@@ -89,7 +89,7 @@
 .bold{
   font-weight:bold;
 }
-
+/* 居中 */
 .text-center {
   text-align: center;
 }
@@ -191,9 +191,87 @@
 .marg10-bottom {
     margin-bottom: 10px;
 }
-.marg20-top {
-    margin-top: 20px;
+
+
+/* 0.5px border */
+.border_left05,
+.border_top05,
+.border_bottom05,
+.border_top_bottom05 {
+    position: relative;
 }
-.marg20-bottom {
-    margin-bottom: 20px;
+.border_top05:before,
+.border_bottom05:after,
+.border_top_bottom05:before,
+.border_top_bottom05:after {
+    display: block;
+    content: "";
+    width: 199%;
+    width: calc(200%);
+    height: 1px;
+    position: absolute;
+    left: -50%;
+    background-color: #dcdcdc;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+    z-index: 1;
+}
+.border_top05:before,
+.border_top_bottom05:before {
+    top: 0;
+}
+.border_bottom05:after,
+.border_top_bottom05:after {
+    bottom: 0;
+}
+.border_left05::before {
+    display: block;
+    content: '';
+    width: 1px;
+    height: 200%;
+    height: calc(200%-20px);
+    position: absolute;
+    // top: -50%;
+    background-color: #E7E8EB;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+    z-index: 1;
+}
+.border_left05::before {
+    left: 0;
+}
+
+/* 超出加点 */
+.ellipsis{
+    display: inline-block;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    word-break: normal;
+}
+.bd-radius-4 {
+  border-radius: 4px;
+}
+.bd-radius-half {
+    border-radius: 50%;
+}
+body {
+  background: rgb(245,245,245);
+}
+input[type=search]::-webkit-search-cancel-button{
+   -webkit-appearance: none;
+}
+textarea {
+  resize: none;
+}
+input, textarea {
+    border: 0;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
