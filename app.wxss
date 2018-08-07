@@ -7,4 +7,193 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
+/* common */
+.row {
+  display: box;
+  -webkit-box-orient: horizontal;
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: box;
+  -webkit-box-orient: vertical;
+  display: flex;
+  flex-direction: column;
+}
+.start-cen {
+  -webkit-box-align: center;
+  -webkit-box-pack: start;
+  align-items: start;
+  justify-content: center;
+}
+.cen-space {
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.cen-around {
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  align-items: center;
+  justify-content: space-around;
+}
+.cen-start {
+  -webkit-box-align: start;
+  -webkit-box-pack: justify;
+  align-items: center;
+  justify-content: start;
+}
+.cen-end {
+  -webkit-box-align: end;
+  -webkit-box-pack: center;
+  align-items: center;
+  justify-content: flex-end;
+}
+.cen-center {
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/*通用字体颜色*/
+.gray-3 {
+    color: #333;
+}
+.gray-6 {
+    color: #666;
+}
+.gray-9 {
+    color: #999;
+}
+.gray-c {
+    color: #ccc;
+}
+.white {
+    color: #fff;
+}
+.red {
+    color: #ff5346;
+}
+.green {
+    color: #23beae;
+}
+.blue {
+    color: #00a0ff;
+}
+.grass-green{
+  color: rgb(71, 212, 101);
+}
+.bold{
+  font-weight:bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/*通用内外边距*/
+.padding5 {
+    padding: 5px;
+}
+.padding5-0 {
+    padding: 5px 0;
+}
+.padding5-left {
+    padding-left: 5px;
+}
+.padding10 {
+    padding: 10px;
+}
+.padding10-top{
+    padding-top:10px;
+}
+.padding10-left {
+    padding-left: 10px;
+}
+.padding10-right {
+    padding-right: 10px;
+}
+.padding10-bottom {
+    padding-bottom: 10px;
+}
+.padding15 {
+    padding: 15px;
+}
+.padding15-left {
+    padding-left: 15px;
+}
+.padding15-right {
+    padding-right: 15px;
+}
+.padding0-5 {
+    padding: 0 5px;
+}
+.padding0-10 {
+    padding: 0 10px;
+}
+.padding0-15 {
+    padding: 0 15px;
+}
+.padding10-0 {
+    padding: 10px 0;
+}
+.padding10-15 {
+    padding: 10px 15px;
+}
+.padding15-0 {
+    padding: 15px 0;
+}
+.padding5-10 {
+    padding: 5px 10px;
+}
+.padding5-15 {
+    padding: 5px 15px;
+}
+.marg10-0 {
+    margin:10px 0;
+}
+.marg5-left {
+    margin-left: 5px;
+}
+.marg15-left {
+    margin-left: 15px;
+}
+.marg5-right {
+  margin-right: 5px;
+}
+.marg5-top {
+    margin-top: 5px;
+}
+.marg5-bottom {
+    margin-bottom: 5px;
+}
+.marg10-bottom {
+    margin-bottom: 10px;
+}
+.marg10 {
+    margin: 10px;
+}
+.marg10-top {
+    margin-top: 10px;
+}
+.marg-10-top {
+    margin-top: -10px;
+}
+.marg10-left {
+    margin-left: 10px;
+}
+.marg10-right {
+    margin-right: 10px;
+}
+.marg10-bottom {
+    margin-bottom: 10px;
+}
+.marg20-top {
+    margin-top: 20px;
+}
+.marg20-bottom {
+    margin-bottom: 20px;
+}
