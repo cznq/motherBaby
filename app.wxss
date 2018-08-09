@@ -1,4 +1,4 @@
-/**app.wxss**/
+/* *app.wxss* */
 .container {
   height: 100%;
   display: flex;
@@ -7,8 +7,30 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
+} 
+ /* common */
+
+ /* 1px线 */
+.line-1{
+  width: 100%;
+  height: 2rpx;
+  background-color: #ccc;
 }
-/* common */
+/* 字体 */
+.font24{
+  font-size: 24rpx;
+}
+.font26{
+  font-size: 26rpx;
+}
+.font28{
+  font-size: 28rpx;
+}
+/* 颜色 */
+.grey{
+  color: #AEAAAA ;
+}
+
 .row {
   display: box;
   -webkit-box-orient: horizontal;
@@ -234,7 +256,7 @@
     height: 200%;
     height: calc(200%-20px);
     position: absolute;
-    // top: -50%;
+     /* top: -50%; */
     background-color: #E7E8EB;
     -webkit-transform: scale(0.5);
     -moz-transform: scale(0.5);

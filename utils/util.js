@@ -14,6 +14,19 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const mformatTime = date => {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  return [year, month, day].map(mformatNumber).join('-') 
+}
+
+const mformatNumber = n => {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  mformatTime: mformatTime
 }

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -12,7 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.1",
-	"appid": "wx362268e053b8c61a",
+	"appid": "wx39540b1ea7cc64a6",
 	"projectname": "motherBaby",
 	"isGameTourist": false,
 	"condition": {
