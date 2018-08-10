@@ -1,5 +1,6 @@
 // pages/order/order.js
 const app = getApp();
+var utils = require('../../utils/util.js');
 Page({
 
   /**
@@ -7,6 +8,7 @@ Page({
    */
   data: {
     orderTitle: "all", //finish recover confirm
+    orderDetails:[],
   },
 
   /**
@@ -14,7 +16,7 @@ Page({
    */
   onLoad: function(options) {
     var _that = this;
-
+    utils.http();
   },
 
   touchTit: function(e) {

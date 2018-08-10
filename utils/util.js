@@ -37,6 +37,7 @@ const mformatNumber = n => {
  * @author   wzj
  */
 function http(url, callBack, reqbody) {
+  console.log('http');
   var reqbody = reqbody ? reqbody : {};
   var dataStr = JSON.stringify({
       reqbody: reqbody
