@@ -29,8 +29,25 @@
   <!-- 内容区域 -->
   <view class='home-content'>
     <view class='home-content-main'>
-      <!-- 预估重量 -->
-      <view class='home-content-main-weight'>
+      <!-- 预估重量&&未登录主动获取用户信息权限 -->
+      <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle row cen-space padding0-10" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+        <view class='home-content-main-weight'>
+          <view class='home-content-main-weight-left'>
+            <image src='../../images/1.png'></image>
+            <view class='font28'>
+              <view>预估重量</view>
+              <view class='home-content-main-weight-left-tips '>低于3KG，可以再积攒下哦</view>
+            </view>
+          </view>
+          <view class='home-content-main-weight-right'>
+            <picker >
+               <view class='font24 grey'>{{weightArr[weightIndex] || '请选择'}} </view>
+              <image src='../../images/2.png'></image>
+            </picker>
+          </view>
+        </view>
+      </button>
+      <view wx:if="{{getUserInfo}}" class='home-content-main-weight'>
         <view class='home-content-main-weight-left'>
           <image src='../../images/1.png'></image>
           <view class='font28'>
@@ -42,7 +59,7 @@
           <picker bindchange="bindWeightPickerChange" value="{{weightIndex}}" range="{{weightArr}}" >
              <view class='font24 grey'>{{weightArr[weightIndex] || '请选择'}} </view>
             <image src='../../images/2.png'></image>
-          </picker>  
+          </picker>
         </view>
       </view>
       <!-- 取件地址 -->
@@ -55,7 +72,7 @@
           <view class='font24 grey'>{{memberAddr.provinceName+memberAddr.cityName+memberAddr.countyName+memberAddr.detailInfo ||'点击填写取件地址'}}</view>
           <image src='../../images/2.png'> </image>
         </label>
-      </view>       
+      </view>
     <!-- 上门时间 -->
       <view class='home-content-main-time'>
         <view class='home-content-main-time-left'>
@@ -66,9 +83,9 @@
           <picker mode="date" value="{{date}}" start="{{startDate}}" end="" bindchange="bindDateChange">
             <view class='font24 grey'>{{date}}</view>
             <image src='../../images/2.png'> </image>
-          </picker> 
+          </picker>
         </view>
-      </view> 
+      </view>
       <!-- 预约须知 -->
       <label class='home-content-appointment_notice' bindtap='bindAppointmentNotice'>
         <image src='../../images/1.png'></image>
@@ -83,7 +100,7 @@
         <!-- 备注内容 -->
         <textarea class='font26' placeholder='请简单介绍下要捐赠的东西（30字内）' maxlength='30' cursor-spacing='25' placeholder-style='font-size:24rpx;' wx:if='{{!showMModal}}'></textarea>
       </view>
-    </view>   
+    </view>
   </view>
   <button class='home-btn-confirm font28' disabled='{{btnIsable}}' bindtap='bindConfirmAppointment' >确定预约</button>
   <view class='home-modal' wx:if='{{showMModal}}'>

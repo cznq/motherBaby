@@ -7,13 +7,6 @@ Page({
    */
   data: {
     orderTitle: "all", //finish recover confirm
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    avatarUrl: "",
-    getUserInfo: false,
-    nickName: "",
-    gender: "",
-    city: "",
-    province: ''
   },
 
   /**
@@ -21,48 +14,9 @@ Page({
    */
   onLoad: function(options) {
     var _that = this;
-    if (app.globalData.code && app.globalData.code != '') {
-      console.log('app.code不为空');
-    } else {
-      app.userInfoReadyCallback = code => {
-        if (code != '') {
-          console.log('code', code);
-        }
-      }
-    }
-    // 查看是否授权
-    wx.getSetting({
-      success: function(res) {
-        console.log(res);
-        var that = this;
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function(res) {
-              _that.setData({
-                getUserInfo: true
-              })
-              console.log(res.userInfo)
-            }
-          })
-        }
-      },
-    })
-  },
-  onGotUserInfo: function(e) {
-    console.log(e.detail.userInfo);
-    let userInfo = e.detail.userInfo;
-    if (!userInfo) {
-      this.setData({
-        getUserInfo: false
-      })
-    } else {
-      this.setData({
-        getUserInfo: true
-      })
-    }
 
   },
+
   touchTit: function(e) {
     let tag = e.target.dataset.tag;
     switch (tag) {
