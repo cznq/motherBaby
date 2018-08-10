@@ -30,7 +30,6 @@
   <view class='home-content'>
     <view class='home-content-main'>
       <!-- 预估重量&&未登录主动获取用户信息权限 -->
-      <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle row cen-space padding0-10" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
         <view class='home-content-main-weight'>
           <view class='home-content-main-weight-left'>
             <image src='../../images/1.png'></image>
@@ -39,25 +38,17 @@
               <view class='home-content-main-weight-left-tips '>低于3KG，可以再积攒下哦</view>
             </view>
           </view>
+        <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle row cen-space " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
           <view class='home-content-main-weight-right'>
             <picker >
-               <view class='font24 grey'>{{weightArr[weightIndex] || '请选择'}} </view>
+               <view class='font24 grey getuserinfowords'>{{weightArr[weightIndex] || '请选择'}} </view>
               <image src='../../images/2.png'></image>
             </picker>
           </view>
-        </view>
-      </button>
-      <view wx:if="{{getUserInfo}}" class='home-content-main-weight'>
-        <view class='home-content-main-weight-left'>
-          <image src='../../images/1.png'></image>
-          <view class='font28'>
-            <view>预估重量</view>
-            <view class='home-content-main-weight-left-tips '>低于3KG，可以再积攒下哦</view>
-          </view>
-        </view>
-        <view class='home-content-main-weight-right'>
+        </button>
+        <view class='home-content-main-weight-right' wx:if="{{getUserInfo}}">
           <picker bindchange="bindWeightPickerChange" value="{{weightIndex}}" range="{{weightArr}}" >
-             <view class='font24 grey'>{{weightArr[weightIndex] || '请选择'}} </view>
+             <view class='font24 grey chooseweight'>{{weightArr[weightIndex] || '请选择'}} </view>
             <image src='../../images/2.png'></image>
           </picker>
         </view>
