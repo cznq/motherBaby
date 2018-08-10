@@ -2,8 +2,8 @@
 <view class='mcontainer'>
 <!-- 轮播图 -->
   <swiper class='home-swiper' indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='{{circular}}' >
+  <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}" >
     <swiper-item>
       <image src="{{item}}" class="slide-image" width="355" height="150"/>
     </swiper-item>
@@ -51,7 +51,7 @@
           <image src='../../images/1.png'></image>
           <view class='font28'>取件地址</view>
         </view>
-        <label class='home-content-main-address-right' bindtap='chooseAddr' >
+        <label class='home-content-main-address-right' bindtap='bindChooseAddr' >
           <view class='font24 grey'>{{memberAddr.provinceName+memberAddr.cityName+memberAddr.countyName+memberAddr.detailInfo ||'点击填写取件地址'}}</view>
           <image src='../../images/2.png'> </image>
         </label>
@@ -63,14 +63,14 @@
           <view class='font28'>上门时间</view>
         </view>
         <view class='home-content-main-time-right'>
-          <picker mode="date" value="{{date}}" start="{{date}}" end="" bindchange="bindDateChange">
+          <picker mode="date" value="{{date}}" start="{{startDate}}" end="" bindchange="bindDateChange">
             <view class='font24 grey'>{{date}}</view>
             <image src='../../images/2.png'> </image>
           </picker> 
         </view>
       </view> 
       <!-- 预约须知 -->
-      <label class='home-content-appointment_notice' bindtap='appointmentNotice'>
+      <label class='home-content-appointment_notice' bindtap='bindAppointmentNotice'>
         <image src='../../images/1.png'></image>
         <view class='font24'>预约须知</view>
       </label>
@@ -81,9 +81,22 @@
           <view class='font28 '>备注</view>
         </view>
         <!-- 备注内容 -->
-        <textarea class='font26' placeholder='请简单介绍下要捐赠的东西（30字内）' maxlength='30' cursor-spacing='25' placeholder-style='font-size:24rpx;'></textarea>
+        <textarea class='font26' placeholder='请简单介绍下要捐赠的东西（30字内）' maxlength='30' cursor-spacing='25' placeholder-style='font-size:24rpx;' wx:if='{{!showMModal}}'></textarea>
       </view>
     </view>   
   </view>
-  <button class='home-btn-confirm font28'>确定预约</button>
+  <button class='home-btn-confirm font28' disabled='{{btnIsable}}' bindtap='bindConfirmAppointment' >确定预约</button>
+  <view class='home-modal' wx:if='{{showMModal}}'>
+    <!-- 预约须知模态框 -->
+    <view class='modal-appointment-notice  font28'>
+      <!-- 标题 -->
+      <view class='modal-appointment-notice-title'>{{modalTitle}}</view>
+      <!-- 内容 -->
+      <view class='modal-appointment-notice-content'>
+      {{modalContent}}
+      </view>
+      <!-- 按钮 -->
+      <button class='modal-appointment-notice-btn' bindtap='bindCloseModal' >{{modalBtnContent}}</button>
+    </view>
+  </view>
 </view>

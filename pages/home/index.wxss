@@ -5,6 +5,10 @@
   width: 100%;
   background-color: #ccc;
 }
+.home-swiper image{
+  width: 100%;
+  height: 100%;
+}
 /* 标题--平台介绍、联系客服、我的 */
 .home-title{
   height: 116rpx;
@@ -227,11 +231,42 @@ textarea{
   left: 0;
   top: 0;
   margin: 150rpx 74rpx;
-  background-color: #fff;
   z-index: 100;
 }
 .home-content-appointment_notice-modal-btn{
   width: 200rpx;
   position: absolute;
 }
+.home-modal{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 15, .55);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.modal-appointment-notice{
+  width: 600rpx;
+  height: 860rpx;
+  background-color: #F9F7FA;
+  border-radius: 26rpx;
+  margin-left: 74rpx;
+  margin-top: 200rpx;
+  text-align: center;
+  position: relative;
+  color: #101010;
+}
 
+.modal-appointment-notice-btn{
+  width: 298rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  position: absolute;
+  bottom: 20rpx;
+  left: 50%;
+  margin-left: -149rpx;
+  background-color: #595858;
+  /* border-radius: 40rpx;
+  border-color: #F9F7FA; */
+}
