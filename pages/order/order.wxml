@@ -1,0 +1,31 @@
+<!--pages/order/order.wxml-->
+<view class="orderTitle row cen-space padding0-10" bindtap="touchTit">
+  <li class="padding10 text-center {{orderTitle === 'all' ? 'border_bottom05':''}}" data-tag='all' >全部</li>
+  <li class="padding10 text-center {{orderTitle === 'confirm' ? 'border_bottom05':''}}" data-tag='confirm'>待确认</li>
+  <li class="padding10 text-center {{orderTitle === 'recover' ? 'border_bottom05':''}}" data-tag='recover'>待回收</li>
+  <li class="padding10 text-center {{orderTitle === 'finish' ? 'border_bottom05':''}}" data-tag='finish'>已完成</li>
+</view>
+<view>
+  <block wx:if="">
+    <view class="padding0-10">
+      <view class="orderContentTit">
+
+      </view>
+      <view class="orderContentMain"></view>
+    </view>
+  </block>
+</view>
+<button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle row cen-space padding0-10" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+
+    <li class="padding10 text-center {{orderTitle === 'all' ? 'border_bottom05':''}}" data-tag='all' >全部</li>
+    <li class="padding10 text-center {{orderTitle === 'confirm' ? 'border_bottom05':''}}" data-tag='confirm'>待确认</li>
+    <li class="padding10 text-center {{orderTitle === 'recover' ? 'border_bottom05':''}}" data-tag='recover'>待回收</li>
+    <li class="padding10 text-center {{orderTitle === 'finish' ? 'border_bottom05':''}}" data-tag='finish'>已完成</li>
+
+</button>
+<view wx:if="{{getUserInfo}}" class="orderTitle row cen-space padding0-10" bindtap="touchTit">
+  <li class="padding10 text-center {{orderTitle === 'all' ? 'border_bottom05':''}}" data-tag='all' >全部</li>
+  <li class="padding10 text-center {{orderTitle === 'confirm' ? 'border_bottom05':''}}" data-tag='confirm'>待确认</li>
+  <li class="padding10 text-center {{orderTitle === 'recover' ? 'border_bottom05':''}}" data-tag='recover'>待回收</li>
+  <li class="padding10 text-center {{orderTitle === 'finish' ? 'border_bottom05':''}}" data-tag='finish'>已完成</li>
+</view>
