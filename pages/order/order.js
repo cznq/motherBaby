@@ -16,7 +16,7 @@ Page({
    */
   onLoad: function(options) {
     var _that = this;
-    utils.http();
+    // utils.http();
   },
 
   touchTit: function(e) {
