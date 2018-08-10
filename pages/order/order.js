@@ -50,7 +50,6 @@ Page({
     })
   },
   onGotUserInfo: function(e) {
-    console.log('666888');
     console.log(e.detail.userInfo);
     let userInfo = e.detail.userInfo;
     if (!userInfo) {
