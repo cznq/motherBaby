@@ -1,0 +1,47 @@
+<!--pages/platform/index.wxml-->
+
+<view class='mcontainer'>
+<!-- 产品介绍 -->
+  <view class='productintro'>
+    <!-- title -->
+    <view class='productintro-box'>
+      <view class='plat-line'></view>
+      <view class='productintro-title'>产品介绍</view>
+    </view>
+    <!-- content -->
+    <view class='productintro-content'>内容</view>
+  </view>
+  
+  <view class='plat-gap'></view> 
+
+<!-- 在线预约流程 -->
+  <view class='online_appointment'>
+  <!-- title -->
+    <view class='online_appointment-box'>
+      <view class='plat-line'></view>
+      <view class='online_appointment-title'>在线预约流程</view>
+    </view>
+    <!-- content -->
+    <view class='online_appointment-content' wx:for="['']">
+      <view class='online_appointment-content-left'>
+        <image src='../../images/1.png'></image>
+      </view>
+      <view class='online_appointment-content-right'>
+        内容
+      </view>
+    </view>
+  </view>
+
+   <view class='plat-gap'></view>
+
+<!-- 预约须知 -->
+  <view class='appointment_notice'>
+  <!-- title -->
+    <view class='appointment_notice-box'>
+      <view class='plat-line'></view>
+      <view class='appointment_notice-title'>预约须知</view>
+    </view>
+    <!-- content -->
+    <view class='appointment_notice-content'>内容</view>
+  </view>
+</view>
