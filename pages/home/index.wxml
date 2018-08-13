@@ -43,7 +43,7 @@
               <image src='../../images/weight@2x.png'></image>
               <view class='font28'>
                 <view class='pink'>预估重量</view>
-                <view class='home-content-main-weight-left-tips grey'>低于3KG，可以再积攒下哦~</view>
+                <view class='home-content-main-weight-left-tips grey' wx:if="{{showWeightTips}}">低于3KG，可以再积攒下哦~</view>
               </view>
             </view>
           <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle row cen-space " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
@@ -105,7 +105,7 @@
         <!-- 备注内容 -->
         <textarea class='font26 .grey' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' placeholder-style='font-size:24rpx;' wx:if='{{!showMModal}}'></textarea>
       </view>
-      <!-- disabled='{{btnIsable}}' -->
+    <!-- disabled='{{btnIsable}}' -->
     <button class='home-btn-confirm font28'  bindtap='bindConfirmAppointment' >确认预约</button>
     </view>
   </view>

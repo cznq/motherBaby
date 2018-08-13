@@ -34,8 +34,8 @@ Page({
       gender: "",
       city: "",
       province: ''
-    }
-
+    },
+    showWeightTips:true
   },
   //主动获取用户信息权限
   onGotUserInfo: function(e) {
@@ -113,16 +113,16 @@ Page({
   },
   // 预约须知提示框
   bindAppointmentNotice() {
-    wx.setClipboardData({
-      data: '123',
-      success: function (res) {
-        wx.getClipboardData({
-          success: function (res) {
-            console.log(res.data) // data
-          }
-        })
-      }
-    })
+    // wx.setClipboardData({
+    //   data: '123',
+    //   success: function (res) {
+    //     wx.getClipboardData({
+    //       success: function (res) {
+    //         console.log(res.data) // data
+    //       }
+    //     })
+    //   }
+    // })
     this.setData({
       showMModal: !this.data.showMModal,
       modalTitle: '预约须知',
@@ -170,6 +170,15 @@ Page({
     } else {
       this.setData({
         btnIsable: true
+      })
+    }
+    if(this.weightIndex!=0){
+      this.setData({
+        showWeightTips:false
+      })
+    }else{
+      this.setData({
+        showWeightTips: true
       })
     }
   },
