@@ -14,7 +14,7 @@
 .line-1{
   width: 100%;
   height: 2rpx;
-  background-color: #ccc;
+  background-color: #f7b4c2;
 }
 /* 字体 */
 .font24{
@@ -27,10 +27,13 @@
   font-size: 28rpx;
 }
 /* 颜色 */
-.grey{
-  color: #AEAAAA ;
-}
 
+.pink{
+  color: rgb(253, 82, 147);
+}
+.grey{
+  color: rgb(102, 102, 102);
+}
 .row {
   display: box;
   -webkit-box-orient: horizontal;

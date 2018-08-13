@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    date: '', //默认时间
+    date: '请预约', //默认时间
     startDate: util.mformatTime(new Date()), //当前时间
     memberAddr: [], //取件地址
     weightArr: ['请选择', '5kg~15kg', '15kg~25kg', '25kg~35kg', '35kg~45kg'], //重量数组
@@ -50,7 +50,6 @@ Page({
         getUserInfo: true
       })
     }
-
   },
   // picker组件--重量改变事件
   bindWeightPickerChange(e) {
@@ -59,14 +58,48 @@ Page({
     })
     this.btnIsable()
   },
+  auth(){
+    let that =this
+    wx.getSetting({
+      success: res => {
+        //这里打印res 得到authSetting数组里scope 三条相关信息都是true 如果拒绝授权 res.authSetting['scope.userInfo'] == false 下面再次调起授权
+        if (res.authSetting['scope.address'] == false) {
+          wx.showModal({
+            title: '警告',
+            content: '您点击了拒绝授权,将无法正常显示个人信息,点击确定重新获取授权。',
+            success: function (e) {
+              wx.getSetting({
+                success: event => {
+                  console.log(event);
+                  //得到authSetting数组里scope 三条相关信息都是true 授权成功
+                  // that.bindChooseAddr()
+                  
+                }
+              });
+            }
+          })
+        }
+      }
+    })
+  },
   // 选择地址
   bindChooseAddr() {
     let that = this
+    this.auth()
     wx.chooseAddress({
-      success: function(res) {
+      success(res) {
+        if (!res.provinceName.includes('北京')){
+          that.bindChooseAddr()
+        }else{
+          console.log('北京市')          
+        }
         that.setData({
           memberAddr: res
         })
+      },
+      fail(res){
+        console.log(res)
+        // that.bindChooseAddr()        
       }
     })
     this.btnIsable()
@@ -80,6 +113,16 @@ Page({
   },
   // 预约须知提示框
   bindAppointmentNotice() {
+    wx.setClipboardData({
+      data: '123',
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            console.log(res.data) // data
+          }
+        })
+      }
+    })
     this.setData({
       showMModal: !this.data.showMModal,
       modalTitle: '预约须知',
@@ -99,14 +142,13 @@ Page({
       showMModal: !this.data.showMModal,
       modalTitle: '预约成功',
       modalContent: '内容',
-      modalBtnContent: '好的'
-    })
-    this.setData({
+      modalBtnContent: '好的',
       weightIndex: 0,
       memberAddr: [],
-      date: '',
-      btnIsable: true
+      date: '请预约',
+      btnIsable: true,
     })
+  
   },
   // 设置导航条颜色
   setNavigationBarColor(bgcolor) {
@@ -137,11 +179,11 @@ Page({
   onLoad: function(options) {
     var _that = this;
     if (app.globalData.code && app.globalData.code != '') {
-      console.log('app.code不为空');
+      // console.log('app.code不为空');
     } else {
       app.userInfoReadyCallback = code => {
         if (code != '') {
-          console.log('code', code);
+          // console.log('code', code);
         }
       }
     }
