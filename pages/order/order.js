@@ -8,7 +8,28 @@ Page({
    */
   data: {
     orderTitle: "all", //finish recover confirm
-    orderDetails:[],
+    orderDetails:[
+      {
+        orderId:'555888899',
+        start:'待确认',
+        donationInfor:'3kg~10kg,2018-08-09',
+        addInfor:{
+          name:'莫晓娜',
+          paperInfo:'3545454242532',
+          address:'xxxxxxxxxxxxx地方'
+        }
+      },
+      {
+        orderId:'22222222222',
+        start:'待确认',
+        donationInfor:'3kg~10kg,2018-08-09',
+        addInfor:{
+          name:'莫晓娜',
+          paperInfo:'3545454242532',
+          address:'xxxxxxxxxxxxx地方'
+        }
+      }
+    ],
   },
 
   /**
@@ -23,6 +44,7 @@ Page({
     let tag = e.target.dataset.tag;
     switch (tag) {
       case "all":
+      // utils.http();
         this.setData({
           'orderTitle': "all"
         })
@@ -47,14 +69,7 @@ Page({
     }
   },
 
-  bindGetUserInfo: function(e) {
-    console.log(e.detail.userInfo)
-  },
-  getPhoneNumber: function(e) {
-    console.log(e.detail.errMsg)
-    console.log(e.detail.iv)
-    console.log(e.detail.encryptedData)
-  },
+
   /**
    * 页面上拉触底事件的处理函数
    */
