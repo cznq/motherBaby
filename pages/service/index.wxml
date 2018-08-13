@@ -1,0 +1,11 @@
+<!--pages/service/index.wxml 联系客服页面-->
+<view class='mcontainer'>
+  <!-- 盒子头部 -->
+  <view class='box-title'>常见问题汇总</view>
+  <!-- 预约回收 -->
+  <view>
+
+  </view>
+  <!-- 运费相关 -->
+  
+</view>
