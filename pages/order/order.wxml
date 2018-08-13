@@ -6,13 +6,25 @@
   <li class="padding10 text-center {{orderTitle === 'finish' ? 'border_bottom05':''}}" data-tag='finish'>已完成</li>
 </view>
 <view>
-  <block wx:if="">
+  <block wx:if="1">
     <view class="padding0-10">
-      <view class="orderContentTit row cen-space">
-          <text>订单号：{{}}</text>
-          <text>{{}}</text>
+      <view class="padding10-0  row cen-space">
+          <text>订单号：{{365466563}}</text>
+          <text>{{'待确认'}}</text>
       </view>
-      <view class="orderContentMain"></view>
+      <view class="border_top05">
+         <view class='padding10-0 row cen-start'>
+           <text class='font28'>捐赠信息：{{'2018-08-07'}}</text>
+           <text class='padding10-left font28'>{{'3kg~10kg'}}，{{2018-08-09}}上门</text>
+         </view>
+         <view class='padding10-0 row cen-start'>
+           <view class='font28'>取件地址：</view>
+           <view class='padding10-left column'>
+            <text class='font28'>{{'莫晓娜'}}  {{'14325454524'}}</text>
+            <text class='font28'>{{'xxxxxxxxxxxxxxx地址'}}</text>
+           </view>
+         </view>
+      </view>
     </view>
   </block>
 </view>
