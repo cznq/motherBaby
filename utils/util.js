@@ -37,17 +37,14 @@ const mformatNumber = n => {
  * @author   wzj
  */
 function http(url, callBack, reqbody) {
-  console.log('http');
   var reqbody = reqbody ? reqbody : {};
-  var dataStr = JSON.stringify({
-      reqbody: reqbody
-  });
+  console.log(reqbody);
   wx.request({
     url: url,
-    data: dataStr,
-    method: 'POST',
+    data: reqbody,
+    method: 'GET',
     header: {
-      "Content-Type": "json"
+      'content-type': 'json'
     },
     success: function (res) {
       callBack(res.data);
