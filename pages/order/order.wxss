@@ -39,13 +39,11 @@ page{
 }
 .myordbtn image{
   width:195rpx;
-  height:53rpx;
+  height:60rpx;
   margin-top:30rpx;
   margin-bottom:10rpx;
 }
-.line-h35{
-  line-height: 70rpx;
-}
+
 
 .title_border05{
   display: relative;
@@ -87,4 +85,38 @@ page{
     -o-transform: scale(0.5);
     transform: scale(0.5);
     z-index: 1;
+}
+.loyer{
+  width:90%;
+  position: fixed;
+  bottom:0px;
+  left:5%;
+  height:0px;
+  overflow: hidden;
+  z-index: 9999;
+  transition: height .3s;
+  overflow: hidden;
+}
+.loyer .cancelInfo{
+  display: block;
+  width:100%;
+  line-height: 50px;
+  background-color: #fd5394;
+  border-radius: 5px;
+  text-align: center;
+}
+.loyer .cancelbtn{
+  display: block;
+  width:100%;
+  line-height: 50px;
+  border:1px solid #f685a3;
+  background-color: #fff;
+  border-radius: 5px;
+  color:#ff8db9;
+  text-align: center;
+  box-sizing: border-box;
+}
+.loyer.action{
+  height: 168px;
+  transition: height .3s;
 }

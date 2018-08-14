@@ -51,13 +51,15 @@
            <text class='padding10-left gray-6 font28'>xxxxxxxxxxxxxxx</text>
          </view>
       </view>
-      <view class='myordbtn row cen-center'>
+      <view class='myordbtn row cen-center' bindtap='cancelbtn'>
         <image src='../../images/myordbtn.png'></image>
       </view>
     </view>
     </view>
   </block>
-  <view>
-
+  <view class="loyer {{cancelbtn ? 'action':''}}">
+      <li catchtap='queryCancel' class='cancelInfo white font36'>信息填写有误</li>
+      <li catchtap='queryCancel' class='cancelInfo marg5-top white font36'>不想捐了</li>
+      <li bindtap='cancelbtn' class='cancelbtn marg10-top font36'>取消</li>
   </view>
 </view>

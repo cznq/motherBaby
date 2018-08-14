@@ -8,6 +8,7 @@ Page({
    */
   data: {
     orderTitle: "all", //finish recover confirm
+    cancelbtn:false,
     orderDetails:[
       {
         orderNo:'555888899',
@@ -98,7 +99,21 @@ Page({
     }
   },
 
-
+  cancelbtn:function(){
+    var cancelbtn = this.data.cancelbtn;
+    if (cancelbtn) {
+      this.setData({
+        cancelbtn:false
+      })
+    }else{
+      this.setData({
+        cancelbtn:true
+      })
+    }
+  },
+  queryCancel:function(e) {
+    
+  }
   /**
    * 页面上拉触底事件的处理函数
    */

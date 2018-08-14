@@ -29,6 +29,9 @@
 .font32{
   font-size: 32rpx;
 }
+.font36{
+  font-size: 36rpx;
+}
 /* 颜色 */
 
 .pink{
