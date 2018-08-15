@@ -17,7 +17,7 @@ const formatNumber = n => {
 const mformatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
-  const day = date.getDate()
+  const day = date.getDate()+1
   return [year, month, day].map(mformatNumber).join('-')
 }
 
@@ -58,9 +58,24 @@ function http(url, callBack, reqbody) {
     }
   })
 }
-
+// 请求
+function mHttp(url, data = {}, callBack, method = 'get', header = { 'content-type': 'application/json'}) {
+  wx.request({
+    url,
+    data,
+    method,
+    header,
+    success(res) {
+      callBack(res.data);
+    },
+    fail(res) {
+     console.log(res)
+    }
+  })
+}
 module.exports = {
-  formatTime: formatTime,
-  mformatTime: mformatTime,
-  http: http
+  formatTime,
+  mformatTime,
+  http,
+  mHttp
 }
