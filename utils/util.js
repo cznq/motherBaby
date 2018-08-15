@@ -49,11 +49,11 @@ function http(url, callBack, reqbody) {
       'content-type': 'json'
     },
     success: function(res) {
-       wx.hideLoading();
+      wx.hideLoading();
       callBack(res.data);
     },
     fail: function(error) {
-       wx.hideLoading();
+      wx.hideLoading();
       console.log(error)
     }
   })
