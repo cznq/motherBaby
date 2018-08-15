@@ -46,7 +46,6 @@ App({
     // 获取用户信息
     wx.getSetting({
       success: res => {
-        console.log(33333);
           if (userInfo != '') {
             console.log('调用登陆接口');
             var url = this.globalData.baseUrl + 'maternal/user/login';
@@ -57,7 +56,9 @@ App({
             utils.http(url, (dataStr) => {
               if (dataStr.success) {
                 console.log('dataStr',dataStr);
-
+              this.globalData.openId = dataStr.openId;
+              this.globalData.sessionKey = dataStr.sessionKey;
+              this.globalData.id = dataStr.id;
               }
             }, reqbody);
           }
