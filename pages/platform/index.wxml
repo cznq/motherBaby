@@ -22,7 +22,7 @@
       <view class='online_appointment-title'>在线预约流程</view>
     </view>
     <!-- content -->
-    <view class='online_appointment-content' wx:for="['']">
+    <view class='online_appointment-content' >
       <view class='online_appointment-content-left'>
         <image src='../../images/1.png'></image>
       </view>

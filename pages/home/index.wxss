@@ -263,7 +263,7 @@ textarea{
   height: 70rpx;
   line-height: 64rpx; 
   border-radius: 70rpx;
-  border: 6rpx solid  #ffe8b4;
+  /* border: 6rpx solid  #ffe8b4; */
   margin-left: 190rpx;
   margin-top: 20rpx;
 }

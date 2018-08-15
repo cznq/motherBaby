@@ -10,9 +10,9 @@ Page({
     startDate: util.mformatTime(new Date()), //当前时间
     memberAddr: [], //取件地址
     weightArr: ['请选择', '5kg~15kg', '15kg~25kg', '25kg~35kg', '35kg~45kg'], //重量数组
-    weightIndex: 0, //默认预估重量下标
+    weightIndex: 0, //默认预估重量下标 
     showMModal: false, //是否弹出提示框
-    // 轮播图部分
+    // 轮播图部分-开始
     imgUrls: [
       '../../images/3.png',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
@@ -23,6 +23,7 @@ Page({
     circular: true,
     interval: 2000,
     duration: 1000,
+    // 轮播图部分-结束
     btnIsable: true, //按钮是否可用
     modalTitle: '', //提示框标题
     modalContent: '', //提示框内容
@@ -35,11 +36,14 @@ Page({
       city: "",
       province: ''
     },
-    showWeightTips:true
+    showWeightTips:true, //是否显示重量提示
+    remarkInfo:'' ,//备注信息
+    navigate:false
   },
+
   //主动获取用户信息权限
   onGotUserInfo: function(e) {
-    console.log(e.detail.userInfo);
+    console.log('onGotUserInfo',e.detail.userInfo);
     let userInfo = e.detail.userInfo;
     if (!userInfo) {
       this.setData({
@@ -58,34 +62,34 @@ Page({
     })
     this.btnIsable()
   },
-  auth(){
-    let that =this
-    wx.getSetting({
-      success: res => {
-        //这里打印res 得到authSetting数组里scope 三条相关信息都是true 如果拒绝授权 res.authSetting['scope.userInfo'] == false 下面再次调起授权
-        if (res.authSetting['scope.address'] == false) {
-          wx.showModal({
-            title: '警告',
-            content: '您点击了拒绝授权,将无法正常显示个人信息,点击确定重新获取授权。',
-            success: function (e) {
-              wx.getSetting({
-                success: event => {
-                  console.log(event);
-                  //得到authSetting数组里scope 三条相关信息都是true 授权成功
-                  // that.bindChooseAddr()
+  // auth(){
+  //   let that =this
+  //   wx.getSetting({
+  //     success: res => {
+  //       //这里打印res 得到authSetting数组里scope 三条相关信息都是true 如果拒绝授权 res.authSetting['scope.userInfo'] == false 下面再次调起授权
+  //       if (res.authSetting['scope.address'] == false) {
+  //         wx.showModal({
+  //           title: '警告',
+  //           content: '您点击了拒绝授权,将无法正常显示个人信息,点击确定重新获取授权。',
+  //           success: function (e) {
+  //             wx.getSetting({
+  //               success: event => {
+  //                 console.log('suc',event);
+  //                 //得到authSetting数组里scope 三条相关信息都是true 授权成功
+  //                 // that.bindChooseAddr()
 
-                }
-              });
-            }
-          })
-        }
-      }
-    })
-  },
+  //               }
+  //             });
+  //           }
+  //         })
+  //       }
+  //     }
+  //   })
+  // },
   // 选择地址
   bindChooseAddr() {
     let that = this
-    this.auth()
+    // this.auth()
     wx.chooseAddress({
       success(res) {
         if (!res.provinceName.includes('北京')){
@@ -103,7 +107,7 @@ Page({
         })
       },
       fail(res){
-        console.log(res)
+        console.log('fail',res)
         // that.bindChooseAddr()
       }
     })
@@ -139,21 +143,54 @@ Page({
   bindCloseModal() {
     this.setData({
       showMModal: false,
+      navigate:false
+    })
+  },
+  bindinput(e){
+    this.setData({
+      remarkInfo: e.detail.value
     })
   },
   // 确认按钮
   bindConfirmAppointment(e) {
-    this.setData({
-      showMModal: !this.data.showMModal,
-      modalTitle: '预约成功',
-      modalContent: '内容',
-      modalBtnContent: '好的',
-      weightIndex: 0,
-      memberAddr: [],
-      date: '请预约',
-      btnIsable: true,
-    })
-
+    let that = this
+    // 订单预约请求
+    util.mHttp(app.globalData.baseUrl +'maternal/order/appointment',{
+      userId: app.globalData.id, //用户id
+      weight: that.data.weightArr[that.data.weightIndex], //预估重量
+      appointment: that.data.date, //上门预约时间 yyyy-MM-dd
+      userName: that.data.memberAddr.userName, //收货人姓名
+      postalCode: that.data.memberAddr.postalCode,//邮编
+      provinceName: that.data.memberAddr.provinceName, //省份
+      cityName: that.data.memberAddr.cityName,//城市
+      countyName: that.data.memberAddr.countyName,//区县
+      detailInfo: that.data.memberAddr.detailInfo ,//收货详细地址
+      nationalCode: that.data.memberAddr.nationalCode, //收货地址国家码
+      telNumber: that.data.memberAddr.telNumber , //收货人电话号码
+      markInfo:that.data.remarkInfo //备注信息
+    },function(data){
+      console.log('suc',data)
+      if(data.success){
+        // console.log('suc')
+        that.setData({
+          showMModal: !that.data.showMModal,
+          modalTitle: '预约成功',
+          modalContent: '内容',
+          modalBtnContent: '好的',
+          weightIndex: 0,
+          memberAddr: [],
+          date: '请预约',
+          btnIsable: true,
+          remarkInfo:'',
+          navigate:true,
+          showWeightTips:true
+        })
+      }else{
+        // console.log('error')
+      }
+      }, 'POST',{
+        'content-type': 'application/x-www-form-urlencoded'
+      })
   },
   // 设置导航条颜色
   setNavigationBarColor(bgcolor) {
@@ -193,21 +230,33 @@ Page({
   onLoad: function(options) {
     var _that = this;
     if (app.globalData.code && app.globalData.code != '') {
-      console.log('app.code不为空');
+      // console.log('code','app.code不为空');
     } else {
-      app.userInfoReadyCallback = code => {
-        if (code != '') {
-          console.log('code', code);
-          var url = app.globalData.baseUrl+'maternal/user/register';
-          util.http(url,(dataStr) => {
-            if (dataStr.success) {
-              console.log('success',dataStr);
-              app.globalData.sessionKey = dataStr.data.sessionKey;
-              app.globalData.openId = dataStr.data.openId;
-              app.globalData.id = dataStr.data.id;
+      var userInfo = {};
+      userInfo = wx.getStorageSync('userInfo'); //读取本地userInfo
+      if (userInfo == '') {
+        app.userInfoReadyCallback = code => {
+          if (code != '') {
+            console.log('code', code);
+            var url = app.globalData.baseUrl + 'maternal/user/register';
+            var reqbody = {
+              wxcode: code
             }
+            util.http(url, (dataStr) => {
+              if (dataStr.success) {
+                console.log('success', dataStr);
+                app.globalData.sessionKey = dataStr.data.sessionKey;
+                app.globalData.openId = dataStr.data.openId;
+                app.globalData.id = dataStr.data.id
+                userInfo = {
+                  openId: app.globalData.openId,
+                  userId: app.globalData.id
+                }
+                wx.setStorageSync('userInfo', userInfo);
+              }
 
-          });
+            }, reqbody);
+          }
         }
       }
     }
@@ -220,7 +269,7 @@ Page({
               _that.setData({
                 getUserInfo: true
               })
-              console.log(res.userInfo);
+              // console.log('suc',res.userInfo);
               // 更新用户信息
               var url = app.globalData.baseUrl+'maternal/user/update';
               var reqbody = {
@@ -235,9 +284,9 @@ Page({
                 mobile:''
               }
               util.http(url,(dataStr) => {
-                console.log(dataStr);
+                // console.log(dataStr);
                 if (dataStr.success) {
-                  console.log('更新用户信息',dataStr);
+                  // console.log('更新用户信息',dataStr);
                   app.globalData.sessionKey = dataStr.data.sessionKey;
                   app.globalData.openId = dataStr.data.openId;
                 }

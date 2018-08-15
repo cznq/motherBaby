@@ -16,14 +16,19 @@
 
   <!-- 标题 -->
   <view class='home-title' >
-    <view class='home-title-left'>
-      <image src='../../images/platintro@2x.png' ></image>
-      <view class='font26'>平台介绍</view>
-    </view>
-    <view class='home-title-center'>
-      <image src='../../images/service@2x.png'></image>
-      <view class='font26'>联系客服</view>
-    </view>
+    <navigator url='../../pages/platform/index' hover-class="none"  >
+      <view class='home-title-left'>
+        <image src='../../images/platintro@2x.png' ></image>
+        <view class='font26'>平台介绍</view>
+      </view>
+    </navigator>
+    <navigator url='../../pages/service/index' hover-class="none"  >  
+      <view class='home-title-center'>
+        <image src='../../images/service@2x.png'></image>
+        <view class='font26'>联系客服</view>
+      </view>
+    </navigator>
+    
     <navigator class='home-title-right' url='../../pages/order/order' hover-class="none" >
       <image src='../../images/reservation@2x.png'></image>
       <view class='font26'>我的预约</view>
@@ -101,10 +106,10 @@
           <view class='font28 pink'>备注</view>
         </view>
         <!-- 备注内容 -->
-        <textarea class='font26 .grey' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' placeholder-style='font-size:24rpx;' wx:if='{{!showMModal}}'></textarea>
+        <textarea class='font26 .grey' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' placeholder-style='font-size:24rpx;' wx:if='{{!showMModal}}' bindinput='bindinput' ></textarea>
       </view>
-    <!-- disabled='{{btnIsable}}' -->
-    <button class='home-btn-confirm font28'  bindtap='bindConfirmAppointment' >确认预约</button>
+   
+    <button class='home-btn-confirm font28'  bindtap='bindConfirmAppointment'  disabled='{{btnIsable}}'>确认预约</button>
     </view>
   </view>
   <view class='home-modal' wx:if='{{showMModal}}'>
@@ -117,7 +122,10 @@
       {{modalContent}}
       </view>
       <!-- 按钮 -->
-      <button class='modal-appointment-notice-btn' bindtap='bindCloseModal' >{{modalBtnContent}}</button>
+      <navigator url='../../pages/order/order' hover-class="none" wx:if="{{navigate}}" >
+        <button class='modal-appointment-notice-btn' bindtap='bindCloseModal' >{{modalBtnContent}}</button>
+      </navigator>
+      <button wx:if="{{!navigate}}" class='modal-appointment-notice-btn' bindtap='bindCloseModal' >{{modalBtnContent}}</button>
     </view>
   </view>
 </view>
