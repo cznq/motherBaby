@@ -2,17 +2,12 @@ const utils = require('./utils/util.js');
 //app.js
 App({
   onLaunch: function() {
-    // 展示本地存储能力
-    // var logs = wx.getStorageSync('logs') || []
-    // logs.unshift(Date.now())
-    // wx.setStorageSync('logs', logs)
     var userInfo = {};
     userInfo = wx.getStorageSync('userInfo'); //读取本地userInfo
     // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        // alert()
         this.globalData.code = res.code;
         console.log('res.code', res.code);
         console.log('userInfo', userInfo);
@@ -55,7 +50,6 @@ App({
             }
             utils.http(url, (dataStr) => {
               if (dataStr.success) {
-                console.log('dataStr',dataStr);
               this.globalData.openId = dataStr.openId;
               this.globalData.sessionKey = dataStr.sessionKey;
               this.globalData.id = dataStr.id;
