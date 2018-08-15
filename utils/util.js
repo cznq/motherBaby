@@ -37,8 +37,10 @@ const mformatNumber = n => {
  * @author   wzj
  */
 function http(url, callBack, reqbody) {
+  wx.showLoading({
+    title: '加载中',
+  })
   var reqbody = reqbody ? reqbody : {};
-  console.log(reqbody);
   wx.request({
     url: url,
     data: reqbody,
@@ -46,10 +48,12 @@ function http(url, callBack, reqbody) {
     header: {
       'content-type': 'json'
     },
-    success: function (res) {
+    success: function(res) {
+       wx.hideLoading();
       callBack(res.data);
     },
-    fail: function (error) {
+    fail: function(error) {
+       wx.hideLoading();
       console.log(error)
     }
   })
@@ -58,5 +62,5 @@ function http(url, callBack, reqbody) {
 module.exports = {
   formatTime: formatTime,
   mformatTime: mformatTime,
-  http:http
+  http: http
 }

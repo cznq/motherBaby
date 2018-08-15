@@ -112,8 +112,17 @@ Page({
     }
   },
   queryCancel:function(e) {
-    
-  }
+    var url = app.globalData.baseUrl+'maternal/order/list';
+    var reqbody = {
+      userId:1
+    }
+    util.http(url,(dataStr) => {
+      if (dataStr.success) {
+        console.log(dataStr);
+
+      }
+    }, reqbody);
+  },
   /**
    * 页面上拉触底事件的处理函数
    */
