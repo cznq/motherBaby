@@ -15,7 +15,7 @@
   </li>
 </view>
 <view>
-  <block wx:if="{{orderTitle ==='al'}}" wx:for='{{orderDetails}}' wx:for-item='item' wx:key="unique">
+  <block wx:if="{{orderTitle ==='all'}}" wx:for='{{orderDetails}}' wx:for-item='item' wx:key="unique">
     <view class="marg10-top padding0-10">
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
@@ -69,9 +69,6 @@
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
           <text wx:if='{{item.orderStatus === 1}}' class='font32 qrcolo'>待确认</text>
-          <text wx:if='{{item.orderStatus === 2}}' class='font32 qrcolo'>已取消</text>
-          <text wx:if='{{item.orderStatus === 3}}' class='font32 qrcolo'>待收货</text>
-          <text wx:if='{{item.orderStatus === 4}}' class='font32 qrcolo'>已完成</text>
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
@@ -113,10 +110,7 @@
             <image src='../../images/myOrder.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
-          <text wx:if='{{item.orderStatus === 1}}' class='font32 qrcolo'>待确认</text>
-          <text wx:if='{{item.orderStatus === 2}}' class='font32 qrcolo'>已取消</text>
           <text wx:if='{{item.orderStatus === 3}}' class='font32 qrcolo'>待收货</text>
-          <text wx:if='{{item.orderStatus === 4}}' class='font32 qrcolo'>已完成</text>
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
@@ -158,9 +152,6 @@
             <image src='../../images/myOrder.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
-          <text wx:if='{{item.orderStatus === 1}}' class='font32 qrcolo'>待确认</text>
-          <text wx:if='{{item.orderStatus === 2}}' class='font32 qrcolo'>已取消</text>
-          <text wx:if='{{item.orderStatus === 3}}' class='font32 qrcolo'>待收货</text>
           <text wx:if='{{item.orderStatus === 4}}' class='font32 qrcolo'>已完成</text>
       </view>
       <view>
@@ -195,9 +186,13 @@
     </view>
     </view>
   </block>
-  <view class='noResult column cen-center'>
-      <view class='row cen-center'><image class='resultImage' src='../../images/noresult.png'></image></view>
-      <view class='row cen-center'><image class='resultbtn' src='../../images/noresultbtn.png'></image></view>
+  <view wx:if="{{noDetails}}" class='noResult column cen-center'>
+      <view class='row cen-center'>
+        <image class='resultImage' src='../../images/noresult.png'></image>
+      </view>
+      <view class='row cen-center'>
+        <image class='resultbtn' src='../../images/noresultbtn.png'></image>
+      </view>
   </view>
   <view class="loyer {{cancelbtn ? 'action':''}}">
       <li catchtap='queryCancel' class='cancelInfo white font36'>信息填写有误</li>

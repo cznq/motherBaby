@@ -49,11 +49,17 @@ Page({
     // telNumber; //收货人电话号码
     // markInfo; //备注信息
     util.http(url, (dataStr) => {
+      this.setData({
+        noDetails: false
+      })
       if (dataStr.success) {
         console.log(dataStr);
-        if(!dataStr.data[0]){
+        if (!dataStr.data[0]) {
           console.log('不存在');
-          return false
+          this.setData({
+            noDetails: true
+          })
+          return false;
         }
         console.log(dataStr.data[0].order);
         orderDetails = dataStr.data[0].order;
@@ -69,7 +75,8 @@ Page({
     switch (tag) {
       case "all":
         this.setData({
-          'orderTitle': "all"
+          orderTitle: "all",
+          noDetails: false
         });
         url = app.globalData.baseUrl + 'maternal/order/list';
         var reqbody = {
@@ -78,9 +85,12 @@ Page({
         util.http(url, (dataStr) => {
           if (dataStr.success) {
             console.log(dataStr);
-            if(!dataStr.data[0]){
+            if (!dataStr.data[0]) {
               console.log('不存在');
-              return false
+              this.setData({
+                noDetails: true
+              })
+              return false;
             }
             console.log(dataStr.data[0].order);
             orderDetails = dataStr.data[0].order;
@@ -92,7 +102,8 @@ Page({
         break;
       case "finish":
         this.setData({
-          'orderTitle': "finish"
+          'orderTitle': "finish",
+          noDetails: false
         });
         url = app.globalData.baseUrl + 'maternal/order/list';
         var reqbody = {
@@ -101,9 +112,11 @@ Page({
         util.http(url, (dataStr) => {
           if (dataStr.success) {
             console.log(dataStr);
-            if(!dataStr.data[4]){
-              console.log('不存在');
-              return false
+            if (!dataStr.data[4]) {
+              this.setData({
+                noDetails: true
+              })
+              return false;
             }
             console.log(dataStr.data[4].order);
             orderDetails = dataStr.data[4].order;
@@ -125,12 +138,12 @@ Page({
         util.http(url, (dataStr) => {
           if (dataStr.success) {
             console.log(dataStr);
-            if(!dataStr.data[3]){
-              console.log('不存在');
+            if (!dataStr.data[3]) {
               this.setData({
-                noDetails: true
+                noDetails: true,
+                orderDetails:[]
               });
-              return false
+              return false;
             }
             console.log(dataStr.data[3].order);
             orderDetails = dataStr.data[3].order;
@@ -142,7 +155,8 @@ Page({
         break;
       case "confirm":
         this.setData({
-          'orderTitle': "confirm"
+          orderTitle: "confirm",
+          noDetails: false
         });
         url = app.globalData.baseUrl + 'maternal/order/list';
         var reqbody = {
@@ -151,9 +165,13 @@ Page({
         util.http(url, (dataStr) => {
           if (dataStr.success) {
             console.log(dataStr);
-            if(!dataStr.data[1]){
+            if (!dataStr.data[1]) {
               console.log('不存在');
-              return false
+              this.setData({
+                noDetails: true,
+                orderDetails:[]
+              })
+              return false;
             }
             console.log(dataStr.data[1].order);
             orderDetails = dataStr.data[1].order;
