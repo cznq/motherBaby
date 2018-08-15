@@ -1,37 +1,65 @@
 <!--pages/order/order.wxml-->
-<view class="orderTitle row cen-space padding0-10" bindtap="touchTit">
-  <li class="padding10 text-center {{orderTitle === 'all' ? 'border_bottom05':''}}" data-tag='all' >全部</li>
-  <li class="padding10 text-center {{orderTitle === 'confirm' ? 'border_bottom05':''}}" data-tag='confirm'>待确认</li>
-  <li class="padding10 text-center {{orderTitle === 'recover' ? 'border_bottom05':''}}" data-tag='recover'>待回收</li>
-  <li class="padding10 text-center {{orderTitle === 'finish' ? 'border_bottom05':''}}" data-tag='finish'>已完成</li>
+
+<view class="orderTitle font32 gray-3  row cen-space padding0-10" bindtap="touchTit">
+  <li class="padding10 text-center "  >
+    <view data-tag='all' class=" padding8r-bottom gray-3  {{orderTitle === 'all' ? 'title_border05':''}}">全部</view>
+  </li>
+  <li class="padding10 text-center " >
+    <view  data-tag='confirm' class="padding8r-bottom gray-3 {{orderTitle === 'confirm' ? 'title_border05':''}}">待确认</view>
+  </li>
+  <li class="padding10 text-center " >
+    <view data-tag='recover' class="padding8r-bottom gray-3 {{orderTitle === 'recover' ? 'title_border05':''}}">待回收</view>
+  </li>
+  <li class="padding10 text-center " >
+    <view data-tag='finish' class="padding8r-bottom gray-3 {{orderTitle === 'finish' ? 'title_border05':''}}">已完成</view>
+  </li>
 </view>
 <view>
   <block wx:if="1" wx:for='{{orderDetails}}' wx:for-item='item' wx:key="unique">
-    <view class="marg10-top border_top05 padding0-10">
-      <view class="padding10-0 row cen-space">
-          <text class='font28'>订单号：{{item.orderId}}</text>
-          <text class='font28'>{{item.start}}</text>
+    <view class="marg10-top padding0-10">
+      <view class="orderInfo padding10">
+      <view class="title Infobottom_05 row cen-space padding10-bottom">
+          <view class='font28'>
+            <image src='../../images/myOrder.png'></image>
+            <text class='gray-6'>订单号：{{item.orderId}}</text>
+          </view>
+          <text class='font32 qrcolo'>{{item.start}}</text>
       </view>
-      <view class="border_top05">
-         <view class='padding10-0 row cen-start'>
-           <text class='font28'>捐赠信息：{{'2018-08-07'}}</text>
-           <text class='padding10-left font28'>{{'3kg~10kg'}}，{{2018-08-09}}上门</text>
+      <view>
+         <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
+           <view class='font28'>
+             <image src='../../images/myinfo.png'></image>
+             <text class='gray-6'>捐赠信息：{{'2018-08-07'}}</text>
+           </view>
+           <text class='padding10-left gray-6 font28'>{{'3kg~10kg'}}，{{2018-08-09}}上门</text>
          </view>
-         <view class='padding10-0 row cen-start'>
-           <view class='font28'>取件地址：</view>
+         <view class='addressInfo Infobottom_05 padding10-0 row cen-start'>
+           <view class='font28 vertitop row'>
+             <image src='../../images/myaddress.png'></image>
+             <text class='gray-6'>取件地址：</text>
+           </view>
            <view class='padding10-left column'>
-            <text class='font28'>{{'莫晓娜'}}  {{'14325454524'}}</text>
-            <text class='font28'>{{'xxxxxxxxxxxxxxx地址'}}</text>
+            <text class='font28 gray-6'>{{'莫晓娜'}}  {{'14325454524'}}</text>
+            <text class='font28 gray-6'>{{'xxxxxxxxxxxxxxx地址'}}</text>
            </view>
          </view>
-         <view class='padding10-0 row cen-start'>
-           <text class='font28'>备注：</text>
-           <text class='padding10-left font28'>xxxxxxxxxxxxxxx</text>
+         <view class='mybz Infobottom_05 padding10-0 row cen-start'>
+           <view class='font28'>
+             <image src='../../images/mybz.png'></image>
+             <text class='gray-6'>备注：</text>
+           </view>
+           <text class='padding10-left gray-6 font28'>xxxxxxxxxxxxxxx</text>
          </view>
       </view>
-      <view class='row cen-end'>
-        <text class='font28'>取消预约</text>
+      <view class='myordbtn row cen-center' bindtap='cancelbtn'>
+        <image src='../../images/myordbtn.png'></image>
       </view>
     </view>
+    </view>
   </block>
+  <view class="loyer {{cancelbtn ? 'action':''}}">
+      <li catchtap='queryCancel' class='cancelInfo white font36'>信息填写有误</li>
+      <li catchtap='queryCancel' class='cancelInfo marg5-top white font36'>不想捐了</li>
+      <li bindtap='cancelbtn' class='cancelbtn marg10-top font36'>取消</li>
+  </view>
 </view>

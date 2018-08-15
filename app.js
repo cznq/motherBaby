@@ -1,3 +1,4 @@
+const utils = require('./utils/util.js');
 //app.js
 App({
   onLaunch: function () {
@@ -12,6 +13,21 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         // alert()
         this.globalData.code = res.code;
+        console.log('res.code',res.code);
+        // var url = this.globalData.baseUrl+'maternal/user/register?wxcode='+ res.code;
+        var url = this.globalData.baseUrl+'maternal/user/register';
+        var reqbody = {
+          wxcode: res.code
+        }
+        utils.http(url,(dataStr) => {
+          if (dataStr.success) {
+            console.log(dataStr);
+            this.globalData.sessionKey = dataStr.data.sessionKey;
+            this.globalData.openId = dataStr.data.openId;
+            this.globalData.id = dataStr.data.id;
+          }
+
+        }, reqbody);
         if (this.userInfoReadyCallback) {
           this.userInfoReadyCallback(res.code)
         }
@@ -34,6 +50,10 @@ App({
   },
   globalData: {
     userInfo: null,
-    code:''
+    code:'',
+    baseUrl:'http://192.168.1.199:8099/',
+    sessionKey:'',
+    openId:'',
+    id:''
   }
 })

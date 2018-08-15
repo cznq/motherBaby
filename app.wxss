@@ -29,6 +29,9 @@
 .font32{
   font-size: 32rpx;
 }
+.font36{
+  font-size: 36rpx;
+}
 /* 颜色 */
 
 .pink{
@@ -147,6 +150,9 @@
 .padding10-bottom {
     padding-bottom: 10px;
 }
+.padding10-bottom {
+    padding-bottom: 10px;
+}
 .padding15 {
     padding: 15px;
 }
@@ -239,7 +245,7 @@
     height: 1px;
     position: absolute;
     left: -50%;
-    background-color: #dcdcdc;
+    background-color: red;
     -webkit-transform: scale(0.5);
     -moz-transform: scale(0.5);
     -ms-transform: scale(0.5);

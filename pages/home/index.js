@@ -73,7 +73,7 @@ Page({
                   console.log(event);
                   //得到authSetting数组里scope 三条相关信息都是true 授权成功
                   // that.bindChooseAddr()
-                  
+
                 }
               });
             }
@@ -96,7 +96,7 @@ Page({
           })
           that.bindChooseAddr()
         }else{
-          console.log('北京市')          
+          console.log('北京市')
         }
         that.setData({
           memberAddr: res
@@ -104,7 +104,7 @@ Page({
       },
       fail(res){
         console.log(res)
-        // that.bindChooseAddr()        
+        // that.bindChooseAddr()
       }
     })
     this.btnIsable()
@@ -153,7 +153,7 @@ Page({
       date: '请预约',
       btnIsable: true,
     })
-  
+
   },
   // 设置导航条颜色
   setNavigationBarColor(bgcolor) {
@@ -193,18 +193,26 @@ Page({
   onLoad: function(options) {
     var _that = this;
     if (app.globalData.code && app.globalData.code != '') {
-      // console.log('app.code不为空');
+      console.log('app.code不为空');
     } else {
       app.userInfoReadyCallback = code => {
         if (code != '') {
-          // console.log('code', code);
+          console.log('code', code);
+          var url = app.globalData.baseUrl+'maternal/user/register';
+          util.http(url,(dataStr) => {
+            if (dataStr.success) {
+              console.log('success',dataStr);
+              app.globalData.sessionKey = dataStr.data.sessionKey;
+              app.globalData.openId = dataStr.data.openId;
+              app.globalData.id = dataStr.data.id;
+            }
+
+          });
         }
       }
     }
     wx.getSetting({// 查看是否授权
       success: function(res) {
-        console.log(res);
-        var that = this;
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
@@ -212,7 +220,29 @@ Page({
               _that.setData({
                 getUserInfo: true
               })
-              console.log(res.userInfo)
+              console.log(res.userInfo);
+              // 更新用户信息
+              var url = app.globalData.baseUrl+'maternal/user/update';
+              var reqbody = {
+                id: app.globalData.id,
+                nickName:res.userInfo.nickName,
+                headSculpture:res.userInfo.avatarUrl,
+                gender:res.userInfo.gender,
+                openId:app.globalData.openId,
+                country:res.userInfo.country,
+                province:res.userInfo.province,
+                city:res.userInfo.city,
+                mobile:''
+              }
+              util.http(url,(dataStr) => {
+                console.log(dataStr);
+                if (dataStr.success) {
+                  console.log('更新用户信息',dataStr);
+                  app.globalData.sessionKey = dataStr.data.sessionKey;
+                  app.globalData.openId = dataStr.data.openId;
+                }
+              }, reqbody);
+
             }
           })
         }

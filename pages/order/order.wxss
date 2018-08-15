@@ -1,12 +1,122 @@
 /* pages/order/order.wxss */
-.orderTitle{
-  border-bottom:2rpx solid #dcdcdc;
+page{
+  background-color: #f9eaed;
 }
-.line-h35{
-  line-height: 70rpx;
+.orderInfo{
+  border: 1px solid #f36e89;
+  border-radius: 4px;
+  background: #fff;
 }
-.border-active{
-  width: 100%;
-  height:2rpx;
-  border: 1rpx solid red;
+.orderInfo .title image{
+  width:29rpx;
+  height:35rpx;
+  vertical-align: middle;
+  padding-right: 7px;
+}
+.orderInfo .title .qrcolo{
+  color:#fd5293;
+}
+.donationInfo image{
+  width:30rpx;
+  height:23rpx;
+  vertical-align: middle;
+  padding-right: 7px;
+}
+.addressInfo image{
+  width:28rpx;
+  height:35rpx;
+  vertical-align: middle;
+  padding-right: 7px;
+}
+.vertitop{
+  margin-top:-16px;
+}
+.mybz image{
+  width:29rpx;
+  height:35rpx;
+  vertical-align: middle;
+  padding-right: 7px;
+}
+.myordbtn image{
+  width:195rpx;
+  height:60rpx;
+  margin-top:30rpx;
+  margin-bottom:10rpx;
+}
+
+
+.title_border05{
+  display: relative;
+}
+.padding8r-bottom{
+  padding-bottom: 16rpx;
+}
+/* 0.5px border */
+.title_border05 {
+    position: relative;
+}
+.title_border05:before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #fd5293;
+    z-index: 1;
+}
+.Infobottom_05 {
+    position: relative;
+}
+.Infobottom_05:before {
+    display: block;
+    content: "";
+    width: 199%;
+    width: calc(200%);
+    height: 1px;
+    position: absolute;
+    left: -50%;
+    bottom: 0;
+    background-color: #fcbbd3;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+    z-index: 1;
+}
+.loyer{
+  width:90%;
+  position: fixed;
+  bottom:0px;
+  left:5%;
+  height:0px;
+  overflow: hidden;
+  z-index: 9999;
+  transition: height .3s;
+  overflow: hidden;
+}
+.loyer .cancelInfo{
+  display: block;
+  width:100%;
+  line-height: 50px;
+  background-color: #fd5394;
+  border-radius: 5px;
+  text-align: center;
+}
+.loyer .cancelbtn{
+  display: block;
+  width:100%;
+  line-height: 50px;
+  border:1px solid #f685a3;
+  background-color: #fff;
+  border-radius: 5px;
+  color:#ff8db9;
+  text-align: center;
+  box-sizing: border-box;
+}
+.loyer.action{
+  height: 168px;
+  transition: height .3s;
 }
