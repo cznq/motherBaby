@@ -14,7 +14,6 @@
     <image class='home-round' src='../../images/round@2x.png'></image>  
   </view>
 
-
   <!-- 标题 -->
   <view class='home-title' >
     <view class='home-title-left'>
@@ -25,13 +24,12 @@
       <image src='../../images/service@2x.png'></image>
       <view class='font26'>联系客服</view>
     </view>
-    <navigator class='home-title-right' url='../../pages/order/order' >
+    <navigator class='home-title-right' url='../../pages/order/order' hover-class="none" >
       <image src='../../images/reservation@2x.png'></image>
       <view class='font26'>我的预约</view>
     </navigator>
   </view>
-  <!-- 1rpx的水平线 -->
-  <!-- <view class='line-1'></view> -->
+
   <!-- 内容区域 -->
   <view class='home-content'>
     <view class='home-content-main'>

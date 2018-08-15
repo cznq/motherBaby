@@ -89,6 +89,11 @@ Page({
     wx.chooseAddress({
       success(res) {
         if (!res.provinceName.includes('北京')){
+          wx.showToast({
+            title: '目前只支持北京市内哦',
+            icon:'none',
+            duration:2000
+          })
           that.bindChooseAddr()
         }else{
           console.log('北京市')          
@@ -172,7 +177,7 @@ Page({
         btnIsable: true
       })
     }
-    if(this.weightIndex!=0){
+    if(this.data.weightIndex!=0){
       this.setData({
         showWeightTips:false
       })

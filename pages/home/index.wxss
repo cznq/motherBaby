@@ -144,9 +144,9 @@
 .home-content-main-time-right image{
   position: absolute;
   right: 20rpx;
-  bottom: 20rpx;
+  bottom: 34rpx;
   width: 24rpx;
-  height: 40rpx;
+  height: 24rpx;
 }
 .home-content-main-weight-left image{
   position: absolute;
@@ -155,10 +155,10 @@
 .home-content-main-weight-right image{
   position: absolute;
   right: 20rpx;
-  bottom: 20rpx;
+  bottom: 6rpx;
   width: 24rpx;
-  height: 40rpx;
-  top: 0;
+  height: 24rpx;
+  /* top: 0; */
 }
 .home-content-main-address-left{
   position: relative;
@@ -176,10 +176,10 @@
 .home-content-main-address-right image{
   position: absolute;
   right: 20rpx;
-  bottom: 20rpx;
+  bottom: 6rpx;
   width: 24rpx;
-  height: 40rpx;
-  top: 0;
+  height: 24rpx;
+  /* top: 0; */
 }
 /* 内容--主要区域--时间--左侧--文字样式 */
 .home-content-main-time-left view{
@@ -333,7 +333,9 @@ textarea{
 }
 /* 获取用户信息button下的image-样式 */
 .orderTitle image{
-  margin-top: 30rpx;
+  position: relative;
+  right: -32rpx;
+  bottom: 92rpx;
 }
 /* 获取用户信息picker下的'请选择'-样式  */
 .getuserinfowords{
