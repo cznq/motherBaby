@@ -9,7 +9,7 @@ Page({
     date: '请预约', //默认时间
     startDate: util.mformatTime(new Date()), //当前时间
     memberAddr: [], //取件地址
-    weightArr: ['请选择', '5kg~15kg', '15kg~25kg', '25kg~35kg', '35kg~45kg'], //重量数组
+    weightArr: ['请选择', '3kg~10kg', '10kg~20kg', '20kg~30kg', '30kg以上'], //重量数组
     weightIndex: 0, //默认预估重量下标
     showMModal: false, //是否弹出提示框
     // 轮播图部分-开始
@@ -157,6 +157,47 @@ Page({
       remarkInfo: e.detail.value
     })
   },
+// 点击我的预约
+  bindMymAppointment(){
+    console.log(app.globalData.id)
+    if (!app.globalData.id){
+      // 登录
+      wx.login({
+        success: res => {
+          console.log('res',res)
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          app.globalData.code = res.code;
+          // 首次登陆调注册接口获取openid&&userid
+            console.log('调用注册接口');
+            var url = app.globalData.baseUrl + 'maternal/user/register';
+            var reqbody = {
+              wxcode: res.code
+            }
+            util.http(url, (dataStr) => {
+              if (dataStr.success) {
+                app.globalData.sessionKey = dataStr.data.sessionKey;
+                app.globalData.openId = dataStr.data.openId;
+                app.globalData.id = dataStr.data.id;
+                userInfo = {
+                  openId: app.globalData.openId,
+                  userId: app.globalData.id
+                }
+                wx.setStorageSync('userInfo', userInfo);
+              }
+            }, reqbody);
+          wx.navigateTo({
+            url: '../order/order',
+          })
+        }
+      })
+    }else{
+      wx.navigateTo({
+        url: '../order/order',
+      })
+    }
+
+  },
+
   // 确认按钮
   bindConfirmAppointment(e) {
     wx.showToast({
