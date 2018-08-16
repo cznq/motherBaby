@@ -162,7 +162,7 @@ Page({
     console.log('telNumber', that.data.memberAddr.telNumber)
     console.log('markInfo', that.data.remarkInfo)
     if (!app.globalData.id) {
-      console.log(66666);
+      console.log('无userId');
       // 登录
       app.getOpenid().then(function(userId) {
         console.log('userId',userId);
@@ -206,7 +206,7 @@ Page({
         }
       })
     }else{
-      console.log(555555);
+      console.log('有userId');
       // 订单预约请求
       util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
         userId: app.globalData.id, //用户id
