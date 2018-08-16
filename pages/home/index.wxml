@@ -11,26 +11,26 @@
       </swiper-item>
     </block>
     </swiper>
-    <image class='home-round' src='../../images/round@2x.png'></image>  
+    <image class='home-round' src='../../images/round.png'></image>  
   </view>
 
   <!-- 标题 -->
   <view class='home-title' >
     <navigator url='../../pages/platform/index' hover-class="none"  >
       <view class='home-title-left'>
-        <image src='../../images/platintro@2x.png' ></image>
+        <image src='../../images/platintro@2x.png' class='platform-img' ></image>
         <view class='font26'>平台介绍</view>
       </view>
     </navigator>
     <navigator url='../../pages/service/index' hover-class="none"  >  
       <view class='home-title-center'>
-        <image src='../../images/service@2x.png'></image>
+        <image src='../../images/service@2x.png' class='service-img'></image>
         <view class='font26'>联系客服</view>
       </view>
     </navigator>
     
     <navigator class='home-title-right' url='../../pages/order/order' hover-class="none" >
-      <image src='../../images/reservation@2x.png'></image>
+      <image src='../../images/reservation@2x.png' class='reservation-img'></image>
       <view class='font26'>我的预约</view>
     </navigator>
   </view>
@@ -105,27 +105,78 @@
           <image src='../../images/remarks@2x.png'></image>
           <view class='font28 pink'>备注</view>
         </view>
-        <!-- 备注内容 -->
-        <textarea class='font26 .grey' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' placeholder-style='font-size:24rpx;' wx:if='{{!showMModal}}' bindinput='bindinput' ></textarea>
+        <!-- 备注内容   -->
+        <textarea class='font26 .grey' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' placeholder-style='font-size:24rpx;' bindinput='bindinput' wx:if='{{!showMModal}}'></textarea>
       </view>
    
     <button class='home-btn-confirm font28'  bindtap='bindConfirmAppointment'  disabled='{{btnIsable}}'>确认预约</button>
     </view>
   </view>
-  <view class='home-modal' wx:if='{{showMModal}}'>
-    <!-- 预约须知模态框 -->
-    <view class='modal-appointment-notice  font28'>
-      <!-- 标题 -->
-      <view class='modal-appointment-notice-title'>{{modalTitle}}</view>
-      <!-- 内容 -->
-      <view class='modal-appointment-notice-content'>
-      {{modalContent}}
-      </view>
-      <!-- 按钮 -->
-      <navigator url='../../pages/order/order' hover-class="none" wx:if="{{navigate}}" >
-        <button class='modal-appointment-notice-btn' bindtap='bindCloseModal' >{{modalBtnContent}}</button>
-      </navigator>
-      <button wx:if="{{!navigate}}" class='modal-appointment-notice-btn' bindtap='bindCloseModal' >{{modalBtnContent}}</button>
+
+
+
+<!-- 仅支持北京地区上门取件提示框  -->
+  <view class='modal-pick-up' wx:if= "{{showPickup}}" >
+    <view class= 'modal-pick-up-box' >
+      <image class='delete-btn' src = '../../images/delete.png' bindtap = 'bindDelete' ></image>
+      <image class='modal-pick-up-logo' src = '../../images/city-logo.png' > </image>
+      <view class='font28  ' > 目前仅支持北京地区上门取件 </view>
+      <view class='font28 ' > 其他城市将会陆续开通，敬请期待 </view>
+      <view class='dots' > </view>
+      <!-- <view class='modal-pick-up-btn-box'> -->
+        <button class='btn-common modal-pick-up-btn'  bindtap = 'bindHideModal' > 好的 </button>    
+      <!-- </view> -->
     </view>
   </view>
+
+    <!-- 预约须知提示框 -->
+    <view class='modal-appointment_notice' wx:if= "{{showMModal}}" >
+    <view class= 'modal-appointment_notice-box' >
+      <image class='delete-btn' src = '../../images/delete.png' bindtap = 'bindCloseAppointment' ></image>
+      <image src='../../images/appointment.png' class='img-title'></image>
+      <view class='modal-appointment_notice-content font26' > 
+        <view class='modal-appointment_notice-content_1'>
+          <image class='img-appointment_1' src='../../images/appointment_1.png'></image>
+          <view class='modal-appointment_notice-content_1_content '>回收类目：婴童服务、早教玩具、早教图书、尿裤湿巾、婴童喂养、婴童洗护等</view>
+        </view>
+        <view class='modal-appointment_notice-content_2'>
+          <image class='img-appointment_2 margintop8' src='../../images/appointment_2.png'></image>
+          <view class='modal-appointment_notice-content_2_content'>闲置物品请尽量保持安全、卫生、可以再使用</view>
+        </view>
+        <view class='modal-appointment_notice-content_3'>
+          <image class='img-appointment_3 margintop8' src='../../images/appointment_3.png'></image>
+          <view class='modal-appointment_notice-content_3_content'>母婴闲置物品回收起重3kg（参考：1kg≈10件婴童夏装），可以和邻居朋友拼单预约</view>
+       </view>
+        <view class='modal-appointment_notice-content_4'>
+          <image class='img-appointment_4 margintop8' src='../../images/appointment_4.png'></image>
+          <view class='modal-appointment_notice-content_4_content'>上门取件时间：8:00-18:00</view>
+        </view>
+        <view class='modal-appointment_notice-content_5'>
+          <image class='img-appointment_5 margintop8' src='../../images/appointment_5.png'></image>
+          <view class='modal-appointment_notice-content_5_content'>上门回收的快递员会再预约当天联系您免费上门取件，请提前打包您的闲置物品</view>
+        </view>
+       </view>  
+      <view class='dots' > </view>
+      <button class='btn-common modal-appointment_notice-btn'  bindtap = 'bindCloseAppointment' > 好的 </button>    
+    </view>
+  </view>
+
+
+  <view class='modal-appointment-success ' wx:if='{{showAppointmentsuccess}}' >
+    <view class='modal-appointment-success-box'>
+      <image class='delete-btn' src = '../../images/delete.png' bindtap = 'bindCloseAppointment' ></image>
+      <image class='modal-appointment-success-img' src='../../images/appointment.png' class='img-title'></image>
+      <view class='modal-appointment-success-content_1 grey font28'>我们已经收到您的预约，上门当天，我们回提前与您联系。</view>
+      <view class='modal-appointment-success-content_2 font28'>
+        <view class='grey '>如有疑问，请添加客服微信：xxxxxxx</view>
+        <button class='btn-copy'>复制</button>
+      </view>
+      <view class='dots' > </view>
+      <navigator url='../../pages/order/order' hover-class="none">
+        <button class='btn-common modal-appointment_notice-btn'  > 好的 </button>          
+      </navigator>
+    </view>
+
+  </view>
+
 </view>

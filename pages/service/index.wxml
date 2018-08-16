@@ -1,11 +1,45 @@
 <!--pages/service/index.wxml 联系客服页面-->
 <view class='mcontainer'>
-  <!-- 盒子头部 -->
-  <view class='box-title'>常见问题汇总</view>
-  <!-- 预约回收 -->
-  <view>
-
+  <view class='service-title'>
+    <image class='service-title-img' src='../../images/question.png'></image>
   </view>
-  <!-- 运费相关 -->
-  
+  <view class='service-content'>
+    <view class='service-content_1'>
+      <view class='service-content_1-title grey font28'>Q：怎么预约回收？</view>
+     
+      <!-- <view class='service-content_1-content-box pink'>
+       <view class='service-content_1-content pink'>
+          A:进入想程序页面。。。
+        </view>
+        <view class='line-1'></view>
+      </view> -->
+    </view>
+     <view class='line-1'></view>
+    <view class='service-content_2'>
+      <view class='service-content_2-title grey font28'>Q：回收需要我们支付运费吗？</view>
+      <!-- <view class='service-content_2-content-box pink'>
+       <view class='service-content_2-content pink'>
+          A:进入想程序页面。。。
+        </view>
+        <view class='line-1'></view>
+      </view> -->
+    </view>
+    <view class='line-1'></view>
+    <view class='service-content_3'>
+      <view class='service-content_3-title grey font28'>Q：对闲置物品有什么要求吗？</view>
+     
+      <!-- <view class='service-content_3-content-box pink'>
+        <view class='service-content_3-content pink'>
+          A:进入想程序页面。。。
+        </view>
+        <view class='line-1'></view>
+      </view> -->
+    </view>
+    <view class='line-1'></view>
+    <view class='service-bottom'>
+      <image class='service-QRcode' src='../../images/qrcode.png'></image>
+      <view class='font24 grey'>微信：dark-artist 点击保存二维码 微信添加客服为好友</view>
+    </view>
+
+  </view>  
 </view>

@@ -38,7 +38,9 @@ Page({
     },
     showWeightTips:true, //是否显示重量提示
     remarkInfo:'' ,//备注信息
-    navigate:false
+    navigate:false,
+    showPickup:false,
+    showAppointmentsuccess:false
   },
 
   //主动获取用户信息权限
@@ -71,7 +73,7 @@ Page({
   //         wx.showModal({
   //           title: '警告',
   //           content: '您点击了拒绝授权,将无法正常显示个人信息,点击确定重新获取授权。',
-  //           success: function (e) {
+  //           success (e) {
   //             wx.getSetting({
   //               success: event => {
   //                 console.log('suc',event);
@@ -89,22 +91,20 @@ Page({
   // 选择地址
   bindChooseAddr() {
     let that = this
-    // this.auth()
+ 
     wx.chooseAddress({
       success(res) {
         if (!res.provinceName.includes('北京')){
-          wx.showToast({
-            title: '目前只支持北京市内哦',
-            icon:'none',
-            duration:2000
+          that.setData({
+            showPickup:true,
+            // memberAddr: res
           })
-          that.bindChooseAddr()
         }else{
-          console.log('北京市')
+          that.setData({
+            showPickup: false,
+            memberAddr: res
+          })
         }
-        that.setData({
-          memberAddr: res
-        })
       },
       fail(res){
         console.log('fail',res)
@@ -139,6 +139,12 @@ Page({
       modalBtnContent: '知道了'
     })
   },
+  bindCloseAppointment(){
+    this.setData({
+      showMModal:false,
+      showAppointmentsuccess:false
+    })
+  },
   // 关闭预约须知提示框
   bindCloseModal() {
     this.setData({
@@ -153,22 +159,28 @@ Page({
   },
   // 确认按钮
   bindConfirmAppointment(e) {
+    wx.showToast({
+      title: '111',
+    })
     let that = this
-    // console.log('userId',app.globalData.id);
-    // console.log('weight',that.data.weightArr[that.data.weightIndex]);
-    // console.log('appointment',that.data.date);
-    // console.log('userName',that.data.memberAddr.userName);
-    // console.log('postalCode',that.data.memberAddr.postalCode);
-    // console.log('provinceName',that.data.memberAddr.provinceName);
-    // console.log('cityName',that.data.memberAddr.cityName);
-    // console.log('countyName',that.data.memberAddr.countyName);
-    // console.log('detailInfo',that.data.memberAddr.detailInfo);
-    // console.log('nationalCode',that.data.memberAddr.nationalCode);
-    // console.log('telNumber',that.data.memberAddr.telNumber);
-    // console.log('markInfo',that.data.remarkInfo);
+
+    // console.log('userId', app.globalData.id)
+    // console.log('weight', that.data.weightArr[that.data.weightIndex])
+    // console.log('appointment', that.data.date)
+    // console.log('userName', that.data.memberAddr.userName)
+    // console.log('postalCode', that.data.memberAddr.postalCode)
+    // console.log('provinceName', that.data.memberAddr.provinceName)
+    // console.log('cityName', that.data.memberAddr.cityName)
+    // console.log('countyName', that.data.memberAddr.provinceName)
+    // console.log('detailInfo', that.data.memberAddr.detailInfo)
+    // console.log('nationalCode', that.data.memberAddr.nationalCode)
+    // console.log('telNumber', that.data.memberAddr.telNumber)
+    // console.log('markInfo', that.data.remarkInfo)
+
     // 订单预约请求
     util.mHttp(app.globalData.baseUrl +'maternal/order/appointment',{
       userId: app.globalData.id, //用户id
+      // userId: 2 , //用户id
       weight: that.data.weightArr[that.data.weightIndex], //预估重量
       appointment: that.data.date, //上门预约时间 yyyy-MM-dd
       userName: that.data.memberAddr.userName, //收货人姓名
@@ -186,16 +198,14 @@ Page({
         // console.log('suc')
         that.setData({
           showMModal: !that.data.showMModal,
-          modalTitle: '预约成功',
-          modalContent: '内容',
-          modalBtnContent: '好的',
           weightIndex: 0,
           memberAddr: [],
           date: '请预约',
           btnIsable: true,
           remarkInfo:'',
           navigate:true,
-          showWeightTips:true
+          showWeightTips:true,
+          showAppointmentsuccess:true
         })
       }else{
         // console.log('error')
@@ -236,6 +246,14 @@ Page({
       })
     }
   },
+  bindHideModal(){
+   this.bindChooseAddr()
+  },
+  bindDelete(){
+    this.setData({
+      showPickup:false
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -266,7 +284,6 @@ Page({
                 }
                 wx.setStorageSync('userInfo', userInfo);
               }
-
             }, reqbody);
           }
         }
@@ -303,7 +320,6 @@ Page({
                   app.globalData.openId = dataStr.data.openId;
                 }
               }, reqbody);
-
             }
           })
         }
@@ -318,7 +334,6 @@ Page({
         indicatorDots: this.data.indicatorDots,
         autoplay: this.data.autoplay
       })
-
   },
 
   /**

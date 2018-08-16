@@ -62,7 +62,7 @@ Page({
           })
           return false;
         }
-        console.log(dataStr.data[0].order);
+        console.log('list',dataStr.data[0].order);
         orderDetails = dataStr.data[0].order;
         this.setData({
           'orderDetails': orderDetails

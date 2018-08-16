@@ -1,1 +1,6 @@
-{}
+{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#595858",
+    "navigationBarTitleText": "联系客服",
+    "navigationBarTextStyle": "#fff"
+}

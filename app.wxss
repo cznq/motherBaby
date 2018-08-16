@@ -9,7 +9,10 @@
   box-sizing: border-box;
 }
  /* common */
-
+ .margintop8{
+   margin: 8rpx
+ }
+ 
  /* 1px线 */
 .line-1{
   width: 100%;
@@ -17,6 +20,9 @@
   background-color: #f7b4c2;
 }
 /* 字体 */
+.font22{
+  font-size: 22rpx;
+}
 .font24{
   font-size: 24rpx;
 }
