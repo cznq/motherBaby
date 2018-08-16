@@ -15,27 +15,15 @@ Page({
     orderDetails: [],
     currentOrderNo: ''
   },
-  // {
-  //   orderNo: '555888899',
-  //   start: '待确认',
-  //   orderStatus: 1,
-  //   weight: '3kg~10kg',
-  //   appointment: '2018-08-09',
-  //   donationInfor: '3kg~10kg,2018-08-09',
-  //   userName: '莫晓娜',
-  //   telNumber: '17600402888',
-  //   detailInfo: 'xxxxxxxxxxxxx地方',
-  //   markInfo: 'xxxxxxxxxxxxxx',
-  // }
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     var _that = this;
     if (app.globalData.id) {
-      wx.showToast({
-        title:'code不为空'+app.globalData.id
-      })
+      // wx.showToast({
+      //   title:'code不为空'+app.globalData.id
+      // })
     }
 
     console.log('globalData.id',app.globalData.id);
@@ -43,19 +31,6 @@ Page({
     var reqbody = {
       userId: app.globalData.id
     }
-    //   userId; //用户id
-    // orderNo; //订单号
-    // weight; //预估重量
-    // appointment; //上门预约时间 yyyy-MM-dd
-    // userName; //收货人姓名
-    // postalCode; //邮编
-    // provinceName; //省份
-    // cityName; //城市
-    // countyName; //国家
-    // detailInfo; //收货详细地址
-    // nationalCode; //收货地址国家码
-    // telNumber; //收货人电话号码
-    // markInfo; //备注信息
     util.http(url, (dataStr) => {
       this.setData({
         noDetails: false
@@ -125,7 +100,7 @@ Page({
         util.http(url, (dataStr) => {
           if (dataStr.success) {
             console.log(dataStr);
-            if (!dataStr.data[4]) {
+            if (!dataStr.data[4] || dataStr.data[4].type != 4) {
               this.setData({
                 noDetails: true
               })
@@ -150,8 +125,8 @@ Page({
         }
         util.http(url, (dataStr) => {
           if (dataStr.success) {
-            console.log(dataStr);
-            if (!dataStr.data[3]) {
+            console.log('待回收',dataStr);
+            if (!dataStr.data[3] || dataStr.data[3].type != 3) {
               this.setData({
                 noDetails: true,
                 orderDetails: []
@@ -177,8 +152,8 @@ Page({
         }
         util.http(url, (dataStr) => {
           if (dataStr.success) {
-            console.log(dataStr);
-            if (!dataStr.data[1]) {
+            console.log('待确认',dataStr);
+            if (!dataStr.data[1] || dataStr.data[1].type != 1) {
               console.log('不存在');
               this.setData({
                 noDetails: true,
