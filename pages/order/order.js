@@ -73,7 +73,7 @@ Page({
         util.http(url, (dataStr) => {
           if (dataStr.success) {
             console.log(dataStr);
-            if (!dataStr.data[0]) {
+            if (!dataStr.data[0] || dataStr.data[0].type != 0) {
               console.log('不存在');
               this.setData({
                 noDetails: true
@@ -100,9 +100,12 @@ Page({
         util.http(url, (dataStr) => {
           if (dataStr.success) {
             console.log(dataStr);
-            if (!dataStr.data[4] || dataStr.data[4].type != 4) {
+            console.log(dataStr.data[4]);
+            if (!dataStr.data[4]) {
+              console.log(3333);
               this.setData({
-                noDetails: true
+                noDetails: true,
+                'orderDetails': []
               })
               return false;
             }
@@ -274,6 +277,11 @@ Page({
         })
       }
     }, reqbody);
+  },
+  yjz:function(){
+    wx.navigateTo({
+      url: '../home/index',
+    })
   },
   /**
    * 页面上拉触底事件的处理函数

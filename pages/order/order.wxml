@@ -190,7 +190,7 @@
       <view class='row cen-center'>
         <image class='resultImage' src='../../images/noresult.png'></image>
       </view>
-      <view class='row cen-center'>
+      <view bindtap='yjz' class='row cen-center'>
         <image class='resultbtn' src='../../images/noresultbtn.png'></image>
       </view>
   </view>

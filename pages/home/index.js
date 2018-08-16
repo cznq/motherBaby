@@ -305,9 +305,9 @@ Page({
   onLoad: function(options) {
     var _that = this;
     if (app.globalData.code && app.globalData.code != '') {
-      wx.showToast({
-        title: 'code不为空'
-      })
+      // wx.showToast({
+      //   title: 'code不为空'
+      // })
     } else {
       var userInfo = {};
       userInfo = wx.getStorageSync('userInfo'); //读取本地userInfo
