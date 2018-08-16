@@ -1,4 +1,5 @@
-/* pages/platform/index.wxss */
+/* @author lya */
+
 .mcontainer{
   width: 100%;
   height: 100%;

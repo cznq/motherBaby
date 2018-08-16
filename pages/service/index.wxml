@@ -1,109 +1,105 @@
+ <!-- @author lya  -->
+ 
 <!--pages/service/index.wxml 联系客服页面-->
-<view class='mcontainer'>
+
+<view class='mcontainer font26'>
   <view class='service-title'>
     <image class='service-title-img' src='../../images/question.png'></image>
   </view>
+  
   <view class='service-content'>
     <view class='service-content_1'>
-      <view class='service-content_1-title grey font28'>Q：怎么预约回收？</view>
-     
-      <!-- <view class='service-content_1-content-box pink'>
+      <view class='service-content_1-title grey font28' bindtap='bindContent1' >Q：怎么预约回收？</view>
+      <view class='line-1'></view>
+      <view class='service-content_1-content-box pink' wx:if="{{show1}}">
        <view class='service-content_1-content pink'>
-          A:进入想程序页面。。。
+          A：进入小程序页面，点击『预约回收』，按照提示填写相关信息并提交，当订单状态变为『待回收』即为预约成功，请您在快递员上门取件前将物品打包好。
         </view>
-        <view class='line-1'></view>
-      </view> -->
+      </view>
     </view>
-     <view class='line-1'></view>
-    <view class='service-content_2'>
-      <view class='service-content_2-title grey font28'>Q：回收需要我们支付运费吗？</view>
-      <!-- <view class='service-content_2-content-box pink'>
-       <view class='service-content_2-content pink'>
-          A:进入想程序页面。。。
-        </view>
-        <view class='line-1'></view>
-      </view> -->
-    </view>
-    <view class='line-1'></view>
-    <view class='service-content_3'>
-      <view class='service-content_3-title grey font28'>Q：对闲置物品有什么要求吗？</view>
-     
-      <!-- <view class='service-content_3-content-box pink'>
-        <view class='service-content_3-content pink'>
-          A:进入想程序页面。。。
-        </view>
-        <view class='line-1'></view>
-      </view> -->
-    </view>
-        <view class='line-1'></view>
-    <view class='service-content_3'>
-      <view class='service-content_3-title grey font28'>Q：预约完成后多久可以上门回收？</view>
-     
-      <!-- <view class='service-content_3-content-box pink'>
-        <view class='service-content_3-content pink'>
-          A:进入想程序页面。。。
-        </view>
-        <view class='line-1'></view>
-      </view> -->
-    </view>
-    <view class='line-1'></view>
-    <view class='service-content_3'>
-      <view class='service-content_3-title grey font28'>Q：取件当日快递员一直没有联系我怎么办？</view>
-     
-      <!-- <view class='service-content_3-content-box pink'>
-        <view class='service-content_3-content pink'>
-          A:进入想程序页面。。。
-        </view>
-        <view class='line-1'></view>
-      </view> -->
-    </view>
-        <view class='line-1'></view>
-    <view class='service-content_3'>
-      <view class='service-content_3-title grey font28'>Q：要达到多少重量可以回收？</view>
-     
-      <!-- <view class='service-content_3-content-box pink'>
-        <view class='service-content_3-content pink'>
-          A:进入想程序页面。。。
-        </view>
-        <view class='line-1'></view>
-      </view> -->
-    </view>
-        <view class='line-1'></view>
-    <view class='service-content_3'>
-      <view class='service-content_3-title grey font28'>Q：哪些城市可以预约上门回收？</view>
-     
-      <!-- <view class='service-content_3-content-box pink'>
-        <view class='service-content_3-content pink'>
-          A:进入想程序页面。。。
-        </view>
-        <view class='line-1'></view>
-      </view> -->
-    </view>
-        <view class='line-1'></view>
-    <view class='service-content_3'>
-      <view class='service-content_3-title grey font28'>Q：怎样修改/取消预约信息？</view>
-     
-      <!-- <view class='service-content_3-content-box pink'>
-        <view class='service-content_3-content pink'>
-          A:进入想程序页面。。。
-        </view>
-        <view class='line-1'></view>
-      </view> -->
-    </view>
-        <view class='line-1'></view>
-    <view class='service-content_3'>
-      <view class='service-content_3-title grey font28'>Q：我的闲置物品流向了哪里？</view>
-     
-      <!-- <view class='service-content_3-content-box pink'>
-        <view class='service-content_3-content pink'>
-          A:进入想程序页面。。。
-        </view>
-        <view class='line-1'></view>
-      </view> -->
-    </view>
-    
+      <view class='line-1 margintop30' wx:if="{{show1}}"></view>
 
-    <view class='line-1'></view>
+    <view class='service-content_2'>
+      <view class='service-content_2-title grey font28' bindtap='bindContent2'>Q：回收需要我们支付运费吗？</view>
+      <view class='line-1'></view>
+      <view class='service-content_2-content-box pink' wx:if="{{show2}}">
+       <view class='service-content_2-content pink'>
+          A：我们提供免费上门取件服务，您无须支付任何费用，如快递员有任何收费行为，您可以联系客户进行处理。
+        </view>
+      </view>
+    </view>
+    <view class='line-1 margintop30' wx:if="{{show2}}"></view>
+    <view class='service-content_3'>
+      <view class='service-content_3-title grey font28' bindtap='bindContent3'>Q：对闲置物品有什么要求吗？</view>
+     <view class='line-1'></view>
+      <view class='service-content_3-content-box pink' wx:if="{{show3}}">
+        <view class='service-content_3-content pink'>
+         A：目前仅支持母婴品类闲置物品的回收（包含：婴童服饰、早教玩具、早教图书、尿裤湿巾、婴童喂养、婴童洗护等）。
+        </view>
+      </view>
+    </view>
+    <view class='line-1 margintop30' wx:if="{{show3}}"></view>
+    <view class='service-content_4'>
+      <view class='service-content_4-title grey font28' bindtap='bindContent4'>Q：预约完成后多久可以上门回收？</view>
+     <view class='line-1'></view>
+      <view class='service-content_4-content-box pink' wx:if="{{show4}}">
+        <view class='service-content_4-content pink'>
+         A：目前仅支持预约次日上门回收服务，快递员会提前与您确认取件时间，一般取件时间为8:00-18:00。
+        </view>
+      </view>
+    </view>
+    <view class='line-1 margintop30' wx:if="{{show4}}"></view>
+    <view class='service-content_5'>
+      <view class='service-content_5-title grey font28' bindtap='bindContent5'>Q：取件当日快递员一直没有联系我怎么办？</view>
+     <view class='line-1'></view>
+      <view class='service-content_5-content-box pink' wx:if="{{show5}}">
+        <view class='service-content_5-content pink'>
+          A：您可以微信联系客服，进行查询及催单。
+        </view>
+      </view>
+    </view>
+    <view class='line-1 margintop30' wx:if="{{show5}}"></view>
+    <view class='service-content_6'>
+      <view class='service-content_6-title grey font28' bindtap='bindContent6'>Q：要达到多少重量可以回收？</view>
+     <view class='line-1'></view>
+      <view class='service-content_6-content-box pink' wx:if="{{show6}}">
+        <view class='service-content_6-content pink'>
+         A：目前起重是3kg（参考：1kg≈10件婴童夏装），未达到此标准的用户，建议重量达标后再进行预约。
+        </view>
+      </view>
+    </view>
+    <view class='line-1 margintop30' wx:if="{{show6}}"></view>
+    <view class='service-content_7'>
+      <view class='service-content_7-title grey font28' bindtap='bindContent7'>Q：哪些城市可以预约上门回收？</view>
+     <view class='line-1'></view>
+      <view class='service-content_7-content-box pink' wx:if="{{show7}}">
+        <view class='service-content_7-content pink'>
+          A：目前仅支持北京地区，其他地区将会陆续开通，敬请期待。
+        </view>
+      </view>
+    </view>
+    <view class='line-1 margintop30' wx:if="{{show7}}"></view>
+    <view class='service-content_8'>
+      <view class='service-content_8-title grey font28' bindtap='bindContent8'>Q：怎样修改/取消预约信息？</view>
+     <view class='line-1'></view>
+      <view class='service-content_8-content-box pink' wx:if="{{show8}}">
+        <view class='service-content_8-content pink'>
+          A：『待确认』状态下，您可以在小程序内找到需要修改或者取消的订单，操作取消订单，需要修改信息的用户可重新提交新的预约；『待回收』状态下，由于快递原因，无法直接取消，您可以联系客服进行处理。
+        </view>
+      </view>
+    </view>
+    <view class='line-1 margintop30' wx:if="{{show8}}"></view>
+    <view class='service-content_9'>
+      <view class='service-content_9-title grey font28' bindtap='bindContent9'>Q：我的闲置物品流向了哪里？</view>
+     <view class='line-1'></view>
+      <view class='service-content_9-content-box pink' wx:if="{{show9}}">
+        <view class='service-content_9-content pink'>
+          A：可进行再利用的物品，我们将上传到平台供其他用户领取使用；不可再利用的部分，我们会进行环保公益处理，后续您可以从订单中查看物品去向，目前功能还在开发中，敬请期待。
+        </view>
+      </view>
+    </view>
+  
+    <view class='line-1 margintop30' wx:if="{{show9}}"></view>
     <view class='service-bottom'>
       <image class='service-QRcode' src='../../images/qrcode.png' bindtap='bindSaveImg' ></image>
       <view class='font24 grey'>微信：dark-artist 点击保存二维码 微信添加客服为好友</view>

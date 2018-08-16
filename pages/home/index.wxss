@@ -1,4 +1,5 @@
-/* pages/home/index.wxss */
+ /* @author lya */
+
 /* 轮播图 */
 .mcontainer{
   width: 100%;

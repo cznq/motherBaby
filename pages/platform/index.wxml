@@ -1,4 +1,5 @@
-<!--pages/platform/index.wxml-->
+<!-- @author lya -->
+
 <view class='mcontainer'>
   <view class='product-intro'>
     <view class='product-intro-title'>
