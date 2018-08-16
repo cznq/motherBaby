@@ -12,26 +12,27 @@ Page({
     orderTitle: "all", //finish recover confirm
     cancelbtn: false,
     noDetails: false,
-    orderDetails: [{
-      orderNo: '555888899',
-      start: '待确认',
-      orderStatus: 1,
-      weight: '3kg~10kg',
-      appointment: '2018-08-09',
-      donationInfor: '3kg~10kg,2018-08-09',
-      userName: '莫晓娜',
-      telNumber: '17600402888',
-      detailInfo: 'xxxxxxxxxxxxx地方',
-      markInfo: 'xxxxxxxxxxxxxx',
-    }],
+    orderDetails: [],
     currentOrderNo: ''
   },
-
+  // {
+  //   orderNo: '555888899',
+  //   start: '待确认',
+  //   orderStatus: 1,
+  //   weight: '3kg~10kg',
+  //   appointment: '2018-08-09',
+  //   donationInfor: '3kg~10kg,2018-08-09',
+  //   userName: '莫晓娜',
+  //   telNumber: '17600402888',
+  //   detailInfo: 'xxxxxxxxxxxxx地方',
+  //   markInfo: 'xxxxxxxxxxxxxx',
+  // }
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     var _that = this;
+    console.log('ssss',app.globalData.id);
     url = app.globalData.baseUrl + 'maternal/order/list';
     var reqbody = {
       userId: app.globalData.id
@@ -62,11 +63,13 @@ Page({
           })
           return false;
         }
-        console.log('list',dataStr.data[0].order);
+        console.log(dataStr.data[0].order);
         orderDetails = dataStr.data[0].order;
         this.setData({
           'orderDetails': orderDetails
         })
+      }else {
+        console.log('userId为空');
       }
     }, reqbody);
   },
