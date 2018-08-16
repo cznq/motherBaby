@@ -81,7 +81,7 @@ Page({
         });
         url = app.globalData.baseUrl + 'maternal/order/list';
         var reqbody = {
-          userId: 1
+          userId: app.globalData.id
         }
         util.http(url, (dataStr) => {
           if (dataStr.success) {
@@ -108,7 +108,7 @@ Page({
         });
         url = app.globalData.baseUrl + 'maternal/order/list';
         var reqbody = {
-          userId: 1
+          userId: app.globalData.id
         }
         util.http(url, (dataStr) => {
           if (dataStr.success) {
@@ -134,7 +134,7 @@ Page({
         });
         url = app.globalData.baseUrl + 'maternal/order/list';
         var reqbody = {
-          userId: 1
+          userId: app.globalData.id
         }
         util.http(url, (dataStr) => {
           if (dataStr.success) {
@@ -161,7 +161,7 @@ Page({
         });
         url = app.globalData.baseUrl + 'maternal/order/list';
         var reqbody = {
-          userId: 1
+          userId: app.globalData.id
         }
         util.http(url, (dataStr) => {
           if (dataStr.success) {
@@ -204,41 +204,65 @@ Page({
     }
   },
   queryCancel: function(e) {
-    // console.log('ee',);
     var url = app.globalData.baseUrl + 'maternal/order/cancel';
     var reqbody = {
       id: this.data.currentOrderNo
     }
     util.http(url, (dataStr) => {
       if (dataStr.success) {
-        console.log(dataStr);
-        /////
-        var _that = this;
-        url = app.globalData.baseUrl + 'maternal/order/list';
-        var reqbody = {
-          userId: app.globalData.id
-        }
-        util.http(url, (dataStr) => {
-          this.setData({
-            noDetails: false
-          })
-          if (dataStr.success) {
-            console.log('ddd', dataStr);
-            if (!dataStr.data[0]) {
-              console.log('不存在');
-              this.setData({
-                noDetails: true
-              })
-              return false;
-            }
-            console.log(dataStr.data[0].order);
-            orderDetails = dataStr.data[0].order;
-            this.setData({
-              'orderDetails': orderDetails
-            })
+        if(this.data.orderTitle ==='all'){
+          /////拉去全部数据
+          var _that = this;
+          url = app.globalData.baseUrl + 'maternal/order/list';
+          var reqbody = {
+            userId: app.globalData.id
           }
-        }, reqbody);
-        ////
+          util.http(url, (dataStr) => {
+            this.setData({
+              noDetails: false
+            })
+            if (dataStr.success) {
+              console.log('ddd', dataStr);
+              if (!dataStr.data[0]) {
+                console.log('不存在');
+                this.setData({
+                  noDetails: true
+                })
+                return false;
+              }
+              console.log(dataStr.data[0].order);
+              orderDetails = dataStr.data[0].order;
+              this.setData({
+                'orderDetails': orderDetails
+              })
+            }
+          }, reqbody);
+          ////
+        }else{
+          url = app.globalData.baseUrl + 'maternal/order/list';
+          var reqbody = {
+            userId: app.globalData.id
+          }
+          util.http(url, (dataStr) => {
+            if (dataStr.success) {
+              console.log(dataStr);
+              if (!dataStr.data[1]) {
+                console.log('不存在');
+                this.setData({
+                  noDetails: true,
+                  orderDetails: []
+                })
+                return false;
+              }
+              console.log(dataStr.data[1].order);
+              orderDetails = dataStr.data[1].order;
+              this.setData({
+                'orderDetails': orderDetails
+              })
+            }
+          }, reqbody);
+        }
+
         this.setData({
           cancelbtn: false
         });
