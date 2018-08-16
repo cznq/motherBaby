@@ -15,8 +15,7 @@ Page({
     // 轮播图部分-开始
     imgUrls: [
       '../../images/3.png',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'
+      '../../images/3.png'
     ],
     indicatorDots: false,
     autoplay: false,
@@ -64,30 +63,6 @@ Page({
     })
     this.btnIsable()
   },
-  // auth(){
-  //   let that =this
-  //   wx.getSetting({
-  //     success: res => {
-  //       //这里打印res 得到authSetting数组里scope 三条相关信息都是true 如果拒绝授权 res.authSetting['scope.userInfo'] == false 下面再次调起授权
-  //       if (res.authSetting['scope.address'] == false) {
-  //         wx.showModal({
-  //           title: '警告',
-  //           content: '您点击了拒绝授权,将无法正常显示个人信息,点击确定重新获取授权。',
-  //           success (e) {
-  //             wx.getSetting({
-  //               success: event => {
-  //                 console.log('suc',event);
-  //                 //得到authSetting数组里scope 三条相关信息都是true 授权成功
-  //                 // that.bindChooseAddr()
-
-  //               }
-  //             });
-  //           }
-  //         })
-  //       }
-  //     }
-  //   })
-  // },
   // 选择地址
   bindChooseAddr() {
     let that = this
@@ -122,16 +97,6 @@ Page({
   },
   // 预约须知提示框
   bindAppointmentNotice() {
-    // wx.setClipboardData({
-    //   data: '123',
-    //   success: function (res) {
-    //     wx.getClipboardData({
-    //       success: function (res) {
-    //         console.log(res.data) // data
-    //       }
-    //     })
-    //   }
-    // })
     this.setData({
       showMModal: !this.data.showMModal,
       modalTitle: '预约须知',
@@ -142,7 +107,8 @@ Page({
   bindCloseAppointment(){
     this.setData({
       showMModal:false,
-      showAppointmentsuccess:false
+      showAppointmentsuccess:false,
+      remarkInfo: '' 
     })
   },
   // 关闭预约须知提示框
@@ -152,6 +118,7 @@ Page({
       navigate:false
     })
   },
+
   bindinput(e){
     this.setData({
       remarkInfo: e.detail.value
@@ -200,23 +167,20 @@ Page({
 
   // 确认按钮
   bindConfirmAppointment(e) {
-    wx.showToast({
-      title: '111',
-    })
     let that = this
 
-    // console.log('userId', app.globalData.id)
-    // console.log('weight', that.data.weightArr[that.data.weightIndex])
-    // console.log('appointment', that.data.date)
-    // console.log('userName', that.data.memberAddr.userName)
-    // console.log('postalCode', that.data.memberAddr.postalCode)
-    // console.log('provinceName', that.data.memberAddr.provinceName)
-    // console.log('cityName', that.data.memberAddr.cityName)
-    // console.log('countyName', that.data.memberAddr.provinceName)
-    // console.log('detailInfo', that.data.memberAddr.detailInfo)
-    // console.log('nationalCode', that.data.memberAddr.nationalCode)
-    // console.log('telNumber', that.data.memberAddr.telNumber)
-    // console.log('markInfo', that.data.remarkInfo)
+    console.log('userId', app.globalData.id)
+    console.log('weight', that.data.weightArr[that.data.weightIndex])
+    console.log('appointment', that.data.date)
+    console.log('userName', that.data.memberAddr.userName)
+    console.log('postalCode', that.data.memberAddr.postalCode)
+    console.log('provinceName', that.data.memberAddr.provinceName)
+    console.log('cityName', that.data.memberAddr.cityName)
+    console.log('countyName', that.data.memberAddr.provinceName)
+    console.log('detailInfo', that.data.memberAddr.detailInfo)
+    console.log('nationalCode', that.data.memberAddr.nationalCode)
+    console.log('telNumber', that.data.memberAddr.telNumber)
+    console.log('markInfo', that.data.remarkInfo)
 
     // 订单预约请求
     util.mHttp(app.globalData.baseUrl +'maternal/order/appointment',{
@@ -238,7 +202,7 @@ Page({
       if(data.success){
         // console.log('suc')
         that.setData({
-          showMModal: !that.data.showMModal,
+          // showMModal: !that.data.showMModal,
           weightIndex: 0,
           memberAddr: [],
           date: '请预约',
@@ -263,6 +227,18 @@ Page({
       animation: {
         duration: 300,
         timingFunc: 'easeIn'
+      }
+    })
+  },
+  bindCopy(){
+    wx.setClipboardData({
+      data: 'dark－artist',
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            console.log(res.data) // data
+          }
+        })
       }
     })
   },

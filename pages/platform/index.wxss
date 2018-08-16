@@ -14,7 +14,7 @@
 
 .product-intro{
   width: 676rpx;
-  height: 290rpx;
+  height: 320rpx;
   border:2rpx solid pink;
   border-radius: 20rpx;
   margin-bottom: 28rpx;
@@ -39,7 +39,7 @@
 .product-intro-content{
   width: 560rpx;
   height: 140rpx;
-  margin: 30rpx 60rpx 0rpx 56rpx;
+  margin: 10rpx 60rpx 0rpx 56rpx;
 }
 .online-booking{
   width: 676rpx;

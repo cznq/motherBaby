@@ -451,7 +451,7 @@ textarea{
   margin-top: 70rpx; 
 }
 .modal-appointment_notice-btn{
-  margin-top: 14rpx;
+  margin-bottom: 10rpx;
 }
 .delete-btn{
   position: absolute;
@@ -584,26 +584,49 @@ textarea{
 }
 .modal-appointment-success-box{
   width: 560rpx;
-  height: 872rpx;
+  height: 560rpx;
   position: absolute;
   left: 50%;
-  top: 102rpx;
+  top: 200rpx;
+  /* top: 102rpx; */
   margin-left: -280rpx;
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  align-content: center;
   border-radius: 10rpx;
 }
 .modal-appointment-success-content_1{
   margin-top: 22rpx;
+  margin-left: 52rpx;
+  margin-right: 52rpx;
 }
 .modal-appointment-success-content_2{
-  display: flex;
   height: 100rpx;
+  margin-left: 52rpx;
+  margin-top: 36rpx;
+  position: relative;
+}
+.modal-appointment-success-content_2-words{
+  width: 308rpx;
 }
 .btn-copy{
-  width: 60rpx;
+  width:140rpx;
   height: 60rpx;
+  line-height: 60rpx;
+  position: absolute;
+  right: 52rpx;
+  top: 0;
+  border: 2rpx solid #f36e89;
+  color: #f36e89
+}
+.dots{
+  width: 480rpx;
+  border-bottom: 5rpx dotted #f36e89;
+  margin: 70rpx 0 20rpx 40rpx;
+}
+.modal-appointment-success-box .modal-appointment-success-img{
+  width: 146rpx;
+  height: 44rpx;
+  margin-top: 58rpx;  
+  margin-left: 208rpx;
 }

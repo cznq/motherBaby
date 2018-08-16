@@ -161,19 +161,19 @@
     </view>
   </view>
 
-
+<!-- 预约成功 -->
   <view class='modal-appointment-success ' wx:if='{{showAppointmentsuccess}}' >
     <view class='modal-appointment-success-box'>
       <image class='delete-btn' src = '../../images/delete.png' bindtap = 'bindCloseAppointment' ></image>
-      <image class='modal-appointment-success-img' src='../../images/appointment.png' class='img-title'></image>
+      <image class='modal-appointment-success-img' src='../../images/appointment_success.png' ></image>
       <view class='modal-appointment-success-content_1 grey font28'>我们已经收到您的预约，上门当天，我们回提前与您联系。</view>
       <view class='modal-appointment-success-content_2 font28'>
-        <view class='grey '>如有疑问，请添加客服微信：xxxxxxx</view>
-        <button class='btn-copy'>复制</button>
+        <view class='grey modal-appointment-success-content_2-words'>如有疑问，请添加客服微信：dark－artist</view>
+          <button class='btn-copy font28' bindtap='bindCopy'>复制</button>
       </view>
       <view class='dots' > </view>
       <navigator url='../../pages/order/order' hover-class="none">
-        <button class='btn-common modal-appointment_notice-btn'  > 好的 </button>          
+        <button class='btn-common modal-appointment_notice-btn' bindtap='bindCloseAppointment' > 好的 </button>          
       </navigator>
     </view>
 
