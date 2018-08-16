@@ -7,6 +7,20 @@ Page({
   data: {
   
   },
+  bindSaveImg(){
+    wx.saveImageToPhotosAlbum({
+      filePath: 'images/qrcode.png',
+      success: function (res) {
+        console.log('suc',res)
+        wx.showToast({
+          title: '保存成功',
+        })
+      },
+      fail: function (res) {
+        console.log('fail',res)
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
