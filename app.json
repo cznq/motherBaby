@@ -9,8 +9,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#595858",
+     "navigationBarBackgroundColor":"#ffffff",
     "navigationBarTitleText": "享换换",
-    "navigationBarTextStyle": "#fff"
+     "navigationBarTextStyle": "black"
   }
 }

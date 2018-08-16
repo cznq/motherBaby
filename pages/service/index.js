@@ -20,6 +20,11 @@ Page({
         console.log('fail',res)
       }
     })
+    // wx.scanCode({
+    //   success: (res) => {
+    //     console.log(res)
+    //   }
+    // })
   },
 
   /**
