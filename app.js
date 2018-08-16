@@ -63,11 +63,13 @@ App({
     var userInfo = {};
     userInfo = wx.getStorageSync('userInfo');
     var _that = this;
+    console.log(1111111);
     return new Promise(function(resolve, reject) {
       // 登录
       wx.login({
         success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          console.log('res.coded',res.code);
           _that.globalData.code = res.code;
           // 首次登陆调注册接口获取openid&&userid
           if (!userInfo) {
@@ -81,16 +83,20 @@ App({
                 _that.globalData.sessionKey = dataStr.data.sessionKey;
                 _that.globalData.openId = dataStr.data.openId;
                 _that.globalData.id = dataStr.data.id;
+                console.log('dataStr.data.id',dataStr.data.id);
                 userInfo = {
                   openId: _that.globalData.openId,
                   userId: _that.globalData.id
                 }
                 wx.setStorageSync('userInfo', userInfo);
+                console.log('userInfo2',userInfo);
                 resolve(userInfo);
+              }else {
+                console.log('失败',dataStr);
               }
             }, reqbody);
           }
-
+          resolve(userInfo);
         }
       })
     });
