@@ -29,10 +29,10 @@
       </view>
     </navigator>
     
-    <navigator class='home-title-right' url='../../pages/order/order' hover-class="none" >
+    <view bindtap='bindMymAppointment'>
       <image src='../../images/reservation@2x.png' class='reservation-img'></image>
-      <view class='font26'>我的预约</view>
-    </navigator>
+      <view class='font26' >我的预约</view>
+    </view>
   </view>
 
   <!-- 内容区域 -->
