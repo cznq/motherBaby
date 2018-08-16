@@ -91,7 +91,7 @@ Page({
   // 选择地址
   bindChooseAddr() {
     let that = this
- 
+
     wx.chooseAddress({
       success(res) {
         if (!res.provinceName.includes('北京')){
@@ -205,18 +205,18 @@ Page({
     })
     let that = this
 
-    // console.log('userId', app.globalData.id)
-    // console.log('weight', that.data.weightArr[that.data.weightIndex])
-    // console.log('appointment', that.data.date)
-    // console.log('userName', that.data.memberAddr.userName)
-    // console.log('postalCode', that.data.memberAddr.postalCode)
-    // console.log('provinceName', that.data.memberAddr.provinceName)
-    // console.log('cityName', that.data.memberAddr.cityName)
-    // console.log('countyName', that.data.memberAddr.provinceName)
-    // console.log('detailInfo', that.data.memberAddr.detailInfo)
-    // console.log('nationalCode', that.data.memberAddr.nationalCode)
-    // console.log('telNumber', that.data.memberAddr.telNumber)
-    // console.log('markInfo', that.data.remarkInfo)
+    console.log('userId', app.globalData.id)
+    console.log('weight', that.data.weightArr[that.data.weightIndex])
+    console.log('appointment', that.data.date)
+    console.log('userName', that.data.memberAddr.userName)
+    console.log('postalCode', that.data.memberAddr.postalCode)
+    console.log('provinceName', that.data.memberAddr.provinceName)
+    console.log('cityName', that.data.memberAddr.cityName)
+    console.log('countyName', that.data.memberAddr.provinceName)
+    console.log('detailInfo', that.data.memberAddr.detailInfo)
+    console.log('nationalCode', that.data.memberAddr.nationalCode)
+    console.log('telNumber', that.data.memberAddr.telNumber)
+    console.log('markInfo', that.data.remarkInfo)
 
     // 订单预约请求
     util.mHttp(app.globalData.baseUrl +'maternal/order/appointment',{
@@ -301,7 +301,9 @@ Page({
   onLoad: function(options) {
     var _that = this;
     if (app.globalData.code && app.globalData.code != '') {
-      // console.log('code','app.code不为空');
+      wx.showToast({
+        title:'code不为空'
+      })
     } else {
       var userInfo = {};
       userInfo = wx.getStorageSync('userInfo'); //读取本地userInfo
