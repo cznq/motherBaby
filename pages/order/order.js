@@ -203,6 +203,18 @@ Page({
       })
     }
   },
+  cancelTxt: function() {
+    var cancelbtn = this.data.cancelbtn;
+    if (cancelbtn) {
+      this.setData({
+        cancelbtn: false
+      })
+    } else {
+      this.setData({
+        cancelbtn: true
+      })
+    }
+  },
   queryCancel: function(e) {
     var url = app.globalData.baseUrl + 'maternal/order/cancel';
     var reqbody = {
@@ -239,6 +251,7 @@ Page({
           }, reqbody);
           ////
         }else{
+          console.log(33333);
           url = app.globalData.baseUrl + 'maternal/order/list';
           var reqbody = {
             userId: app.globalData.id
@@ -256,6 +269,7 @@ Page({
               }
               console.log(dataStr.data[1].order);
               orderDetails = dataStr.data[1].order;
+              console.log('dataStr',dataStr);
               this.setData({
                 'orderDetails': orderDetails
               })

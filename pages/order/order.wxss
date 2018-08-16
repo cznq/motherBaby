@@ -2,6 +2,9 @@
 page{
   background-color: #f9eaed;
 }
+.orderTitle li{
+  padding:10px 10px 0 10px;
+}
 .orderInfo{
   border: 1px solid #f36e89;
   border-radius: 4px;
@@ -93,12 +96,12 @@ page{
   padding-top:70rpx;
 }
 .noResult .resultImage{
-  width:253rpx;
-  height:253rpx;
+  width:269rpx;
+  height:269rpx;
 }
 .noResult .resultbtn{
-  width:132rpx;
-  height:40rpx;
+  width:195rpx;
+  height:60rpx;
   margin-top:25rpx;
 }
 .loyer{
