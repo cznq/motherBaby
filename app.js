@@ -50,9 +50,11 @@ App({
             }
             utils.http(url, (dataStr) => {
               if (dataStr.success) {
-              this.globalData.openId = dataStr.openId;
-              this.globalData.sessionKey = dataStr.sessionKey;
-              this.globalData.id = dataStr.id;
+                console.log('dataStr',dataStr);
+              this.globalData.openId = dataStr.data.openId;
+              this.globalData.sessionKey = dataStr.data.sessionKey;
+              this.globalData.id = dataStr.data.id;
+              console.log('this.globalData.id',this.globalData.id);
               }
             }, reqbody);
           }

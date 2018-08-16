@@ -24,6 +24,7 @@ Page({
       detailInfo: 'xxxxxxxxxxxxx地方',
       markInfo: 'xxxxxxxxxxxxxx',
     }],
+    currentOrderNo: ''
   },
 
   /**
@@ -33,7 +34,7 @@ Page({
     var _that = this;
     url = app.globalData.baseUrl + 'maternal/order/list';
     var reqbody = {
-      userId: 1
+      userId: app.globalData.id
     }
     //   userId; //用户id
     // orderNo; //订单号
@@ -53,7 +54,7 @@ Page({
         noDetails: false
       })
       if (dataStr.success) {
-        console.log(dataStr);
+        console.log('ddd', dataStr);
         if (!dataStr.data[0]) {
           console.log('不存在');
           this.setData({
@@ -141,7 +142,7 @@ Page({
             if (!dataStr.data[3]) {
               this.setData({
                 noDetails: true,
-                orderDetails:[]
+                orderDetails: []
               });
               return false;
             }
@@ -169,7 +170,7 @@ Page({
               console.log('不存在');
               this.setData({
                 noDetails: true,
-                orderDetails:[]
+                orderDetails: []
               })
               return false;
             }
@@ -186,7 +187,11 @@ Page({
     }
   },
 
-  cancelbtn: function() {
+  cancelbtn: function(e) {
+    var orderno = e.currentTarget.dataset.orderno;
+    this.setData({
+      currentOrderNo: orderno
+    })
     var cancelbtn = this.data.cancelbtn;
     if (cancelbtn) {
       this.setData({
@@ -199,14 +204,49 @@ Page({
     }
   },
   queryCancel: function(e) {
-    var url = app.globalData.baseUrl + 'maternal/order/list';
+    // console.log('ee',);
+    var url = app.globalData.baseUrl + 'maternal/order/cancel';
     var reqbody = {
-      userId: 1
+      id: this.data.currentOrderNo
     }
     util.http(url, (dataStr) => {
       if (dataStr.success) {
         console.log(dataStr);
-
+        /////
+        var _that = this;
+        url = app.globalData.baseUrl + 'maternal/order/list';
+        var reqbody = {
+          userId: app.globalData.id
+        }
+        util.http(url, (dataStr) => {
+          this.setData({
+            noDetails: false
+          })
+          if (dataStr.success) {
+            console.log('ddd', dataStr);
+            if (!dataStr.data[0]) {
+              console.log('不存在');
+              this.setData({
+                noDetails: true
+              })
+              return false;
+            }
+            console.log(dataStr.data[0].order);
+            orderDetails = dataStr.data[0].order;
+            this.setData({
+              'orderDetails': orderDetails
+            })
+          }
+        }, reqbody);
+        ////
+        this.setData({
+          cancelbtn: false
+        });
+        wx.showToast({
+          title: '取消成功',
+          icon: 'success',
+          duration: 2000
+        })
       }
     }, reqbody);
   },

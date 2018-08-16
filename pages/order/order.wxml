@@ -54,7 +54,7 @@
            <text class='padding10-left gray-6 font28'>{{item.markInfo}}</text>
          </view>
       </view>
-      <view class='myordbtn row cen-center' bindtap='cancelbtn'>
+      <view wx:if='{{item.orderStatus === 1}}' class='myordbtn row cen-center' data-orderno='{{item.id}}' bindtap='cancelbtn'>
         <image src='../../images/myordbtn.png'></image>
       </view>
     </view>
@@ -96,7 +96,7 @@
            <text class='padding10-left gray-6 font28'>{{item.markInfo}}</text>
          </view>
       </view>
-      <view class='myordbtn row cen-center' bindtap='cancelbtn'>
+      <view wx:if='{{item.orderStatus === 1}}' class='myordbtn row cen-center' bindtap='cancelbtn'>
         <image src='../../images/myordbtn.png'></image>
       </view>
     </view>
@@ -138,7 +138,7 @@
            <text class='padding10-left gray-6 font28'>{{item.markInfo}}</text>
          </view>
       </view>
-      <view class='myordbtn row cen-center' bindtap='cancelbtn'>
+      <view wx:if='{{item.orderStatus === 1}}' class='myordbtn row cen-center' bindtap='cancelbtn'>
         <image src='../../images/myordbtn.png'></image>
       </view>
     </view>
@@ -180,7 +180,7 @@
            <text class='padding10-left gray-6 font28'>{{item.markInfo}}</text>
          </view>
       </view>
-      <view class='myordbtn row cen-center' bindtap='cancelbtn'>
+      <view wx:if='{{item.orderStatus === 1}}' class='myordbtn row cen-center' bindtap='cancelbtn'>
         <image src='../../images/myordbtn.png'></image>
       </view>
     </view>

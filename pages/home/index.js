@@ -10,7 +10,7 @@ Page({
     startDate: util.mformatTime(new Date()), //当前时间
     memberAddr: [], //取件地址
     weightArr: ['请选择', '5kg~15kg', '15kg~25kg', '25kg~35kg', '35kg~45kg'], //重量数组
-    weightIndex: 0, //默认预估重量下标 
+    weightIndex: 0, //默认预估重量下标
     showMModal: false, //是否弹出提示框
     // 轮播图部分-开始
     imgUrls: [
@@ -154,6 +154,18 @@ Page({
   // 确认按钮
   bindConfirmAppointment(e) {
     let that = this
+    // console.log('userId',app.globalData.id);
+    // console.log('weight',that.data.weightArr[that.data.weightIndex]);
+    // console.log('appointment',that.data.date);
+    // console.log('userName',that.data.memberAddr.userName);
+    // console.log('postalCode',that.data.memberAddr.postalCode);
+    // console.log('provinceName',that.data.memberAddr.provinceName);
+    // console.log('cityName',that.data.memberAddr.cityName);
+    // console.log('countyName',that.data.memberAddr.countyName);
+    // console.log('detailInfo',that.data.memberAddr.detailInfo);
+    // console.log('nationalCode',that.data.memberAddr.nationalCode);
+    // console.log('telNumber',that.data.memberAddr.telNumber);
+    // console.log('markInfo',that.data.remarkInfo);
     // 订单预约请求
     util.mHttp(app.globalData.baseUrl +'maternal/order/appointment',{
       userId: app.globalData.id, //用户id
