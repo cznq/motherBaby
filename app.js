@@ -9,8 +9,6 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         this.globalData.code = res.code;
-        console.log('res.code', res.code);
-        console.log('userInfo', userInfo);
         // 首次登陆调注册接口获取openid&&userid
         if (userInfo == '') {
           console.log('调用注册接口');
