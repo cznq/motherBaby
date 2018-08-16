@@ -59,6 +59,42 @@ App({
       }
     })
   },
+  getOpenid:function(){
+    var userInfo = {};
+    userInfo = wx.getStorageSync('userInfo');
+    var _that = this;
+    return new Promise(function(resolve, reject) {
+      // 登录
+      wx.login({
+        success: res => {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          _that.globalData.code = res.code;
+          // 首次登陆调注册接口获取openid&&userid
+          if (!userInfo) {
+            console.log('主动注册接口');
+            var url = _that.globalData.baseUrl + 'maternal/user/register';
+            var reqbody = {
+              wxcode: res.code
+            }
+            utils.http(url, (dataStr) => {
+              if (dataStr.success) {
+                _that.globalData.sessionKey = dataStr.data.sessionKey;
+                _that.globalData.openId = dataStr.data.openId;
+                _that.globalData.id = dataStr.data.id;
+                userInfo = {
+                  openId: _that.globalData.openId,
+                  userId: _that.globalData.id
+                }
+                wx.setStorageSync('userInfo', userInfo);
+                resolve(userInfo);
+              }
+            }, reqbody);
+          }
+
+        }
+      })
+    });
+  },
   globalData: {
     userInfo: null,
     code: '',

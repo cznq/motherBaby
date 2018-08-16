@@ -28,23 +28,23 @@ Page({
     modalContent: '', //提示框内容
     modalBtnContent: '', //提示框按钮内容
     getUserInfo: false,
-    customInfo:{  //用户信息
+    customInfo: { //用户信息
       avatarUrl: "",
       nickName: "",
       gender: "",
       city: "",
       province: ''
     },
-    showWeightTips:true, //是否显示重量提示
-    remarkInfo:'' ,//备注信息
-    navigate:false,
-    showPickup:false,
-    showAppointmentsuccess:false
+    showWeightTips: true, //是否显示重量提示
+    remarkInfo: '', //备注信息
+    navigate: false,
+    showPickup: false,
+    showAppointmentsuccess: false
   },
 
   //主动获取用户信息权限
   onGotUserInfo: function(e) {
-    console.log('onGotUserInfo',e.detail.userInfo);
+    console.log('onGotUserInfo', e.detail.userInfo);
     let userInfo = e.detail.userInfo;
     if (!userInfo) {
       this.setData({
@@ -66,23 +66,23 @@ Page({
   // 选择地址
   bindChooseAddr() {
     let that = this
- 
+
     wx.chooseAddress({
       success(res) {
-        if (!res.provinceName.includes('北京')){
+        if (!res.provinceName.includes('北京')) {
           that.setData({
-            showPickup:true,
+            showPickup: true,
             // memberAddr: res
           })
-        }else{
+        } else {
           that.setData({
             showPickup: false,
             memberAddr: res
           })
         }
       },
-      fail(res){
-        console.log('fail',res)
+      fail(res) {
+        console.log('fail', res)
         // that.bindChooseAddr()
       }
     })
@@ -104,7 +104,7 @@ Page({
       modalBtnContent: '知道了'
     })
   },
-  bindCloseAppointment(){
+  bindCloseAppointment() {
     this.setData({
       showMModal:false,
       showAppointmentsuccess:false,
@@ -115,49 +115,29 @@ Page({
   bindCloseModal() {
     this.setData({
       showMModal: false,
-      navigate:false
+      navigate: false
     })
   },
-
-  bindinput(e){
+  bindinput(e) {
     this.setData({
       remarkInfo: e.detail.value
     })
   },
-// 点击我的预约
-  bindMymAppointment(){
-    console.log(app.globalData.id)
-    if (!app.globalData.id){
+  // 点击我的预约
+  bindMymAppointment() {
+    console.log(app.globalData.id);
+    var _that = this;
+    if (!app.globalData.id) {
       // 登录
-      wx.login({
-        success: res => {
-          console.log('res',res)
-          // 发送 res.code 到后台换取 openId, sessionKey, unionId
-          app.globalData.code = res.code;
-          // 首次登陆调注册接口获取openid&&userid
-            console.log('调用注册接口');
-            var url = app.globalData.baseUrl + 'maternal/user/register';
-            var reqbody = {
-              wxcode: res.code
-            }
-            util.http(url, (dataStr) => {
-              if (dataStr.success) {
-                app.globalData.sessionKey = dataStr.data.sessionKey;
-                app.globalData.openId = dataStr.data.openId;
-                app.globalData.id = dataStr.data.id;
-                userInfo = {
-                  openId: app.globalData.openId,
-                  userId: app.globalData.id
-                }
-                wx.setStorageSync('userInfo', userInfo);
-              }
-            }, reqbody);
+      app.getOpenid().then(function(userId) {
+        console.log(userId);
+        if (userId) {
           wx.navigateTo({
             url: '../order/order',
           })
         }
       })
-    }else{
+    } else {
       wx.navigateTo({
         url: '../order/order',
       })
@@ -183,23 +163,23 @@ Page({
     console.log('markInfo', that.data.remarkInfo)
 
     // 订单预约请求
-    util.mHttp(app.globalData.baseUrl +'maternal/order/appointment',{
+    util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
       userId: app.globalData.id, //用户id
       // userId: 2 , //用户id
       weight: that.data.weightArr[that.data.weightIndex], //预估重量
       appointment: that.data.date, //上门预约时间 yyyy-MM-dd
       userName: that.data.memberAddr.userName, //收货人姓名
-      postalCode: that.data.memberAddr.postalCode,//邮编
+      postalCode: that.data.memberAddr.postalCode, //邮编
       provinceName: that.data.memberAddr.provinceName, //省份
-      cityName: that.data.memberAddr.cityName,//城市
-      countyName: that.data.memberAddr.countyName,//区县
-      detailInfo: that.data.memberAddr.detailInfo ,//收货详细地址
+      cityName: that.data.memberAddr.cityName, //城市
+      countyName: that.data.memberAddr.countyName, //区县
+      detailInfo: that.data.memberAddr.detailInfo, //收货详细地址
       nationalCode: that.data.memberAddr.nationalCode, //收货地址国家码
-      telNumber: that.data.memberAddr.telNumber , //收货人电话号码
-      markInfo:that.data.remarkInfo //备注信息
-    },function(data){
-      console.log('suc',data)
-      if(data.success){
+      telNumber: that.data.memberAddr.telNumber, //收货人电话号码
+      markInfo: that.data.remarkInfo //备注信息
+    }, function(data) {
+      console.log('suc', data)
+      if (data.success) {
         // console.log('suc')
         that.setData({
           // showMModal: !that.data.showMModal,
@@ -207,17 +187,17 @@ Page({
           memberAddr: [],
           date: '请预约',
           btnIsable: true,
-          remarkInfo:'',
-          navigate:true,
-          showWeightTips:true,
-          showAppointmentsuccess:true
+          remarkInfo: '',
+          navigate: true,
+          showWeightTips: true,
+          showAppointmentsuccess: true
         })
-      }else{
+      } else {
         // console.log('error')
       }
-      }, 'POST',{
-        'content-type': 'application/x-www-form-urlencoded'
-      })
+    }, 'POST', {
+      'content-type': 'application/x-www-form-urlencoded'
+    })
   },
   // 设置导航条颜色
   setNavigationBarColor(bgcolor) {
@@ -253,22 +233,22 @@ Page({
         btnIsable: true
       })
     }
-    if(this.data.weightIndex!=0){
+    if (this.data.weightIndex != 0) {
       this.setData({
-        showWeightTips:false
+        showWeightTips: false
       })
-    }else{
+    } else {
       this.setData({
         showWeightTips: true
       })
     }
   },
-  bindHideModal(){
-   this.bindChooseAddr()
+  bindHideModal() {
+    this.bindChooseAddr()
   },
-  bindDelete(){
+  bindDelete() {
     this.setData({
-      showPickup:false
+      showPickup: false
     })
   },
   /**
@@ -277,7 +257,9 @@ Page({
   onLoad: function(options) {
     var _that = this;
     if (app.globalData.code && app.globalData.code != '') {
-      // console.log('code','app.code不为空');
+      wx.showToast({
+        title: 'code不为空'
+      })
     } else {
       var userInfo = {};
       userInfo = wx.getStorageSync('userInfo'); //读取本地userInfo
@@ -306,7 +288,7 @@ Page({
         }
       }
     }
-    wx.getSetting({// 查看是否授权
+    wx.getSetting({ // 查看是否授权
       success: function(res) {
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
@@ -317,19 +299,19 @@ Page({
               })
               // console.log('suc',res.userInfo);
               // 更新用户信息
-              var url = app.globalData.baseUrl+'maternal/user/update';
+              var url = app.globalData.baseUrl + 'maternal/user/update';
               var reqbody = {
                 id: app.globalData.id,
-                nickName:res.userInfo.nickName,
-                headSculpture:res.userInfo.avatarUrl,
-                gender:res.userInfo.gender,
-                openId:app.globalData.openId,
-                country:res.userInfo.country,
-                province:res.userInfo.province,
-                city:res.userInfo.city,
-                mobile:''
+                nickName: res.userInfo.nickName,
+                headSculpture: res.userInfo.avatarUrl,
+                gender: res.userInfo.gender,
+                openId: app.globalData.openId,
+                country: res.userInfo.country,
+                province: res.userInfo.province,
+                city: res.userInfo.city,
+                mobile: ''
               }
-              util.http(url,(dataStr) => {
+              util.http(url, (dataStr) => {
                 // console.log(dataStr);
                 if (dataStr.success) {
                   // console.log('更新用户信息',dataStr);

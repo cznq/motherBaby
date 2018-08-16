@@ -32,7 +32,13 @@ Page({
    */
   onLoad: function(options) {
     var _that = this;
-    console.log('ssss',app.globalData.id);
+    if (app.globalData.id) {
+      wx.showToast({
+        title:'code不为空'+app.globalData.id
+      })
+    }
+
+    console.log('globalData.id',app.globalData.id);
     url = app.globalData.baseUrl + 'maternal/order/list';
     var reqbody = {
       userId: app.globalData.id
@@ -70,6 +76,9 @@ Page({
         })
       }else {
         console.log('userId为空');
+        this.setData({
+          noDetails: true
+        })
       }
     }, reqbody);
   },
@@ -261,8 +270,9 @@ Page({
           }
           util.http(url, (dataStr) => {
             if (dataStr.success) {
-              console.log(dataStr);
-              if (!dataStr.data[1]) {
+              console.log('取消成功后取得待确认data[1]',dataStr);
+              console.log(dataStr.data[1].type);
+              if (!dataStr.data[1] || dataStr.data[1].type != 1) {
                 console.log('不存在');
                 this.setData({
                   noDetails: true,
@@ -270,7 +280,6 @@ Page({
                 })
                 return false;
               }
-              console.log(dataStr.data[1].order);
               orderDetails = dataStr.data[1].order;
               console.log('dataStr',dataStr);
               this.setData({
