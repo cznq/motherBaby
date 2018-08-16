@@ -3,6 +3,7 @@
 .mcontainer{
   width: 100%;
   height: 100%;
+  position: absolute;
 }
 .swiper-box{
    position: relative;
@@ -19,7 +20,7 @@
 .home-round{
   position: absolute;
   width: 100%;
-  height: 30rpx;
+  height: 36rpx;
   left: 0;
   bottom: -17rpx;
 }
@@ -38,6 +39,19 @@
   width: 104rpx;
   height: 94rpx;
 }
+/*  */
+.platform-img{
+  width: 99rpx;
+  height: 76rpx;
+}
+.service-img{
+  width: 103rpx;
+  height: 79rpx;
+}
+.reservation-img{
+  width: 101rpx;
+  height: 68rpx;
+}
 /* 内容区域--上门时间、预估重量等 */
 .home-content{
   width: 100%;
@@ -48,8 +62,8 @@
 }
 /* 内容--image样式 */
 .home-content image{
-  width: 48rpx;
-  height: 48rpx;  
+  width: 40rpx;
+  height: 40rpx;  
 }
 /* 内容--主要区域样式 */
 .home-content-main{
@@ -137,27 +151,29 @@
   position: absolute;
   left: 15rpx;
   bottom: 0;
-  width: 40rpx;
-  height: 40rpx
+  width: 30rpx;
+  height: 30rpx
 }
 /* 内容--主要区域--时间--右侧--图片 */
 .home-content-main-time-right image{
   position: absolute;
   right: 20rpx;
   bottom: 34rpx;
-  width: 24rpx;
-  height: 24rpx;
+  width: 12rpx;
+  height: 21rpx;
 }
 .home-content-main-weight-left image{
   position: absolute;
   left: 15rpx;
+  width: 30rpx;
+  height: 30rpx;
 }
 .home-content-main-weight-right image{
   position: absolute;
   right: 20rpx;
   bottom: 6rpx;
-  width: 24rpx;
-  height: 24rpx;
+  width: 12rpx;
+  height: 21rpx;
   /* top: 0; */
 }
 .home-content-main-address-left{
@@ -168,8 +184,8 @@
 }
 .home-content-main-address-left image{
   position: absolute;
-  width: 40rpx;
-  height: 48rpx;
+  width: 30rpx;
+  height: 40rpx;
   left: 15rpx;
   bottom: 0;
 }
@@ -177,8 +193,8 @@
   position: absolute;
   right: 20rpx;
   bottom: 6rpx;
-  width: 24rpx;
-  height: 24rpx;
+  width: 12rpx;
+  height: 21rpx;
   /* top: 0; */
 }
 /* 内容--主要区域--时间--左侧--文字样式 */
@@ -242,8 +258,8 @@
 .home-content-remarks-left image{
   margin-left: 10rpx;
   display: block;
-  width: 48rpx;
-  height: 48rpx;
+  width: 30rpx;
+  height: 30rpx;
 }
 .home-content-remarks-left .font28{
   margin-left: 10rpx;
@@ -271,7 +287,7 @@ textarea{
 .home-content-appointment_notice-modal{
   position: absolute;
   width: 600rpx;
-  height:860rpx;
+  height:100%;
   left: 0;
   top: 0;
   margin: 150rpx 74rpx;
@@ -290,18 +306,22 @@ textarea{
   position: absolute;
   left: 0;
   top: 0;
+  text-align: center;
 }
 /* 预约须知盒子 */
 .modal-appointment-notice{
-  width: 600rpx;
-  height: 860rpx;
+  width: 560rpx;
+  height: 872rpx;
   background-color: #F9F7FA;
   border-radius: 26rpx;
-  margin-left: 74rpx;
-  margin-top: 200rpx;
+  margin-left: 90rpx;
+  margin-top: 102rpx;
   text-align: center;
-  position: relative;
+  /* position: relative; */
   color: #101010;
+}
+.home-modal .modal-appointment-notice-title{
+  margin-top: 58rpx;
 }
 /* 预约须知按钮 */
 .modal-appointment-notice-btn{
@@ -347,4 +367,243 @@ textarea{
 /* 预估重量picker下的'请选择'-样式 */
 .chooseweight{
   padding-top: 0rpx;
+}
+
+/* 仅支持北京地区上门取件提示框  */
+
+.modal-pick-up{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 15, .55);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.modal-pick-up-box{
+  width: 560rpx;
+  height: 545rpx;
+  position: absolute;
+  left: 50%;
+  top: 216rpx;
+  margin-left: -280rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  border-radius: 10rpx;
+}
+.modal-pick-up-box .modal-pick-up-logo{
+  width: 163rpx;
+  height: 120rpx;
+  margin-top: 70rpx;
+  margin-bottom: 60rpx;
+}
+.modal-pick-up-box .dots{
+  width: 480rpx;
+  border-bottom: 5rpx dotted #f36e89;
+  margin-top: 70rpx; 
+}
+.modal-pick-up-btn{
+  margin-top: 28rpx;
+}
+.delete-btn{
+  position: absolute;
+  right: 30rpx;
+  top:22rpx;
+  width: 25rpx;
+  height: 25rpx;
+}
+
+/* 预约须知提示框  */
+
+.modal-appointment_notice{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 15, .55);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.modal-appointment_notice-box{
+  width: 560rpx;
+  height: 872rpx;
+  position: absolute;
+  left: 50%;
+  top: 102rpx;
+  margin-left: -280rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  border-radius: 10rpx;
+}
+.modal-appointment_notice-box .modal-appointment_notice-logo{
+  width: 163rpx;
+  height: 120rpx;
+  margin-top: 70rpx;
+  margin-bottom: 60rpx;
+}
+.modal-appointment_notice .dots{
+  width: 480rpx;
+  border-bottom: 5rpx dotted #f36e89;
+  margin-top: 70rpx; 
+}
+.modal-appointment_notice-btn{
+  margin-top: 14rpx;
+}
+.delete-btn{
+  position: absolute;
+  right: 30rpx;
+  top:22rpx;
+  width: 25rpx;
+  height: 25rpx;
+}
+.img-title{
+  width: 146rpx;
+  height: 44rpx;
+  margin-top: 58rpx;
+}
+.modal-appointment_notice-content_1{
+  width: 446rpx;
+  height: 82rpx;
+  display: flex;
+  margin-top: 48rpx;
+  /* position: relative; */
+}
+
+.modal-appointment_notice-content_2{
+  width: 446rpx;
+  height: 82rpx;
+  display: flex;
+  margin-top: 36rpx;
+}
+.modal-appointment_notice-content_3{
+  width: 446rpx;
+  height: 82rpx;
+  display: flex;
+  margin-top: 36rpx;
+  
+}
+.modal-appointment_notice-content_4{
+  width: 446rpx;
+  height: 82rpx;
+  display: flex;
+  margin-top: 36rpx;
+  
+}
+.modal-appointment_notice-content_5{
+  width: 446rpx;
+  height: 82rpx;
+  display: flex;
+  margin-top: 36rpx;
+
+}
+.modal-appointment_notice-content_1_content{
+  flex: 1;
+  margin-left: 63rpx;
+  margin-top: 5rpx;
+}
+.modal-appointment_notice-content_2_content{
+  flex: 1;
+  margin-left: 63rpx;
+  margin-top: 20rpx;
+}
+.modal-appointment_notice-content_3_content{
+  flex: 1;
+  margin-left: 63rpx;
+  margin-top: 20rpx;
+}
+.modal-appointment_notice-content_4_content{
+  flex: 1;
+  margin-left: 63rpx;
+  margin-top: 40rpx;
+}
+.modal-appointment_notice-content_5_content{
+  flex: 1;
+  margin-left: 63rpx;
+  margin-top: -20rpx;
+}
+
+.img-appointment_1{
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 22rpx;
+  margin-top: 10rpx;
+}
+.img-appointment_2{
+  position: absolute;
+  width: 35rpx;
+  height: 40rpx;
+  margin-right: 22rpx;
+  margin-top: 20rpx;
+}
+.img-appointment_3{
+  position: absolute;
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 22rpx;
+  margin-top: 26rpx;
+}
+.img-appointment_4{
+  position: absolute;
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 22rpx;
+  margin-top: 40rpx;
+}
+.img-appointment_5{
+  position: absolute;
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: -10rpx;
+  margin-top: -16rpx;
+}
+.btn-common{
+  background-color: #fd5293;
+  color: #fff;
+  width: 230rpx;
+  height: 70rpx;
+  line-height: 64rpx; 
+  border-radius: 70rpx;
+  border: 6rpx solid  #ffe8b4;
+  /* margin-left: 160rpx; */
+  /* margin-top: 14rpx; */
+}
+
+
+.modal-appointment-success{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 15, .55);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.modal-appointment-success-box{
+  width: 560rpx;
+  height: 872rpx;
+  position: absolute;
+  left: 50%;
+  top: 102rpx;
+  margin-left: -280rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  border-radius: 10rpx;
+}
+.modal-appointment-success-content_1{
+  margin-top: 22rpx;
+}
+.modal-appointment-success-content_2{
+  display: flex;
+  height: 100rpx;
+}
+.btn-copy{
+  width: 60rpx;
+  height: 60rpx;
 }

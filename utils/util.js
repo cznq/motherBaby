@@ -79,3 +79,57 @@ module.exports = {
   http,
   mHttp
 }
+
+
+
+//   < view class='home-modal' wx: if= '{{!showMModal}}' >
+//     <!--预约须知模态框 -->
+//       <view class='modal-appointment-notice  font28' >
+//         <!--标题 -->
+//           <view class='modal-appointment-notice-title' > 预约须知 < /view>
+//             < !--内容 -->
+//               <view class='modal-appointment-notice-content' >
+//                 {{ modalContent }}
+// </view>
+//   < !--按钮 -->
+//     <navigator url='../../pages/order/order' hover - class="none" wx: if= "{{navigate}}" >
+//       <button class= 'modal-appointment-notice-btn' bindtap = 'bindCloseModal' > {{ modalBtnContent }}</button>
+//         < /navigator>
+//         < button wx: if= "{{!navigate}}" class='modal-appointment-notice-btn' bindtap = 'bindCloseModal' > {{ modalBtnContent }}</button>
+//           < /view>
+//           < /view>
+
+
+
+  // < view class='home-modal' wx: if= '{{showMModal}}' >
+  //   <!--预约须知模态框 -->
+  //     <view class='modal-appointment-notice  font28' >
+  //       <!--标题 -->
+  //         <view class='modal-appointment-notice-title' > 11 < /view>
+  //           < !--内容 -->
+  //             <view class='modal-appointment-notice-content' >
+  //               </view>
+  //               < !--按钮 -->
+  //                 <navigator url='../../pages/order/order' hover - class="none" wx: if= "{{navigate}}" >
+  //                   <button class= 'modal-appointment-notice-btn' bindtap = 'bindCloseModal' > {{ modalBtnContent }}</button>
+  //                     < /navigator>
+  //                     < button wx: if= "{{!navigate}}" class='modal-appointment-notice-btn' bindtap = 'bindCloseModal' > {{ modalBtnContent }}</button>
+  //                       < /view>
+  //                       < /view>
+
+
+  // < view class='home-modal' wx: if= '{{showMModal}}' >
+  //   <!--预约须知模态框 -->
+  //     <view class='modal-appointment-notice  font28' >
+  //       <!--标题 -->
+  //         <view class='modal-appointment-notice-title' > 11 < /view>
+  //           < !--内容 -->
+  //             <view class='modal-appointment-notice-content' >
+  //               </view>
+  //               < !--按钮 -->
+  //                 <navigator url='../../pages/order/order' hover - class="none" wx: if= "{{navigate}}" >
+  //                   <button class= 'modal-appointment-notice-btn' bindtap = 'bindCloseModal' > {{ modalBtnContent }}</button>
+  //                     < /navigator>
+  //                     < button wx: if= "{{!navigate}}" class='modal-appointment-notice-btn' bindtap = 'bindCloseModal' > {{ modalBtnContent }}</button>
+  //                       < /view>
+  //                       < /view>

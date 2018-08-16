@@ -33,7 +33,7 @@ Page({
     var _that = this;
     url = app.globalData.baseUrl + 'maternal/order/list';
     var reqbody = {
-      userId: 1
+      userId: 2
     }
     //   userId; //用户id
     // orderNo; //订单号
@@ -61,7 +61,7 @@ Page({
           })
           return false;
         }
-        console.log(dataStr.data[0].order);
+        console.log('list',dataStr.data[0].order);
         orderDetails = dataStr.data[0].order;
         this.setData({
           'orderDetails': orderDetails

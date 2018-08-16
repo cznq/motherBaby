@@ -1,73 +1,95 @@
 /* pages/platform/index.wxss */
-
-/* 竖线 */
-.plat-line{
-  width: 10rpx;
-  height: 40rpx;
-  background-color: #000;
-  border-radius: 5rpx;
-  margin-right: 20rpx;
-}
-/* 间隔线 */
-.plat-gap{
+.mcontainer{
   width: 100%;
-  height: 20rpx;
-  background-color: #ccc;
+  height: 100%;
+  position: absolute;
+  background-color: #f9eaed;
 }
-/* 产品介绍盒子 */
-.productintro-box{
-  display: flex;
-  align-items: center;
-  margin-left: 20rpx;
+.product-line{
+  width: 622rpx;
+  margin-left: 26rpx;
+  height: 2rpx;
+  background-color: pink;
 }
-/* 产品介绍title */
-.productintro-title{
 
+.product-intro{
+  width: 676rpx;
+  height: 290rpx;
+  border:2rpx solid pink;
+  border-radius: 20rpx;
+  margin-bottom: 28rpx;
+  margin-top: 38rpx;
+  margin-left: 32rpx;
+  background-color: #fff;
 }
-/* 产品介绍内容 */
-.productintro-content{
-  margin-left: 50rpx;
-}
-/* 在线预约盒子 */
-.online_appointment-box{
+.product-intro-title{
   display: flex;
-  align-items: center;  
-  margin-left: 20rpx;
+  height: 76rpx;
+  line-height: 76rpx;
 }
-/* 在线预约title */
-.online_appointment-title{
-
+.product-intro-title-img{
+  width: 28rpx;
+  height: 34rpx;
+  margin-left: 28rpx;
+  margin-top: 20rpx;
 }
-/* 在线预约content */
-.online_appointment-content{
-  margin-left: 30rpx;
+.product-intro-title-words{
+  margin-left: 12rpx;
+}
+.product-intro-content{
+  width: 560rpx;
+  height: 140rpx;
+  margin: 30rpx 60rpx 0rpx 56rpx;
+}
+.online-booking{
+  width: 676rpx;
+  height: 775rpx;
+  border:2rpx solid pink;
+  border-radius: 20rpx;
+  margin-left: 32rpx;
+  background-color: #fff;  
+}
+.online-booking-title{
   display: flex;
-  align-items: center;
+  height: 76rpx;
+  line-height: 76rpx;
 }
-/* 在线预约content-左侧 */
-.online_appointment-content-left{
-
+.online-booking-title-img{
+  width: 28rpx;
+  height: 34rpx;
+  margin-left: 28rpx;
+  margin-top: 20rpx; 
 }
-/* 在线预约content-左侧-image */
-.online_appointment-content-left image{
-  width: 100rpx;
-  height: 100rpx;
+.online-booking-title-words{
+  margin-left: 12rpx;
 }
-/* 在线预约content-右侧 */
-.online_appointment-content-right{
-  margin-left: 30rpx;
+.online-booking-content image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 63rpx;
+  margin-right: 49rpx;
 }
-/* 预约须知盒子 */
-.appointment_notice-box{
+.online-booking-content_1{
   display: flex;
-  align-items: center;  
-  margin-left: 20rpx;
+  margin-top: 68rpx;
 }
-/* 预约须知title */
-.appointment_notice-title{
-
+.online-booking-content-text{
+  flex: 1;
+  margin-right: 60rpx;
 }
-/* 预约须知content */
-.appointment_notice-content{
-  margin-left: 50rpx;
+.online-booking-content_2{
+  display: flex;
+  margin-top: 50rpx;
+}
+.online-booking-content_3{
+  display: flex;
+  margin-top: 50rpx;
+}
+.online-booking-content_4{
+  display: flex;
+  margin-top: 50rpx;
+}
+.online-booking-content_5{
+  display: flex;
+  margin-top: 50rpx;
 }
