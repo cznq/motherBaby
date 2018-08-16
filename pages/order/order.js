@@ -280,7 +280,6 @@ Page({
                 })
                 return false;
               }
-              console.log(dataStr.data[1].order);
               orderDetails = dataStr.data[1].order;
               console.log('dataStr',dataStr);
               this.setData({
