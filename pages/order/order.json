@@ -1,6 +1,6 @@
 {
-  "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "#595858",
   "navigationBarTitleText": "我的预约",
-  "navigationBarTextStyle": "#fff"
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTextStyle": "black"
 }

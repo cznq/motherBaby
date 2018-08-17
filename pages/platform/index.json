@@ -1,1 +1,6 @@
-{}
+{
+    "navigationBarTitleText": "平台介绍",
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTextStyle": "black"
+}
