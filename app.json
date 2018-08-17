@@ -4,13 +4,13 @@
     "pages/service/index",
     "pages/platform/index",
     "pages/order/order",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
-     "navigationBarBackgroundColor":"#ffffff",
-    "navigationBarTitleText": "享换换",
-     "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#595858",
+    "navigationBarTitleText": "领物",
+    "navigationBarTextStyle": "#fff"
   }
 }
