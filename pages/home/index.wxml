@@ -107,9 +107,10 @@
           <view class='font28 pinkColor'>备注</view>
         </view>
         <!-- 备注内容   -->
-        <textarea class='font26 .' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' placeholder-style='font-size:24rpx;' bindinput='bindinput' wx:if='{{!showMModal}}'></textarea>
+        <textarea class='font26 ' placeholder='请简单介绍一下要捐赠的东西' maxlength='30'  cursor-spacing='25' 
+        bindinput='bindinput' placeholder-class='placeholder-class contentColor' wx:if='{{showTextarea}}' value='{{remarkInfo}}'></textarea>
       </view>
-   
+  
     <button class='home-btn-confirm font28'  bindtap='bindConfirmAppointment'  disabled='{{btnIsable}}'>确认预约</button>
     </view>
   </view>
@@ -163,7 +164,7 @@
   </view>
 
 <!-- 预约成功 -->
-  <view class='modal-appointment-success titleColor'  wx:if='{{showAppointmentsuccess}}' >
+  <view class='modal-appointment-success titleColor'  wx:if='{{showAppointmentsuccess}}'>
     <view class='modal-appointment-success-box'>
       <image class='delete-btn' src = '../../images/delete.png' bindtap = 'bindCloseAppointment' ></image>
       <image class='modal-appointment-success-img' src='../../images/appointment_success.png' ></image>

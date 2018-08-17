@@ -1,8 +1,18 @@
-
-
 let util = require('../../utils/util.js');
 const app = getApp();
 Page({
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    } else {
+      console.log('res', res.from)
+    }
+    return {
+      title: '自定义转发标题',
+      // path: '/pages/index/index'
+    }
+  },
   /**
    * 页面的初始数据
    */
@@ -13,9 +23,10 @@ Page({
     weightArr: ['请选择', '3kg~10kg', '10kg~20kg', '20kg~30kg', '30kg以上'], //重量数组
     weightIndex: 0, //默认预估重量下标
     showMModal: false, //是否弹出提示框
+    showTextarea:true,
     // 轮播图部分-开始
     imgUrls: [
-      '../../images/3.png',
+      // '../../images/3.png',
       '../../images/3.png'
     ],
     indicatorDots: false,
@@ -76,11 +87,13 @@ Page({
         if (!res.provinceName.includes('北京')) {
           that.setData({
             showPickup: true,
+            showTextarea:false
             // memberAddr: res
           })
         } else {
           that.setData({
             showPickup: false,
+            showTextarea:true,
             memberAddr: res
           })
         }
@@ -103,6 +116,7 @@ Page({
   bindAppointmentNotice() {
     this.setData({
       showMModal: !this.data.showMModal,
+      showTextarea:false,
       modalTitle: '预约须知',
       modalContent: '内容',
       modalBtnContent: '知道了'
@@ -111,6 +125,7 @@ Page({
   bindCloseAppointment() {
     this.setData({
       showMModal:false,
+      showTextarea:true,
       showAppointmentsuccess:false,
       remarkInfo: ''
     })
@@ -119,6 +134,7 @@ Page({
   bindCloseModal() {
     this.setData({
       showMModal: false,
+      showTextarea:true,
       navigate: false
     })
   },
@@ -199,7 +215,8 @@ Page({
                 remarkInfo: '',
                 navigate: true,
                 showWeightTips: true,
-                showAppointmentsuccess: true
+                showAppointmentsuccess: true,
+                showTextarea:false
               })
             } else {
               // console.log('error')
@@ -239,7 +256,8 @@ Page({
             remarkInfo: '',
             navigate: true,
             showWeightTips: true,
-            showAppointmentsuccess: true
+            showAppointmentsuccess: true,
+            showTextarea:false
           })
         } else {
           // console.log('error')
@@ -300,7 +318,8 @@ Page({
   },
   bindDelete() {
     this.setData({
-      showPickup: false
+      showPickup: false,
+      showTextarea:true
     })
   },
   /**
