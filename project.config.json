@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -44,7 +44,25 @@
 				{
 					"id": -1,
 					"name": "order",
-					"pathName": "pages/order/order"
+					"pathName": "pages/order/order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "平台介绍",
+					"pathName": "pages/platform/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "联系客服",
+					"pathName": "pages/service/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index"
 				}
 			]
 		}

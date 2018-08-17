@@ -16,8 +16,8 @@ const formatNumber = n => {
 
 const mformatTime = date => {
   const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
+  const month = date.getMonth() + 1 
+  const day = date.getDate()+1  
   return [year, month, day].map(mformatNumber).join('-')
 }
 
@@ -37,29 +37,45 @@ const mformatNumber = n => {
  * @author   wzj
  */
 function http(url, callBack, reqbody) {
-  console.log('http');
+  wx.showLoading({
+    title: '加载中',
+  })
   var reqbody = reqbody ? reqbody : {};
-  var dataStr = JSON.stringify({
-      reqbody: reqbody
-  });
   wx.request({
     url: url,
-    data: dataStr,
+    data: reqbody,
     method: 'POST',
     header: {
-      "Content-Type": "json"
+      'content-type': 'application/x-www-form-urlencoded'
     },
-    success: function (res) {
+    success: function(res) {
+      wx.hideLoading();
       callBack(res.data);
     },
-    fail: function (error) {
+    fail: function(error) {
+      wx.hideLoading();
       console.log(error)
     }
   })
 }
-
+// 请求
+function mHttp(url, data = {}, callBack, method = 'get', header = { 'content-type': 'application/json'}) {
+  wx.request({
+    url,
+    data,
+    method,
+    header,
+    success(res) {
+      callBack(res.data);
+    },
+    fail(res) {
+     console.log(res)
+    }
+  })
+}
 module.exports = {
-  formatTime: formatTime,
-  mformatTime: mformatTime,
-  http:http
+  formatTime,
+  mformatTime,
+  http,
+  mHttp
 }
