@@ -315,38 +315,38 @@ Page({
    */
   onLoad: function(options) {
     var _that = this;
-    if (app.globalData.code && app.globalData.code != '') {
-      // wx.showToast({
-      //   title: 'code不为空'
-      // })
-    } else {
-      var userInfo = {};
-      userInfo = wx.getStorageSync('userInfo'); //读取本地userInfo
-      if (userInfo == '') {
-        app.userInfoReadyCallback = code => {
-          if (code != '') {
-            console.log('code', code);
-            var url = app.globalData.baseUrl + 'maternal/user/register';
-            var reqbody = {
-              wxcode: code
-            }
-            util.http(url, (dataStr) => {
-              if (dataStr.success) {
-                console.log('success', dataStr);
-                app.globalData.sessionKey = dataStr.data.sessionKey;
-                app.globalData.openId = dataStr.data.openId;
-                app.globalData.id = dataStr.data.id
-                userInfo = {
-                  openId: app.globalData.openId,
-                  userId: app.globalData.id
-                }
-                wx.setStorageSync('userInfo', userInfo);
-              }
-            }, reqbody);
-          }
-        }
-      }
-    }
+    // if (app.globalData.code && app.globalData.code != '') {
+    //   // wx.showToast({
+    //   //   title: 'code不为空'
+    //   // })
+    // } else {
+    //   // var userInfo = {};
+    //   // userInfo = wx.getStorageSync('userInfo'); //读取本地userInfo
+    //   // if (userInfo == '') {
+    //   //   app.userInfoReadyCallback = code => {
+    //   //     if (code != '') {
+    //   //       console.log('code', code);
+    //   //       var url = app.globalData.baseUrl + 'maternal/user/register';
+    //   //       var reqbody = {
+    //   //         wxcode: code
+    //   //       }
+    //   //       util.http(url, (dataStr) => {
+    //   //         if (dataStr.success) {
+    //   //           console.log('success', dataStr);
+    //   //           app.globalData.sessionKey = dataStr.data.sessionKey;
+    //   //           app.globalData.openId = dataStr.data.openId;
+    //   //           app.globalData.id = dataStr.data.id
+    //   //           userInfo = {
+    //   //             openId: app.globalData.openId,
+    //   //             userId: app.globalData.id
+    //   //           }
+    //   //           wx.setStorageSync('userInfo', userInfo);
+    //   //         }
+    //   //       }, reqbody);
+    //   //     }
+    //   //   }
+    //   // }
+    // }
     wx.getSetting({ // 查看是否授权
       success: function(res) {
         if (res.authSetting['scope.userInfo']) {
