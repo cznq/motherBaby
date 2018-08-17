@@ -1,18 +1,6 @@
 let util = require('../../utils/util.js');
 const app = getApp();
 Page({
-  onShareAppMessage: function (res) {
-    if (res.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(res.target)
-    } else {
-      console.log('res', res.from)
-    }
-    return {
-      title: '自定义转发标题',
-      // path: '/pages/index/index'
-    }
-  },
   /**
    * 页面的初始数据
    */
@@ -451,8 +439,16 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
-
-  },
+   onShareAppMessage: function (res) {
+     if (res.from === 'button') {
+       // 来自页面内转发按钮
+       console.log(res.target)
+     }
+     return {
+       title: '享换换',
+       path: ' /pages/home/index',
+       imageUrl:'../../images/share.jpg'
+     }
+   }
 
 })
