@@ -54,7 +54,6 @@ Page({
     showAppointmentsuccess: false
   },
 
-
   //主动获取用户信息权限
   onGotUserInfo: function(e) {
     console.log('onGotUserInfo', e.detail.userInfo);
@@ -69,7 +68,7 @@ Page({
       })
     }
   },
-  bindChooseWeight() {
+  bindChooseWeight(){
 
   },
   // picker组件--重量改变事件
@@ -186,7 +185,7 @@ Page({
       console.log('无userId');
       // 登录
       app.getOpenid().then(function(userId) {
-        console.log('userId', userId);
+        console.log('userId',userId);
         if (userId) {
           // 订单预约请求
           util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
@@ -227,7 +226,7 @@ Page({
           })
         }
       })
-    } else {
+    }else{
       console.log('有userId');
       // 订单预约请求
       util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
@@ -281,12 +280,12 @@ Page({
       }
     })
   },
-  bindCopy() {
+  bindCopy(){
     wx.setClipboardData({
       data: 'dark－artist',
-      success: function(res) {
+      success: function (res) {
         wx.getClipboardData({
-          success: function(res) {
+          success: function (res) {
             console.log(res.data) // data
           }
         })
@@ -406,58 +405,54 @@ Page({
         autoplay: this.data.autoplay
       })
   },
-  onShareAppMessage: function (res) {
-    if (res.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(res.target)
-    }
-    return {
-      title: '享换换',
-      path: ' /pages/home/index',
-      imageUrl:'../../images/share.jpg'
-    }
-  }
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  // onReady: function() {
-  //
-  // },
-  //
-  // /**
-  //  * 生命周期函数--监听页面显示
-  //  */
-  // onShow: function() {
-  //
-  // },
-  //
-  // /**
-  //  * 生命周期函数--监听页面隐藏
-  //  */
-  // onHide: function() {
-  //
-  // },
-  //
-  // /**
-  //  * 生命周期函数--监听页面卸载
-  //  */
-  // onUnload: function() {
-  //
-  // },
-  //
-  // /**
-  //  * 页面相关事件处理函数--监听用户下拉动作
-  //  */
-  // onPullDownRefresh: function() {
-  //
-  // },
-  //
-  // /**
-  //  * 页面上拉触底事件的处理函数
-  //  */
-  // onReachBottom: function() {
-  //
-  // },
+  onReady: function() {
 
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function() {
+
+  },
 
 })
