@@ -57,6 +57,9 @@ Page({
       })
     }
   },
+  bindChooseWeight(){
+
+  },
   // picker组件--重量改变事件
   bindWeightPickerChange(e) {
     this.setData({

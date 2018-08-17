@@ -83,7 +83,7 @@
   border-radius: 10rpx;
   background-color: #fbfbfb;  
 }
-.home-content-main-choose .line-1{
+.home-content-main-choose .line-2{
   width: 562rpx;
   position: absolute;
   left: 54rpx;
@@ -223,7 +223,7 @@
   height: 46rpx;
   /* margin:20rpx 0; */
 }
-.home-content-appointment_notice .pink{
+.home-content-appointment_notice .pinkColor{
   text-decoration: underline;
   margin-top: 4rpx;
 }
@@ -407,6 +407,7 @@ textarea{
 }
 .modal-pick-up-btn{
   margin-top: 28rpx;
+  text-align: center;
 }
 .delete-btn{
   position: absolute;
@@ -453,6 +454,7 @@ textarea{
 }
 .modal-appointment_notice-btn{
   margin-bottom: 10rpx;
+  text-align: center;
 }
 .delete-btn{
   position: absolute;
@@ -611,14 +613,16 @@ textarea{
   width: 308rpx;
 }
 .btn-copy{
-  width:140rpx;
+  width:120rpx;
   height: 60rpx;
   line-height: 60rpx;
   position: absolute;
   right: 52rpx;
   top: 0;
   border: 2rpx solid #f36e89;
-  color: #f36e89
+  color: #f36e89;
+  background-color: #fff;
+  
 }
 .dots{
   width: 480rpx;
@@ -630,4 +634,7 @@ textarea{
   height: 44rpx;
   margin-top: 58rpx;  
   margin-left: 208rpx;
+}
+.modal-appointment-success-btn-box{
+  margin: 0 auto;
 }

@@ -153,7 +153,7 @@
   margin: 27rpx 56rpx 0 27rpx;
 }
 
-.line-1{
+.line-2{
   width: 622rpx;
   margin-left: 26rpx;
 }
