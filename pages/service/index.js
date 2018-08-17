@@ -1,3 +1,5 @@
+/* @author lya */
+
 // pages/service/index.js 联系客服页面
 Page({
 
@@ -5,13 +7,75 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    show1:false,
+    show2:false,
+    show3:false,
+    show4:false,
+    show5:false,
+    show6:false,
+    show7:false,
+    show8:false,
+    show9:false,
+  },
+  bindContent1(){
+    let that =this
+    this.setData({
+      show1:!that.data.show1
+    })
+  },
+  bindContent2() {
+    let that = this
+    this.setData({
+      show2: !that.data.show2
+    })
+  },
+  bindContent3() {
+    let that = this
+    this.setData({
+      show3: !that.data.show3
+    })
+  },
+  bindContent4() {
+    let that = this
+    this.setData({
+      show4: !that.data.show4
+    })
+  },
+  bindContent5() {
+    let that = this
+    this.setData({
+      show5: !that.data.show5
+    })
+  },
+  bindContent6() {
+    let that = this
+    this.setData({
+      show6: !that.data.show6
+    })
+  },
+  bindContent7() {
+    let that = this
+    this.setData({
+      show7: !that.data.show7
+    })
+  },
+  bindContent8() {
+    let that = this
+    this.setData({
+      show8: !that.data.show8
+    })
+  },
+  bindContent9() {
+    let that = this
+    this.setData({
+      show9: !that.data.show9
+    })
   },
   bindSaveImg(){
     wx.saveImageToPhotosAlbum({
       filePath: 'images/qrcode.png',
       success: function (res) {
-        console.log('suc',res)
+        // console.log('suc',res)
         wx.showToast({
           title: '保存成功',
         })

@@ -8,18 +8,28 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 }
+/* 字体颜色 */
+.titleColor{
+  color: #323232;
+}
+.contentColor{
+  color: #999999;
+}
+.pinkColor{
+  color: #fd5293;
+}
  /* common */
  .margintop8{
    margin: 8rpx
  }
  
- /* 1px线 */
-.line-1{
+ /* 2px线 */
+.line-2{
   width: 100%;
   height: 2rpx;
   background-color: #f7b4c2;
 }
-/* 字体 */
+/* 字体大小 */
 .font22{
   font-size: 22rpx;
 }
@@ -40,12 +50,13 @@
 }
 /* 颜色 */
 
-.pink{
+/* .pink{
   color: rgb(253, 82, 147);
 }
 .grey{
   color: rgb(102, 102, 102);
-}
+} */
+
 .row {
   display: box;
   -webkit-box-orient: horizontal;

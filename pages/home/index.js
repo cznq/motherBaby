@@ -1,4 +1,5 @@
-// pages/home/index.js
+
+
 let util = require('../../utils/util.js');
 const app = getApp();
 Page({
@@ -55,6 +56,9 @@ Page({
         getUserInfo: true
       })
     }
+  },
+  bindChooseWeight(){
+
   },
   // picker组件--重量改变事件
   bindWeightPickerChange(e) {

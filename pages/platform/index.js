@@ -1,4 +1,5 @@
-// pages/platform/index.js
+// @author lya
+
 Page({
 
   /**

@@ -1,5 +1,6 @@
-<!--pages/home/index.wxml-->
-<view class='mcontainer'>
+ <!-- @author lya -->
+ 
+<view class='mcontainer contentColor'>
 <!-- 轮播图 -->
   <view class='swiper-box'>
   <!-- indicator-dots="{{indicatorDots}}" -->
@@ -15,11 +16,11 @@
   </view>
 
   <!-- 标题 -->
-  <view class='home-title' >
+  <view class='home-title titleColor' >
     <navigator url='../../pages/platform/index' hover-class="none"  >
       <view class='home-title-left'>
         <image src='../../images/platintro@2x.png' class='platform-img' ></image>
-        <view class='font26'>平台介绍</view>
+        <view class='font26 '>平台介绍</view>
       </view>
     </navigator>
     <navigator url='../../pages/service/index' hover-class="none"  >  
@@ -45,47 +46,47 @@
             <view class='home-content-main-weight-left'>
               <image src='../../images/weight@2x.png'></image>
               <view class='font28'>
-                <view class='pink'>预估重量</view>
-                <view class='home-content-main-weight-left-tips grey' wx:if="{{showWeightTips}}">低于3KG，可以再积攒下哦~</view>
+                <view class='pinkColor'>预估重量</view>
+                <view class='home-content-main-weight-left-tips ' wx:if="{{showWeightTips}}">低于3KG，可以再积攒下哦~</view>
               </view>
             </view>
-          <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle row cen-space " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+          <button  wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle row cen-space " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
             <view class='home-content-main-weight-right'>
               <picker >
-                <view class='font24 grey getuserinfowords'>{{weightArr[weightIndex] || '请选择'}} </view>
+                <view class='font24  getuserinfowords contentColor'>{{weightArr[weightIndex] || '请选择'}} </view>
                 <image src='../../images/arrow_right@2x.png'></image>
               </picker>
             </view>
           </button>
-          <view class='home-content-main-weight-right' wx:if="{{getUserInfo}}">
+          <view class='home-content-main-weight-right' wx:if="{{getUserInfo}}" bindtap='bindChooseWeight'>
             <picker bindchange="bindWeightPickerChange" value="{{weightIndex}}" range="{{weightArr}}" >
-              <view class='font24 grey chooseweight'>{{weightArr[weightIndex] || '请选择'}} </view>
+              <view class='font24  chooseweight'>{{weightArr[weightIndex] || '请选择'}} </view>
               <image src='../../images/arrow_right@2x.png'></image>
             </picker>
           </view>
         </view>
-        <view class='line-1'></view>
+        <view class='line-2'></view>
         <!-- 取件地址 -->
         <view class='home-content-main-address'>
           <view class='home-content-main-address-left'>
             <image src='../../images/address@2x.png'></image>
-            <view class='font28 pink'>取件地址</view>
+            <view class='font28 pinkColor'>取件地址</view>
           </view>
           <label class='home-content-main-address-right' bindtap='bindChooseAddr' >
-            <view class='font24 grey'>{{memberAddr.provinceName+memberAddr.cityName+memberAddr.countyName+memberAddr.detailInfo ||'请填写'}}</view>
+            <view class='font24 '>{{memberAddr.provinceName+memberAddr.cityName+memberAddr.countyName+memberAddr.detailInfo ||'请填写'}}</view>
             <image src='../../images/arrow_right@2x.png'> </image>
           </label>
         </view>
-        <view class='line-1'></view>
+        <view class='line-2'></view>
       <!-- 上门时间 -->
         <view class='home-content-main-time'>
           <view class='home-content-main-time-left'>
             <image src='../../images/time@2x.png'></image>
-            <view class='font28 pink'>上门时间</view>
+            <view class='font28 pinkColor'>上门时间</view>
           </view>
           <view class='home-content-main-time-right'>
             <picker mode="date" value="{{date}}" start="{{startDate}}" end="" bindchange="bindDateChange">
-              <view class='font24 grey'>{{date}}</view>
+              <view class='font24 '>{{date}}</view>
               <image src='../../images/arrow_right@2x.png'> </image>
             </picker>
           </view>
@@ -97,16 +98,16 @@
         <view  class='img-dots'></view>
         <!-- <image class='img-dots' src='../../images/dots@2x.png'></image> -->
         <image src='../../images/notice@2x.png' class='img-appointment_notice'></image>
-        <view class='font24 pink'>预约须知</view>
+        <view class='font24 pinkColor'>预约须知</view>
       </label>
       <!-- 备注 -->
       <view class='home-content-remarks'>
         <view class='home-content-remarks-left'>
           <image src='../../images/remarks@2x.png'></image>
-          <view class='font28 pink'>备注</view>
+          <view class='font28 pinkColor'>备注</view>
         </view>
         <!-- 备注内容   -->
-        <textarea class='font26 .grey' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' placeholder-style='font-size:24rpx;' bindinput='bindinput' wx:if='{{!showMModal}}'></textarea>
+        <textarea class='font26 .' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' placeholder-style='font-size:24rpx;' bindinput='bindinput' wx:if='{{!showMModal}}'></textarea>
       </view>
    
     <button class='home-btn-confirm font28'  bindtap='bindConfirmAppointment'  disabled='{{btnIsable}}'>确认预约</button>
@@ -116,7 +117,7 @@
 
 
 <!-- 仅支持北京地区上门取件提示框  -->
-  <view class='modal-pick-up' wx:if= "{{showPickup}}" >
+  <view class='modal-pick-up titleColor' wx:if= "{{showPickup}}" >
     <view class= 'modal-pick-up-box' >
       <image class='delete-btn' src = '../../images/delete.png' bindtap = 'bindDelete' ></image>
       <image class='modal-pick-up-logo' src = '../../images/city-logo.png' > </image>
@@ -124,13 +125,13 @@
       <view class='font28 ' > 其他城市将会陆续开通，敬请期待 </view>
       <view class='dots' > </view>
       <!-- <view class='modal-pick-up-btn-box'> -->
-        <button class='btn-common modal-pick-up-btn'  bindtap = 'bindHideModal' > 好的 </button>    
+        <view class='btn-common modal-pick-up-btn'  bindtap = 'bindHideModal' > 好的 </view>    
       <!-- </view> -->
     </view>
   </view>
 
     <!-- 预约须知提示框 -->
-    <view class='modal-appointment_notice' wx:if= "{{showMModal}}" >
+    <view class='modal-appointment_notice titleColor' wx:if= "{{showMModal}}" >
     <view class= 'modal-appointment_notice-box' >
       <image class='delete-btn' src = '../../images/delete.png' bindtap = 'bindCloseAppointment' ></image>
       <image src='../../images/appointment.png' class='img-title'></image>
@@ -157,23 +158,23 @@
         </view>
        </view>  
       <view class='dots' > </view>
-      <button class='btn-common modal-appointment_notice-btn'  bindtap = 'bindCloseAppointment' > 好的 </button>    
+      <view class='btn-common modal-appointment_notice-btn'  bindtap = 'bindCloseAppointment' > 好的 </view>    
     </view>
   </view>
 
 <!-- 预约成功 -->
-  <view class='modal-appointment-success ' wx:if='{{showAppointmentsuccess}}' >
+  <view class='modal-appointment-success titleColor'  wx:if='{{showAppointmentsuccess}}' >
     <view class='modal-appointment-success-box'>
       <image class='delete-btn' src = '../../images/delete.png' bindtap = 'bindCloseAppointment' ></image>
       <image class='modal-appointment-success-img' src='../../images/appointment_success.png' ></image>
-      <view class='modal-appointment-success-content_1 grey font28'>我们已经收到您的预约，上门当天，我们回提前与您联系。</view>
+      <view class='modal-appointment-success-content_1  font28'>我们已经收到您的预约，上门当天，我们回提前与您联系。</view>
       <view class='modal-appointment-success-content_2 font28'>
-        <view class='grey modal-appointment-success-content_2-words'>如有疑问，请添加客服微信：dark－artist</view>
+        <view class=' modal-appointment-success-content_2-words'>如有疑问，请添加客服微信：dark－artist</view>
           <button class='btn-copy font28' bindtap='bindCopy'>复制</button>
       </view>
       <view class='dots' > </view>
-      <navigator url='../../pages/order/order' hover-class="none">
-        <button class='btn-common modal-appointment_notice-btn' bindtap='bindCloseAppointment' > 好的 </button>          
+      <navigator url='../../pages/order/order' hover-class="none" class='modal-appointment-success-btn-box'>
+        <view class='btn-common modal-appointment_notice-btn' bindtap='bindCloseAppointment' > 好的 </view>          
       </navigator>
     </view>
 
