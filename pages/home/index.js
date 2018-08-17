@@ -1,6 +1,18 @@
 let util = require('../../utils/util.js');
 const app = getApp();
 Page({
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    } else {
+      console.log('res', res.from)
+    }
+    return {
+      title: '自定义转发标题',
+      // path: '/pages/index/index'
+    }
+  },
   /**
    * 页面的初始数据
    */
@@ -11,9 +23,10 @@ Page({
     weightArr: ['请选择', '3kg~10kg', '10kg~20kg', '20kg~30kg', '30kg以上'], //重量数组
     weightIndex: 0, //默认预估重量下标
     showMModal: false, //是否弹出提示框
+    showTextarea:true,
     // 轮播图部分-开始
     imgUrls: [
-      '../../images/3.png',
+      // '../../images/3.png',
       '../../images/3.png'
     ],
     indicatorDots: false,
@@ -41,7 +54,6 @@ Page({
     showAppointmentsuccess: false
   },
 
-
   //主动获取用户信息权限
   onGotUserInfo: function(e) {
     console.log('onGotUserInfo', e.detail.userInfo);
@@ -56,7 +68,7 @@ Page({
       })
     }
   },
-  bindChooseWeight() {
+  bindChooseWeight(){
 
   },
   // picker组件--重量改变事件
@@ -75,11 +87,13 @@ Page({
         if (!res.provinceName.includes('北京')) {
           that.setData({
             showPickup: true,
+            showTextarea:false
             // memberAddr: res
           })
         } else {
           that.setData({
             showPickup: false,
+            showTextarea:true,
             memberAddr: res
           })
         }
@@ -102,6 +116,7 @@ Page({
   bindAppointmentNotice() {
     this.setData({
       showMModal: !this.data.showMModal,
+      showTextarea:false,
       modalTitle: '预约须知',
       modalContent: '内容',
       modalBtnContent: '知道了'
@@ -109,8 +124,9 @@ Page({
   },
   bindCloseAppointment() {
     this.setData({
-      showMModal: false,
-      showAppointmentsuccess: false,
+      showMModal:false,
+      showTextarea:true,
+      showAppointmentsuccess:false,
       remarkInfo: ''
     })
   },
@@ -118,6 +134,7 @@ Page({
   bindCloseModal() {
     this.setData({
       showMModal: false,
+      showTextarea:true,
       navigate: false
     })
   },
@@ -168,7 +185,7 @@ Page({
       console.log('无userId');
       // 登录
       app.getOpenid().then(function(userId) {
-        console.log('userId', userId);
+        console.log('userId',userId);
         if (userId) {
           // 订单预约请求
           util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
@@ -198,7 +215,8 @@ Page({
                 remarkInfo: '',
                 navigate: true,
                 showWeightTips: true,
-                showAppointmentsuccess: true
+                showAppointmentsuccess: true,
+                showTextarea:false
               })
             } else {
               // console.log('error')
@@ -208,7 +226,7 @@ Page({
           })
         }
       })
-    } else {
+    }else{
       console.log('有userId');
       // 订单预约请求
       util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
@@ -238,7 +256,8 @@ Page({
             remarkInfo: '',
             navigate: true,
             showWeightTips: true,
-            showAppointmentsuccess: true
+            showAppointmentsuccess: true,
+            showTextarea:false
           })
         } else {
           // console.log('error')
@@ -261,12 +280,12 @@ Page({
       }
     })
   },
-  bindCopy() {
+  bindCopy(){
     wx.setClipboardData({
       data: 'dark－artist',
-      success: function(res) {
+      success: function (res) {
         wx.getClipboardData({
-          success: function(res) {
+          success: function (res) {
             console.log(res.data) // data
           }
         })
@@ -299,7 +318,8 @@ Page({
   },
   bindDelete() {
     this.setData({
-      showPickup: false
+      showPickup: false,
+      showTextarea:true
     })
   },
   /**
@@ -385,58 +405,54 @@ Page({
         autoplay: this.data.autoplay
       })
   },
-  onShareAppMessage: function (res) {
-    if (res.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(res.target)
-    }
-    return {
-      title: '享换换',
-      path: ' /pages/home/index',
-      imageUrl:'../../images/share.jpg'
-    }
-  }
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  // onReady: function() {
-  //
-  // },
-  //
-  // /**
-  //  * 生命周期函数--监听页面显示
-  //  */
-  // onShow: function() {
-  //
-  // },
-  //
-  // /**
-  //  * 生命周期函数--监听页面隐藏
-  //  */
-  // onHide: function() {
-  //
-  // },
-  //
-  // /**
-  //  * 生命周期函数--监听页面卸载
-  //  */
-  // onUnload: function() {
-  //
-  // },
-  //
-  // /**
-  //  * 页面相关事件处理函数--监听用户下拉动作
-  //  */
-  // onPullDownRefresh: function() {
-  //
-  // },
-  //
-  // /**
-  //  * 页面上拉触底事件的处理函数
-  //  */
-  // onReachBottom: function() {
-  //
-  // },
+  onReady: function() {
 
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function() {
+
+  },
 
 })
