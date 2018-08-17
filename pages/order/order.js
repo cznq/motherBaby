@@ -4,7 +4,6 @@ var util = require('../../utils/util.js');
 var url = '';
 var orderDetails = [];
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -19,6 +18,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    wx.hideShareMenu();//禁止分享
     var _that = this;
     if (app.globalData.id) {
       // wx.showToast({
@@ -57,7 +57,6 @@ Page({
       }
     }, reqbody);
   },
-
   touchTit: function(e) {
     let tag = e.target.dataset.tag;
     switch (tag) {
