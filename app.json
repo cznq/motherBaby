@@ -7,8 +7,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#595858",
-    "navigationBarTitleText": "领物",
-    "navigationBarTextStyle": "#fff"
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "享换换",
+    "navigationBarTextStyle": "black"
+    
   }
 }

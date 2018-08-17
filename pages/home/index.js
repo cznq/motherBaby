@@ -15,7 +15,7 @@ Page({
     // 轮播图部分-开始
     imgUrls: [
       // '../../images/3.png',
-      '../../images/3.png'
+      '../../images/banner.png'
     ],
     indicatorDots: false,
     autoplay: false,
