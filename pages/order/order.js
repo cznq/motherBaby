@@ -4,16 +4,6 @@ var util = require('../../utils/util.js');
 var url = '';
 var orderDetails = [];
 Page({
-  onShareAppMessage: function (res) {
-    if (res.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(res.target)
-    }
-    return {
-      title: '自定义转发标题',
-      path: '/page/order/order'
-    }
-  },
   /**
    * 页面的初始数据
    */
@@ -35,7 +25,6 @@ Page({
       //   title:'code不为空'+app.globalData.id
       // })
     }
-
     console.log('globalData.id',app.globalData.id);
     url = app.globalData.baseUrl + 'maternal/order/list';
     var reqbody = {
@@ -288,8 +277,8 @@ Page({
     }, reqbody);
   },
   yjz:function(){
-    wx.navigateTo({
-      url: '../home/index',
+    wx.navigateBack({
+      url: '../home/home',
     })
   },
   /**
@@ -298,11 +287,18 @@ Page({
   onReachBottom: function() {
 
   },
-
   /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
+  * 用户点击右上角分享
+  */
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '享换换',
+      path: ' /pages/order/order',
+      imageUrl: '../../images/share.jpg'
+    }
   }
 })

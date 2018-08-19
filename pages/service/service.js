@@ -2,7 +2,6 @@
 
 // pages/service/index.js 联系客服页面
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -75,13 +74,24 @@ Page({
     wx.saveImageToPhotosAlbum({
       filePath: 'images/qrcode.png',
       success: function (res) {
-        // console.log('suc',res)
         wx.showToast({
           title: '保存成功',
         })
       },
       fail: function (res) {
-        console.log('fail',res)
+        wx.getSetting({
+          success(res) {
+            if (!res.authSetting['scope.writePhotosAlbum']) {
+              wx.openSetting({
+                success(res) {
+                  res.authSetting = {
+                    "scope.writePhotosAlbum": true,
+                  }
+                }
+              })
+            }
+          }
+        })
       }
     })
     // wx.scanCode({
@@ -143,7 +153,14 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '联系客服',
+      imageUrl: '../../images/share.jpg'
+    }
   }
 })

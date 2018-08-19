@@ -34,7 +34,7 @@
        </view>
         <view class='online-booking-content_4 font24'>
           <image class='img-online-booking_4' src='../../images/product_intro_5.png'></image>
-          <view class='online-booking-content-text'>4、取件当天快递员会与主动您联系</view>
+          <view class='online-booking-content-text'>4、取件当天快递员会主动与您联系</view>
         </view>
         <view class='online-booking-content_5 font24'>
           <image class='img-online-booking_5 ' src='../../images/product_intro_6.png'></image>

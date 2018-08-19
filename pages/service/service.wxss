@@ -32,13 +32,9 @@
   margin-left: 30rpx;
   margin-top: 26rpx;
   margin-bottom: 30rpx;
-  /* position: relative; */
 }
 
 .service-bottom{
-  /* position: absolute;
-  bottom: 80rpx;
-  left: 28rpx; */
   margin-top: 80rpx;
   margin-bottom: 80rpx;
   text-align: center;
@@ -46,7 +42,6 @@
 
 .service-content_1 {
   max-height: 300rpx;
-  /* line-height: 83rpx; */
 }
 .service-content_1-title{
   height: 83rpx;
@@ -58,7 +53,6 @@
 }
 .service-content_2 {
   max-height: 300rpx;
-  /* line-height: 83rpx; */
 }
 .service-content_2-title{
   height: 83rpx;
@@ -70,7 +64,6 @@
 }
 .service-content_3 {
   max-height: 300rpx;
-  /* line-height: 83rpx; */
 }
 .service-content_3-title{
   height: 83rpx;
@@ -82,7 +75,6 @@
 }
 .service-content_4 {
   max-height: 300rpx;
-  /* line-height: 83rpx; */
 }
 .service-content_4-title{
   height: 83rpx;
@@ -94,7 +86,6 @@
 }
 .service-content_5 {
   max-height: 300rpx;
-  /* line-height: 83rpx; */
 }
 .service-content_5-title{
   height: 83rpx;
@@ -106,7 +97,6 @@
 }
 .service-content_6 {
   max-height: 300rpx;
-  /* line-height: 83rpx; */
 }
 .service-content_6-title{
   height: 83rpx;
@@ -118,7 +108,6 @@
 }
 .service-content_7 {
   max-height: 300rpx;
-  /* line-height: 83rpx; */
 }
 .service-content_7-title{
   height: 83rpx;
@@ -130,7 +119,6 @@
 }
 .service-content_8 {
   max-height: 300rpx;
-  /* line-height: 83rpx; */
 }
 .service-content_8-title{
   height: 83rpx;
@@ -142,7 +130,6 @@
 }
 .service-content_9 {
   max-height: 300rpx;
-  /* line-height: 83rpx; */
 }
 .service-content_9-title{
   height: 83rpx;
@@ -152,7 +139,6 @@
 .service-content_9-content-box{
   margin: 27rpx 56rpx 0 27rpx;
 }
-
 .line-2{
   width: 622rpx;
   margin-left: 26rpx;

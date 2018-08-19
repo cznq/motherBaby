@@ -1,7 +1,6 @@
  <!-- @author lya  -->
  
 <!--pages/service/index.wxml 联系客服页面-->
-
 <view class='mcontainer font26 '>
   <view class='service-title'>
     <image class='service-title-img' src='../../images/question.png'></image>

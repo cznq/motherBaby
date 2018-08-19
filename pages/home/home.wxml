@@ -17,13 +17,13 @@
 
   <!-- 标题 -->
   <view class='home-title titleColor' >
-    <navigator url='../../pages/platform/index' hover-class="none"  >
+    <navigator url='../../pages/platform/platform' hover-class="none"  >
       <view class='home-title-left'>
         <image src='../../images/platintro@2x.png' class='platform-img' ></image>
         <view class='font26 '>平台介绍</view>
       </view>
     </navigator>
-    <navigator url='../../pages/service/index' hover-class="none"  >  
+    <navigator url='../../pages/service/service' hover-class="none"  >  
       <view class='home-title-center'>
         <image src='../../images/service@2x.png' class='service-img'></image>
         <view class='font26'>联系客服</view>
@@ -50,17 +50,17 @@
                 <view class='home-content-main-weight-left-tips ' wx:if="{{showWeightTips}}">低于3KG，可以再积攒下哦~</view>
               </view>
             </view>
-          <button  wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle row cen-space " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+          <button  wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle row cen-space contentColor" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
             <view class='home-content-main-weight-right'>
-              <picker >
-                <view class='font24  getuserinfowords contentColor'>{{weightArr[weightIndex] || '请选择'}} </view>
-                <image src='../../images/arrow_right@2x.png'></image>
-              </picker>
+                 <view class='font24 chooseweight' wx:if='{{showWeightTips}}'>请选择</view>
+                <image class='img-getUserInfo-arrow' src='../../images/arrow_right@2x.png'></image>
             </view>
           </button>
-          <view class='home-content-main-weight-right' wx:if="{{getUserInfo}}" bindtap='bindChooseWeight'>
+          <view class='home-content-main-weight-right' wx:if="{{getUserInfo}}" >
             <picker bindchange="bindWeightPickerChange" value="{{weightIndex}}" range="{{weightArr}}" >
-              <view class='font24  chooseweight'>{{weightArr[weightIndex] || '请选择'}} </view>
+             <view class='font24 chooseweight' wx:if='{{showWeightTips}}'>请选择</view>
+              <view class='font24  chooseweight'  wx:if='{{!showWeightTips}}'>{{weightArr[weightIndex] }} </view>
+             
               <image src='../../images/arrow_right@2x.png'></image>
             </picker>
           </view>
@@ -96,7 +96,6 @@
       <!-- 预约须知 -->
       <label class='home-content-appointment_notice' bindtap='bindAppointmentNotice'>
         <view  class='img-dots'></view>
-        <!-- <image class='img-dots' src='../../images/dots@2x.png'></image> -->
         <image src='../../images/notice@2x.png' class='img-appointment_notice'></image>
         <view class='font24 pinkColor'>预约须知</view>
       </label>
@@ -107,8 +106,8 @@
           <view class='font28 pinkColor'>备注</view>
         </view>
         <!-- 备注内容   -->
-        <textarea class='font26 ' placeholder='请简单介绍一下要捐赠的东西' maxlength='30'  cursor-spacing='25' 
-        bindinput='bindinput' placeholder-class='placeholder-class contentColor' wx:if='{{showTextarea}}' value='{{remarkInfo}}'></textarea>
+        <textarea class='font24 {{changeLine?"b":"a"}} contentColor' placeholder='请简单介绍一下要捐赠的东西' maxlength='30'  cursor-spacing='25' 
+        bindinput='bindinput' bindlinechange='bindlinechange' placeholder-class='placeholder-class contentColor' wx:if='{{showTextarea}}' value='{{remarkInfo}}'></textarea>
       </view>
   
     <button class='home-btn-confirm font28'  bindtap='bindConfirmAppointment'  disabled='{{btnIsable}}'>确认预约</button>
@@ -120,30 +119,34 @@
 <!-- 仅支持北京地区上门取件提示框  -->
   <view class='modal-pick-up titleColor' wx:if= "{{showPickup}}" >
     <view class= 'modal-pick-up-box' >
-      <image class='delete-btn' src = '../../images/delete.png' bindtap = 'bindDelete' ></image>
+      <view class='delete-box' bindtap = 'bindDelete' >
+      
+      <image class='delete-btn' src = '../../images/delete.png' ></image>
+      </view>
       <image class='modal-pick-up-logo' src = '../../images/city-logo.png' > </image>
       <view class='font28  ' > 目前仅支持北京地区上门取件 </view>
       <view class='font28 ' > 其他城市将会陆续开通，敬请期待 </view>
       <view class='dots' > </view>
-      <!-- <view class='modal-pick-up-btn-box'> -->
         <view class='btn-common modal-pick-up-btn'  bindtap = 'bindHideModal' > 好的 </view>    
-      <!-- </view> -->
     </view>
   </view>
 
     <!-- 预约须知提示框 -->
     <view class='modal-appointment_notice titleColor' wx:if= "{{showMModal}}" >
     <view class= 'modal-appointment_notice-box' >
-      <image class='delete-btn' src = '../../images/delete.png' bindtap = 'bindCloseAppointment' ></image>
+      <view class='delete-box' bindtap = 'bindCloseAppointment'>
+      
+      <image class='delete-btn' src = '../../images/delete.png'  ></image>
+      </view>
       <image src='../../images/appointment.png' class='img-title'></image>
       <view class='modal-appointment_notice-content font26' > 
         <view class='modal-appointment_notice-content_1'>
           <image class='img-appointment_1' src='../../images/appointment_1.png'></image>
-          <view class='modal-appointment_notice-content_1_content '>回收类目：婴童服务、早教玩具、早教图书、尿裤湿巾、婴童喂养、婴童洗护等</view>
+          <view class='modal-appointment_notice-content_1_content '>回收类目：婴童服饰、早教玩具、早教图书、尿裤湿巾、婴童喂养、婴童洗护等</view>
         </view>
         <view class='modal-appointment_notice-content_2'>
           <image class='img-appointment_2 margintop8' src='../../images/appointment_2.png'></image>
-          <view class='modal-appointment_notice-content_2_content'>闲置物品请尽量保持安全、卫生、可以再使用</view>
+          <view class='modal-appointment_notice-content_2_content'>闲置物品请尽量保证安全、卫生、可以再使用</view>
         </view>
         <view class='modal-appointment_notice-content_3'>
           <image class='img-appointment_3 margintop8' src='../../images/appointment_3.png'></image>
@@ -155,7 +158,7 @@
         </view>
         <view class='modal-appointment_notice-content_5'>
           <image class='img-appointment_5 margintop8' src='../../images/appointment_5.png'></image>
-          <view class='modal-appointment_notice-content_5_content'>上门回收的快递员会再预约当天联系您免费上门取件，请提前打包您的闲置物品</view>
+          <view class='modal-appointment_notice-content_5_content'>上门回收的快递员会在预约当日联系您免费上门取件，请提前打包您的闲置物品</view>
         </view>
        </view>  
       <view class='dots' > </view>
@@ -164,9 +167,12 @@
   </view>
 
 <!-- 预约成功 -->
-  <view class='modal-appointment-success titleColor'  wx:if='{{showAppointmentsuccess}}'>
+
+  <view class='modal-appointment-success titleColor'   wx:if='{{showAppointmentsuccess}}'>
     <view class='modal-appointment-success-box'>
-      <image class='delete-btn' src = '../../images/delete.png' bindtap = 'bindCloseAppointment' ></image>
+      <view class='delete-box' bindtap='bindCloseAppointment' >    
+       <image class='delete-btn' src = '../../images/delete.png'  ></image>
+      </view>
       <image class='modal-appointment-success-img' src='../../images/appointment_success.png' ></image>
       <view class='modal-appointment-success-content_1  font28'>我们已经收到您的预约，上门当天，我们回提前与您联系。</view>
       <view class='modal-appointment-success-content_2 font28'>
@@ -178,7 +184,5 @@
         <view class='btn-common modal-appointment_notice-btn' bindtap='bindCloseAppointment' > 好的 </view>          
       </navigator>
     </view>
-
   </view>
-
 </view>
