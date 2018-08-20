@@ -586,13 +586,12 @@
   max-height: 82rpx;
   margin-top: 30rpx;
   position: relative;  
-  
 }
 
 .modal-appointment_notice-content_4 {
   width: 446rpx;
   max-height: 82rpx;
-  margin-top: 36rpx;
+  margin-top: 44rpx;
   position: relative;  
   
 }
@@ -613,24 +612,25 @@
 
 .modal-appointment_notice-content_2_content {
   margin-left: 63rpx;
-  margin-top: 20rpx;
+  margin-top: 20rpx; 
+  height: 60rpx;
+  
 }
 
 .modal-appointment_notice-content_3_content {
   margin-left: 63rpx;
   margin-top: 20rpx;
-  position: relative;  
 }
 
 .modal-appointment_notice-content_4_content {
   margin-left: 63rpx;
   margin-top: 40rpx;
-  position: relative;  
+  line-height: 50rpx;
+  height: 30rpx;
 }
 
 .modal-appointment_notice-content_5_content {
   margin-left: 63rpx;
-  position: relative;  
 }
 
 .img-appointment_1 {
@@ -669,7 +669,7 @@
   position: absolute;
   width: 37rpx;
   height: 36rpx;
-  left: -5rpx;
+  left: -4rpx;
   top: 0;
 }
 
