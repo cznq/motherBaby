@@ -4,38 +4,6 @@ App({
   onLaunch: function() {
     var userInfo = {};
     userInfo = wx.getStorageSync('userInfo'); //读取本地userInfo
-    // // 登录
-    // wx.login({
-    //   success: res => {
-    //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
-    //     this.globalData.code = res.code;
-    //     // 首次登陆调注册接口获取openid&&userid
-    //     if (userInfo == '') {
-    //       console.log('调用注册接口');
-    //       var url = this.globalData.baseUrl + 'maternal/user/register';
-    //       var reqbody = {
-    //         wxcode: res.code
-    //       }
-    //       utils.http(url, (dataStr) => {
-    //         if (dataStr.success) {
-    //           this.globalData.sessionKey = dataStr.data.sessionKey;
-    //           this.globalData.openId = dataStr.data.openId;
-    //           this.globalData.id = dataStr.data.id;
-    //           userInfo = {
-    //             openId: this.globalData.openId,
-    //             userId: this.globalData.id
-    //           }
-    //           wx.setStorageSync('userInfo', userInfo);
-    //
-    //         }
-    //       }, reqbody);
-    //     }
-    //
-    //     if (this.userInfoReadyCallback) {
-    //       this.userInfoReadyCallback(res.code)
-    //     }
-    //   }
-    // })
     // 获取用户信息
     wx.getSetting({
       success: res => {

@@ -1,96 +1,112 @@
 /* @author lya */
 
-.mcontainer{
+.mcontainer {
   width: 100%;
   height: 100%;
   position: absolute;
   background-color: #f9eaed;
 }
-.product-line{
+
+.product-line {
   width: 622rpx;
   margin-left: 26rpx;
   height: 2rpx;
   background-color: pink;
 }
 
-.product-intro{
+.product-intro {
   width: 676rpx;
   height: 320rpx;
-  border:2rpx solid pink;
+  border: 2rpx solid pink;
   border-radius: 20rpx;
   margin-bottom: 28rpx;
   margin-top: 38rpx;
   margin-left: 32rpx;
   background-color: #fff;
 }
-.product-intro-title{
+
+.product-intro-title {
   display: flex;
   height: 76rpx;
   line-height: 76rpx;
 }
-.product-intro-title-img{
+
+.product-intro-title-img {
   width: 28rpx;
   height: 34rpx;
   margin-left: 28rpx;
   margin-top: 20rpx;
 }
-.product-intro-title-words{
+
+.product-intro-title-words {
   margin-left: 12rpx;
 }
-.product-intro-content{
+
+.product-intro-content {
   width: 560rpx;
   height: 140rpx;
   margin: 10rpx 60rpx 0rpx 56rpx;
 }
-.online-booking{
+
+.online-booking {
   width: 676rpx;
   height: 775rpx;
-  border:2rpx solid pink;
+  border: 2rpx solid pink;
   border-radius: 20rpx;
   margin-left: 32rpx;
-  background-color: #fff;  
+  background-color: #fff;
 }
-.online-booking-title{
+
+.online-booking-title {
   display: flex;
   height: 76rpx;
   line-height: 76rpx;
 }
-.online-booking-title-img{
+
+.online-booking-title-img {
   width: 28rpx;
   height: 34rpx;
   margin-left: 28rpx;
-  margin-top: 20rpx; 
+  margin-top: 20rpx;
 }
-.online-booking-title-words{
+
+.online-booking-title-words {
   margin-left: 12rpx;
 }
-.online-booking-content image{
+
+.online-booking-content image {
   width: 40rpx;
   height: 40rpx;
   margin-left: 63rpx;
   margin-right: 49rpx;
 }
-.online-booking-content_1{
+
+.online-booking-content_1 {
   display: flex;
   margin-top: 68rpx;
 }
-.online-booking-content-text{
+
+.online-booking-content-text {
   flex: 1;
   margin-right: 60rpx;
 }
-.online-booking-content_2{
+
+.online-booking-content_2 {
   display: flex;
   margin-top: 50rpx;
 }
-.online-booking-content_3{
+
+.online-booking-content_3 {
   display: flex;
   margin-top: 50rpx;
 }
-.online-booking-content_4{
+
+.online-booking-content_4 {
   display: flex;
   margin-top: 50rpx;
 }
-.online-booking-content_5{
+
+.online-booking-content_5 {
   display: flex;
   margin-top: 50rpx;
 }

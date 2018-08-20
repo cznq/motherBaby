@@ -48,14 +48,9 @@
 .font36{
   font-size: 36rpx;
 }
-/* 颜色 */
 
-/* .pink{
-  color: rgb(253, 82, 147);
-}
-.grey{
-  color: rgb(102, 102, 102);
-} */
+
+
 
 .row {
   display: box;
