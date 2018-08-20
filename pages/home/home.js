@@ -6,7 +6,6 @@ Page({
   /**
    * 页面的初始数据
    */
-  
   data: {
     date: '请预约', //默认时间
     startDate: util.mformatTime(new Date()), //当前时间
@@ -26,7 +25,7 @@ Page({
     interval: 3000,
     duration: 1000,
     // 轮播图部分-结束
-    btnIsable: true, //按钮是否可用
+    btnDisable: true, //按钮是否可用
     modalTitle: '', //提示框标题
     modalContent: '', //提示框内容
     modalBtnContent: '', //提示框按钮内容
@@ -191,83 +190,86 @@ Page({
     // console.log('nationalCode', that.data.memberAddr.nationalCode)
     // console.log('telNumber', that.data.memberAddr.telNumber)
     // console.log('markInfo', that.data.remarkInfo)
-    if (!app.globalData.id) {
-      console.log('无userId');
-      // 登录
-      app.getOpenid().then(function(userId) {
-        console.log('userId', userId);
-        if (userId) {
-          // 订单预约请求
-          util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
-            userId: app.globalData.id, //用户id
-            // userId: 2 , //用户id
-            weight: that.data.weightArr[that.data.weightIndex], //预估重量
-            appointment: that.data.date, //上门预约时间 yyyy-MM-dd
-            userName: that.data.memberAddr.userName, //收货人姓名
-            postalCode: that.data.memberAddr.postalCode, //邮编
-            provinceName: that.data.memberAddr.provinceName, //省份
-            cityName: that.data.memberAddr.cityName, //城市
-            countyName: that.data.memberAddr.countyName, //区县
-            detailInfo: that.data.memberAddr.detailInfo, //收货详细地址
-            nationalCode: that.data.memberAddr.nationalCode, //收货地址国家码
-            telNumber: that.data.memberAddr.telNumber, //收货人电话号码
-            markInfo: that.data.remarkInfo //备注信息
-          }, function(data) {
-            console.log('suc', data)
-            if (data.success) {
-              that.setData({
-                weightIndex: 0,
-                memberAddr: [],
-                date: '请预约',
-                btnIsable: true,
-                remarkInfo: '',
-                navigate: true,
-                showWeightTips: true,
-                showAppointmentsuccess: true,
-                showTextarea: false
+    if (!this.data.btnDisable){
+      if (!app.globalData.id) {
+        console.log('无userId');
+        // 登录
+        app.getOpenid().then(function (userId) {
+          console.log('userId', userId);
+          if (userId) {
+            // 订单预约请求
+            util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
+              userId: app.globalData.id, //用户id
+              // userId: 2 , //用户id
+              weight: that.data.weightArr[that.data.weightIndex], //预估重量
+              appointment: that.data.date, //上门预约时间 yyyy-MM-dd
+              userName: that.data.memberAddr.userName, //收货人姓名
+              postalCode: that.data.memberAddr.postalCode, //邮编
+              provinceName: that.data.memberAddr.provinceName, //省份
+              cityName: that.data.memberAddr.cityName, //城市
+              countyName: that.data.memberAddr.countyName, //区县
+              detailInfo: that.data.memberAddr.detailInfo, //收货详细地址
+              nationalCode: that.data.memberAddr.nationalCode, //收货地址国家码
+              telNumber: that.data.memberAddr.telNumber, //收货人电话号码
+              markInfo: that.data.remarkInfo //备注信息
+            }, function (data) {
+              console.log('suc', data)
+              if (data.success) {
+                that.setData({
+                  weightIndex: 0,
+                  memberAddr: [],
+                  date: '请预约',
+                  btnDisable: true,
+                  remarkInfo: '',
+                  navigate: true,
+                  showWeightTips: true,
+                  showAppointmentsuccess: true,
+                  showTextarea: false
+                })
+              }
+            }, 'POST', {
+                'content-type': 'application/x-www-form-urlencoded'
               })
-            }
-          }, 'POST', {
+          }
+        })
+      } else {
+        console.log('有userId');
+        // 订单预约请求
+        util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
+          userId: app.globalData.id, //用户id
+          // userId: 2 , //用户id
+          weight: that.data.weightArr[that.data.weightIndex], //预估重量
+          appointment: that.data.date, //上门预约时间 yyyy-MM-dd
+          userName: that.data.memberAddr.userName, //收货人姓名
+          postalCode: that.data.memberAddr.postalCode, //邮编
+          provinceName: that.data.memberAddr.provinceName, //省份
+          cityName: that.data.memberAddr.cityName, //城市
+          countyName: that.data.memberAddr.countyName, //区县
+          detailInfo: that.data.memberAddr.detailInfo, //收货详细地址
+          nationalCode: that.data.memberAddr.nationalCode, //收货地址国家码
+          telNumber: that.data.memberAddr.telNumber, //收货人电话号码
+          markInfo: that.data.remarkInfo //备注信息
+        }, function (data) {
+          console.log('suc', data)
+          if (data.success) {
+            that.setData({
+              weightIndex: 0,
+              memberAddr: [],
+              date: '请预约',
+              btnDisable: true,
+              remarkInfo: '',
+              navigate: true,
+              showWeightTips: true,
+              showAppointmentsuccess: true,
+              showTextarea: false
+            })
+          }
+        }, 'POST', {
             'content-type': 'application/x-www-form-urlencoded'
           })
-        }
-      })
-    } else {
-      console.log('有userId');
-      // 订单预约请求
-      util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
-        userId: app.globalData.id, //用户id
-        // userId: 2 , //用户id
-        weight: that.data.weightArr[that.data.weightIndex], //预估重量
-        appointment: that.data.date, //上门预约时间 yyyy-MM-dd
-        userName: that.data.memberAddr.userName, //收货人姓名
-        postalCode: that.data.memberAddr.postalCode, //邮编
-        provinceName: that.data.memberAddr.provinceName, //省份
-        cityName: that.data.memberAddr.cityName, //城市
-        countyName: that.data.memberAddr.countyName, //区县
-        detailInfo: that.data.memberAddr.detailInfo, //收货详细地址
-        nationalCode: that.data.memberAddr.nationalCode, //收货地址国家码
-        telNumber: that.data.memberAddr.telNumber, //收货人电话号码
-        markInfo: that.data.remarkInfo //备注信息
-      }, function(data) {
-        console.log('suc', data)
-        if (data.success) {
-          that.setData({
-            weightIndex: 0,
-            memberAddr: [],
-            date: '请预约',
-            btnIsable: true,
-            remarkInfo: '',
-            navigate: true,
-            showWeightTips: true,
-            showAppointmentsuccess: true,
-            showTextarea: false
-          })
-        } 
-      }, 'POST', {
-        'content-type': 'application/x-www-form-urlencoded'
-      })
+      }
     }
+    
   },
   // 设置导航条颜色
   setNavigationBarColor(bgcolor) {
@@ -296,11 +298,11 @@ Page({
   btnIsable() {
     if (this.data.weightIndex != 0 && this.data.memberAddr.length != 0 && this.data.date) {
       this.setData({
-        btnIsable: false
+        btnDisable: false
       })
     } else {
       this.setData({
-        btnIsable: true
+        btnDisable: true
       })
     }
     if (this.data.weightIndex) {

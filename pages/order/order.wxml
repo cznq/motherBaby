@@ -89,7 +89,7 @@
            </view>
          </view>
          <view class='mybz Infobottom_05 padding10-0 row cen-start'>
-           <view class='font28'>
+           <view class='font28 row cen-start'>
              <image src='../../images/mybz.png'></image>
              <text class='gray-6'>备注：</text>
            </view>
@@ -131,7 +131,7 @@
            </view>
          </view>
          <view class='mybz Infobottom_05 padding10-0 row cen-start'>
-           <view class='font28'>
+           <view class='font28 row cen-start'>
              <image src='../../images/mybz.png'></image>
              <text class='gray-6'>备注：</text>
            </view>
@@ -173,7 +173,7 @@
            </view>
          </view>
          <view class='mybz Infobottom_05 padding10-0 row cen-start'>
-           <view class='font28'>
+           <view class='font28 row cen-start'>
              <image src='../../images/mybz.png'></image>
              <text class='gray-6'>备注：</text>
            </view>

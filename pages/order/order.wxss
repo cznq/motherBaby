@@ -18,8 +18,10 @@ page{
   margin-top: 80rpx;
   margin-bottom: 20rpx;
 }
+
 .orderTitle li{
-  flex: 1;
+  padding:10px 10px 0 10px;
+  
 }
 .orderInfo{
   border: 1px solid #f36e89;
