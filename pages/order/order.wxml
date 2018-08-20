@@ -1,6 +1,6 @@
 <!--pages/order/order.wxml-->
 
-<view class="orderTitle font32 gray-3  row cen-space " bindtap="touchTit">
+<view class="orderTitle font32 gray-3  row cen-space padding0-10" bindtap="touchTit">
   <li class="text-center "  >
     <view data-tag='all' class=" padding8r-bottom gray-3  {{orderTitle === 'all' ? 'title_border05':''}}">全部</view>
   </li>
@@ -14,7 +14,7 @@
     <view data-tag='finish' class="padding8r-bottom gray-3 {{orderTitle === 'finish' ? 'title_border05':''}}">已完成</view>
   </li>
 </view>
-<view class='order-content-box' >
+<view>
   <block wx:if="{{orderTitle ==='all'}}" wx:for='{{orderDetails}}' wx:for-item='item' wx:key="unique">
     <view class="marg10-top padding0-10">
       <view class="orderInfo padding10">
@@ -49,7 +49,7 @@
          <view class='mybz Infobottom_05 padding10-0 row cen-start'>
            <view class='font28 row cen-start'>
              <image src='../../images/mybz.png'></image>
-             <text class='gray-6 text'>备注：</text>
+             <text class='gray-6'>备注：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.markInfo}}</text>
          </view>
@@ -199,4 +199,4 @@
       <li catchtap='queryCancel' class='cancelInfo marg5-top white font36'>不想捐了</li>
       <li bindtap='cancelTxt' class='cancelbtn marg10-top font36'>取消</li>
   </view>
-  </view>
+</view>
