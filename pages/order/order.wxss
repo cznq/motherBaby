@@ -14,15 +14,13 @@ page{
   z-index: 100;
   background-color: #f9eaed;
   box-sizing: border-box;
-  padding-top:5px;
 }
 .order-content-box{
   margin-top: 100rpx;
   margin-bottom: 20rpx;
 }
 .orderTitle li{
-  padding-top:10px;
-  /* flex: 1; */
+  padding-top:15px;
 }
 .orderInfo{
   border: 1px solid #f36e89;
