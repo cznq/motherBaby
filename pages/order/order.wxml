@@ -39,9 +39,9 @@
          <view class='addressInfo Infobottom_05 padding10-0 row cen-start'>
            <view class='font28 vertitop row'>
              <image src='../../images/myaddress.png'></image>
-             <text class='gray-6'>取件地址：</text>
+             <text class='gray-6 text'>取件地址：</text>
            </view>
-           <view class='padding10-left column'>
+           <view class='column'>
             <text class='font28 gray-6'>{{item.userName}}  {{item.telNumber}}</text>
             <text class='font28 gray-6'>{{item.detailInfo}}</text>
            </view>
@@ -49,7 +49,7 @@
          <view class='mybz Infobottom_05 padding10-0 row cen-start'>
            <view class='font28 row cen-start'>
              <image src='../../images/mybz.png'></image>
-             <text class='gray-6'>备注：</text>
+             <text class='row gray-6 text'>备注：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.markInfo}}</text>
          </view>
@@ -81,9 +81,9 @@
          <view class='addressInfo Infobottom_05 padding10-0 row cen-start'>
            <view class='font28 vertitop row'>
              <image src='../../images/myaddress.png'></image>
-             <text class='gray-6'>取件地址：</text>
+             <text class='gray-6 text'>取件地址：</text>
            </view>
-           <view class='padding10-left column'>
+           <view class=' column'>
             <text class='font28 gray-6'>{{item.userName}}  {{item.telNumber}}</text>
             <text class='font28 gray-6'>{{item.detailInfo}}</text>
            </view>
@@ -91,7 +91,7 @@
          <view class='mybz Infobottom_05 padding10-0 row cen-start'>
            <view class='font28'>
              <image src='../../images/mybz.png'></image>
-             <text class='gray-6'>备注：</text>
+             <text class='gray-6 text'>备注：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.markInfo}}</text>
          </view>
@@ -123,9 +123,9 @@
          <view class='addressInfo Infobottom_05 padding10-0 row cen-start'>
            <view class='font28 vertitop row'>
              <image src='../../images/myaddress.png'></image>
-             <text class='gray-6'>取件地址：</text>
+             <text class='gray-6 text'>取件地址：</text>
            </view>
-           <view class='padding10-left column'>
+           <view class=' column'>
             <text class='font28 gray-6'>{{item.userName}}  {{item.telNumber}}</text>
             <text class='font28 gray-6'>{{item.detailInfo}}</text>
            </view>
@@ -133,7 +133,7 @@
          <view class='mybz Infobottom_05 padding10-0 row cen-start'>
            <view class='font28'>
              <image src='../../images/mybz.png'></image>
-             <text class='gray-6'>备注：</text>
+             <text class='gray-6 text'>备注：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.markInfo}}</text>
          </view>
@@ -165,9 +165,9 @@
          <view class='addressInfo Infobottom_05 padding10-0 row cen-start'>
            <view class='font28 vertitop row'>
              <image src='../../images/myaddress.png'></image>
-             <text class='gray-6'>取件地址：</text>
+             <text class='gray-6 text'>取件地址：</text>
            </view>
-           <view class='padding10-left column'>
+           <view class='column'>
             <text class='font28 gray-6'>{{item.userName}}  {{item.telNumber}}</text>
             <text class='font28 gray-6'>{{item.detailInfo}}</text>
            </view>
@@ -175,7 +175,7 @@
          <view class='mybz Infobottom_05 padding10-0 row cen-start'>
            <view class='font28'>
              <image src='../../images/mybz.png'></image>
-             <text class='gray-6'>备注：</text>
+             <text class='gray-6 text'>备注：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.markInfo}}</text>
          </view>
@@ -194,9 +194,12 @@
         <image class='resultbtn' src='../../images/noresultbtn.png'></image>
       </view>
   </view>
-  <view class="loyer {{cancelbtn ? 'action':''}}">
-      <li catchtap='queryCancel' class='cancelInfo white font36'>信息填写有误</li>
-      <li catchtap='queryCancel' class='cancelInfo marg5-top white font36'>不想捐了</li>
-      <li bindtap='cancelTxt' class='cancelbtn marg10-top font36'>取消</li>
+  <view class="loyerbg {{cancelbtn ? 'action':''}}" catchtap='loyerbg'>
+    <view class="loyer {{cancelbtn ? 'action':''}}">
+        <li catchtap='queryCancel' class='cancelInfo white font36'>信息填写有误</li>
+        <li catchtap='queryCancel' class='cancelInfo marg5-top white font36'>不想捐了</li>
+        <li bindtap='cancelTxt' class='cancelbtn marg10-top font36'>取消</li>
+    </view>
   </view>
+
   </view>
