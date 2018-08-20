@@ -76,7 +76,6 @@ Page({
           that.setData({
             showPickup: true,
             showTextarea: false
-            // memberAddr: res
           })
         } else {
           that.setData({
