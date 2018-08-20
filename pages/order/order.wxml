@@ -194,7 +194,7 @@
         <image class='resultbtn' src='../../images/noresultbtn.png'></image>
       </view>
   </view>
-  <view class="loyerbg {{cancelbtn ? 'action':''}}" catchtap='loyerbg'>
+  <view class="loyerbg {{cancelbtn ? 'action':''}}" catchtouchmove='loyerbg'>
     <view class="loyer {{cancelbtn ? 'action':''}}">
         <li catchtap='queryCancel' class='cancelInfo white font36'>信息填写有误</li>
         <li catchtap='queryCancel' class='cancelInfo marg5-top white font36'>不想捐了</li>
