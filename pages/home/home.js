@@ -86,6 +86,7 @@ Page({
         }
       },
       fail(res) {
+        
         wx.getSetting({
           success(res) {
             if (!res.authSetting['scope.address']) {
@@ -155,12 +156,12 @@ Page({
   },
   // 点击我的预约
   bindMymAppointment() {
-    console.log(app.globalData.id);
+    console.log('1',app.globalData.id);
     var _that = this;
     if (!app.globalData.id) {
       // 登录
       app.getOpenid().then(function(userId) {
-        console.log(userId);
+        console.log('2userId',userId);
         if (userId) {
           wx.navigateTo({
             url: '../order/order',

@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": 0,
@@ -54,15 +54,9 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "联系客服",
-					"pathName": "pages/service/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "index",
-					"pathName": "pages/index/index",
+					"pathName": "pages/service/service",
 					"query": ""
 				}
 			]
