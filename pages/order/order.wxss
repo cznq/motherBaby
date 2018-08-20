@@ -2,8 +2,12 @@
 page{
   background-color: #f9eaed;
 }
+.orderTitle{
+
+}
 .orderTitle li{
   padding:10px 10px 0 10px;
+  
 }
 .orderInfo{
   border: 1px solid #f36e89;
