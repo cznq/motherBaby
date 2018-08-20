@@ -5,7 +5,7 @@ page{
 .orderTitle{
   position: fixed;
   width: 100%;
-  height: 80rpx;
+  /* height: 80rpx; */
   left: 0;
   top: 0;
   display: flex;
@@ -14,6 +14,7 @@ page{
   z-index: 100;
   background-color: #f9eaed;
   box-sizing: border-box;
+  padding-top:5px;
 }
 .order-content-box{
   margin-top: 100rpx;
@@ -142,8 +143,6 @@ white-space:nowrap;
   right:0;
   bottom:0;
   left:0;
-  width:100%;
-  height:100%;
   z-index: 999;
   display: none;
 }
@@ -160,8 +159,6 @@ white-space:nowrap;
   z-index: 9999;
   transition: height .3s;
   overflow: hidden;
-
-  /* background-color: #fff; */
 }
 .loyer .cancelInfo{
   display: block;
