@@ -33,12 +33,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "首页",
-					"pathName": "pages/home/index",
+					"pathName": "pages/home/home",
 					"query": ""
 				},
 				{
@@ -62,7 +62,8 @@
 				{
 					"id": -1,
 					"name": "index",
-					"pathName": "pages/index/index"
+					"pathName": "pages/index/index",
+					"query": ""
 				}
 			]
 		}
