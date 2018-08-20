@@ -6,7 +6,7 @@ Page({
   /**
    * 页面的初始数据
    */
-  
+
   data: {
     date: '请预约', //默认时间
     startDate: util.mformatTime(new Date()), //当前时间
@@ -17,8 +17,8 @@ Page({
     showTextarea: true,
     // 轮播图部分-开始
     imgUrls: [
-      '../../images/banner.png',
-      '../../images/banner.png'
+      '../../images/bannerX.jpg',
+      // '../../images/banner.png'
     ],
     indicatorDots: false,
     autoplay: false,
@@ -86,7 +86,7 @@ Page({
         }
       },
       fail(res) {
-        
+
         wx.getSetting({
           success(res) {
             if (!res.authSetting['scope.address']) {
@@ -263,7 +263,7 @@ Page({
             showAppointmentsuccess: true,
             showTextarea: false
           })
-        } 
+        }
       }, 'POST', {
         'content-type': 'application/x-www-form-urlencoded'
       })

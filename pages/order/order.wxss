@@ -9,17 +9,19 @@ page{
   left: 0;
   top: 0;
   display: flex;
-  align-content: center;
+  align-content: space-between;
   align-items: center;
   z-index: 100;
   background-color: #f9eaed;
+  box-sizing: border-box;
 }
 .order-content-box{
-  margin-top: 80rpx;
+  margin-top: 100rpx;
   margin-bottom: 20rpx;
 }
 .orderTitle li{
-  flex: 1;
+  padding-top:10px;
+  /* flex: 1; */
 }
 .orderInfo{
   border: 1px solid #f36e89;
@@ -78,9 +80,7 @@ white-space:nowrap;
 }
 
 
-.title_border05{
-  display: relative;
-}
+
 .padding8r-bottom{
   padding-bottom: 16rpx;
 }
@@ -91,12 +91,14 @@ white-space:nowrap;
 .title_border05:before {
     display: block;
     content: "";
-    width: 100rpx;
-    height: 2px;
+    width: 199%;
+    width: calc(200%);
+    height: 4px;
     position: absolute;
-    left: 40rpx;
+    left: -50%;
     bottom: 0;
     background-color: #fd5293;
+    transform: scale(0.5);
     z-index: 1;
 }
 .Infobottom_05 {

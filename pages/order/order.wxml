@@ -1,6 +1,6 @@
 <!--pages/order/order.wxml-->
 
-<view class="orderTitle font32 gray-3  row cen-space " bindtap="touchTit">
+<view class="orderTitle font32 gray-3  row cen-space padding0-15 " bindtap="touchTit">
   <li class="text-center "  >
     <view data-tag='all' class=" padding8r-bottom gray-3  {{orderTitle === 'all' ? 'title_border05':''}}">全部</view>
   </li>
@@ -16,7 +16,7 @@
 </view>
 <view class='order-content-box' >
   <block wx:if="{{orderTitle ==='all'}}" wx:for='{{orderDetails}}' wx:for-item='item' wx:key="unique">
-    <view class="marg10-top padding0-10">
+    <view class="marg10-top padding0-15">
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
           <view class='font28'>
@@ -61,7 +61,7 @@
     </view>
   </block>
   <block wx:if="{{orderTitle ==='confirm'}}" wx:for='{{orderDetails}}' wx:for-item='item' wx:key="unique">
-    <view class="marg10-top padding0-10">
+    <view class="marg10-top padding0-15">
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
           <view class='font28'>
@@ -103,7 +103,7 @@
     </view>
   </block>
   <block wx:if="{{orderTitle ==='recover'}}" wx:for='{{orderDetails}}' wx:for-item='item' wx:key="unique">
-    <view class="marg10-top padding0-10">
+    <view class="marg10-top padding0-15">
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
           <view class='font28'>
@@ -145,7 +145,7 @@
     </view>
   </block>
   <block wx:if="{{orderTitle ==='finish'}}" wx:for='{{orderDetails}}' wx:for-item='item' wx:key="unique">
-    <view class="marg10-top padding0-10">
+    <view class="marg10-top padding0-15">
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
           <view class='font28'>
