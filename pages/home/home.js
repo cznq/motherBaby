@@ -6,6 +6,7 @@ Page({
   /**
    * 页面的初始数据
    */
+  
   data: {
     date: '请预约', //默认时间
     startDate: util.mformatTime(new Date()), //当前时间
