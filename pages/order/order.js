@@ -60,7 +60,7 @@ Page({
       }
     }, reqbody);
   },
-  touchTit: function(e) { 
+  touchTit: function(e) {
     this.setData({
       cancelbtn:false
     })
@@ -182,7 +182,9 @@ Page({
         console.log('^………');
     }
   },
-
+  loyerbg: function(){
+    return false;
+  },
   cancelbtn: function(e) {
     var orderno = e.currentTarget.dataset.orderno;
     this.setData({

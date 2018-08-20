@@ -46,7 +46,7 @@ Page({
   },
 
   //主动获取用户信息权限
-  onGotUserInfo: function(e) {
+  onGotUserInfo: function (e) {
     console.log('onGotUserInfo', e.detail.userInfo);
     let userInfo = e.detail.userInfo;
     if (!userInfo) {
@@ -85,7 +85,7 @@ Page({
         }
       },
       fail(res) {
-        
+
         wx.getSetting({
           success(res) {
             if (!res.authSetting['scope.address']) {
@@ -155,12 +155,12 @@ Page({
   },
   // 点击我的预约
   bindMymAppointment() {
-    console.log('1',app.globalData.id);
+    console.log('1', app.globalData.id);
     var _that = this;
     if (!app.globalData.id) {
       // 登录
-      app.getOpenid().then(function(userId) {
-        console.log('2userId',userId);
+      app.getOpenid().then(function (userId) {
+        console.log('2userId', userId);
         if (userId) {
           wx.navigateTo({
             url: '../order/order',
@@ -190,7 +190,7 @@ Page({
     // console.log('nationalCode', that.data.memberAddr.nationalCode)
     // console.log('telNumber', that.data.memberAddr.telNumber)
     // console.log('markInfo', that.data.remarkInfo)
-    if (!this.data.btnDisable){
+    if (!this.data.btnDisable) {
       if (!app.globalData.id) {
         console.log('无userId');
         // 登录
@@ -269,7 +269,7 @@ Page({
           })
       }
     }
-    
+
   },
   // 设置导航条颜色
   setNavigationBarColor(bgcolor) {
@@ -285,9 +285,9 @@ Page({
   bindCopy() {
     wx.setClipboardData({
       data: 'dark－artist',
-      success: function(res) {
+      success: function (res) {
         wx.getClipboardData({
-          success: function(res) {
+          success: function (res) {
             console.log(res.data) // data
           }
         })
@@ -323,14 +323,14 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     var _that = this;
     wx.getSetting({ // 查看是否授权
-      success: function(res) {
+      success: function (res) {
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
-            success: function(res) {
+            success: function (res) {
               _that.setData({
                 getUserInfo: true
               })
@@ -362,9 +362,9 @@ Page({
     })
     // 图片数量大于1时才显示指示点、自动轮播
     this.data.imgUrls.length > 1 ? this.setData({
-        indicatorDots: !this.data.indicatorDots,
-        autoplay: !this.data.autoplay
-      }) :
+      indicatorDots: !this.data.indicatorDots,
+      autoplay: !this.data.autoplay
+    }) :
       this.setData({
         indicatorDots: this.data.indicatorDots,
         autoplay: this.data.autoplay
@@ -374,49 +374,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function(res) {
+  onShareAppMessage: function (res) {
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)
