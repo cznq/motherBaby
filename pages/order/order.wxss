@@ -72,8 +72,8 @@ white-space:nowrap;
  text-overflow:ellipsis;
 }
 .myordbtn image{
-  width:195rpx;
-  height:60rpx;
+  width:185rpx;
+  height:69rpx;
   margin-top:30rpx;
   margin-bottom:10rpx;
 }
