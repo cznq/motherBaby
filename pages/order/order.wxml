@@ -29,11 +29,11 @@
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
-           <view class='font28'>
+           <view class='font28 row cen-start'>
              <image src='../../images/juanzeng.png'></image>
-             <text class='gray-6'>捐赠信息：</text>
+             <text class='gray-6 text'>捐赠信息：</text>
            </view>
-           <text class='padding10-left gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
+           <text class='gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
          </view>
          <view class='addressInfo Infobottom_05 padding10-0 row cen-start'>
            <view class='font28 vertitop row'>
@@ -54,7 +54,7 @@
          </view>
       </view>
       <view wx:if='{{item.orderStatus === 1}}' class='myordbtn row cen-center' data-orderno='{{item.id}}' bindtap='cancelbtn'>
-        <image src='../../images/myordbtn.png'></image>
+        <image src='../../images/quxiao.png'></image>
       </view>
     </view>
     </view>
@@ -71,9 +71,9 @@
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
-           <view class='font28'>
+           <view class='font28 row cen-start'>
              <image src='../../images/juanzeng.png'></image>
-             <text class='gray-6'>捐赠信息：</text>
+             <text class='gray-6 text'>捐赠信息：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
          </view>
@@ -96,7 +96,7 @@
          </view>
       </view>
       <view wx:if='{{item.orderStatus === 1}}' class='myordbtn row cen-center' data-orderno='{{item.id}}' bindtap='cancelbtn'>
-        <image src='../../images/myordbtn.png'></image>
+        <image src='../../images/quxiao.png'></image>
       </view>
     </view>
     </view>
@@ -113,9 +113,9 @@
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
-           <view class='font28'>
+           <view class='font28 row cen-start'>
              <image src='../../images/juanzeng.png'></image>
-             <text class='gray-6'>捐赠信息：</text>
+             <text class='gray-6 text'>捐赠信息：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
          </view>
@@ -138,7 +138,7 @@
          </view>
       </view>
       <view wx:if='{{item.orderStatus === 1}}' class='myordbtn row cen-center' bindtap='cancelbtn'>
-        <image src='../../images/myordbtn.png'></image>
+        <image src='../../images/quxiao.png'></image>
       </view>
     </view>
     </view>
@@ -155,9 +155,9 @@
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
-           <view class='font28'>
+           <view class='font28 row cen-start'>
              <image src='../../images/juanzeng.png'></image>
-             <text class='gray-6'>捐赠信息：</text>
+             <text class='gray-6 text'>捐赠信息：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
          </view>
@@ -180,7 +180,7 @@
          </view>
       </view>
       <view wx:if='{{item.orderStatus === 1}}' class='myordbtn row cen-center' bindtap='cancelbtn'>
-        <image src='../../images/myordbtn.png'></image>
+        <image src='../../images/quxiao.png'></image>
       </view>
     </view>
     </view>
@@ -190,7 +190,7 @@
         <image class='resultImage' src='../../images/noresult.png'></image>
       </view>
       <view bindtap='yjz' class='row cen-center'>
-        <image class='resultbtn' src='../../images/noresultbtn.png'></image>
+        <image class='resultbtn' src='../../images/yuyue.png'></image>
       </view>
   </view>
   <view class="loyerbg {{cancelbtn ? 'action':''}}" catchtouchmove='loyerbg'>
