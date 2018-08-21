@@ -1,5 +1,9 @@
 /* @author lya */
-
+page{
+  background-color: #f9eaed;
+  width: 100%;
+  height: 100%;
+}
 .mcontainer {
   width: 100%;
   height: 100%;
@@ -53,6 +57,7 @@
   border: 2rpx solid pink;
   border-radius: 20rpx;
   margin-left: 32rpx;
+  margin-bottom: 30rpx;
   background-color: #fff;
 }
 
