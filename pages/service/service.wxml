@@ -23,7 +23,7 @@
       <view class='line-2'></view>
       <view class='service-content_2-content-box font22 ' wx:if="{{show2}}">
         <view class='service-content_2-content '>
-          A：我们提供免费上门取件服务，您无须支付任何费用，如快递员有任何收费行为，您可以联系客户进行处理。
+          A：我们提供免费上门取件服务，您无须支付任何费用，如快递员有任何收费行为，您可以联系客服进行处理。
         </view>
       </view>
     </view>
@@ -44,7 +44,7 @@
       <view class='line-2'></view>
       <view class='service-content_4-content-box font22 ' wx:if="{{show4}}">
         <view class='service-content_4-content '>
-          A：目前仅支持预约次日上门回收服务，快递员会提前与您确认取件时间，一般取件时间为8:00-18:00。
+          A：目前仅支持预约次日及以后日期上门回收服务，快递员会提前与您确认取件时间，一般取件时间为8:00-18:00。
         </view>
       </view>
     </view>

@@ -43,7 +43,7 @@ Page({
     navigate: false,
     showPickup: false,
     showAppointmentsuccess: false,
-    changeLine: false
+    changeLine: false,
   },
 
   //主动获取用户信息权限
@@ -106,8 +106,25 @@ Page({
   },
   // 设置上门时间
   bindDateChange(e) {
+    let day = ''
+    console.log('fire',new Date(e.detail.value).getDay())
+    if (new Date(e.detail.value).getDay()===1){
+      day ='（周一）' 
+    } else if (new Date(e.detail.value).getDay() === 2) {
+      day = '（周二）'       
+    }else if (new Date(e.detail.value).getDay() === 3) {
+      day = '（周三）' 
+    } else if (new Date(e.detail.value).getDay() === 4) {
+      day = '（周四）' 
+    } else if   (new Date(e.detail.value).getDay() === 5) {
+      day = '（周五）' 
+    } else if   (new Date(e.detail.value).getDay() === 6) {
+      day = '（周六）' 
+    } else if (new Date(e.detail.value).getDay() === 0) {
+      day = '（周日）' 
+    } 
     this.setData({
-      date: e.detail.value
+      date: e.detail.value+ day
     })
     this.btnIsable()
   },
@@ -325,6 +342,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('day',new Date().getDay())
     var _that = this;
     wx.getSetting({ // 查看是否授权
       success: function (res) {

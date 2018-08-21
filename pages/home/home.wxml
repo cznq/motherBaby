@@ -133,10 +133,9 @@
   <view class='modal-appointment_notice titleColor font24'  wx:if="{{showMModal}}"  >
     <view class='modal-appointment_notice-box'>
       <view class='delete-box' bindtap='bindCloseAppointment'>
-
         <image class='delete-btn' src='../../images/delete.png'></image>
       </view>
-      <image src='../../images/yuyuexuzhi.png' class='img-title'></image>
+      <image src='../../images/appointment.png' class='img-title'></image>
       <view class='modal-appointment_notice-content font26'>
         <view class='modal-appointment_notice-content_1'>
           <image class='img-appointment_1' src='../../images/appointment_1.png'></image>
