@@ -19,19 +19,19 @@
     <navigator url='../../pages/platform/platform' hover-class="none">
       <view class='home-title-left'>
         <image src='../../images/platintro@2x.png' class='platform-img'></image>
-        <view class='font26 '>平台介绍</view>
+        <view class='font24 '>平台介绍</view>
       </view>
     </navigator>
     <navigator url='../../pages/service/service' hover-class="none">
       <view class='home-title-center'>
         <image src='../../images/service@2x.png' class='service-img'></image>
-        <view class='font26'>联系客服</view>
+        <view class='font24'>联系客服</view>
       </view>
     </navigator>
 
-    <view bindtap='bindMymAppointment'>
+    <view bindtap='bindMymAppointment' class='home-title-right'>
       <image src='../../images/reservation@2x.png' class='reservation-img'></image>
-      <view class='font26'>我的预约</view>
+      <view class='font24'>我的预约</view>
     </view>
   </view>
 

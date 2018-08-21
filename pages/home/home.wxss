@@ -45,23 +45,33 @@
 /* 标题--平台介绍、联系客服、我的 */
 
 .home-title {
-  height: 150rpx;
+  height: 136rpx;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  align-content: center;
+}
+.home-title-left view{
+  line-height: 0;
+  margin-top: 10rpx;
+}
+.home-title-center view{
+  line-height: 0;
+  margin-top: 10rpx;
+}
+.home-title-right view{
+  line-height: 0;
+  margin-top: 10rpx;
 }
 .platform-img{
-  width: 94rpx;
-  height: 94rpx;
+  width: 86rpx;
+  height: 86rpx;
 }
 .service-img{
-  width: 94rpx;
-  height: 94rpx;
+  width: 86rpx;
+  height: 86rpx;
 }
 .reservation-img{
-  width: 94rpx;
-  height: 94rpx;
+  width: 86rpx;
+  height: 86rpx;
 }
 
 /* 标题图片样式 */
@@ -203,7 +213,7 @@
 .home-content-main-time-right image {
   position: absolute;
   right: 20rpx;
-  top: 32rpx;
+  top: 36rpx;
   width: 12rpx;
   height: 21rpx;
 }
@@ -211,7 +221,7 @@
 .home-content-main-weight-right image {
   position: absolute;
   right: -12rpx;
-  top: 32rpx;
+  top: 36rpx;
   width: 12rpx;
   height: 21rpx;
   margin-right: 32rpx;
@@ -228,7 +238,7 @@
 }
 .home-content-main-address-right image {
   position: absolute;
-  top: 32rpx;
+  top: 36rpx;
   right: 20rpx;
   width: 12rpx;
   height: 21rpx;
@@ -436,7 +446,7 @@
 
 .orderTitle image {
   position:absolute;
-  top:32rpx;
+  top:36rpx;
   right:-12rpx;
   width:12rpx;
   height:21rpx;
