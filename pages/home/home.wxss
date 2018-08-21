@@ -213,7 +213,7 @@
 .home-content-main-time-right image {
   position: absolute;
   right: 20rpx;
-  top: 36rpx;
+  top: 34rpx;
   width: 12rpx;
   height: 21rpx;
 }
@@ -221,7 +221,7 @@
 .home-content-main-weight-right image {
   position: absolute;
   right: -12rpx;
-  top: 36rpx;
+  top: 34rpx;
   width: 12rpx;
   height: 21rpx;
   margin-right: 32rpx;
@@ -238,7 +238,7 @@
 }
 .home-content-main-address-right image {
   position: absolute;
-  top: 36rpx;
+  top: 34rpx;
   right: 20rpx;
   width: 12rpx;
   height: 21rpx;
