@@ -19,7 +19,7 @@
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
           <view class='font28'>
-            <image src='../../images/myOrder.png'></image>
+            <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
           <text wx:if='{{item.orderStatus === 1}}' class='font32 qrcolo'>待确认</text>
@@ -30,14 +30,14 @@
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
            <view class='font28'>
-             <image src='../../images/myinfo.png'></image>
+             <image src='../../images/juanzeng.png'></image>
              <text class='gray-6'>捐赠信息：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
          </view>
          <view class='addressInfo Infobottom_05 padding10-0 row cen-start'>
            <view class='font28 vertitop row'>
-             <image src='../../images/myaddress.png'></image>
+             <image src='../../images/dizhi.png'></image>
              <text class='gray-6 text'>取件地址：</text>
            </view>
            <view class='column'>
@@ -47,7 +47,7 @@
          </view>
          <view class='mybz Infobottom_05 padding10-0 row cen-start'>
            <view class='font28 row cen-start'>
-             <image src='../../images/mybz.png'></image>
+             <image src='../../images/beizhu1.png'></image>
              <text class='row gray-6 text'>备注：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.markInfo}}</text>
@@ -64,7 +64,7 @@
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
           <view class='font28'>
-            <image src='../../images/myOrder.png'></image>
+            <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
           <text wx:if='{{item.orderStatus === 1}}' class='font32 qrcolo'>待确认</text>
@@ -72,14 +72,14 @@
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
            <view class='font28'>
-             <image src='../../images/myinfo.png'></image>
+             <image src='../../images/juanzeng.png'></image>
              <text class='gray-6'>捐赠信息：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
          </view>
          <view class='addressInfo Infobottom_05 padding10-0 row cen-start'>
            <view class='font28 vertitop row'>
-             <image src='../../images/myaddress.png'></image>
+             <image src='../../images/dizhi.png'></image>
              <text class='gray-6 text'>取件地址：</text>
            </view>
            <view class=' column'>
@@ -89,7 +89,7 @@
          </view>
          <view class='mybz Infobottom_05 padding10-0 row cen-start'>
            <view class='font28'>
-             <image src='../../images/mybz.png'></image>
+             <image src='../../images/beizhu1.png'></image>
              <text class='gray-6 text'>备注：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.markInfo}}</text>
@@ -106,7 +106,7 @@
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
           <view class='font28'>
-            <image src='../../images/myOrder.png'></image>
+            <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
           <text wx:if='{{item.orderStatus === 3}}' class='font32 qrcolo'>待收货</text>
@@ -114,14 +114,14 @@
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
            <view class='font28'>
-             <image src='../../images/myinfo.png'></image>
+             <image src='../../images/juanzeng.png'></image>
              <text class='gray-6'>捐赠信息：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
          </view>
          <view class='addressInfo Infobottom_05 padding10-0 row cen-start'>
            <view class='font28 vertitop row'>
-             <image src='../../images/myaddress.png'></image>
+             <image src='../../images/dizhi.png'></image>
              <text class='gray-6 text'>取件地址：</text>
            </view>
            <view class=' column'>
@@ -131,7 +131,7 @@
          </view>
          <view class='mybz Infobottom_05 padding10-0 row cen-start'>
            <view class='font28'>
-             <image src='../../images/mybz.png'></image>
+             <image src='../../images/beizhu1.png'></image>
              <text class='gray-6 text'>备注：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.markInfo}}</text>
@@ -148,7 +148,7 @@
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
           <view class='font28'>
-            <image src='../../images/myOrder.png'></image>
+            <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
           <text wx:if='{{item.orderStatus === 4}}' class='font32 qrcolo'>已完成</text>
@@ -156,14 +156,14 @@
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
            <view class='font28'>
-             <image src='../../images/myinfo.png'></image>
+             <image src='../../images/juanzeng.png'></image>
              <text class='gray-6'>捐赠信息：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
          </view>
          <view class='addressInfo Infobottom_05 padding10-0 row cen-start'>
            <view class='font28 vertitop row'>
-             <image src='../../images/myaddress.png'></image>
+             <image src='../../images/dizhi.png'></image>
              <text class='gray-6 text'>取件地址：</text>
            </view>
            <view class='column'>
@@ -173,7 +173,7 @@
          </view>
          <view class='mybz Infobottom_05 padding10-0 row cen-start'>
            <view class='font28'>
-             <image src='../../images/mybz.png'></image>
+             <image src='../../images/beizhu1.png'></image>
              <text class='gray-6 text'>备注：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.markInfo}}</text>
