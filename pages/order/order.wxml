@@ -29,11 +29,11 @@
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
-           <view class='font28'>
+           <view class='font28 row cen-start'>
              <image src='../../images/juanzeng.png'></image>
-             <text class='gray-6'>捐赠信息：</text>
+             <text class='gray-6 text'>捐赠信息：</text>
            </view>
-           <text class='padding10-left gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
+           <text class='gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
          </view>
          <view class='addressInfo Infobottom_05 padding10-0 row cen-start'>
            <view class='font28 vertitop row'>
@@ -71,9 +71,9 @@
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
-           <view class='font28'>
+           <view class='font28 row cen-start'>
              <image src='../../images/juanzeng.png'></image>
-             <text class='gray-6'>捐赠信息：</text>
+             <text class='gray-6 text'>捐赠信息：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
          </view>
@@ -113,9 +113,9 @@
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
-           <view class='font28'>
+           <view class='font28 row cen-start'>
              <image src='../../images/juanzeng.png'></image>
-             <text class='gray-6'>捐赠信息：</text>
+             <text class='gray-6 text'>捐赠信息：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
          </view>
@@ -155,9 +155,9 @@
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row cen-start'>
-           <view class='font28'>
+           <view class='font28 row cen-start'>
              <image src='../../images/juanzeng.png'></image>
-             <text class='gray-6'>捐赠信息：</text>
+             <text class='gray-6 text'>捐赠信息：</text>
            </view>
            <text class='padding10-left gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
          </view>

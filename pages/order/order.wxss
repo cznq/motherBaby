@@ -42,6 +42,13 @@ page{
   vertical-align: middle;
   padding-right: 7px;
 }
+.donationInfo .text{
+  width:152rpx;
+  height:35rpx;
+  white-space:nowrap;
+ overflow:hidden;
+ text-overflow:ellipsis;
+}
 .addressInfo image{
   width:28rpx;
   height:35rpx;
