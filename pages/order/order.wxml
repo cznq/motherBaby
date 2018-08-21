@@ -1,5 +1,4 @@
 <!--pages/order/order.wxml-->
-
 <view class="orderTitle font32 gray-3  row cen-space padding0-15 " bindtap="touchTit">
   <li class="text-center "  >
     <view data-tag='all' class=" padding8r-bottom gray-3  {{orderTitle === 'all' ? 'title_border05':''}}">全部</view>
@@ -201,5 +200,5 @@
         <li bindtap='cancelTxt' class='cancelbtn marg10-top font36'>取消</li>
     </view>
   </view>
-
+  </contact-button>
   </view>
