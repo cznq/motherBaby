@@ -109,20 +109,20 @@ Page({
     let day = ''
     console.log('fire',new Date(e.detail.value).getDay())
     if (new Date(e.detail.value).getDay()===1){
-      day ='（周一）' 
+      day ='（周一）'
     } else if (new Date(e.detail.value).getDay() === 2) {
-      day = '（周二）'       
+      day = '（周二）'
     }else if (new Date(e.detail.value).getDay() === 3) {
-      day = '（周三）' 
+      day = '（周三）'
     } else if (new Date(e.detail.value).getDay() === 4) {
-      day = '（周四）' 
+      day = '（周四）'
     } else if   (new Date(e.detail.value).getDay() === 5) {
-      day = '（周五）' 
+      day = '（周五）'
     } else if   (new Date(e.detail.value).getDay() === 6) {
-      day = '（周六）' 
+      day = '（周六）'
     } else if (new Date(e.detail.value).getDay() === 0) {
-      day = '（周日）' 
-    } 
+      day = '（周日）'
+    }
     this.setData({
       date: e.detail.value+ day
     })
