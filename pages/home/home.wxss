@@ -306,8 +306,8 @@
 }
 
 .home-content-remarks-left image {
-  width: 35rpx;
-  height: 34rpx;
+  width: 36rpx;
+  height: 42rpx;
   left: 25rpx;
   top: 24rpx;
   position: absolute;
