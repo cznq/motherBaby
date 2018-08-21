@@ -74,14 +74,14 @@
 }
 .img-dizhi{
   width: 30rpx;
-  height: 38rpx; 
+  height: 38rpx;
   top: 28rpx;
-  left: 20rpx; 
+  left: 20rpx;
   position: absolute;
 }
 .img-shijian{
   width: 33rpx;
-  height: 33rpx;  
+  height: 33rpx;
   top: 28rpx;
   margin-left: 16rpx;
   position: absolute;
@@ -342,7 +342,7 @@
   border-radius: 70rpx;
   margin-left: 190rpx;
   margin-top: 20rpx;
-  border: 5rpx solid #ffe8b4;  
+  border: 5rpx solid #ffe8b4;
 }
 /* btn:disabled{
   border: none;
@@ -411,6 +411,9 @@
 }
 
 /* 获取用户信息button样式 */
+.yuyue::after{
+  border: 0;
+}
 
 .orderTitle::after {
   border: none;
@@ -424,7 +427,7 @@
   right: 50rpx;
   top: 32rpx;
   padding: 0;
-  height: 88rpx; 
+  height: 88rpx;
   line-height: 88rpx;
 
 }
@@ -526,7 +529,7 @@
   align-items: center;
   align-content: center;
   border-radius: 10rpx;
-  
+
 }
 
 .modal-appointment_notice-box .modal-appointment_notice-logo {
@@ -534,7 +537,7 @@
   height: 120rpx;
   margin-top: 70rpx;
   margin-bottom: 60rpx;
-  
+
 }
 
 .modal-appointment_notice .dots {
@@ -577,7 +580,7 @@
 .modal-appointment_notice-content_2 {
   width: 446rpx;
   max-height: 82rpx;
-  position: relative;  
+  position: relative;
   margin-top: 36rpx;
 }
 
@@ -585,23 +588,23 @@
   width: 446rpx;
   max-height: 82rpx;
   margin-top: 30rpx;
-  position: relative;  
+  position: relative;
 }
 
 .modal-appointment_notice-content_4 {
   width: 446rpx;
   max-height: 82rpx;
   margin-top: 44rpx;
-  position: relative;  
-  
+  position: relative;
+
 }
 
 .modal-appointment_notice-content_5 {
   width: 446rpx;
   max-height: 82rpx;
   margin-top: 36rpx;
-  position: relative;  
-  
+  position: relative;
+
 }
 
 .modal-appointment_notice-content_1_content {
@@ -612,9 +615,9 @@
 
 .modal-appointment_notice-content_2_content {
   margin-left: 63rpx;
-  margin-top: 20rpx; 
+  margin-top: 20rpx;
   height: 60rpx;
-  
+
 }
 
 .modal-appointment_notice-content_3_content {

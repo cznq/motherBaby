@@ -2,7 +2,7 @@
 
 <view class='mcontainer contentColor'>
   <!-- 轮播图 -->
- 
+
   <view class='swiper-box'>
     <!-- indicator-dots="{{indicatorDots}}" -->
     <swiper class='home-swiper' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='{{circular}}'>
@@ -19,7 +19,7 @@
     <navigator url='../../pages/platform/platform' hover-class="none">
       <view class='home-title-left'>
         <image src='../../images/platintro@2x.png' class='platform-img'></image>
-        <view class='font26 '>平台介绍</view>        
+        <view class='font26 '>平台介绍</view>
       </view>
     </navigator>
     <navigator url='../../pages/service/service' hover-class="none">
@@ -129,14 +129,14 @@
   </view>
 
   <!-- 预约须知提示框 -->
- 
+
   <view class='modal-appointment_notice titleColor font24'  wx:if="{{showMModal}}"  >
     <view class='modal-appointment_notice-box'>
       <view class='delete-box' bindtap='bindCloseAppointment'>
 
         <image class='delete-btn' src='../../images/delete.png'></image>
       </view>
-      <image src='../../images/appointment.png' class='img-title'></image>
+      <image src='../../images/yuyuexuzhi.png' class='img-title'></image>
       <view class='modal-appointment_notice-content font26'>
         <view class='modal-appointment_notice-content_1'>
           <image class='img-appointment_1' src='../../images/appointment_1.png'></image>
