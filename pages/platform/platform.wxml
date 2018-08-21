@@ -1,25 +1,24 @@
 <!-- @author lya -->
 
-<view class='mcontainer'>
+<view class='mcontainer font24'>
   <view class='product-intro'>
     <view class='product-intro-title'>
       <image class='product-intro-title-img' src='../../images/product_intro_1.png'></image>
-      <view class='product-intro-title-words font28 titleColor'>产品介绍</view>
+      <view class='product-intro-title-words  titleColor'>产品介绍</view>
     </view>
     <view class='product-line'></view>
-    <view class='product-intro-content contentColor font24'>
+    <view class='product-intro-content color666 font24'>
       享换换是一家母婴闲置物品回收&赠送平台，旨在为可以继续使用的母婴闲置物品找个新家。我们提供母婴闲置物品免费上门回收服务，并将可以继续使用的物品进行相应处理和包装，上传至平台供用户领取。定期清理闲置物品，让我们一起为母婴闲置物品找个新家，为“低碳生活”添砖加瓦。
     </view>
   </view>
-  <view class='online-booking pinkColor'>
+  <view class='online-booking pinkColor font22'>
     <view class='online-booking-title'>
       <image class='online-booking-title-img' src='../../images/product_intro_7.png'></image>
-      <view class='online-booking-title-words font28 titleColor'>在线预约流程</view>
+      <view class='online-booking-title-words  titleColor font24'>在线预约流程</view>
     </view>
     <view class='product-line'></view>
     <view class='online-booking-content'>
-      <!-- <view class= 'online-booking-content-box' > -->
-      <view class='online-booking-content-box font28'>
+      <view class='online-booking-content-box '>
         <view class='online-booking-content_1 font24'>
           <image class='img-online-booking_1' src='../../images/product_intro_2.png'></image>
           <view class='online-booking-content-text'>1、提前打包好母婴闲置物品、称重，方便预约及回收</view>
@@ -42,7 +41,6 @@
         </view>
       </view>
     </view>
-    <!-- </view>     -->
   </view>
 
 </view>

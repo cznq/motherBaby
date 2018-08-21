@@ -15,6 +15,9 @@
 .contentColor{
   color: #999999;
 }
+.color666{
+  color: #666;
+}
 .pinkColor{
   color: #fd5293;
 }
@@ -29,6 +32,12 @@
   height: 2rpx;
   background-color: #f7b4c2;
 }
+.font16{
+  font-size: 16rpx;
+}
+.font20{
+  font-size: 20rpx;
+}
 /* 字体大小 */
 .font22{
   font-size: 22rpx;
@@ -42,8 +51,14 @@
 .font28{
   font-size: 28rpx;
 }
+.font30{
+  font-size: 30rpx;
+}
 .font32{
   font-size: 32rpx;
+}
+.font34{
+  font-size: 34rpx;
 }
 .font36{
   font-size: 36rpx;

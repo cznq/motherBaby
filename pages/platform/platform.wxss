@@ -34,8 +34,8 @@
 .product-intro-title-img {
   width: 28rpx;
   height: 34rpx;
-  margin-left: 28rpx;
-  margin-top: 20rpx;
+  margin-left: 29rpx;
+  margin-top: 23rpx;
 }
 
 .product-intro-title-words {
@@ -44,7 +44,6 @@
 
 .product-intro-content {
   width: 560rpx;
-  height: 140rpx;
   margin: 10rpx 60rpx 0rpx 56rpx;
 }
 
@@ -65,13 +64,14 @@
 
 .online-booking-title-img {
   width: 28rpx;
-  height: 34rpx;
-  margin-left: 28rpx;
-  margin-top: 20rpx;
+  height: 29rpx;
+  margin-left: 30rpx;
+  margin-top: 29rpx;
 }
 
 .online-booking-title-words {
   margin-left: 12rpx;
+  margin-top: 2rpx;
 }
 
 .online-booking-content image {
