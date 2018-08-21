@@ -200,5 +200,4 @@
         <li bindtap='cancelTxt' class='cancelbtn marg10-top font36'>取消</li>
     </view>
   </view>
-  </contact-button>
   </view>
