@@ -16,15 +16,17 @@ page{
 .product-line {
   width: 622rpx;
   margin-left: 26rpx;
-  height: 2rpx;
-  background-color: pink;
+  height: 1rpx;
+  background-color: #FD5293;
+  opacity: .38;
 }
 
 .product-intro {
   width: 676rpx;
-  height: 320rpx;
-  border: 2rpx solid pink;
-  border-radius: 20rpx;
+  /* height: 290rpx; */
+  height: 380rpx;
+  border: 1rpx solid #F36E89;
+  border-radius: 10rpx;
   margin-bottom: 28rpx;
   margin-top: 38rpx;
   margin-left: 32rpx;
@@ -39,7 +41,7 @@ page{
 
 .product-intro-title-img {
   width: 28rpx;
-  height: 34rpx;
+  height: 33rpx;
   margin-left: 29rpx;
   margin-top: 23rpx;
 }
@@ -49,15 +51,17 @@ page{
 }
 
 .product-intro-content {
-  width: 560rpx;
+  /* width: 560rpx; */
+  width: 580rpx;
   margin: 10rpx 60rpx 0rpx 56rpx;
 }
 
 .online-booking {
   width: 676rpx;
-  height: 775rpx;
-  border: 2rpx solid pink;
-  border-radius: 20rpx;
+  /* height: 775rpx; */
+  height: 705rpx;
+  border: 1rpx solid #F36E89;
+  border-radius: 10rpx;
   margin-left: 32rpx;
   margin-bottom: 30rpx;
   background-color: #fff;
@@ -73,7 +77,7 @@ page{
   width: 28rpx;
   height: 29rpx;
   margin-left: 30rpx;
-  margin-top: 29rpx;
+  margin-top: 26rpx;
 }
 
 .online-booking-title-words {
@@ -82,15 +86,16 @@ page{
 }
 
 .online-booking-content image {
-  width: 40rpx;
-  height: 40rpx;
+  /* width: 40rpx;
+  height: 40rpx; */
   margin-left: 63rpx;
   margin-right: 49rpx;
 }
 
 .online-booking-content_1 {
   display: flex;
-  margin-top: 68rpx;
+  /* margin-top: 68rpx; */
+  margin-top: 58rpx;
 }
 
 .online-booking-content-text {
@@ -116,4 +121,31 @@ page{
 .online-booking-content_5 {
   display: flex;
   margin-top: 50rpx;
+}
+.img-online-booking_1{
+  width: 27.5rpx;
+  height: 24rpx;
+  margin-top: 10rpx;
+}
+.img-online-booking_2{
+  width: 22rpx;
+  height: 24.5rpx;
+  margin-top: 10rpx;
+  
+}
+.img-online-booking_3{
+  width: 27.5rpx;
+  height: 23.5rpx;
+  margin-top: 10rpx;
+}
+.img-online-booking_4{
+  width: 24.5rpx;
+  height: 24.5rpx;  
+  margin-top: 10rpx;
+  
+}
+.img-online-booking_5{
+  width: 27.5rpx;
+  height: 21rpx;
+  margin-top: 10rpx;
 }
