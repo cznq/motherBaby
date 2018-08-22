@@ -43,7 +43,7 @@ Page({
     navigate: false,
     showPickup: false,
     showAppointmentsuccess: false,
-    changeLine: false,
+    changeLine: false
   },
 
   //主动获取用户信息权限

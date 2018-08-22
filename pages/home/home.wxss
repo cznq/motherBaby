@@ -290,7 +290,9 @@ page{
   top: 0;
   text-align: center;
 }
+.placeholder-class{
 
+}
 /* 预约须知盒子 */
 
 .modal-appointment-notice {
