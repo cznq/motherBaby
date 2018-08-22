@@ -7,11 +7,8 @@ page{
   background-color: #f9eaed;
 }
 .mcontainer {
-  width: 100%;
-  max-height: 3000rpx;
   position: absolute;
   margin-bottom: 30rpx;
-  background-color: #f9eaed;
 }
 
 .service-title-img {
@@ -21,8 +18,8 @@ page{
 }
 
 .service-QRcode {
-  width: 100rpx;
-  height: 100rpx;
+  width: 126rpx;
+  height: 126rpx;
 }
 
 .service-title {
@@ -32,10 +29,11 @@ page{
 }
 
 .service-content {
-  width: 676rpx;
+  /* width: 676rpx; */
+  width: 688rpx;
   min-height: 1028rpx;
   background-color: #fff;
-  border: 2rpx solid pink;
+  border: 1rpx solid #F36E89;
   border-radius: 10rpx;
   margin-left: 30rpx;
   margin-bottom: 30rpx;
@@ -173,11 +171,21 @@ page{
   margin: 27rpx 56rpx 0 27rpx;
 }
 
-.line-2 {
+.line-1 {
   width: 622rpx;
+  height: 1rpx;
   margin-left: 26rpx;
+  background-color: #FD5293;
+  opacity: .38;
 }
 
 .margintop30 {
   margin-top: 30rpx;
+}
+.bg-qrcode{
+  width: 136rpx;
+  height: 136rpx;
+  position: absolute;
+  margin-left: -5rpx;
+  margin-top: -5rpx;
 }
