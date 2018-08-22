@@ -72,7 +72,7 @@ App({
   globalData: {
     userInfo: null,
     code: '',
-    baseUrl: 'http://192.168.1.199:8099/',//http://192.168.1.199:8099/https://nbmp.moji.com/
+    baseUrl: 'https://nbmp.moji.com/',//http://192.168.1.199:8099/
     sessionKey: '',
     openId: '',
     id: ''

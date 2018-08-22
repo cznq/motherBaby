@@ -80,7 +80,7 @@ white-space:nowrap;
 }
 .myordbtn image{
   width:182rpx;
-  height:52rpx;
+  height:56rpx;
   margin-top:30rpx;
   margin-bottom:10rpx;
 }
@@ -139,7 +139,7 @@ white-space:nowrap;
 }
 .noResult .resultbtn{
   width:182rpx;
-  height:52rpx;
+  height:56rpx;
   margin-top:25rpx;
 }
 .loyerbg{

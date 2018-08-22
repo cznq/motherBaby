@@ -54,7 +54,7 @@
          </view>
       </view>
       <view wx:if='{{item.orderStatus === 1}}' class='myordbtn row cen-center' data-orderno='{{item.id}}' bindtap='cancelbtn'>
-        <image src='../../images/quxiao.png'></image>
+        <image src='../../images/qxyd.png'></image>
       </view>
     </view>
     </view>
@@ -190,7 +190,7 @@
         <image class='resultImage' src='../../images/noresult.png'></image>
       </view>
       <view bindtap='yjz' class='row cen-center'>
-        <image class='resultbtn' src='../../images/yuyue.png'></image>
+        <image class='resultbtn' src='../../images/yjz.png'></image>
       </view>
   </view>
   <view class="loyerbg {{cancelbtn ? 'action':''}}" catchtouchmove='loyerbg'>
