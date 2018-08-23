@@ -75,18 +75,28 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
-    var that = this;
+    let that = this;
+    that.setData({
+      showInvitation: false
+    })
     var userId = app.globalData.id;
     console.log('userid', app.globalData.id)
     return {
       title: '邀请好友领积分',
       path: '/pages/cookies/cookies?userId=' + userId, //这里拼接需要携带的参数
       imageUrl: '../../images/share.jpg',
-      success: function (res) {
+      success (res) {
         that.setData({
           showInvitation: true
         })
+      },
+      fail(res){
+        // that.setData({
+        //   showInvitation: false
+        // })
+        // wx.showToast({
+        //   title: '用户取消了邀请',
+        // })
       }
     }
   }

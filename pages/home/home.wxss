@@ -34,16 +34,20 @@ page{
 }
 /* 平台介绍、联系客服、我的预约-文字 */
 .home-title-words{
-  font-size: 28rpx;
+  font-size: 24rpx;
   line-height: 0;
   margin-top: 16rpx;
 }
+.platform-words{
+  margin-top: 14rpx;
+}
 .words-myappointment{
-  margin-top: 16rpx;
+  margin-top: 12rpx;
 }
 .platform-img{
   width: 99rpx;
   height: 76rpx;
+  margin-top: 5rpx;
 }
 .service-img{
   width: 103rpx;
@@ -52,7 +56,7 @@ page{
 .reservation-img{
   width: 101rpx;
   height: 68rpx;
-  margin-top: 10rpx;
+  margin-top: 14rpx;
 }
 .binggan-img{
   width: 113rpx;
@@ -210,7 +214,7 @@ page{
 }
 .a {
   height: 88rpx;
-  margin-top: 24rpx;
+  margin-top: 28rpx;
   line-height: 0rpx;
 }
 
@@ -240,11 +244,12 @@ page{
   display: flex;
   justify-content: flex-end;
   height: 46rpx;
+  line-height: 46rpx;
 }
 
 .home-content-appointment_notice .pinkColor {
   text-decoration: underline;
-  margin-top: 4rpx;
+  margin-top: -2rpx;
 }
 
 .home-content-appointment_notice .img-appointment_notice {

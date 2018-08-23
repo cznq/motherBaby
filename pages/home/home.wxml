@@ -18,7 +18,7 @@
     <navigator url='../../pages/platform/platform' hover-class="none">
       <view class='home-title-left'>
         <image src='../../images/platintro@2x.png' class='platform-img'></image>
-        <view class='home-title-words '>平台介绍</view>
+        <view class='home-title-words platform-words'>平台介绍</view>
       </view>
     </navigator>
     <navigator url='../../pages/service/service' hover-class="none">
@@ -49,7 +49,7 @@
             <image src='../../images/yugu.png' class='img-yugu'></image>
             <view class='weight-margin'>
               <view class='pinkColor {{!showWeightTips?"margintop26":""}}'>预估重量</view>
-              <view class='home-content-main-weight-left-tips font20' wx:if="{{showWeightTips}}">低于3KG，可以再积攒下哦~</view>
+              <view class='home-content-main-weight-left-tips font18' wx:if="{{showWeightTips}}">低于3KG，可以再积攒下哦~</view>
             </view>
           </view>
           <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle row cen-space contentColor" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
@@ -99,7 +99,7 @@
       <label class='home-content-appointment_notice' bindtap='bindAppointmentNotice'>
         <view class='img-dots'></view>
         <image src='../../images/notice@2x.png' class='img-appointment_notice'></image>
-        <view class='font24 pinkColor'>预约须知</view>
+        <view class='font20 pinkColor'>预约须知</view>
       </label>
       <!-- 备注 -->
       <view class='home-content-remarks'>
@@ -108,7 +108,7 @@
           <view class=' pinkColor'>备注</view>
         </view>
         <!-- 备注内容   -->
-        <textarea class=' {{changeLine?"b":"a"}} contentColor font26' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' bindinput='bindinput' bindlinechange='bindlinechange' placeholder-class='placeholder-class contentColor' wx:if='{{showTextarea}}'
+        <textarea class=' {{changeLine?"b":"a"}} contentColor font24' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' bindinput='bindinput' bindlinechange='bindlinechange' placeholder-class='placeholder-class contentColor' wx:if='{{showTextarea}}'
           value='{{remarkInfo}}'></textarea>
       </view>
       <view class='home-btn-confirm  {{btnDisable?"disablebtn":""}}' bindtap='bindConfirmAppointment'>免费上门取货</view>
