@@ -96,7 +96,7 @@
          </view>
       </view>
       <view wx:if='{{item.orderStatus === 1}}' class='myordbtn row cen-center' data-orderno='{{item.id}}' bindtap='cancelbtn'>
-        <image src='../../images/quxiao.png'></image>
+        <image src='../../images/qxyd.png'></image>
       </view>
     </view>
     </view>
