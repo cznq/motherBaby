@@ -2,8 +2,25 @@
 page{
   background-color: #f9eaed;
 }
+.orderTitle{
+  position: fixed;
+  width: 100%;
+  /* height: 80rpx; */
+  left: 0;
+  top: 0;
+  display: flex;
+  align-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background-color: #f9eaed;
+  box-sizing: border-box;
+}
+.order-content-box{
+  margin-top: 100rpx;
+  margin-bottom: 20rpx;
+}
 .orderTitle li{
-  padding:10px 10px 0 10px;
+  padding-top:15px;
 }
 .orderInfo{
   border: 1px solid #f36e89;
@@ -25,11 +42,25 @@ page{
   vertical-align: middle;
   padding-right: 7px;
 }
+.donationInfo .text{
+  width:152rpx;
+  height:35rpx;
+  white-space:nowrap;
+ overflow:hidden;
+ text-overflow:ellipsis;
+}
 .addressInfo image{
   width:28rpx;
   height:35rpx;
   vertical-align: middle;
   padding-right: 7px;
+}
+.addressInfo .text{
+  width:152rpx;
+  height:35rpx;
+  white-space:nowrap;
+ overflow:hidden;
+ text-overflow:ellipsis;
 }
 .vertitop{
   margin-top:-16px;
@@ -40,17 +71,22 @@ page{
   vertical-align: middle;
   padding-right: 7px;
 }
+.mybz .text{
+  width:75rpx;
+  height:35rpx;
+white-space:nowrap;
+ overflow:hidden;
+ text-overflow:ellipsis;
+}
 .myordbtn image{
-  width:195rpx;
+  width:182rpx;
   height:60rpx;
   margin-top:30rpx;
   margin-bottom:10rpx;
 }
 
 
-.title_border05{
-  display: relative;
-}
+
 .padding8r-bottom{
   padding-bottom: 16rpx;
 }
@@ -61,12 +97,14 @@ page{
 .title_border05:before {
     display: block;
     content: "";
-    width: 100%;
-    height: 2px;
+    width: 199%;
+    width: calc(200%);
+    height: 4px;
     position: absolute;
-    left: 0;
+    left: -50%;
     bottom: 0;
     background-color: #fd5293;
+    transform: scale(0.5);
     z-index: 1;
 }
 .Infobottom_05 {
@@ -100,9 +138,21 @@ page{
   height:269rpx;
 }
 .noResult .resultbtn{
-  width:195rpx;
+  width:182rpx;
   height:60rpx;
   margin-top:25rpx;
+}
+.loyerbg{
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index: 999;
+  display: none;
+}
+.loyerbg.action{
+  display: block;
 }
 .loyer{
   width:90%;

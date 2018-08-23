@@ -62,8 +62,9 @@ App({
                 console.log('失败',dataStr);
               }
             }, reqbody);
+          }else{
+            resolve(userInfo);
           }
-          resolve(userInfo);
         }
       })
     });

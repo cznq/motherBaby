@@ -1,4 +1,5 @@
 // pages/order/order.js
+//jdklfj
 const app = getApp();
 var util = require('../../utils/util.js');
 var url = '';
@@ -12,7 +13,10 @@ Page({
     cancelbtn: false,
     noDetails: false,
     orderDetails: [],
-    currentOrderNo: ''
+    currentOrderNo: '',
+    startX:0,
+    endX:0,
+    tag:''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -57,6 +61,9 @@ Page({
     }, reqbody);
   },
   touchTit: function(e) {
+    this.setData({
+      cancelbtn:false
+    })
     let tag = e.target.dataset.tag;
     switch (tag) {
       case "all":
@@ -85,6 +92,7 @@ Page({
             })
           }
         }, reqbody);
+
         break;
       case "finish":
         this.setData({
@@ -126,7 +134,7 @@ Page({
         }
         util.http(url, (dataStr) => {
           if (dataStr.success) {
-            console.log('待回收',dataStr);
+            console.log('待回收', dataStr);
             if (!dataStr.data[3] || dataStr.data[3].type != 3) {
               this.setData({
                 noDetails: true,
@@ -153,7 +161,7 @@ Page({
         }
         util.http(url, (dataStr) => {
           if (dataStr.success) {
-            console.log('待确认',dataStr);
+            console.log('待确认', dataStr);
             if (!dataStr.data[1] || dataStr.data[1].type != 1) {
               console.log('不存在');
               this.setData({
@@ -174,7 +182,9 @@ Page({
         console.log('^………');
     }
   },
-
+  loyerbg: function(){
+    return false;
+  },
   cancelbtn: function(e) {
     var orderno = e.currentTarget.dataset.orderno;
     this.setData({

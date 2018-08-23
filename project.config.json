@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
@@ -48,21 +48,21 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 2,
 					"name": "平台介绍",
-					"pathName": "pages/platform/index",
+					"pathName": "pages/platform/platform",
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "联系客服",
-					"pathName": "pages/service/index",
+					"pathName": "pages/service/service",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "index",
-					"pathName": "pages/index/index",
+					"name": "plan",
+					"pathName": "pages/plan/plan",
 					"query": ""
 				}
 			]
