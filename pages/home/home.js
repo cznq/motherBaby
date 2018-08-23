@@ -43,7 +43,8 @@ Page({
     navigate: false,
     showPickup: false,
     showAppointmentsuccess: false,
-    changeLine: false
+    changeLine: false,
+    msg:''
   },
 
   //主动获取用户信息权限
@@ -190,7 +191,11 @@ Page({
       })
     }
   },
-
+  bindMyCookies(e){
+    wx.navigateTo({
+      url: '../cookies/cookies',
+    })
+  },
   // 确认按钮
   bindConfirmAppointment(e) {
     let that = this
@@ -341,7 +346,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('day', new Date().getDay())
+    console.log('onload',options)
+    // console.log('day', new Date().getDay())
     var _that = this;
     wx.getSetting({ // 查看是否授权
       success: function (res) {
@@ -399,8 +405,14 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: function (options) {
+    // if(options.msg){
+    //   console.log(options.msg)
+    // }
+    // this.setData({
+    //   msg
+    // })
+    console.log('show',options)
   },
 
   /**

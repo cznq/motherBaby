@@ -1,0 +1,20 @@
+ <!-- @author lya -->
+
+
+<view class='mcontainer'>
+
+  <button class='btn-invitation' open-type="share" >点我邀请</button>
+
+  <view class='modal-invitation-success titleColor font26' wx:if="{{showInvitation}}">
+    <view class='modal-invitation-success-box'>
+      <view class='delete-box' bindtap='bindCloseinvitation'>
+        <image class='delete-btn' src='../../images/delete.png'></image>
+      </view>
+      <image class='modal-invitation-success-img' src='../../images/invitation_success.png'></image>
+      <view class='modal-invitation-success-content font26 '>好友加入后，60颗小饼干立即到手！</view>
+      <view class='dots'></view>
+        <button class='modal-invitation_notice-btn font34' open-type="share"> 继续邀请 </button>
+    </view>
+  </view>
+
+  </view>

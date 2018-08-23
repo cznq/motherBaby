@@ -33,8 +33,8 @@
       <view class=' home-title-words words-myappointment'>我的预约</view>
     </view>
     <!-- <view bindtap='bindMyCookies' class='home-title-right'>
-      <image src='../../images/reservation@2x.png' class='reservation-img'></image>
-      <view class='font24'>小饼干</view>
+      <image src='../../images/binggan.png' class='binggan-img'></image>
+      <view class='home-title-words'>小饼干</view>
     </view> -->
   </view>
 
@@ -120,7 +120,6 @@
   <view class='modal-pick-up titleColor font30'  wx:if="{{showPickup}}">
     <view class='modal-pick-up-box'>
       <view class='delete-box' bindtap='bindDelete'>
-
         <image class='delete-btn' src='../../images/delete.png'></image>
       </view>
       <image class='modal-pick-up-logo' src='../../images/city-logo.png'> </image>

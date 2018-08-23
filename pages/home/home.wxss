@@ -54,6 +54,11 @@ page{
   height: 68rpx;
   margin-top: 10rpx;
 }
+.binggan-img{
+  width: 113rpx;
+  height: 71rpx;
+  margin-top: 10rpx;
+}
 
 /* 标题图片样式 */
 .img-yugu{
@@ -270,11 +275,7 @@ page{
   z-index: 100;
 }
 
-/* .chooseweight{
-  margin-top: 40rpx;
-} */
 /* 提示框中按钮样式 */
-
 .home-content-appointment_notice-modal-btn {
   width: 200rpx;
   position: absolute;
@@ -284,14 +285,11 @@ page{
 .home-modal {
   width: 100%;
   height: 100%;
-  background-color: rgba(15, 15, 15, 0.55);
+  background-color: rgba(15, 15, 15, 0.65);
   position: absolute;
   left: 0;
   top: 0;
   text-align: center;
-}
-.placeholder-class{
-
 }
 /* 预约须知盒子 */
 
@@ -364,7 +362,7 @@ page{
 .modal-pick-up {
   width: 100%;
   height: 100%;
-  background-color: rgba(15, 15, 15, 0.55);
+  background-color: rgba(15, 15, 15, 0.65);
   position: absolute;
   left: 0;
   top: 0;
@@ -375,8 +373,9 @@ page{
   height: 545rpx;
   position: absolute;
   left: 50%;
-  top: 216rpx;
+  top: 50%;
   margin-left: -280rpx;
+  margin-top: -272.5rpx;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -420,7 +419,7 @@ page{
 .modal-appointment_notice {
   width: 100%;
   height: 100%;
-  background-color: rgba(15, 15, 15, 0.55);
+  background-color: rgba(15, 15, 15, 0.65);
   position: absolute;
   left: 0;
   top: 0;
@@ -431,8 +430,9 @@ page{
   height: 872rpx;
   position: relative;
   left: 50%;
-  top: 102rpx;
+  top: 50%;
   margin-left: -280rpx;
+  margin-top: -436rpx;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -609,7 +609,7 @@ page{
 .modal-appointment-success {
   width: 100%;
   height: 100%;
-  background-color: rgba(15, 15, 15, 0.55);
+  background-color: rgba(15, 15, 15, 0.65);
   position: absolute;
   left: 0;
   top: 0;
@@ -626,8 +626,9 @@ page{
   height: 560rpx;
   position: absolute;
   left: 50%;
-  top: 200rpx;
+  top: 50%;
   margin-left: -280rpx;
+  margin-top: -280rpx;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -682,8 +683,6 @@ page{
   background-color: #F8F8F8;
   color: rgba(0, 0, 0, .3);
 }
-
-
 .delete-box {
   width: 100rpx;
   height: 100rpx;

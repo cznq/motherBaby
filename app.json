@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/service/service",
     "pages/platform/platform",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/cookies/cookies"
   ],
   "window": {
     "backgroundTextStyle": "light",
