@@ -41,7 +41,7 @@ page{
 
 .service-bottom {
   margin-top: 80rpx;
-  margin-bottom: 80rpx;
+  margin-bottom: 60rpx;
   text-align: center;
 }
 
@@ -50,8 +50,8 @@ page{
 }
 
 .service-content_1-title {
-  height: 83rpx;
-  line-height: 83rpx;
+  height: 82rpx;
+  line-height: 84rpx;
   margin-left: 28rpx;
 }
 
@@ -64,8 +64,8 @@ page{
 }
 
 .service-content_2-title {
-  height: 83rpx;
-  line-height: 83rpx;
+  height: 82rpx;
+  line-height: 84rpx;
   margin-left: 28rpx;
 }
 
@@ -78,8 +78,8 @@ page{
 }
 
 .service-content_3-title {
-  height: 83rpx;
-  line-height: 83rpx;
+  height: 82rpx;
+  line-height: 84rpx;
   margin-left: 28rpx;
 }
 
@@ -92,8 +92,8 @@ page{
 }
 
 .service-content_4-title {
-  height: 83rpx;
-  line-height: 83rpx;
+  height: 82rpx;
+  line-height: 84rpx;
   margin-left: 28rpx;
 }
 
@@ -106,8 +106,8 @@ page{
 }
 
 .service-content_5-title {
-  height: 83rpx;
-  line-height: 83rpx;
+  height: 82rpx;
+  line-height: 84rpx;
   margin-left: 28rpx;
 }
 
@@ -120,8 +120,8 @@ page{
 }
 
 .service-content_6-title {
-  height: 83rpx;
-  line-height: 83rpx;
+  height: 82rpx;
+  line-height: 84rpx;
   margin-left: 28rpx;
 }
 
@@ -134,8 +134,8 @@ page{
 }
 
 .service-content_7-title {
-  height: 83rpx;
-  line-height: 83rpx;
+  height: 82rpx;
+  line-height: 84rpx;
   margin-left: 28rpx;
 }
 
@@ -148,8 +148,8 @@ page{
 }
 
 .service-content_8-title {
-  height: 83rpx;
-  line-height: 83rpx;
+  height: 82rpx;
+  line-height: 84rpx;
   margin-left: 28rpx;
 }
 
@@ -162,8 +162,8 @@ page{
 }
 
 .service-content_9-title {
-  height: 83rpx;
-  line-height: 83rpx;
+  height: 82rpx;
+  line-height: 84rpx;
   margin-left: 28rpx;
 }
 
@@ -188,4 +188,7 @@ page{
   position: absolute;
   margin-left: -5rpx;
   margin-top: -5rpx;
+}
+.words-bottom{
+  margin-top: 20rpx;
 }

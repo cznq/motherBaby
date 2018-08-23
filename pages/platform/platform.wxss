@@ -51,9 +51,8 @@ page{
 }
 
 .product-intro-content {
-  /* width: 560rpx; */
-  width: 580rpx;
-  margin: 10rpx 60rpx 0rpx 56rpx;
+  width: 560rpx;
+  margin: 20rpx 60rpx 0rpx 58rpx;
 }
 
 .online-booking {
@@ -77,19 +76,12 @@ page{
   width: 28rpx;
   height: 29rpx;
   margin-left: 30rpx;
-  margin-top: 26rpx;
+  margin-top: 27rpx;
 }
 
 .online-booking-title-words {
   margin-left: 12rpx;
   margin-top: 2rpx;
-}
-
-.online-booking-content image {
-  /* width: 40rpx;
-  height: 40rpx; */
-  margin-left: 63rpx;
-  margin-right: 49rpx;
 }
 
 .online-booking-content_1 {
@@ -123,29 +115,33 @@ page{
   margin-top: 50rpx;
 }
 .img-online-booking_1{
-  width: 27.5rpx;
-  height: 24rpx;
-  margin-top: 10rpx;
+  width: 55rpx;
+  height: 48rpx;
+  margin-top: 8rpx;
+  margin-left: 63rpx;
+  margin-right: 49rpx;
 }
 .img-online-booking_2{
-  width: 22rpx;
-  height: 24.5rpx;
-  margin-top: 10rpx;
-  
+  width: 44rpx;
+  height: 49rpx;
+  margin-left: 68rpx;
+  margin-right: 49rpx;
 }
 .img-online-booking_3{
-  width: 27.5rpx;
-  height: 23.5rpx;
-  margin-top: 10rpx;
+  width: 55rpx;
+  height: 47rpx;
+  margin-left: 60rpx;
+  margin-right: 49rpx;
 }
 .img-online-booking_4{
-  width: 24.5rpx;
-  height: 24.5rpx;  
-  margin-top: 10rpx;
-  
+  width: 49rpx;
+  height: 49rpx;  
+  margin-left: 66rpx;
+  margin-right: 49rpx;
 }
 .img-online-booking_5{
-  width: 27.5rpx;
-  height: 21rpx;
-  margin-top: 10rpx;
+  width: 55rpx;
+  height: 42rpx;
+  margin-left: 63rpx;
+  margin-right: 49rpx;
 }

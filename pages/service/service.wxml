@@ -102,7 +102,7 @@
     <view class='service-bottom'>
       <image class='bg-qrcode' src='../../images/qrcode_bg.png' bindtap='bindSaveImg'></image>
       <image class='service-QRcode' src='../../images/qrcode.png' ></image>
-      <view class=' titleColor font26'>微信：dark-artist 点击保存二维码 微信添加客服为好友</view>
+      <view class=' titleColor font26 words-bottom'>微信：dark-artist 点击保存二维码 微信添加客服为好友</view>
     </view>
 
   </view>

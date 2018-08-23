@@ -16,7 +16,7 @@ Page({
     showTextarea: true,
     // 轮播图部分-开始
     imgUrls: [
-      '../../images/banner.png',
+      '../../images/banner1.png',
       '../../images/banner2.png',
       '../../images/banner3.png',
     ],
@@ -160,11 +160,11 @@ Page({
   },
   bindlinechange(e) {
     // console.log(e)
-    if (e.detail.lineCount == '2') {
+    if (e.detail.lineCount == '2' || e.detail.lineCount == '3') {
       this.setData({
         changeLine: true
       })
-    } else {
+    } else if (e.detail.lineCount == '1' ) {
       this.setData({
         changeLine: false
       })

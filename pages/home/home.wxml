@@ -108,7 +108,7 @@
           <view class=' pinkColor'>备注</view>
         </view>
         <!-- 备注内容   -->
-        <textarea class=' {{changeLine?"b":"a"}} contentColor' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' bindinput='bindinput' bindlinechange='bindlinechange' placeholder-class='placeholder-class contentColor' wx:if='{{showTextarea}}'
+        <textarea class=' {{changeLine?"b":"a"}} contentColor font26' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' bindinput='bindinput' bindlinechange='bindlinechange' placeholder-class='placeholder-class contentColor' wx:if='{{showTextarea}}'
           value='{{remarkInfo}}'></textarea>
       </view>
       <view class='home-btn-confirm  {{btnDisable?"disablebtn":""}}' bindtap='bindConfirmAppointment'>免费上门取货</view>
@@ -133,7 +133,7 @@
 
   <!-- 预约须知提示框 -->
 
-  <view class='modal-appointment_notice titleColor ' wx:if="{{showMModal}}"   >
+  <view class='modal-appointment_notice titleColor '  wx:if="{{showMModal}}"  >
     <view class='modal-appointment_notice-box'>
       <view class='delete-box' bindtap='bindCloseAppointment'>
         <image class='delete-btn' src='../../images/delete.png'></image>
@@ -150,7 +150,7 @@
         </view>
         <view class='modal-appointment_notice-content_3'>
           <image class='img-appointment_3 margintop8' src='../../images/appointment_3.png'></image>
-          <view class='modal-appointment_notice-content_3_content'>母婴闲置物品回收起重3kg（参考：1kg≈10件婴童夏装），可以和邻居朋友拼单预约</view>
+          <view class='modal-appointment_notice-content_3_content'>母婴闲置物品回收起重3kg(参考:1kg≈10件婴童夏装)，可以和邻居朋友拼单预约</view>
         </view>
         <view class='modal-appointment_notice-content_4'>
           <image class='img-appointment_4 margintop8' src='../../images/appointment_4.png'></image>

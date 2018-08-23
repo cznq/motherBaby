@@ -36,10 +36,10 @@ page{
 .home-title-words{
   font-size: 28rpx;
   line-height: 0;
-  margin-top: 10rpx;
+  margin-top: 16rpx;
 }
 .words-myappointment{
-  margin-top: 10rpx;
+  margin-top: 16rpx;
 }
 .platform-img{
   width: 99rpx;
@@ -205,13 +205,13 @@ page{
 }
 .a {
   height: 88rpx;
-  margin-top: 22rpx;
-  line-height: 0;
+  margin-top: 24rpx;
+  line-height: 0rpx;
 }
 
 .b {
   height: 88rpx;
-  margin-top: 4rpx;
+  margin-top: 0rpx;
 }
 
 /* 确认预约按钮 */
@@ -395,12 +395,15 @@ page{
 .modal-pick-up-box .dots {
   width: 480rpx;
   border-bottom: 3rpx dotted #f36e89;
-  margin-top: 70rpx;
+  position: absolute;
+  left: 40rpx;
+  bottom:147rpx ;
 }
 
 .modal-pick-up-btn {
-  margin-top: 28rpx;
-  margin-bottom: 30rpx;
+  position: absolute;
+  left: 166rpx;
+  bottom: 47rpx;
   text-align: center;
 }
 
@@ -450,7 +453,7 @@ page{
 .modal-appointment_notice .dots {
   position: absolute;
   left: 42rpx;
-  bottom: 120rpx;
+  bottom: 161rpx;
   width: 481rpx;
   border-bottom: 3rpx dotted #f36e89;
   margin: 0 0 20rpx 0;
@@ -458,7 +461,7 @@ page{
 
 .modal-appointment_notice-btn {
   position: absolute;
-  bottom: 30rpx;
+  bottom: 62rpx;
   left: 50%;
   margin-left: -115rpx;
   text-align: center;
@@ -494,20 +497,20 @@ page{
   width: 446rpx;
   max-height: 82rpx;
   position: relative;
-  margin-top: 46rpx;
+  margin-top: 36rpx;
 }
 
 .modal-appointment_notice-content_3 {
   width: 446rpx;
   max-height: 82rpx;
-  margin-top: 30rpx;
+  margin-top: 20rpx;
   position: relative;
 }
 
 .modal-appointment_notice-content_4 {
   width: 446rpx;
   max-height: 82rpx;
-  margin-top: 74rpx;
+  margin-top: 34rpx;
   position: relative;
 
 }
@@ -515,7 +518,7 @@ page{
 .modal-appointment_notice-content_5 {
   width: 446rpx;
   max-height: 82rpx;
-  margin-top: 36rpx;
+  margin-top: 16rpx;
   position: relative;
 
 }
@@ -524,29 +527,33 @@ page{
   position: absolute;
   left: 60rpx;
   top: 0;
+  line-height: 30rpx;
 }
 
 .modal-appointment_notice-content_2_content {
   margin-left: 63rpx;
   margin-top: 20rpx;
   height: 60rpx;
-
+  line-height: 30rpx;
 }
 
 .modal-appointment_notice-content_3_content {
   margin-left: 63rpx;
   margin-top: 20rpx;
+  line-height: 30rpx;
 }
 
 .modal-appointment_notice-content_4_content {
   margin-left: 63rpx;
-  margin-top: 40rpx;
-  line-height: 50rpx;
-  height: 30rpx;
+  /* margin-top: 20rpx; */
+  line-height: 30rpx;
+  height: 40rpx;
 }
 
 .modal-appointment_notice-content_5_content {
   margin-left: 63rpx;
+  line-height: 30rpx;
+
 }
 
 .img-appointment_1 {
@@ -554,23 +561,23 @@ page{
   width: 37rpx;
   height: 37rpx;
   left: 0;
-  top: 6rpx;
+  top: 2rpx;
 }
 
 .img-appointment_2 {
   position: absolute;
-  width: 33rpx;
-  height: 35rpx;
+  width: 36rpx;
+  height: 40rpx;
   left: -5rpx;
-  top: 0;
+  top: -8rpx;
 }
 
 .img-appointment_3 {
   position: absolute;
-  width: 37rpx;
-  height: 37rpx;
+  width: 35rpx;
+  height: 35rpx;
   left: -5rpx;
-  top: 0;
+  top: -6rpx;
 }
 
 .img-appointment_4 {
@@ -578,15 +585,15 @@ page{
   width: 37rpx;
   height: 37rpx;
   left: -5rpx;
-  top: 0;
+  top: -10rpx;
 }
 
 .img-appointment_5 {
   position: absolute;
-  width: 37rpx;
-  height: 36rpx;
+  width: 35rpx;
+  height: 35rpx;
   left: -4rpx;
-  top: 0;
+  top: -6rpx;
 }
 
 .btn-common {
@@ -609,11 +616,10 @@ page{
 }
 .modal-appointment-success .dots{
   border-bottom: 3rpx dotted #f36e89;
-  margin-top: 60rpx;
-  margin-left: 40rpx;
-  margin-bottom: 30rpx;
+  position: absolute;
+  left: 42rpx;
+  bottom: 172rpx;
   width: 481rpx;
-  margin-right: 20rpx;
 }
 .modal-appointment-success-box {
   width: 560rpx;
