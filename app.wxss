@@ -83,6 +83,12 @@
   display: flex;
   flex-direction: column;
 }
+.start-start {
+  -webkit-box-align: start;
+  -webkit-box-pack: start;
+  align-items: start;
+  justify-content: start;
+}
 .start-cen {
   -webkit-box-align: center;
   -webkit-box-pack: start;

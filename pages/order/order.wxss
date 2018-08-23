@@ -63,7 +63,7 @@ page{
  text-overflow:ellipsis;
 }
 .vertitop{
-  margin-top:-16px;
+  margin-top:-76rpx;
 }
 .mybz image{
   width:29rpx;
@@ -134,13 +134,13 @@ white-space:nowrap;
   padding-top:70rpx;
 }
 .noResult .resultImage{
-  width:269rpx;
-  height:269rpx;
+  width:379rpx;
+  height:379rpx;
 }
 .noResult .resultbtn{
   width:182rpx;
   height:60rpx;
-  margin-top:25rpx;
+  margin-top:48rpx;
 }
 .loyerbg{
   position: fixed;
