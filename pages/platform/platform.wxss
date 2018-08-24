@@ -23,8 +23,8 @@ page{
 
 .product-intro {
   width: 676rpx;
-  /* height: 290rpx; */
-  height: 380rpx;
+  /* height: 292rpx; */
+  height: 372rpx;
   border: 1rpx solid #F36E89;
   border-radius: 10rpx;
   margin-bottom: 28rpx;
@@ -52,13 +52,13 @@ page{
 
 .product-intro-content {
   width: 560rpx;
-  margin: 20rpx 60rpx 0rpx 58rpx;
+  margin: 40rpx 60rpx 45rpx 58rpx;
 }
 
 .online-booking {
   width: 676rpx;
-  /* height: 775rpx; */
-  height: 705rpx;
+  height: 735rpx;
+  /* height: 705rpx; */
   border: 1rpx solid #F36E89;
   border-radius: 10rpx;
   margin-left: 32rpx;

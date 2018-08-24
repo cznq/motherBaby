@@ -76,14 +76,14 @@ page{
   width: 30rpx;
   height: 38rpx;
   top: 28rpx;
-  left: 20rpx;
+  left: 24rpx;
   position: absolute;
 }
 .img-shijian{
   width: 33rpx;
   height: 33rpx;
   top: 28rpx;
-  left: 16rpx;
+  left: 23rpx;
   position: absolute;
 }
 
@@ -201,7 +201,7 @@ page{
 .home-content-remarks-left image {
   width: 36rpx;
   height: 42rpx;
-  left: 25rpx;
+  left: 26rpx;
   top: 24rpx;
   position: absolute;
 }
@@ -484,7 +484,7 @@ page{
   width: 155rpx;
   height: 52rpx;
   position: absolute;
-  top: 58rpx;
+  top: 57rpx;
   left: 50%;
   margin-left: -78rpx;
 }
@@ -494,7 +494,7 @@ page{
 .modal-appointment_notice-content_1 {
   width: 446rpx;
   height: 82rpx;
-  margin-top: 140rpx;
+  margin-top: 144rpx;
   position: relative;
 }
 
@@ -566,7 +566,7 @@ page{
   width: 37rpx;
   height: 37rpx;
   left: 0;
-  top: 2rpx;
+  top: 4rpx;
 }
 
 .img-appointment_2 {
@@ -641,7 +641,7 @@ page{
 }
 
 .modal-appointment-success-content_1 {
-  margin-top: 22rpx;
+  margin-top: 50rpx;
   margin-left: 52rpx;
   margin-right: 52rpx;
   line-height: 28rpx;

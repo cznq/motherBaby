@@ -138,7 +138,7 @@
         <image class='delete-btn' src='../../images/delete.png'></image>
       </view>
       <image src='../../images/appointment.png' class='img-title'></image>
-      <view class='modal-appointment_notice-content font28'>
+      <view class='modal-appointment_notice-content font24'>
         <view class='modal-appointment_notice-content_1'>
           <image class='img-appointment_1' src='../../images/appointment_1.png'></image>
           <view class='modal-appointment_notice-content_1_content '>回收类目：婴童服饰、早教玩具、早教图书、尿裤湿巾、婴童喂养、婴童洗护等</view>
@@ -149,7 +149,7 @@
         </view>
         <view class='modal-appointment_notice-content_3'>
           <image class='img-appointment_3 margintop8' src='../../images/appointment_3.png'></image>
-          <view class='modal-appointment_notice-content_3_content'>母婴闲置物品回收起重3kg(参考:1kg≈10件婴童夏装)，可以和邻居朋友拼单预约</view>
+          <view class='modal-appointment_notice-content_3_content'>母婴闲置物品回收起重3kg（参考：1kg≈10件婴童夏装），可以和邻居朋友拼单预约</view>
         </view>
         <view class='modal-appointment_notice-content_4'>
           <image class='img-appointment_4 margintop8' src='../../images/appointment_4.png'></image>
@@ -167,7 +167,7 @@
 
   <!-- 预约成功 -->
 
-  <view class='modal-appointment-success titleColor font26'  wx:if='{{showAppointmentsuccess}}'>
+  <view class='modal-appointment-success titleColor font24'  wx:if='{{showAppointmentsuccess}}' >
     <view class='modal-appointment-success-box'>
       <view class='delete-box' bindtap='bindCloseAppointment'>
         <image class='delete-btn' src='../../images/delete.png'></image>

@@ -318,7 +318,7 @@ Page({
   },
   // 判断按钮是否可用
   btnIsable() {
-    if (this.data.weightIndex != 0 && this.data.memberAddr.length != 0 && this.data.date) {
+    if (this.data.weightIndex != 0 && this.data.memberAddr.length != 0 && this.data.date!='请预约') {
       this.setData({
         btnDisable: false
       })
