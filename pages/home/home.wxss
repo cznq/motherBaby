@@ -691,8 +691,8 @@ page{
 }
 
 .modal-appointment-success-box .modal-appointment-success-img {
-  width: 146rpx;
-  height: 44rpx;
+  width: 156rpx;
+  height: 53rpx;
   margin-top: 58rpx;
   margin-left: 208rpx;
 }

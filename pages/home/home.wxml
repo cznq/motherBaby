@@ -162,7 +162,7 @@
 
   <!-- 预约成功 -->
 
-  <view class='modal-appointment-success titleColor font24' wx:if='{{showAppointmentsuccess}}'  >
+  <view class='modal-appointment-success titleColor font28' wx:if='{{showAppointmentsuccess}}'  >
     <view class='modal-appointment-success-box'>
       <view class='delete-box' bindtap='bindCloseAppointment'>
         <image class='delete-btn' src='../../images/delete.png'></image>
@@ -170,10 +170,10 @@
       <image class='modal-appointment-success-img' src='../../images/appointment_success.png'></image>
       <view class='modal-appointment-success-content_1  '>我们已经收到您的预约，上门当天，我们会提前与您联系。</view>
       <view class='modal-appointment-success-content_2 '>
-        <view class=' modal-appointment-success-content_2-words'>复制并添加客服微信，
+        <view class=' modal-appointment-success-content_2-words'>复制并添加客服微信,进入换换星球，更多好礼享不停！
         </view>
-        <view class=' modal-appointment-success-content_2-words'>进入换换星球，更多好礼享不停！
-        </view>
+        <!-- <view class=' modal-appointment-success-content_2-words'>进入换换星球，更多好礼享不停！
+        </view> -->
         <view class='btn-copy font28' bindtap='bindCopy'>复制</view>
       </view>
       <view class='dots'> </view>
