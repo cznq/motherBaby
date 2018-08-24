@@ -161,7 +161,6 @@
   </view>
 
   <!-- 预约成功 -->
-
   <view class='modal-appointment-success titleColor font28' wx:if='{{showAppointmentsuccess}}'  >
     <view class='modal-appointment-success-box'>
       <view class='delete-box' bindtap='bindCloseAppointment'>
