@@ -39,15 +39,18 @@ page{
   margin-top: 16rpx;
 }
 .platform-words{
-  margin-top: 14rpx;
+  margin-top: 10rpx;
 }
-.words-myappointment{
+.service-words{
+  margin-top: 16rpx;
+}
+.myappointment-words{
   margin-top: 12rpx;
 }
 .platform-img{
   width: 99rpx;
   height: 76rpx;
-  margin-top: 5rpx;
+  margin-top: 8rpx;
 }
 .service-img{
   width: 103rpx;

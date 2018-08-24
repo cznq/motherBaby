@@ -24,13 +24,13 @@
     <navigator url='../../pages/service/service' hover-class="none">
       <view class='home-title-center'>
         <image src='../../images/service@2x.png' class='service-img'></image>
-        <view class='home-title-words '>联系客服</view>
+        <view class='home-title-words service-words'>联系客服</view>
       </view>
     </navigator>
 
     <view bindtap='bindMymAppointment' class='home-title-right'>
       <image src='../../images/reservation@2x.png' class='reservation-img'></image>
-      <view class=' home-title-words words-myappointment'>我的预约</view>
+      <view class=' home-title-words myappointment-words'>我的预约</view>
     </view>
     <!-- <view bindtap='bindMyCookies' class='home-title-right'>
       <image src='../../images/binggan.png' class='binggan-img'></image>

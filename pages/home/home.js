@@ -87,7 +87,6 @@ Page({
         }
       },
       fail(res) {
-
         wx.getSetting({
           success(res) {
             if (!res.authSetting['scope.address']) {
@@ -306,7 +305,7 @@ Page({
   },
   bindCopy() {
     wx.setClipboardData({
-      data: 'dark－artist',
+      data: 'dark-artist',
       success: function (res) {
         wx.getClipboardData({
           success: function (res) {
