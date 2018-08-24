@@ -68,7 +68,7 @@ page{
 .img-yugu{
   width: 35rpx;
   height: 34rpx;
-  top: 28rpx;
+  top: 24rpx;
   left: 20rpx;
   position: absolute;
 }
@@ -123,6 +123,15 @@ page{
   position: relative;
   height: 88rpx;
   line-height: 88rpx;
+}
+.home-content-main-time-right{
+  margin-top: -4rpx;
+}
+.home-content-main-address-left .pinkColor{
+  margin-top: 24rpx;
+}
+.home-content-main-time-left .pinkColor{
+  margin-top: 24rpx;
 }
 /* 取件地址右侧文字样式 */
 .home-content-main-address-right-words {
@@ -211,6 +220,9 @@ page{
 }
 .margintop26{
   margin-top: 26rpx;
+}
+.margintop8{
+  margin-top: 8rpx;
 }
 .a {
   height: 88rpx;

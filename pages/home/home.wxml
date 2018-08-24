@@ -46,7 +46,7 @@
         <!-- 预估重量&&未登录主动获取用户信息权限 -->
         <view class='home-content-main-common home-content-main-weight'>
           <view class='.home-content-main-left home-content-main-weight-left'>
-            <image src='../../images/yugu.png' class='img-yugu'></image>
+            <image src='../../images/yugu.png' class='img-yugu {{!showWeightTips?"margintop8":""}}'></image>
             <view class='weight-margin'>
               <view class='pinkColor {{!showWeightTips?"margintop26":""}}'>预估重量</view>
               <view class='home-content-main-weight-left-tips font18' wx:if="{{showWeightTips}}">低于3KG，可以再积攒下哦~</view>
