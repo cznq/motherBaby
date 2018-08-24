@@ -87,7 +87,7 @@
             <text class='font28 gray-6'>{{item.detailInfo}}</text>
            </view>
          </view>
-         <view class='mybz Infobottom_05 padding10-0 row start-start'>
+         <view class='mybez Infobottom_05 padding10-0 row start-start'>
            <view class='font28 row cen-start'>
              <image src='../../images/beizhu.png'></image>
              <text class='row gray-6 text'>备注：</text>
@@ -129,7 +129,7 @@
             <text class='font28 gray-6'>{{item.detailInfo}}</text>
            </view>
          </view>
-         <view class='mybz Infobottom_05 padding10-0 row start-start'>
+         <view class='mybez Infobottom_05 padding10-0 row start-start'>
            <view class='font28 row cen-start'>
              <image src='../../images/beizhu.png'></image>
              <text class='row gray-6 text'>备注：</text>
@@ -171,7 +171,7 @@
             <text class='font28 gray-6'>{{item.detailInfo}}</text>
            </view>
          </view>
-         <view class='mybz Infobottom_05 padding10-0 row start-start'>
+         <view class='mybez Infobottom_05 padding10-0 row start-start'>
            <view class='font28 row cen-start'>
              <image src='../../images/beizhu.png'></image>
              <text class='row gray-6 text'>备注：</text>
