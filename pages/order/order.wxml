@@ -18,9 +18,9 @@
     <view class="marg10-top padding0-15">
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
-          <view class='font28'>
+          <view class='font28 row cen-start'>
             <image src='../../images/product_intro_1.png'></image>
-            <text class='gray-6'>订单号：{{item.orderNo}}</text>
+            <text class='gray-6 text'>订单号：{{item.orderNo}}</text>
           </view>
           <text wx:if='{{item.orderStatus === 1}}' class='font32 qrcolo'>待确认</text>
           <text wx:if='{{item.orderStatus === 2}}' class='font32 qrcolo'>已取消</text>
@@ -29,7 +29,7 @@
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row start-start'>
-           <view class='font28 row cen-start'>
+           <view class=' font28 row cen-start'>
              <image src='../../images/yuejz.png'></image>
              <text class='gray-6 text'>捐赠信息：</text>
            </view>
@@ -45,8 +45,8 @@
             <text class='font28 gray-6'>{{item.detailInfo}}</text>
            </view>
          </view>
-         <view class='mybz Infobottom_05 padding10-0 row start-start'>
-           <view class='font28 row cen-start'>
+         <view class='mybez Infobottom_05 padding10-0 row start-start'>
+           <view class=' font28 row cen-start'>
              <image src='../../images/beizhu.png'></image>
              <text class='row gray-6 text'>备注：</text>
            </view>
@@ -63,7 +63,7 @@
     <view class="marg10-top padding0-15">
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
-          <view class='font28'>
+          <view class='font28 row cen-start'>
             <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
@@ -105,7 +105,7 @@
     <view class="marg10-top padding0-15">
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
-          <view class='font28'>
+          <view class='font28 row cen-start'>
             <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
@@ -147,7 +147,7 @@
     <view class="marg10-top padding0-15">
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
-          <view class='font28'>
+          <view class='font28 row cen-start'>
             <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>

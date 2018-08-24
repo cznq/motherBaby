@@ -36,15 +36,20 @@ page{
 .orderInfo .title .qrcolo{
   color:#fd5293;
 }
+.orderInfo .title .text{
+  line-height: 35rpx;
+}
 .donationInfo image{
-  width:30rpx;
+  width:28rpx;
   height:23rpx;
+  margin-top:1px;
   vertical-align: middle;
   padding-right: 7px;
 }
 .donationInfo .text{
   width:152rpx;
   height:35rpx;
+  vertical-align: middle;
   white-space:nowrap;
  overflow:hidden;
  text-overflow:ellipsis;
@@ -65,15 +70,16 @@ page{
 .vertitop{
   margin-top:-76rpx;
 }
-.mybz image{
-  width:29rpx;
-  height:35rpx;
+.mybez image{
+  width:28rpx;
+  height:31rpx;
   vertical-align: middle;
   padding-right: 7px;
 }
-.mybz .text{
+.mybez .text{
   width:75rpx;
   height:35rpx;
+  line-height: 35rpx;
 white-space:nowrap;
  overflow:hidden;
  text-overflow:ellipsis;
@@ -148,6 +154,7 @@ white-space:nowrap;
   right:0;
   bottom:0;
   left:0;
+  background-color: rgba(0, 0, 0,0.5);
   z-index: 999;
   display: none;
 }
@@ -166,14 +173,17 @@ white-space:nowrap;
   overflow: hidden;
 }
 .loyer .cancelInfo{
+    position: relative;
   display: block;
   width:100%;
   line-height: 50px;
   background-color: #fd5394;
   border-radius: 5px;
   text-align: center;
+
 }
 .loyer .cancelbtn{
+  position: relative;
   display: block;
   width:100%;
   line-height: 50px;
@@ -183,6 +193,7 @@ white-space:nowrap;
   color:#ff8db9;
   text-align: center;
   box-sizing: border-box;
+
 }
 .loyer.action{
   height: 168px;
