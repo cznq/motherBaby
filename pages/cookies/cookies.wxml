@@ -1,8 +1,6 @@
  <!-- @author lya -->
-
-
 <view class='mcontainer color666'>
-
+  <!-- 顶部区域 -->
   <view class='top'></view>
   <!-- 悬浮框 -->
    <view class='top-suspension'>
@@ -26,15 +24,13 @@
       <button class='btn-invitation' open-type="share" ></button>
     </view>
    </view>
-
+  <!-- 内容区域 -->
   <view class='content font28'>
     <view class='content-title'>
       <image src='../../images/icon_money.png' class='img-money'></image>
       <view class='content-title-text titleColor'>小饼干账单</view>
     </view>
     <view class='line'></view>
-   
- 
 
     <view class='content-list-box'>
       <view class='content-list'>

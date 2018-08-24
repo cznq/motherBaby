@@ -17,12 +17,21 @@ color: #E09B51;
 .underline{
   text-decoration: underline;
 }
-
-
+/* 遮罩层 */
+.mask-layer{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 15, 0.65);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* 顶部粉色区域 */
 .top{
   height: 402rpx;
   background-color: #F9EAED;
 }
+/* 顶部浮层 */
 .top-suspension{
   width: 678rpx;
   height: 399rpx;
@@ -33,16 +42,19 @@ color: #E09B51;
   border-radius: 10rpx;
   border: 1rpx solid #F36E89;
 }
+/* 顶部浮层标题 */
 .top-suspension-title{
   display: flex;
   position: absolute;
   left: 189rpx;
   top: 68rpx;
 }
+/* 顶部浮层-饼干数量文字 */
 .cookie_num{
   margin-left: 10rpx;
   margin-right: 10rpx;
 }
+
 .img-cookies{
   width: 93rpx;
   height: 92rpx;
@@ -50,7 +62,7 @@ color: #E09B51;
   left: 292rpx;
   top: 144rpx;
 }
-
+/* 小饼干法则提示框 */
 .top-suspension-toast{
   display: flex;
   position: absolute;
@@ -113,17 +125,14 @@ color: #E09B51;
   background-color: rgba(255, 255, 255, 0);
 }
 
-
-
-
-
-
-
+/* 内容部分 */
+/* 标题 */
 .content-title{
   display: flex;
   height: 138rpx;
   position: relative;
 }
+/* 图标 */
 .img-money{
   width: 28rpx;
   height: 30rpx;
@@ -131,29 +140,35 @@ color: #E09B51;
   left: 35rpx;
   top: 77rpx;
 }
+/* 标题文字 */
 .content-title-text{
   position: absolute;
   left: 74rpx;
   top: 72rpx;
 }
+/* list 外部容器 */
 .content-list-box{
   height: 127rpx;
   width: 100%;
   position: relative;
 }
+/* 线 */
 .content-list-box .line{
   position: absolute;
   left: 0;
   bottom: 0;
 }
+/* list 内部容器 */
 .content-list{
   display: flex;
   height: 126rpx;
 }
+/* list 左侧 */
 .content-list-left{
   margin-top: 30rpx;
   margin-left: 74rpx;
 }
+/* list 右侧 */
 .content-list-right{
   position: absolute;
   top: 50rpx;
@@ -162,25 +177,7 @@ color: #E09B51;
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* 分享成功提示框 */
-.mask-layer{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(15, 15, 15, 0.65);
-  position: absolute;
-  left: 0;
-  top: 0;
-}
 .modal-invitation-success-box{
   width: 560rpx;
   height: 442rpx;
