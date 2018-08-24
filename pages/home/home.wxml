@@ -32,10 +32,10 @@
       <image src='../../images/reservation@2x.png' class='reservation-img'></image>
       <view class=' home-title-words words-myappointment'>我的预约</view>
     </view>
-    <view bindtap='bindMyCookies' class='home-title-right'>
+    <!-- <view bindtap='bindMyCookies' class='home-title-right'>
       <image src='../../images/binggan.png' class='binggan-img'></image>
       <view class='home-title-words'>小饼干</view>
-    </view>
+    </view> -->
   </view>
 
   <!-- 内容区域 -->
