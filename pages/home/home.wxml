@@ -32,10 +32,10 @@
       <image src='../../images/reservation@2x.png' class='reservation-img'></image>
       <view class=' home-title-words words-myappointment'>我的预约</view>
     </view>
-    <!-- <view bindtap='bindMyCookies' class='home-title-right'>
+    <view bindtap='bindMyCookies' class='home-title-right'>
       <image src='../../images/binggan.png' class='binggan-img'></image>
       <view class='home-title-words'>小饼干</view>
-    </view> -->
+    </view>
   </view>
 
   <!-- 内容区域 -->
@@ -52,20 +52,15 @@
               <view class='home-content-main-weight-left-tips font18' wx:if="{{showWeightTips}}">低于3KG，可以再积攒下哦~</view>
             </view>
           </view>
-          <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle row cen-space contentColor" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
-             <view class='home-content-main-right home-content-main-weight-right' >
-              <view class=' chooseweight' wx:if='{{showWeightTips}}'>请选择</view>
-              <view wx:if='{{!showWeightTips}}'>{{weightArr[weightIndex] }} </view>
-              <image src='../../images/arrow_right@2x.png' ></image>
-          </view>
-          </button>
-          <view class='home-content-main-right home-content-main-weight-right' wx:if="{{getUserInfo}}">
+          <view class='home-content-main-right home-content-main-weight-right' >
             <picker bindchange="bindWeightPickerChange" value="{{weightIndex}}" range="{{weightArr}}">
               <view class='chooseweight' wx:if='{{showWeightTips}}'>请选择</view>
               <view  wx:if='{{!showWeightTips}}'>{{weightArr[weightIndex] }} </view>
               <image src='../../images/arrow_right@2x.png' ></image>
             </picker>
           </view>
+          <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle row cen-space contentColor" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+          </button>
         </view>
         <view class='line-2'></view>
         <!-- 取件地址 -->
@@ -167,7 +162,7 @@
 
   <!-- 预约成功 -->
 
-  <view class='modal-appointment-success titleColor font24'  wx:if='{{showAppointmentsuccess}}' >
+  <view class='modal-appointment-success titleColor font24' wx:if='{{showAppointmentsuccess}}'  >
     <view class='modal-appointment-success-box'>
       <view class='delete-box' bindtap='bindCloseAppointment'>
         <image class='delete-btn' src='../../images/delete.png'></image>
@@ -175,7 +170,10 @@
       <image class='modal-appointment-success-img' src='../../images/appointment_success.png'></image>
       <view class='modal-appointment-success-content_1  '>我们已经收到您的预约，上门当天，我们会提前与您联系。</view>
       <view class='modal-appointment-success-content_2 '>
-        <view class=' modal-appointment-success-content_2-words'>如有疑问，请添加客服微信：dark－artist</view>
+        <view class=' modal-appointment-success-content_2-words'>复制并添加客服微信，
+        </view>
+        <view class=' modal-appointment-success-content_2-words'>进入换换星球，更多好礼享不停！
+        </view>
         <view class='btn-copy font28' bindtap='bindCopy'>复制</view>
       </view>
       <view class='dots'> </view>

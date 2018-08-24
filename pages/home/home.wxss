@@ -352,6 +352,8 @@ page{
 
 .orderTitle {
   background-color: rgba(255, 255, 255, 0);
+  /* background-color: yellow; */
+  width: 150rpx;
   position: absolute;
   right: 50rpx;
   top: 32rpx;
@@ -402,9 +404,9 @@ page{
 }
 
 .modal-pick-up-box .modal-pick-up-logo {
-  width: 163rpx;
-  height: 158rpx;
-  margin-top: 70rpx;
+  width: 160rpx;
+  height: 118rpx;
+  margin-top: 71rpx;
   margin-bottom: 60rpx;
 }
 
@@ -667,7 +669,7 @@ page{
 }
 
 .modal-appointment-success-content_2-words {
-  width: 340rpx;
+  width: 360rpx;
   line-height: 28rpx;
 }
 

@@ -7,18 +7,27 @@ Page({
    */
   data: {
     showInvitation:false,
+    showRules:false
   },
   bindCloseinvitation(){
     this.setData({
       showInvitation:false
     })
   },
-
+  handleShowRules(){
+    this.setData({
+      showRules:true
+    })
+  },
+  handleCloseRules(){
+    this.setData({
+      showRules: false
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (res) {
-    console.log(res.userId)
     if (res.userId) {
       this.setData({
         shareId: res.userId

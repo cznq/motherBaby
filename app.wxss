@@ -21,6 +21,9 @@
 .pinkColor{
   color: #fd5293;
 }
+.white{
+  color: #fff;
+}
  /* common */
  .margintop8{
    margin: 8rpx

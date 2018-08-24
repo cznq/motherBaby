@@ -94,7 +94,28 @@ page{
   flex: 1;
   margin-right: 60rpx;
 }
-
+.online-booking-content-text-1{
+  margin-top: 6rpx;
+}
+.online-booking-content-text-1 .next-line{
+  margin-left:24rpx; 
+}
+.online-booking-content-text-2{
+  margin-top: 6rpx;
+  margin-left: 2rpx;
+}
+.online-booking-content-text-3{
+  margin-top: 4rpx;
+}
+.online-booking-content-text-3 .next-line{
+  margin-left: 27rpx;
+}
+.online-booking-content-text-4{
+  margin-top: 4rpx;
+}
+.online-booking-content-text-5{
+  margin-top: 2rpx;
+}
 .online-booking-content_2 {
   display: flex;
   margin-top: 50rpx;

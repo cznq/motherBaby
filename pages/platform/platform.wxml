@@ -22,23 +22,29 @@
       <view class='online-booking-content-box '>
         <view class='online-booking-content_1 '>
           <image class='img-online-booking_1' src='../../images/booking_1.png'></image>
-          <view class='online-booking-content-text'>1、提前打包好母婴闲置物品、称重，方便预约及回收</view>
+          <view class='online-booking-content-text online-booking-content-text-1'>1. 提前打包好母婴闲置物品、称重，方便预约
+            <view class='next-line'>及回收</view>
+          </view>
+          
         </view>
         <view class='online-booking-content_2 '>
           <image class='img-online-booking_2' src='../../images/booking_2.png'></image>
-          <view class='online-booking-content-text'>2、在线预约并等待确认</view>
+          <view class='online-booking-content-text online-booking-content-text-2'>2. 在线预约并等待确认</view>
         </view>
         <view class='online-booking-content_3 '>
           <image class='img-online-booking_3 margintop8' src='../../images/booking_3.png'></image>
-          <view class='online-booking-content-text'>3、显示待回收表示预约成功，请等待快递员免费上门取件</view>
+          <view class='online-booking-content-text online-booking-content-text-3'>3. 显示待回收表示预约成功，请等待快递员免
+            <view class='next-line'>费上门取件</view>
+          </view>
+          
         </view>
         <view class='online-booking-content_4 '>
           <image class='img-online-booking_4' src='../../images/booking_4.png'></image>
-          <view class='online-booking-content-text'>4、取件当天快递员会主动与您联系</view>
+          <view class='online-booking-content-text online-booking-content-text-4'>4. 取件当天快递员会主动与您联系</view>
         </view>
         <view class='online-booking-content_5 '>
           <image class='img-online-booking_5 ' src='../../images/booking_5.png'></image>
-          <view class='online-booking-content-text'>5、将打包好的母婴闲置物品交给我们的快递员</view>
+          <view class='online-booking-content-text online-booking-content-text-5'>5. 将打包好的母婴闲置物品交给我们的快递员</view>
         </view>
       </view>
     </view>

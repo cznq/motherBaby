@@ -1,10 +1,100 @@
  <!-- @author lya -->
 
 
-<view class='mcontainer'>
+<view class='mcontainer color666'>
 
-  <button class='btn-invitation' open-type="share" hover-class='none' >点我邀请</button>
-  <view class='modal-invitation-success titleColor font26' wx:if="{{showInvitation}}">
+  <view class='top'></view>
+  <!-- 悬浮框 -->
+   <view class='top-suspension'>
+    <view class='top-suspension-title font32 pink'>
+      <view >当前拥有</view>
+      <view class='yellow cookie_num'>123</view>
+      <view>小饼干</view>
+    </view>
+    <image class='img-cookies' src='../../images/big_cookies.png'></image>
+    <view class='top-suspension-toast' bindtap='handleShowRules'>
+      <image class='img-notice' src='../../images/notice@2x.png'></image>
+      <view class='font20 pink underline'>小饼干法则</view>
+    </view>
+    <image class='top-suspension-bg' src='../../images/bg_cookies.png'></image>
+    <view class='top-suspension-bottom'>
+      <view class='top-suspension-bottom-left white'>
+        <view class='font28 '>邀好友，得饼干</view>
+        <view class='font24 '>每邀请1名新用户，获得60小饼干</view>
+      </view>
+      <view class='top-suspension-bottom-right font24 pinkColor'>去邀请</view>
+      <button class='btn-invitation' open-type="share" ></button>
+    </view>
+   </view>
+
+  <view class='content font28'>
+    <view class='content-title'>
+      <image src='../../images/icon_money.png' class='img-money'></image>
+      <view class='content-title-text titleColor'>小饼干账单</view>
+    </view>
+    <view class='line'></view>
+   
+ 
+
+    <view class='content-list-box'>
+      <view class='content-list'>
+        <view class='content-list-left'>
+          <view>注册有礼</view>
+          <view class='font24 content-list-left-time'>
+            <view>2018-08-24</view>
+            <view class='time-hms'>17:44:23</view>
+          </view>
+        </view>
+        <view class='content-list-right pinkColor'>+160</view>     
+      </view>
+      <view class='line'></view> 
+    </view>
+
+    <view class='content-list-box'>
+      <view class='content-list'>
+        <view class='content-list-left'>
+          <view>回收成功</view>
+          <view class='font24 content-list-left-time'>
+            <view>2018-08-24</view>
+            <view class='time-hms'>17:44:23</view>
+          </view>
+        </view>
+        <view class='content-list-right pinkColor'>+160</view>     
+      </view>
+      <view class='line'></view> 
+    </view>
+
+    <view class='content-list-box'>
+      <view class='content-list'>
+        <view class='content-list-left'>
+          <view>宝贝入库</view>
+          <view class='font24 content-list-left-time'>
+            <view>2018-08-24</view>
+            <view class='time-hms'>17:44:23</view>
+          </view>
+        </view>
+        <view class='content-list-right pinkColor'>+160</view>     
+      </view>
+      <view class='line'></view> 
+    </view>
+
+        <view class='content-list-box'>
+      <view class='content-list'>
+        <view class='content-list-left'>
+          <view>订单处罚</view>
+          <view class='font24 content-list-left-time'>
+            <view>2018-08-24</view>
+            <view class='time-hms'>17:44:23</view>
+          </view>
+        </view>
+        <view class='content-list-right blue'>-20</view>     
+      </view>
+      <view class='line'></view> 
+    </view>
+  </view>
+
+  <!-- 分享成功提示框 -->
+  <view class='mask-layer titleColor font26' wx:if="{{showInvitation}}">
     <view class='modal-invitation-success-box'>
       <view class='delete-box' bindtap='bindCloseinvitation'>
         <image class='delete-btn' src='../../images/delete.png'></image>
@@ -16,4 +106,18 @@
     </view>
   </view>
 
+  <!-- 小饼干法则 -->
+  <view class='mask-layer' wx:if="{{showRules}}">
+    
+    <view class='modal-invitation-success-box'>
+      <view class='delete-box' bindtap='handleCloseRules'>
+        <image class='delete-btn' src='../../images/delete.png'></image>
+      </view>
+      <image class='modal-invitation-success-img' src='../../images/invitation_success.png'></image>
+      <view class='modal-invitation-success-content font26 '>新用户首次登陆...</view>
+      <view class='dots'></view>
+        <button class='modal-invitation_notice-btn font34' bindtap='handleCloseRules' > 知道了 </button>
+    </view>
+
   </view>
+</view>
