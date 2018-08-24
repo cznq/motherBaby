@@ -84,6 +84,9 @@ white-space:nowrap;
  overflow:hidden;
  text-overflow:ellipsis;
 }
+.bz_text{
+  margin-top:-2px;
+}
 .myordbtn image{
   width:182rpx;
   height:60rpx;
@@ -196,6 +199,6 @@ white-space:nowrap;
 
 }
 .loyer.action{
-  height: 168px;
+  height: 178px;
   transition: height .3s;
 }
