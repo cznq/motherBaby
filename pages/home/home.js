@@ -72,7 +72,7 @@ Page({
   bindChooseAddr() {
     let that = this
     wx.chooseAddress({
-      success(res) {
+    success(res) {
         if (!res.provinceName.includes('北京')) {
           that.setData({
             showPickup: true,
@@ -100,9 +100,13 @@ Page({
             }
           }
         })
+      },
+      complete(res){
+        console.log('complete',that.data.memberAddr)
+        that.btnIsable()
       }
     })
-    this.btnIsable()
+
   },
   // 设置上门时间
   bindDateChange(e) {
@@ -317,7 +321,8 @@ Page({
   },
   // 判断按钮是否可用
   btnIsable() {
-    if (this.data.weightIndex != 0 && this.data.memberAddr.length != 0 && this.data.date!='请预约') {
+    console.log(this.data.memberAddr.length)
+    if (this.data.weightIndex != 0 && this.data.memberAddr.length !=0&& this.data.date!='请预约') {
       this.setData({
         btnDisable: false
       })
@@ -411,7 +416,7 @@ Page({
     // this.setData({
     //   msg
     // })
-    console.log('show',options)
+    // console.log('show',options)
   },
 
   /**

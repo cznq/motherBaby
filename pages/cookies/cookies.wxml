@@ -103,14 +103,46 @@
   </view>
 
   <!-- 小饼干法则 -->
+
   <view class='mask-layer' wx:if="{{showRules}}">
-    
-    <view class='modal-invitation-success-box'>
+ 
+    <view class='modal-rules-box'>
       <view class='delete-box' bindtap='handleCloseRules'>
         <image class='delete-btn' src='../../images/delete.png'></image>
       </view>
-      <image class='modal-invitation-success-img' src='../../images/invitation_success.png'></image>
-      <view class='modal-invitation-success-content font26 '>新用户首次登陆...</view>
+      <image class='modal-rules-img' src='../../images/cookies_rules.png'></image>
+      <!-- 1 -->
+      <view class='rules-one'>
+        <image class='img-rules-num-1' src='../../images/1.png'></image>
+        <view class='rule-content-1 font24 titleColor'>
+          <view>新用户首次登陆</view>
+          <view>小饼干+150块</view>
+        </view>
+      </view>
+      <!-- 2 -->
+      <view class='rules-two'>
+        <image class='img-rules-num-2' src='../../images/2.png'></image>
+        <view class='rule-content-2 font24 titleColor'>
+          <view>新用户首次登陆</view>
+          <view>小饼干+150块</view>
+        </view>
+      </view>
+      <!-- 3 -->
+      <view class='rules-three'>
+        <image class='img-rules-num-3' src='../../images/3.png'></image>
+        <view class='rule-content-3 font24 titleColor'>
+          <view>新用户首次登陆</view>
+          <view>小饼干+150块</view>
+        </view>
+      </view>  
+      <!-- 4 -->
+      <view class='rules-four'>
+        <image class='img-rules-num-4' src='../../images/4.png'></image>
+        <view class='rule-content-4 font24 titleColor'>
+          <view>新用户首次登陆</view>
+          <view>小饼干+150块</view>
+        </view>
+      </view>
       <view class='dots'></view>
         <button class='modal-invitation_notice-btn font34' bindtap='handleCloseRules' > 知道了 </button>
     </view>

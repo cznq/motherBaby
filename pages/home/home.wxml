@@ -181,4 +181,19 @@
       </navigator>
     </view>
   </view>
+
+  <!-- 新手有礼 -->
+  <!-- <view class='mask-layer' wx:if='false'>
+    <view class='gift'>
+      <view class='delete-box' bindtap='bindDelete'>
+        <image class='delete-btn-gift' src='../../images/delete.png'></image>
+      </view>
+      <image class='img-gift' src='../../images/gift.png'></image>
+      <view class='font36 gift-words'>
+        <view >送你160枚小饼干</view>
+        <view >免费领宝贝</view>
+      </view>
+      <view class='gift-btn'>立即领取</view>
+    </view>
+  </view> -->
 </view>
