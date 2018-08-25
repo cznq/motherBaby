@@ -173,7 +173,7 @@
   </view>
 
   <!-- 预约成功 -->
-  <view class='modal-appointment-success titleColor font28' wx:if='{{showAppointmentsuccess}}'  >
+  <view class='modal-appointment-success titleColor font28'   wx:if='{{showAppointmentsuccess}}'  >
     <view class='modal-appointment-success-box'>
       <view class='delete-box' bindtap='bindCloseAppointment'>
         <image class='delete-btn' src='../../images/delete.png'></image>
@@ -181,11 +181,18 @@
       <image class='modal-appointment-success-img' src='../../images/appointment_success.png'></image>
       <view class='modal-appointment-success-content_1  '>我们已经收到您的预约，上门当天，我们会提前与您联系。</view>
       <view class='modal-appointment-success-content_2 '>
-        <view class=' modal-appointment-success-content_2-words'>复制并添加客服微信,进入换换星球，更多好礼享不停！
+        <!-- <view class=' modal-appointment-success-content_2-words'>复制并添加客服微信,进入换换星球，更多好礼享不停！ -->
+        <view class=' modal-appointment-success-content_2-words'>
+        
+          <view class='margintop2'>点击</view> 
+          <view class='btn-copy font28' bindtap='bindCopy'>复制</view>
+           <view class='margintop2' >客服微信号dark-artist，</view> 
         </view>
+        <view>在微信中添加好友，即可咨询。</view> 
+
         <!-- <view class=' modal-appointment-success-content_2-words'>进入换换星球，更多好礼享不停！
         </view> -->
-        <view class='btn-copy font28' bindtap='bindCopy'>复制</view>
+        <!-- <view class='btn-copy font28' bindtap='bindCopy'>复制</view> -->
       </view>
       <view class='dots'> </view>
       <navigator url='../../pages/order/order' hover-class="none" class='modal-appointment-success-btn-box'>
