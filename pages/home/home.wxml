@@ -31,11 +31,15 @@
     <view bindtap='bindMymAppointment' class='home-title-right'>
       <image src='../../images/reservation@2x.png' class='reservation-img'></image>
       <view class=' home-title-words myappointment-words'>我的预约</view>
+      <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="btn-getuserinfo " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+      </button>
     </view>
-    <!-- <view bindtap='bindMyCookies' class='home-title-right'>
+    <view bindtap='bindMyCookies' class='home-title-cookies'>
       <image src='../../images/binggan.png' class='binggan-img'></image>
       <view class='home-title-words'>小饼干</view>
-    </view> -->
+      <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="btn-getuserinfo " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+      </button>
+    </view>
   </view>
 
   <!-- 内容区域 -->
@@ -59,7 +63,7 @@
               <image src='../../images/arrow_right@2x.png' ></image>
             </picker>
           </view>
-          <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle row cen-space contentColor" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+          <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
           </button>
         </view>
         <view class='line-2'></view>
@@ -69,10 +73,13 @@
             <image src='../../images/dizhi.png' class='img-dizhi'></image>
             <view class=' pinkColor'>取件地址</view>
           </view>
+
           <label class='home-content-main-right home-content-main-address-right' bindtap='bindChooseAddr'>
             <view class='home-content-main-address-right-words'>{{memberAddr.provinceName+memberAddr.cityName+memberAddr.countyName+memberAddr.detailInfo ||'请填写'}}</view>
             <image src='../../images/arrow_right@2x.png'> </image>
           </label>
+          <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="btn-getuserinfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+          </button>
         </view>
         <view class='line-2'></view>
         <!-- 上门时间 -->
@@ -87,6 +94,8 @@
               <image src='../../images/arrow_right@2x.png'> </image>
             </picker>
           </view>
+          <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="btn-getuserinfo " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+          </button>
         </view>
       </view>
 
@@ -103,8 +112,11 @@
           <view class=' pinkColor'>备注</view>
         </view>
         <!-- 备注内容   -->
-        <textarea class=' {{changeLine?"b":"a"}} contentColor font24' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' bindinput='bindinput' bindlinechange='bindlinechange' placeholder-class='placeholder-class contentColor' wx:if='{{showTextarea}}'
-          value='{{remarkInfo}}'></textarea>
+        <textarea class=' {{changeLine?"b":"a"}} contentColor font24' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' bindinput='bindinput' bindlinechange='bindlinechange' placeholder-class='placeholder-class contentColor' wx:if='{{showTextarea&&getUserInfo}}' disabled='{{!getUserInfo}}'
+          value='{{remarkInfo}}' ></textarea>
+          <view class='font24 remarks-text' wx:if="{{!getUserInfo}}">请简单介绍一下要捐赠的东西</view>
+          <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="btn-getuserinfo " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+          </button>
       </view>
       <view class='home-btn-confirm  {{btnDisable?"disablebtn":""}}' bindtap='bindConfirmAppointment'>免费上门取货</view>
     </view>
@@ -183,7 +195,7 @@
   </view>
 
   <!-- 新手有礼 -->
-  <!-- <view class='mask-layer' wx:if='false'>
+  <view class='mask-layer' wx:if='{{showGift}}'>
     <view class='gift'>
       <view class='delete-box' bindtap='bindDelete'>
         <image class='delete-btn-gift' src='../../images/delete.png'></image>
@@ -193,7 +205,7 @@
         <view >送你160枚小饼干</view>
         <view >免费领宝贝</view>
       </view>
-      <view class='gift-btn'>立即领取</view>
+      <view class='gift-btn' bindtap='handleGetGift'>立即领取</view>
     </view>
-  </view> -->
+  </view>
 </view>

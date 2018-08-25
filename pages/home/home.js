@@ -44,12 +44,13 @@ Page({
     showPickup: false,
     showAppointmentsuccess: false,
     changeLine: false,
-    msg:''
+    msg:'',
+    showGift:false //是否显示新手有礼弹框
   },
 
   //主动获取用户信息权限
   onGotUserInfo: function (e) {
-    console.log('onGotUserInfo', e.detail.userInfo);
+    // console.log('onGotUserInfo', e.detail.userInfo);
     let userInfo = e.detail.userInfo;
     if (!userInfo) {
       this.setData({
@@ -57,9 +58,12 @@ Page({
       })
     } else {
       this.setData({
-        getUserInfo: true
+        getUserInfo: true,
+        showGift:true,
+        showTextarea:false
       })
     }
+    console.log(e)
   },
   // picker组件--重量改变事件
   bindWeightPickerChange(e) {
@@ -178,26 +182,32 @@ Page({
   bindMymAppointment() {
     console.log('1', app.globalData.id);
     var _that = this;
-    if (!app.globalData.id) {
-      // 登录
-      app.getOpenid().then(function (userId) {
-        console.log('2userId', userId);
-        if (userId) {
-          wx.navigateTo({
-            url: '../order/order',
-          })
-        }
-      })
-    } else {
-      wx.navigateTo({
-        url: '../order/order',
-      })
+    if (_that.data.getUserInfo){
+      if (!app.globalData.id) {
+        // 登录
+        app.getOpenid().then(function (userId) {
+          console.log('2userId', userId);
+          if (userId) {
+            wx.navigateTo({
+              url: '../order/order',
+            })
+          }
+        })
+      } else {
+        wx.navigateTo({
+          url: '../order/order',
+        })
+      }
     }
+
   },
   bindMyCookies(e){
-    wx.navigateTo({
-      url: '../cookies/cookies',
-    })
+    if (this.data.getUserInfo){
+      wx.navigateTo({
+        url: '../cookies/cookies',
+      })
+    }
+
   },
   // 确认按钮
   bindConfirmAppointment(e) {
@@ -321,7 +331,6 @@ Page({
   },
   // 判断按钮是否可用
   btnIsable() {
-    console.log(this.data.memberAddr.length)
     if (this.data.weightIndex != 0 && this.data.memberAddr.length !=0&& this.data.date!='请预约') {
       this.setData({
         btnDisable: false
@@ -343,13 +352,27 @@ Page({
   bindDelete() {
     this.setData({
       showPickup: false,
-      showTextarea: true
+      showTextarea: true,
+      showGift:false,
+      showTextarea:true
+    })
+  },
+  handleGetGift(){
+    this.setData({
+      showGift: false,
+      showTextarea:true      
+    })
+    wx.showToast({
+      title: '领取成功',
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+
+    
     console.log('onload',options)
     // console.log('day', new Date().getDay())
     var _that = this;
@@ -362,6 +385,7 @@ Page({
               _that.setData({
                 getUserInfo: true
               })
+              console.log()
               // 更新用户信息
               var url = app.globalData.baseUrl + 'maternal/user/update';
               var reqbody = {
@@ -384,10 +408,9 @@ Page({
             }
           })
         }
-
-
       },
     })
+
     // 图片数量大于1时才显示指示点、自动轮播
     this.data.imgUrls.length > 1 ? this.setData({
       indicatorDots: !this.data.indicatorDots,

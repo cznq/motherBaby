@@ -203,8 +203,8 @@ color: #E09B51;
   height: 25rpx;
 }
 .modal-invitation-success-img {
-  width: 156rpx;
-  height: 54rpx;
+  width: 171rpx;
+  height: 57rpx;
   margin-top: 57rpx;
   margin-left: 208rpx;
 }

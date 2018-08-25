@@ -12,8 +12,8 @@ page{
 }
 
 .service-title-img {
-  width: 229rpx;
-  height: 52rpx;
+  width: 253rpx;
+  height: 56rpx;
   margin-top: 34rpx;
 }
 

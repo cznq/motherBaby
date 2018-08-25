@@ -127,6 +127,7 @@ page{
   height: 88rpx;
   line-height: 88rpx;
 }
+
 .home-content-main-time-right{
   margin-top: -4rpx;
 }
@@ -365,6 +366,17 @@ page{
   line-height: 88rpx;
   font-size: 28rpx;
 }
+.btn-getuserinfo::after{
+  border: none
+}
+.btn-getuserinfo{
+  background-color: rgba(255, 255, 255, 0);
+  width: 150rpx;
+  position: absolute;
+  right: 50rpx;
+  top: 120rpx;
+  height: 88rpx;
+}
 
 /* 获取用户信息button下的image-样式 */
 .orderTitle .chooseweight{
@@ -498,12 +510,12 @@ page{
 }
 
 .img-title {
-  width: 155rpx;
-  height: 52rpx;
+  width: 171rpx;
+  height: 56rpx;
   position: absolute;
   top: 57rpx;
   left: 50%;
-  margin-left: -78rpx;
+  margin-left: -85.5rpx;
 }
 .modal-appointment_notice-content{
   height: 100%;
@@ -691,8 +703,8 @@ page{
 }
 
 .modal-appointment-success-box .modal-appointment-success-img {
-  width: 156rpx;
-  height: 53rpx;
+  width: 172rpx;
+  height: 56rpx;
   margin-top: 58rpx;
   margin-left: 208rpx;
 }
@@ -761,3 +773,28 @@ page{
   line-height: 66rpx;
   border: 2rpx solid #fff;
 }
+
+/* 获取用户信息按钮 */
+ .home-content-main-time .btn-getuserinfo{
+   margin-top: 90rpx;
+ }
+ .home-content-remarks .btn-getuserinfo{
+   margin-top: 225rpx;
+   width: 450rpx;
+ }
+ .home-title-right .btn-getuserinfo{
+   position: absolute;
+   left: 240rpx;
+   top: 490rpx;
+ }
+ .home-title-cookies .btn-getuserinfo{
+   position: absolute;
+   right: 10rpx;
+   top: 490rpx;
+ }
+
+ /* textarea不显示时显示的文字 */
+ .remarks-text{
+   width: 500rpx;
+   margin-right: 110rpx;
+ }
