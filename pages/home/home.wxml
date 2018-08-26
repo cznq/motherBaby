@@ -3,7 +3,7 @@
 <view class='contentColor'>
   <!-- 轮播图 -->
   <view class='swiper-box'>
-    <!-- indicator-dots="{{indicatorDots}}" --> 
+    <!-- indicator-dots="{{indicatorDots}}" -->
     <swiper class='home-swiper' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='{{circular}}'>
       <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
         <swiper-item>
@@ -15,25 +15,28 @@
   </view>
   <!-- 标题 -->
   <view class='home-title titleColor'>
+    <!-- 平台介绍 -->
     <navigator url='../../pages/platform/platform' hover-class="none">
-      <view class='home-title-left'>
+      <view class='home-title-platform'>
         <image src='../../images/platintro@2x.png' class='platform-img'></image>
         <view class='home-title-words platform-words'>平台介绍</view>
       </view>
     </navigator>
+    <!-- 联系客服 -->
     <navigator url='../../pages/service/service' hover-class="none">
-      <view class='home-title-center'>
+      <view class='home-title-service'>
         <image src='../../images/service@2x.png' class='service-img'></image>
         <view class='home-title-words service-words'>联系客服</view>
       </view>
     </navigator>
-
-    <view bindtap='bindMymAppointment' class='home-title-right'>
+    <!--我的预约  -->
+    <view bindtap='bindMymAppointment' class='home-title-myappointment'>
       <image src='../../images/reservation@2x.png' class='reservation-img'></image>
       <view class=' home-title-words myappointment-words'>我的预约</view>
       <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="btn-getuserinfo " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
       </button>
     </view>
+    <!-- 小饼干 -->
     <view bindtap='bindMyCookies' class='home-title-cookies'>
       <image src='../../images/binggan.png' class='binggan-img'></image>
       <view class='home-title-words'>小饼干</view>
@@ -48,6 +51,7 @@
       <!-- 选择区域 -->
       <view class='home-content-main-choose'>
         <!-- 预估重量&&未登录主动获取用户信息权限 -->
+        <!-- 预估重量 -->
         <view class='home-content-main-common home-content-main-weight'>
           <view class='.home-content-main-left home-content-main-weight-left'>
             <image src='../../images/yugu.png' class='img-yugu {{!showWeightTips?"margintop8":""}}'></image>
@@ -56,15 +60,13 @@
               <view class='home-content-main-weight-left-tips font18' wx:if="{{showWeightTips}}">低于3KG，可以再积攒下哦~</view>
             </view>
           </view>
-          <view class='home-content-main-right home-content-main-weight-right' >
+          <view class='home-content-main-right home-content-main-weight-right'>
             <picker bindchange="bindWeightPickerChange" value="{{weightIndex}}" range="{{weightArr}}">
               <view class='chooseweight' wx:if='{{showWeightTips}}'>请选择</view>
-              <view  wx:if='{{!showWeightTips}}'>{{weightArr[weightIndex] }} </view>
-              <image src='../../images/arrow_right@2x.png' ></image>
+              <view wx:if='{{!showWeightTips}}'>{{weightArr[weightIndex] }} </view>
+              <image src='../../images/arrow_right@2x.png'></image>
             </picker>
           </view>
-          <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="orderTitle" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
-          </button>
         </view>
         <view class='line-2'></view>
         <!-- 取件地址 -->
@@ -78,8 +80,7 @@
             <view class='home-content-main-address-right-words'>{{memberAddr.provinceName+memberAddr.cityName+memberAddr.countyName+memberAddr.detailInfo ||'请填写'}}</view>
             <image src='../../images/arrow_right@2x.png'> </image>
           </label>
-          <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="btn-getuserinfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
-          </button>
+      
         </view>
         <view class='line-2'></view>
         <!-- 上门时间 -->
@@ -90,11 +91,11 @@
           </view>
           <view class='home-content-main-right home-content-main-time-right'>
             <picker mode="date" value="{{date}}" start="{{startDate}}" end="" bindchange="bindDateChange">
-              <view >{{date}}</view>
+              <view>{{date}}</view>
               <image src='../../images/arrow_right@2x.png'> </image>
             </picker>
           </view>
-          <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="btn-getuserinfo " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+          <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="btn-getuserinfo btn-getuserinfo-weight" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
           </button>
         </view>
       </view>
@@ -112,19 +113,18 @@
           <view class=' pinkColor'>备注</view>
         </view>
         <!-- 备注内容   -->
-        <textarea class=' {{changeLine?"b":"a"}} contentColor font24' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' bindinput='bindinput' bindlinechange='bindlinechange' placeholder-class='placeholder-class contentColor' wx:if='{{showTextarea&&getUserInfo}}' disabled='{{!getUserInfo}}'
-          value='{{remarkInfo}}' ></textarea>
-          <view class='font24 remarks-text' wx:if="{{!getUserInfo}}">请简单介绍一下要捐赠的东西</view>
-          <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="btn-getuserinfo " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
-          </button>
+        <textarea class=' {{changeLine?"b":"a"}} contentColor font24' placeholder='请简单介绍一下要捐赠的东西' maxlength='30' cursor-spacing='25' bindinput='bindinput' bindlinechange='bindlinechange' placeholder-class='placeholder-class contentColor' wx:if='{{showTextarea&&getUserInfo}}'
+          disabled='{{!getUserInfo}}' value='{{remarkInfo}}'></textarea>
+        <view class='font24 remarks-text' wx:if="{{!getUserInfo}}">请简单介绍一下要捐赠的东西</view>
+        <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="btn-getuserinfo " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+        </button>
       </view>
-      <view class='home-btn-confirm  {{btnDisable?"disablebtn":""}}' bindtap='bindConfirmAppointment'>免费上门取货</view>
+      <view class='home-btn-confirm  {{btnDisable?"disablebtn":""}} font34' bindtap='bindConfirmAppointment'>免费上门取货</view>
     </view>
   </view>
 
   <!-- 仅支持北京地区上门取件提示框  -->
- 
-  <view class='modal-pick-up titleColor font30'  wx:if="{{showPickup}}">
+  <view class='modal-pick-up titleColor font30' wx:if="{{showPickup}}">
     <view class='modal-pick-up-box'>
       <view class='delete-box' bindtap='bindDelete'>
         <image class='delete-btn' src='../../images/delete.png'></image>
@@ -138,8 +138,7 @@
   </view>
 
   <!-- 预约须知提示框 -->
-
-  <view class='modal-appointment_notice titleColor '  wx:if="{{showMModal}}"  >
+  <view class='modal-appointment_notice titleColor ' wx:if="{{showMModal}}">
     <view class='modal-appointment_notice-box'>
       <view class='delete-box' bindtap='bindCloseAppointment'>
         <image class='delete-btn' src='../../images/delete.png'></image>
@@ -173,7 +172,7 @@
   </view>
 
   <!-- 预约成功 -->
-  <view class='modal-appointment-success titleColor font28'   wx:if='{{showAppointmentsuccess}}'  >
+  <view class='modal-appointment-success titleColor font28' wx:if='{{showAppointmentsuccess}}'>
     <view class='modal-appointment-success-box'>
       <view class='delete-box' bindtap='bindCloseAppointment'>
         <image class='delete-btn' src='../../images/delete.png'></image>
@@ -183,12 +182,12 @@
       <view class='modal-appointment-success-content_2 '>
         <!-- <view class=' modal-appointment-success-content_2-words'>复制并添加客服微信,进入换换星球，更多好礼享不停！ -->
         <view class=' modal-appointment-success-content_2-words'>
-        
-          <view class='margintop2'>点击</view> 
+
+          <view class='margintop2'>点击</view>
           <view class='btn-copy font28' bindtap='bindCopy'>复制</view>
-           <view class='margintop2' >客服微信号dark-artist，</view> 
+          <view class='margintop2'>客服微信号dark-artist，</view>
         </view>
-        <view>在微信中添加好友，即可咨询。</view> 
+        <view>在微信中添加好友，即可咨询。</view>
 
         <!-- <view class=' modal-appointment-success-content_2-words'>进入换换星球，更多好礼享不停！
         </view> -->
@@ -209,8 +208,8 @@
       </view>
       <image class='img-gift' src='../../images/gift.png'></image>
       <view class='font36 gift-words'>
-        <view >送你160枚小饼干</view>
-        <view >免费领宝贝</view>
+        <view>送你160枚小饼干</view>
+        <view>免费领宝贝</view>
       </view>
       <view class='gift-btn' bindtap='handleGetGift'>立即领取</view>
     </view>
