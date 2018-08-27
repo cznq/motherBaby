@@ -204,7 +204,7 @@
   <view class='mask-layer' wx:if='{{showGift}}'>
     <view class='gift'>
       <view class='delete-box' bindtap='bindDelete'>
-        <image class='delete-btn-gift' src='../../images/delete.png'></image>
+        <image class='delete-btn-gift' src='../../images/delete_white.png'></image>
       </view>
       <image class='img-gift' src='../../images/gift.png'></image>
       <view class='font36 gift-words'>
@@ -212,6 +212,21 @@
         <view>免费领宝贝</view>
       </view>
       <view class='gift-btn' bindtap='handleGetGift'>立即领取</view>
+      <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="btn-getuserinfo " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+      </button>
     </view>
+  </view>
+
+    <view class='mask-layer' wx:if='{{successfulReceipt}}'>
+    <view class='gift'>
+      <view class='delete-box' bindtap='bindDelete'>
+        <image class='delete-btn-gift' src='../../images/delete_white.png'></image>
+      </view>
+      <image class='img-gift' src='../../images/gift.png'></image>
+      <view class='font36 gift-words'>
+        <view>160枚小饼干已入账</view>
+      </view>
+      <view class='gift-btn' bindtap='handleViewCookies'>立即查看</view>
+    </view>÷
   </view>
 </view>

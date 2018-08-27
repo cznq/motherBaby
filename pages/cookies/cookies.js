@@ -1,7 +1,6 @@
 // @author lya
 const app = getApp();
 Page({
-  shareId: '',
   /**
    * 页面的初始数据
    */
@@ -28,14 +27,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (res) {
-    if (res.userId) {
-      this.setData({
-        shareId: res.userId
-      })
-      wx.showToast({
-        title: '用户id为' + this.data.shareId,
-      })
-    }
+
   },
 
   /**
@@ -92,7 +84,7 @@ Page({
     console.log('userid', app.globalData.id)
     return {
       title: '邀请好友领积分',
-      path: '/pages/cookies/cookies?userId=' + userId, //这里拼接需要携带的参数
+      path: '/pages/home/home?userId=' + userId , //这里拼接需要携带的参数userId
       imageUrl: '../../images/share.jpg',
       success (res) {
         that.setData({

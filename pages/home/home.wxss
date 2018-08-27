@@ -713,8 +713,8 @@ page{
   position: absolute;
   right: 20rpx;
   top: 10rpx;
-  width: 25rpx;
-  height: 25rpx;
+  width: 23rpx;
+  height: 23rpx;
 }
 .gift-words{
   position: absolute;
@@ -778,6 +778,12 @@ page{
    right: 10rpx;
    top: 490rpx;
  }
+.gift .btn-getuserinfo{
+  left: 30rpx;
+  top: 451rpx;
+  width: 230rpx;
+  height: 70rpx;
+}
 
  /* textarea不显示时显示的文字 */
  .remarks-text{

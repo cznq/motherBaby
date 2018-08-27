@@ -10,17 +10,17 @@ App({
           if (userInfo != '') {
             console.log('调用登陆接口');
             var url = this.globalData.baseUrl + 'maternal/user/login';
-            console.log('userInfo.openId',userInfo.openId);
+            // console.log('userInfo.openId',userInfo.openId);
             var reqbody = {
               openId: userInfo.openId
             }
             utils.http(url, (dataStr) => {
               if (dataStr.success) {
-                console.log('dataStr',dataStr);
+                // console.log('dataStr',dataStr);
               this.globalData.openId = dataStr.data.openId;
               this.globalData.sessionKey = dataStr.data.sessionKey;
               this.globalData.id = dataStr.data.id;
-              console.log('this.globalData.id',this.globalData.id);
+              // console.log('this.globalData.id',this.globalData.id);
               }
             }, reqbody);
           }
@@ -36,7 +36,7 @@ App({
       wx.login({
         success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
-          console.log('res.coded',res.code);
+          // console.log('res.coded',res.code);
           _that.globalData.code = res.code;
           // 首次登陆调注册接口获取openid&&userid
           if (!userInfo) {
@@ -50,16 +50,16 @@ App({
                 _that.globalData.sessionKey = dataStr.data.sessionKey;
                 _that.globalData.openId = dataStr.data.openId;
                 _that.globalData.id = dataStr.data.id;
-                console.log('dataStr.data.id',dataStr.data.id);
+                // console.log('dataStr.data.id',dataStr.data.id);
                 userInfo = {
                   openId: _that.globalData.openId,
                   userId: _that.globalData.id
                 }
                 wx.setStorageSync('userInfo', userInfo);
-                console.log('userInfo2',userInfo);
+                // console.log('userInfo2',userInfo);
                 resolve(userInfo);
               }else {
-                console.log('失败',dataStr);
+                // console.log('失败',dataStr);
               }
             }, reqbody);
           }else{
@@ -72,8 +72,8 @@ App({
   globalData: {
     userInfo: null,
     code: '',
-    baseUrl: 'https://nbmp.moji.com/',
-    // baseUrl: 'http://192.168.1.199:8099/',
+    // baseUrl: 'https://nbmp.moji.com/',
+    baseUrl: 'http://192.168.1.199:8099/',
     sessionKey: '',
     openId: '',
     id: ''

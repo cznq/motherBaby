@@ -40,30 +40,50 @@ Page({
     },
     showWeightTips: true, //是否显示重量提示
     remarkInfo: '', //备注信息
-    navigate: false,
-    showPickup: false,
-    showAppointmentsuccess: false,
-    changeLine: false,
-    msg:'',
-    showGift:false //是否显示新手有礼弹框
+    showPickup: false,  //是否显示
+    showAppointmentsuccess: false, //是否显示预约成功
+    changeLine: false, //textarea文字是否换行
+    showGift: false,//是否显示新手有礼弹框
+    successfulReceipt:false,  //是否显示领取成功提示框
+    shareId: '',
   },
 
   //主动获取用户信息权限
   onGotUserInfo: function (e) {
     // console.log('onGotUserInfo', e.detail.userInfo);
+    let that = this
     let userInfo = e.detail.userInfo;
     if (!userInfo) {
       this.setData({
-        getUserInfo: false
+        getUserInfo: false,  
       })
     } else {
+      if (!that.data.getUserInfo) {
+        if (!app.globalData.id) {
+          // 登录
+          app.getOpenid().then(function (userId) {
+            
+            if (!that.data.shareId){
+              wx.showToast({
+                title: '没人分享给我，是我自己来的。我的id是' + app.globalData.id,
+                icon: 'none'
+              })
+            }else{
+              wx.showToast({
+                title: '分享给我的id为' + shareid + ' ，我的id是' + app.globalData.id,
+                icon: 'none'
+              })
+            }    
+          })
+        }
+      }
       this.setData({
         getUserInfo: true,
-        showGift:true,
+        showGift: false,
+        successfulReceipt:true,
         showTextarea:false
       })
     }
-    console.log(e)
   },
   // picker组件--重量改变事件
   bindWeightPickerChange(e) {
@@ -106,7 +126,7 @@ Page({
         })
       },
       complete(res){
-        console.log('complete',that.data.memberAddr)
+        // console.log('complete',that.data.memberAddr)
         that.btnIsable()
       }
     })
@@ -158,7 +178,6 @@ Page({
     this.setData({
       showMModal: false,
       showTextarea: true,
-      navigate: false
     })
   },
   bindinput(e) {
@@ -180,13 +199,13 @@ Page({
   },
   // 点击我的预约
   bindMymAppointment() {
-    console.log('1', app.globalData.id);
+    // console.log('1', app.globalData.id);
     var _that = this;
     if (_that.data.getUserInfo){
       if (!app.globalData.id) {
         // 登录
         app.getOpenid().then(function (userId) {
-          console.log('2userId', userId);
+          // console.log('2userId', userId);
           if (userId) {
             wx.navigateTo({
               url: '../order/order',
@@ -207,30 +226,28 @@ Page({
         url: '../cookies/cookies',
       })
     }
-
   },
   // 确认按钮
   bindConfirmAppointment(e) {
     let that = this
-
-    // console.log('userId', app.globalData.id)
-    // console.log('weight', that.data.weightArr[that.data.weightIndex])
-    // console.log('appointment', that.data.date)
-    // console.log('userName', that.data.memberAddr.userName)
-    // console.log('postalCode', that.data.memberAddr.postalCode)
-    // console.log('provinceName', that.data.memberAddr.provinceName)
-    // console.log('cityName', that.data.memberAddr.cityName)
-    // console.log('countyName', that.data.memberAddr.provinceName)
-    // console.log('detailInfo', that.data.memberAddr.detailInfo)
-    // console.log('nationalCode', that.data.memberAddr.nationalCode)
-    // console.log('telNumber', that.data.memberAddr.telNumber)
-    // console.log('markInfo', that.data.remarkInfo)
+    console.log('userId', app.globalData.id)
+    console.log('weight', that.data.weightArr[that.data.weightIndex])
+    console.log('appointment', that.data.date)
+    console.log('userName', that.data.memberAddr.userName)
+    console.log('postalCode', that.data.memberAddr.postalCode)
+    console.log('provinceName', that.data.memberAddr.provinceName)
+    console.log('cityName', that.data.memberAddr.cityName)
+    console.log('countyName', that.data.memberAddr.provinceName)
+    console.log('detailInfo', that.data.memberAddr.detailInfo)
+    console.log('nationalCode', that.data.memberAddr.nationalCode)
+    console.log('telNumber', that.data.memberAddr.telNumber)
+    console.log('markInfo', that.data.remarkInfo)
     if (!this.data.btnDisable) {
       if (!app.globalData.id) {
-        console.log('无userId');
+        // console.log('无userId');
         // 登录
         app.getOpenid().then(function (userId) {
-          console.log('userId', userId);
+          // console.log('userId', userId);
           if (userId) {
             // 订单预约请求
             util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
@@ -248,18 +265,17 @@ Page({
               telNumber: that.data.memberAddr.telNumber, //收货人电话号码
               markInfo: that.data.remarkInfo //备注信息
             }, function (data) {
-              console.log('suc', data)
+              // console.log('suc', data)
               if (data.success) {
                 that.setData({
-                  weightIndex: 0,
-                  memberAddr: [],
-                  date: '请预约',
-                  btnDisable: true,
-                  remarkInfo: '',
-                  navigate: true,
-                  showWeightTips: true,
-                  showAppointmentsuccess: true,
-                  showTextarea: false
+                  weightIndex: 0, //数组重量下标
+                  memberAddr: [], //收获地址
+                  date: '请预约', //日期
+                  btnDisable: true, //免费上门取货按钮是否可用
+                  remarkInfo: '', //备注信息
+                  showWeightTips: true,  //是否显示重量提示
+                  showAppointmentsuccess: true, //是否显示预约成功提示框
+                  showTextarea: false //是否显示textarea
                 })
               }
             }, 'POST', {
@@ -268,7 +284,7 @@ Page({
           }
         })
       } else {
-        console.log('有userId');
+        // console.log('有userId');
         // 订单预约请求
         util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
           userId: app.globalData.id, //用户id
@@ -285,7 +301,7 @@ Page({
           telNumber: that.data.memberAddr.telNumber, //收货人电话号码
           markInfo: that.data.remarkInfo //备注信息
         }, function (data) {
-          console.log('suc', data)
+          // console.log('suc', data)
           if (data.success) {
             that.setData({
               weightIndex: 0,
@@ -293,7 +309,6 @@ Page({
               date: '请预约',
               btnDisable: true,
               remarkInfo: '',
-              navigate: true,
               showWeightTips: true,
               showAppointmentsuccess: true,
               showTextarea: false
@@ -349,31 +364,42 @@ Page({
   bindHideModal() {
     this.bindChooseAddr()
   },
-  bindDelete() {
+  bindDelete(e) {
     this.setData({
       showPickup: false,
       showTextarea: true,
-      showGift:false,
-      showTextarea:true
+      successfulReceipt:false,
+      showTextarea:true,
+      showGift:false
     })
   },
   handleGetGift(){
     this.setData({
-      showGift: false,
-      showTextarea:true      
+      successfulReceipt: true,
+      showTextarea:false      
     })
-    wx.showToast({
-      title: '领取成功',
+  },
+  handleViewCookies(){
+    this.setData({
+      successfulReceipt: false,
+      showTextarea: true
     })
+    wx.navigateTo({
+      url: '../cookies/cookies'
+      })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (options.userId) {
+      this.setData({
+        shareId: options.userId
+      })
+      console.log('userid',app.globalData.id)
+      console.log('shareId', this.data.shareId)
 
-
-    
-    console.log('onload',options)
+    }
     // console.log('day', new Date().getDay())
     var _that = this;
     wx.getSetting({ // 查看是否授权
@@ -385,7 +411,6 @@ Page({
               _that.setData({
                 getUserInfo: true
               })
-              console.log()
               // 更新用户信息
               var url = app.globalData.baseUrl + 'maternal/user/update';
               var reqbody = {
@@ -407,8 +432,12 @@ Page({
               }, reqbody);
             }
           })
+        }else{   //如果未授权则显示新手有礼提示框
+          _that.setData({
+            showGift:true
+          })
         }
-      },
+      }
     })
 
     // 图片数量大于1时才显示指示点、自动轮播
@@ -433,13 +462,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (options) {
-    // if(options.msg){
-    //   console.log(options.msg)
-    // }
-    // this.setData({
-    //   msg
-    // })
-    // console.log('show',options)
+
   },
 
   /**
@@ -476,7 +499,7 @@ Page({
   onShareAppMessage: function (res) {
     if (res.from === 'button') {
       // 来自页面内转发按钮
-      console.log(res.target)
+      // console.log(res.target)
     }
     return {
       title: '享换换',
