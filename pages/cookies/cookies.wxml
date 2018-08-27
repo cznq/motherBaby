@@ -1,13 +1,14 @@
  <!-- @author lya -->
 <view class='mcontainer color666'>
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> 1111</button> 
   <!-- 顶部区域 -->
   <view class='top'></view>
   <!-- 悬浮框 -->
    <view class='top-suspension'>
     <view class='top-suspension-title font32 pink'>
       <view >当前拥有</view>
-      <view class='yellow cookie_num'>123</view>
-      <view>小饼干</view>
+      <view class='yellow cookie_num'>{{points}}</view>
+      <view>块小饼干</view>
     </view>
     <image class='img-cookies' src='../../images/big_cookies.png'></image>
     <view class='top-suspension-toast' bindtap='handleShowRules'>
@@ -18,7 +19,7 @@
     <view class='top-suspension-bottom'>
       <view class='top-suspension-bottom-left white'>
         <view class='font28 '>邀好友，得饼干</view>
-        <view class='font24 '>每邀请1名新用户，获得60小饼干</view>
+        <view class='font24 '>每成功邀请1名新用户，获得60块小饼干</view>
       </view>
       <view class='top-suspension-bottom-right font24 pinkColor'>去邀请</view>
       <button class='btn-invitation' open-type="share" ></button>
@@ -32,20 +33,23 @@
     </view>
     <view class='line'></view>
 
+<block wx:for="{{pointsList}}" wx:key="{{pointsList.id}}">
     <view class='content-list-box'>
       <view class='content-list'>
         <view class='content-list-left'>
-          <view>注册有礼</view>
+          <view>{{item.name}}</view>
           <view class='font24 content-list-left-time'>
-            <view>2018-08-24</view>
-            <view class='time-hms'>17:44:23</view>
+            <view>{{item.createTime}}</view>
+            <!-- <view class='time-hms'>17:44:23</view> -->
           </view>
         </view>
-        <view class='content-list-right pinkColor'>+160</view>     
+        <view class='content-list-right pinkColor'>+{{item.points}}</view>     
       </view>
       <view class='line'></view> 
     </view>
+</block>
 
+<!-- 
     <view class='content-list-box'>
       <view class='content-list'>
         <view class='content-list-left'>
@@ -74,7 +78,7 @@
       <view class='line'></view> 
     </view>
 
-        <view class='content-list-box'>
+    <view class='content-list-box'>
       <view class='content-list'>
         <view class='content-list-left'>
           <view>订单处罚</view>
@@ -86,7 +90,7 @@
         <view class='content-list-right blue'>-20</view>     
       </view>
       <view class='line'></view> 
-    </view>
+    </view> -->
   </view>
 
   <!-- 分享成功提示框 -->
@@ -96,7 +100,7 @@
         <image class='delete-btn' src='../../images/delete.png'></image>
       </view>
       <image class='modal-invitation-success-img' src='../../images/invitation_success.png'></image>
-      <view class='modal-invitation-success-content font26 '>好友加入后，60颗小饼干立即到手！</view>
+      <view class='modal-invitation-success-content font26 '>好友成功登录后，60块小饼干立刻到手！</view>
       <view class='dots'></view>
         <button class='modal-invitation_notice-btn font34' open-type="share" > 继续邀请 </button>
     </view>
@@ -115,32 +119,45 @@
       <view class='rules-one'>
         <image class='img-rules-num-1' src='../../images/1.png'></image>
         <view class='rule-content-1 font24 titleColor'>
-          <view>新用户首次登陆</view>
+          <view>用户首次登陆</view>
           <view>小饼干+150块</view>
         </view>
       </view>
       <!-- 2 -->
+      <!-- 每成功寄出1kg闲置物品
+
+           小饼干+21块
+
+成功寄出中每有1件可再使用闲置物品
+
+           根据实际闲置物品估值发放小饼干
+
+邀请新用户
+
+           小饼干+60块 -->
+
+
       <view class='rules-two'>
         <image class='img-rules-num-2' src='../../images/2.png'></image>
         <view class='rule-content-2 font24 titleColor'>
-          <view>新用户首次登陆</view>
-          <view>小饼干+150块</view>
+          <view>每成功寄出1kg闲置物品</view>
+          <view>小饼干+21块</view>
         </view>
       </view>
       <!-- 3 -->
       <view class='rules-three'>
         <image class='img-rules-num-3' src='../../images/3.png'></image>
         <view class='rule-content-3 font24 titleColor'>
-          <view>新用户首次登陆</view>
-          <view>小饼干+150块</view>
+          <view>成功寄出中每有1件可再使用闲置物品</view>
+          <view>根据实际闲置物品估值发放小饼干</view>
         </view>
       </view>  
       <!-- 4 -->
       <view class='rules-four'>
         <image class='img-rules-num-4' src='../../images/4.png'></image>
         <view class='rule-content-4 font24 titleColor'>
-          <view>新用户首次登陆</view>
-          <view>小饼干+150块</view>
+          <view>邀请新用户</view>
+          <view>小饼干+60块</view>
         </view>
       </view>
       <view class='dots'></view>

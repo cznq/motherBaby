@@ -1,6 +1,6 @@
 // @author lya
 
-let util = require('../../utils/util.js');
+let util = require('../../utils/util.js')
 const app = getApp();
 Page({
   /**
@@ -10,7 +10,7 @@ Page({
     date: '请预约', //默认时间
     startDate: util.mformatTime(new Date()), //当前时间
     memberAddr: [], //取件地址
-    weightArr: ['3kg以下无法上门取件', '3kg~10kg', '10kg~20kg', '20kg~30kg', '30kg以上'], //重量数组
+    weightArr: [], //重量数组
     weightIndex: 0, //默认预估重量下标
     showMModal: false, //是否弹出提示框
     showTextarea: true,
@@ -46,6 +46,7 @@ Page({
     showGift: false,//是否显示新手有礼弹框
     successfulReceipt:false,  //是否显示领取成功提示框
     shareId: '',
+    userId:''
   },
 
   //主动获取用户信息权限
@@ -61,8 +62,7 @@ Page({
       if (!that.data.getUserInfo) {
         if (!app.globalData.id) {
           // 登录
-          app.getOpenid().then(function (userId) {
-            
+          app.getOpenid(that.data.shareId).then(function (userId) {
             if (!that.data.shareId){
               wx.showToast({
                 title: '没人分享给我，是我自己来的。我的id是' + app.globalData.id,
@@ -77,6 +77,29 @@ Page({
           })
         }
       }
+      console.log('update---',userInfo)
+      // id: 用户id，long类型，不能为空
+      // openId: 微信唯一标识，String类型，不能为空
+      // nickName: 昵称
+      // headSculpture: 头像
+      // gender: 性别，0 - 未知，1 - 男，2 - 女
+      // country: 国家
+      // province: 省份
+      // city: 城市
+      // markInfo: 备注信息
+      // mobile: 手机号
+      // util.mHttp(app.globalData.baseUrl + 'maternal/user/update', {
+
+      // }, function (data) {
+      //   if (data.success) {
+      //     console.log(data) 
+         
+      //   }
+      // }, 'POST', {
+      //     'content-type': 'application/x-www-form-urlencoded'
+      //   })
+
+
       this.setData({
         getUserInfo: true,
         showGift: false,
@@ -85,6 +108,22 @@ Page({
       })
     }
   },
+  handleGetWeight(){
+    let that = this
+    util.mHttp(app.globalData.baseUrl + 'maternal/system/weight', {}, function (data) {
+      if (data.success) {
+        let weightArr = []
+        Object.keys(data.data).forEach(function (key) {
+          weightArr.push(data.data[key])
+        });
+        that.setData({
+          weightArr: weightArr
+        })
+      }
+    }, 'POST', {
+        'content-type': 'application/x-www-form-urlencoded'
+      })
+  },
   // picker组件--重量改变事件
   bindWeightPickerChange(e) {
     this.setData({
@@ -92,6 +131,7 @@ Page({
     })
     this.btnIsable()
   },
+
   // 选择地址
   bindChooseAddr() {
     let that = this
@@ -108,6 +148,26 @@ Page({
             showTextarea: true,
             memberAddr: res
           })
+          console.log('suc-----app.globalData.id', app.globalData.id)
+          if (app.globalData.id){
+            util.mHttp(app.globalData.baseUrl + 'maternal/address/add', {
+              userId: app.globalData.id, //用户id
+              userName: that.data.memberAddr.userName, //收货人姓名
+              postalCode: that.data.memberAddr.postalCode, //邮编
+              provinceName: that.data.memberAddr.provinceName, //省份
+              cityName: that.data.memberAddr.cityName, //城市
+              countyName: that.data.memberAddr.countyName, //区县
+              detailInfo: that.data.memberAddr.detailInfo, //收货详细地址
+              nationalCode: that.data.memberAddr.nationalCode, //收货地址国家码
+              telNumber: that.data.memberAddr.telNumber, //收货人电话号码
+            }, function (data) {
+              if (data.success) {
+                console.log(data)
+              }
+            }, 'POST', {
+                'content-type': 'application/x-www-form-urlencoded'
+              })
+          }
         }
       },
       fail(res) {
@@ -125,12 +185,10 @@ Page({
           }
         })
       },
-      complete(res){
-        // console.log('complete',that.data.memberAddr)
+      complete(res){  
         that.btnIsable()
       }
     })
-
   },
   // 设置上门时间
   bindDateChange(e) {
@@ -231,7 +289,7 @@ Page({
   bindConfirmAppointment(e) {
     let that = this
     console.log('userId', app.globalData.id)
-    console.log('weight', that.data.weightArr[that.data.weightIndex])
+    console.log('weight', that.data.weightIndex)
     console.log('appointment', that.data.date)
     console.log('userName', that.data.memberAddr.userName)
     console.log('postalCode', that.data.memberAddr.postalCode)
@@ -243,11 +301,11 @@ Page({
     console.log('telNumber', that.data.memberAddr.telNumber)
     console.log('markInfo', that.data.remarkInfo)
     if (!this.data.btnDisable) {
-      if (!app.globalData.id) {
+      if (!app.globalData.id) {  
         // console.log('无userId');
         // 登录
         app.getOpenid().then(function (userId) {
-          // console.log('userId', userId);
+          console.log('userId', userId);
           if (userId) {
             // 订单预约请求
             util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
@@ -265,7 +323,7 @@ Page({
               telNumber: that.data.memberAddr.telNumber, //收货人电话号码
               markInfo: that.data.remarkInfo //备注信息
             }, function (data) {
-              // console.log('suc', data)
+              console.log('suc', data)
               if (data.success) {
                 that.setData({
                   weightIndex: 0, //数组重量下标
@@ -289,7 +347,7 @@ Page({
         util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
           userId: app.globalData.id, //用户id
           // userId: 2 , //用户id
-          weight: that.data.weightArr[that.data.weightIndex], //预估重量
+          weight: that.data.weightIndex, //预估重量
           appointment: that.data.date, //上门预约时间 yyyy-MM-dd
           userName: that.data.memberAddr.userName, //收货人姓名
           postalCode: that.data.memberAddr.postalCode, //邮编
@@ -301,7 +359,7 @@ Page({
           telNumber: that.data.memberAddr.telNumber, //收货人电话号码
           markInfo: that.data.remarkInfo //备注信息
         }, function (data) {
-          // console.log('suc', data)
+          console.log('suc', data)
           if (data.success) {
             that.setData({
               weightIndex: 0,
@@ -398,7 +456,6 @@ Page({
       })
       console.log('userid',app.globalData.id)
       console.log('shareId', this.data.shareId)
-
     }
     // console.log('day', new Date().getDay())
     var _that = this;

@@ -60,7 +60,7 @@
               <view class='home-content-main-weight-left-tips font18' wx:if="{{showWeightTips}}">低于3KG，可以再积攒下哦~</view>
             </view>
           </view>
-          <view class='home-content-main-right home-content-main-weight-right'>
+          <view class='home-content-main-right home-content-main-weight-right' bindtap='handleGetWeight'>
             <picker bindchange="bindWeightPickerChange" value="{{weightIndex}}" range="{{weightArr}}">
               <view class='chooseweight' wx:if='{{showWeightTips}}'>请选择</view>
               <view wx:if='{{!showWeightTips}}'>{{weightArr[weightIndex] }} </view>
@@ -209,7 +209,7 @@
       <image class='img-gift' src='../../images/gift.png'></image>
       <view class='font36 gift-words'>
         <view>送你160枚小饼干</view>
-        <view>免费领宝贝</view>
+        <view>体验0元换宝贝</view>
       </view>
       <view class='gift-btn' bindtap='handleGetGift'>立即领取</view>
       <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="btn-getuserinfo " lang="zh_CN" bindgetuserinfo="onGotUserInfo">

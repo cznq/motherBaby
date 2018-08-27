@@ -1,4 +1,5 @@
 // @author lya
+let util = require('../../utils/util.js')
 const app = getApp();
 Page({
   /**
@@ -6,7 +7,9 @@ Page({
    */
   data: {
     showInvitation:false,
-    showRules:false
+    showRules:false,
+    points:0,
+    pointsList:[]
   },
   bindCloseinvitation(){
     this.setData({
@@ -23,11 +26,32 @@ Page({
       showRules: false
     })
   },
+  getPhoneNumber: function (e) {
+    console.log(e.detail.errMsg)
+    console.log(e.detail.iv) //加密算法的初始向量
+    console.log(e.detail.encryptedData)   //包括敏感数据在内的完整用户信息的加密数据
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (res) {
-
+    let that  = this
+    console.log('cookies_id',app.globalData.id)
+    if (app.globalData.id) {
+      util.mHttp(app.globalData.baseUrl + 'maternal/user/points', {
+        userId: app.globalData.id, //用户id
+      }, function (data) {
+        if (data.success) {
+          console.log(data)
+          that.setData({
+            points: data.data.points, 
+            pointsList: data.data.pointsList
+          })
+        }
+      }, 'POST', {
+          'content-type': 'application/x-www-form-urlencoded'
+        })
+    }
   },
 
   /**
@@ -83,7 +107,7 @@ Page({
     var userId = app.globalData.id;
     console.log('userid', app.globalData.id)
     return {
-      title: '邀请好友领积分',
+      title: '送你160枚小饼干，免费领宝贝',
       path: '/pages/home/home?userId=' + userId , //这里拼接需要携带的参数userId
       imageUrl: '../../images/share.jpg',
       success (res) {
