@@ -179,8 +179,8 @@
            <text class='bz_text padding10-left gray-6 font28'>{{item.markInfo}}</text>
          </view>
       </view>
-      <view wx:if='{{item.orderStatus === 1}}' class='myordbtn row cen-center' bindtap='cancelbtn'>
-        <image src='../../images/quxiao.png'></image>
+      <view class='myordbtn font26 padding10-0 gray-3 row cen-end'>
+        <text class='padding15-right'>回收成功</text><text class='padding10-right'>收获</text><image class='small_cookies' src='../../images/small_cookies.png'></image><text class='energy'>{{123}}</text>
       </view>
     </view>
     </view>

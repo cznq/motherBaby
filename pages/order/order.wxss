@@ -202,3 +202,14 @@ white-space:nowrap;
   height: 178px;
   transition: height .3s;
 }
+.myordbtn .small_cookies{
+  width:37rpx;
+  height:36rpx;
+  padding-right:5px;
+  vertical-align:middle;
+  margin:0;
+}
+.energy{
+  font-size: 28rpx;
+  color:#cb8030;
+}
