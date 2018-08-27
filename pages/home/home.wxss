@@ -30,7 +30,7 @@ page{
   height: 136rpx;
   display: flex;
   justify-content: space-around;
-  text-align: center; 
+  text-align: center;
 }
 /* 平台介绍、联系客服、我的预约-文字 */
 .home-title-words{

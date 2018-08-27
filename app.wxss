@@ -125,8 +125,6 @@
   justify-content: start;
 }
 .cen-end {
-  -webkit-box-align: end;
-  -webkit-box-pack: center;
   align-items: center;
   justify-content: flex-end;
 }
