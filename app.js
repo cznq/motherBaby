@@ -29,7 +29,7 @@ App({
   },
   getOpenid:function(){
     var userInfo = {};
-    userInfo = wx.getStorageSync('userInfo');
+        userInfo = wx.getStorageSync('userInfo');
     var _that = this;
     return new Promise(function(resolve, reject) {
       // 登录
