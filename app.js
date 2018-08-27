@@ -30,7 +30,7 @@ App({
   },
   getOpenid:function(shareId){
     var userInfo = {};
-    userInfo = wx.getStorageSync('userInfo');
+        userInfo = wx.getStorageSync('userInfo');
     var _that = this;
     return new Promise(function(resolve, reject) {
       // 登录
@@ -38,6 +38,7 @@ App({
         success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           console.log('code',res.code);
+
           _that.globalData.code = res.code;
           // 首次登陆调注册接口获取openid&&userid
           if (!userInfo) {
