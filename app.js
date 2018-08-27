@@ -37,6 +37,7 @@ App({
         success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           console.log('res.coded',res.code);
+          // return false;
           _that.globalData.code = res.code;
           // 首次登陆调注册接口获取openid&&userid
           if (!userInfo) {
@@ -72,8 +73,8 @@ App({
   globalData: {
     userInfo: null,
     code: '',
-    baseUrl: 'https://nbmp.moji.com/',
-    // baseUrl: 'http://192.168.1.199:8099/',
+    // baseUrl: 'https://nbmp.moji.com/',
+    baseUrl: 'http://192.168.1.199:8099/',
     sessionKey: '',
     openId: '',
     id: ''
