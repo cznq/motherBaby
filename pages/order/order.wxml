@@ -16,26 +16,26 @@
 <view class='order-content-box font26' >
   <block wx:if="{{orderTitle ==='all'}}" wx:for='{{orderDetails}}' wx:for-item='item' wx:key="unique">
     <view class="marg10-top padding0-15">
-      <view class="orderInfo padding10">
-      <view class="title Infobottom_05 row cen-space padding10-bottom">
+      <view class="orderInfo">
+      <view class="title Infobottom_05 row cen-space padding10">
           <view class=' row cen-start'>
             <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6 text'>订单号：{{item.orderNo}}</text>
           </view>
-          <text wx:if='{{item.orderStatus === 1}}' class='font28 qrcolo'>待确认</text>
-          <text wx:if='{{item.orderStatus === 2}}' class='font28 qrcolo'>已取消</text>
-          <text wx:if='{{item.orderStatus === 3}}' class='font28 qrcolo'>待收货</text>
-          <text wx:if='{{item.orderStatus === 4}}' class='font28 qrcolo'>已完成</text>
+          <text wx:if='{{item.orderStatus === 1}}' class=' qrcolo'>待确认</text>
+          <text wx:if='{{item.orderStatus === 2}}' class=' qrcolo'>已取消</text>
+          <text wx:if='{{item.orderStatus === 3}}' class=' qrcolo'>待收货</text>
+          <text wx:if='{{item.orderStatus === 4}}' class=' qrcolo'>已完成</text>
       </view>
       <view>
-         <view class='donationInfo Infobottom_05 padding10-0 row start-start'>
+         <view class='donationInfo Infobottom_05 padding10 row start-start'>
            <view class='  row cen-start'>
              <image src='../../images/yuejz.png'></image>
              <text class='gray-6 text'>捐赠信息：</text>
            </view>
            <text class='gray-6 '>{{item.weightValue}}，{{item.appointment}}上门</text>
          </view>
-         <view class='addressInfo Infobottom_05 padding10-0 row start-start'>
+         <view class='addressInfo Infobottom_05 padding10 row start-start'>
            <view class=' row '>
              <image src='../../images/dizhi.png'></image>
              <text class='gray-6 text'>取件地址：</text>
@@ -45,7 +45,7 @@
             <text class=' gray-6'>{{item.detailInfo}}</text>
            </view>
          </view>
-         <view class='mybez Infobottom_05 padding10-0 row start-start'>
+         <view class='mybez Infobottom_05 padding10 row start-start'>
            <view class=' row cen-start'>
              <image src='../../images/beizhu.png'></image>
              <text class='row gray-6 text'>备注：</text>
@@ -61,23 +61,23 @@
   </block>
   <block wx:if="{{orderTitle ==='confirm'}}" wx:for='{{orderDetails}}' wx:for-item='item' wx:key="unique">
     <view class="marg10-top padding0-15">
-      <view class="orderInfo padding10">
-      <view class="title Infobottom_05 row cen-space padding10-bottom">
+      <view class="orderInfo ">
+      <view class="title Infobottom_05 row cen-space padding10">
           <view class=' row cen-start'>
             <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
-          <text wx:if='{{item.orderStatus === 1}}' class='font32 qrcolo'>待确认</text>
+          <text wx:if='{{item.orderStatus === 1}}' class=' qrcolo'>待确认</text>
       </view>
       <view>
-         <view class='donationInfo Infobottom_05 padding10-0 row start-start'>
+         <view class='donationInfo Infobottom_05 padding10 row start-start'>
            <view class=' row cen-start'>
              <image src='../../images/yuejz.png'></image>
              <text class='gray-6 text'>捐赠信息：</text>
            </view>
            <text class='gray-6 '>{{item.weightValue}}，{{item.appointment}}上门</text>
          </view>
-         <view class='addressInfo Infobottom_05 padding10-0 row start-start'>
+         <view class='addressInfo Infobottom_05 padding10 row start-start'>
            <view class=' row'>
              <image src='../../images/dizhi.png'></image>
              <text class='gray-6 text'>取件地址：</text>
@@ -87,7 +87,7 @@
             <text class=' gray-6'>{{item.detailInfo}}</text>
            </view>
          </view>
-         <view class='mybez Infobottom_05 padding10-0 row start-start'>
+         <view class='mybez Infobottom_05 padding10 row start-start'>
            <view class=' row cen-start'>
              <image src='../../images/beizhu.png'></image>
              <text class='row gray-6 text'>备注：</text>
@@ -103,23 +103,23 @@
   </block>
   <block wx:if="{{orderTitle ==='recover'}}" wx:for='{{orderDetails}}' wx:for-item='item' wx:key="unique">
     <view class="marg10-top padding0-15">
-      <view class="orderInfo padding10">
-      <view class="title Infobottom_05 row cen-space padding10-bottom">
+      <view class="orderInfo ">
+      <view class="title Infobottom_05 row cen-space padding10">
           <view class=' row cen-start'>
             <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
-          <text wx:if='{{item.orderStatus === 3}}' class='font32 qrcolo'>待收货</text>
+          <text wx:if='{{item.orderStatus === 3}}' class=' qrcolo'>待收货</text>
       </view>
       <view>
-         <view class='donationInfo Infobottom_05 padding10-0 row start-start'>
+         <view class='donationInfo Infobottom_05 padding10 row start-start'>
            <view class=' row cen-start'>
              <image src='../../images/yuejz.png'></image>
              <text class='gray-6 text'>捐赠信息：</text>
            </view>
            <text class='gray-6 '>{{item.weightValue}}，{{item.appointment}}上门</text>
          </view>
-         <view class='addressInfo Infobottom_05 padding10-0 row start-start'>
+         <view class='addressInfo Infobottom_05 padding10 row start-start'>
            <view class=' row'>
              <image src='../../images/dizhi.png'></image>
              <text class='gray-6 text'>取件地址：</text>
@@ -129,7 +129,7 @@
             <text class=' gray-6'>{{item.detailInfo}}</text>
            </view>
          </view>
-         <view class='mybez Infobottom_05 padding10-0 row start-start'>
+         <view class='mybez Infobottom_05 padding10 row start-start'>
            <view class=' row cen-start'>
              <image src='../../images/beizhu.png'></image>
              <text class='row gray-6 text'>备注：</text>
@@ -145,23 +145,23 @@
   </block>
   <block wx:if="{{orderTitle ==='finish'}}" wx:for='{{orderDetails}}' wx:for-item='item' wx:key="unique">
     <view class="marg10-top padding0-15">
-      <view class="orderInfo padding10">
-      <view class="title Infobottom_05 row cen-space padding10-bottom">
+      <view class="orderInfo ">
+      <view class="title Infobottom_05 row cen-space padding10">
           <view class=' row cen-start'>
             <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
-          <text wx:if='{{item.orderStatus === 4}}' class='font32 qrcolo'>已完成</text>
+          <text wx:if='{{item.orderStatus === 4}}' class='font26 qrcolo'>已完成</text>
       </view>
       <view>
-         <view class='donationInfo Infobottom_05 padding10-0 row start-start'>
+         <view class='donationInfo Infobottom_05 padding10 row start-start'>
            <view class=' row cen-start'>
              <image src='../../images/yuejz.png'></image>
              <text class='gray-6 text'>捐赠信息：</text>
            </view>
            <text class='gray-6 '>{{item.weightValue}}，{{item.appointment}}上门</text>
          </view>
-         <view class='addressInfo Infobottom_05 padding10-0 row start-start'>
+         <view class='addressInfo Infobottom_05 padding10 row start-start'>
            <view class=' row'>
              <image src='../../images/dizhi.png'></image>
              <text class='gray-6 text'>取件地址：</text>
@@ -171,7 +171,7 @@
             <text class=' gray-6'>{{item.detailInfo}}</text>
            </view>
          </view>
-         <view class='mybez Infobottom_05 padding10-0 row start-start'>
+         <view class='mybez Infobottom_05 padding10 row start-start'>
            <view class=' row cen-start'>
              <image src='../../images/beizhu.png'></image>
              <text class='row gray-6 text'>备注：</text>
@@ -179,7 +179,7 @@
            <text class='bz_text padding10-left gray-6 '>{{item.markInfo}}</text>
          </view>
       </view>
-      <view class='myordbtn font26 padding10-0 gray-3 row cen-end'>
+      <view class='myordbtn font26 padding10 gray-3 row cen-end'>
         <text class='padding15-right'>回收成功</text><text >收获：</text><image class='small_cookies' src='../../images/small_cookies.png'></image><text class='energy font28'> {{item.points?item.points:0}}</text>
       </view>
     </view>

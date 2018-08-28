@@ -25,6 +25,7 @@ page{
   border: 1px solid #f36e89;
   border-radius: 4px;
   background: #fff;
+  padding: 0 10rpx;
 }
 .orderInfo .title image{
   width:29rpx;
@@ -79,9 +80,9 @@ page{
   width:75rpx;
   height:35rpx;
   line-height: 35rpx;
-white-space:nowrap;
- overflow:hidden;
- text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 .bz_text{
   margin-top:-1px;
@@ -89,8 +90,8 @@ white-space:nowrap;
 .myordbtn image{
   width:182rpx;
   height:60rpx;
-  margin-top:30rpx;
-  margin-bottom:10rpx;
+  margin-top:40rpx;
+  margin-bottom:45rpx;
 }
 .padding8r-bottom{
   padding-bottom: 16rpx;
