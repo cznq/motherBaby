@@ -48,49 +48,6 @@
       <view class='line'></view> 
     </view>
 </block>
-
-<!-- 
-    <view class='content-list-box'>
-      <view class='content-list'>
-        <view class='content-list-left'>
-          <view>回收成功</view>
-          <view class='font24 content-list-left-time'>
-            <view>2018-08-24</view>
-            <view class='time-hms'>17:44:23</view>
-          </view>
-        </view>
-        <view class='content-list-right pinkColor'>+160</view>     
-      </view>
-      <view class='line'></view> 
-    </view>
-
-    <view class='content-list-box'>
-      <view class='content-list'>
-        <view class='content-list-left'>
-          <view>宝贝入库</view>
-          <view class='font24 content-list-left-time'>
-            <view>2018-08-24</view>
-            <view class='time-hms'>17:44:23</view>
-          </view>
-        </view>
-        <view class='content-list-right pinkColor'>+160</view>     
-      </view>
-      <view class='line'></view> 
-    </view>
-
-    <view class='content-list-box'>
-      <view class='content-list'>
-        <view class='content-list-left'>
-          <view>订单处罚</view>
-          <view class='font24 content-list-left-time'>
-            <view>2018-08-24</view>
-            <view class='time-hms'>17:44:23</view>
-          </view>
-        </view>
-        <view class='content-list-right blue'>-20</view>     
-      </view>
-      <view class='line'></view> 
-    </view> -->
   </view>
 
   <!-- 分享成功提示框 -->
@@ -124,19 +81,6 @@
         </view>
       </view>
       <!-- 2 -->
-      <!-- 每成功寄出1kg闲置物品
-
-           小饼干+21块
-
-成功寄出中每有1件可再使用闲置物品
-
-           根据实际闲置物品估值发放小饼干
-
-邀请新用户
-
-           小饼干+60块 -->
-
-
       <view class='rules-two'>
         <image class='img-rules-num-2' src='../../images/2.png'></image>
         <view class='rule-content-2 font24 titleColor'>

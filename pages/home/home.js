@@ -479,7 +479,8 @@ Page({
                 country: res.userInfo.country,
                 province: res.userInfo.province,
                 city: res.userInfo.city,
-                mobile: ''
+                mobile: '',
+                markInfo:''
               }
               util.http(url, (dataStr) => {
                 if (dataStr.success) {
