@@ -36,16 +36,24 @@ Page({
    */
   onLoad: function (res) {
     let that  = this
-    console.log('cookies_id',app.globalData.id)
     if (app.globalData.id) {
       util.mHttp(app.globalData.baseUrl + 'maternal/user/points', {
         userId: app.globalData.id, //用户id
       }, function (data) {
         if (data.success) {
-          console.log(data)
+          console.log(data.data)
+          let pointsList = data.data.pointsList
+          let newlist = []
+          for (let i = 0; i < pointsList.length; i++) {
+            newlist[i] = pointsList[i].createTime.split(" ")
+          }
+          for (let i = 0; i < newlist.length; i++) {
+            pointsList[i].date = newlist[i][0],
+            pointsList[i].time = newlist[i][1]
+          } 
           that.setData({
             points: data.data.points, 
-            pointsList: data.data.pointsList
+            pointsList: pointsList
           })
         }
       }, 'POST', {

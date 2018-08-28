@@ -2,6 +2,15 @@ const utils = require('./utils/util.js');
 //app.js
 App({
   onLaunch: function() {
+    wx.getNetworkType({
+      success: function(res) {
+        if(res.networkType=='none'){
+          wx.showToast({
+            title: '请检查您的网络',
+          })
+        }
+      },
+    })
     var userInfo = {};
     userInfo = wx.getStorageSync('userInfo'); //读取本地userInfo
     // 获取用户信息
@@ -38,7 +47,6 @@ App({
         success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           console.log('code',res.code);
-
           _that.globalData.code = res.code;
           // 首次登陆调注册接口获取openid&&userid
           if (!userInfo) {
@@ -55,8 +63,7 @@ App({
                 _that.globalData.sessionKey = dataStr.data.sessionKey;
                 _that.globalData.openId = dataStr.data.openId;
                 _that.globalData.id = dataStr.data.id;
-                console.log('dataStr.data.id',dataStr.data.id);
-          
+                console.log('dataStr.data.id',dataStr.data.id);     
                 userInfo = {
                   openId: _that.globalData.openId,
                   userId: _that.globalData.id

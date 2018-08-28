@@ -69,7 +69,9 @@ function mHttp(url, data = {}, callBack, method = 'get', header = { 'content-typ
       callBack(res.data);
     },
     fail(res) {
-     console.log(res)
+      wx.showToast({
+        title: '网络不给力...',
+      })
     }
   })
 }

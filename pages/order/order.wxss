@@ -5,7 +5,6 @@ page{
 .orderTitle{
   position: fixed;
   width: 100%;
-  /* height: 80rpx; */
   left: 0;
   top: 0;
   display: flex;
@@ -128,7 +127,8 @@ white-space:nowrap;
     position: absolute;
     left: -50%;
     bottom: 0;
-    background-color: #fcbbd3;
+    background-color: #F36E89;
+    opacity: .48;
     -webkit-transform: scale(0.5);
     -moz-transform: scale(0.5);
     -ms-transform: scale(0.5);
@@ -170,7 +170,6 @@ white-space:nowrap;
   bottom:0px;
   left:5%;
   height:0px;
-  overflow: hidden;
   z-index: 9999;
   transition: height .3s;
   overflow: hidden;

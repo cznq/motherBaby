@@ -1,6 +1,5 @@
  <!-- @author lya -->
 <view class='mcontainer color666'>
-  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> 1111</button> 
   <!-- 顶部区域 -->
   <view class='top'></view>
   <!-- 悬浮框 -->
@@ -10,12 +9,15 @@
       <view class='yellow cookie_num'>{{points}}</view>
       <view>块小饼干</view>
     </view>
+    <!-- 小饼干图片 -->
     <image class='img-cookies' src='../../images/big_cookies.png'></image>
+    <!-- 小饼干法则 -->
     <view class='top-suspension-toast' bindtap='handleShowRules'>
       <image class='img-notice' src='../../images/notice@2x.png'></image>
       <view class='font20 pink underline'>小饼干法则</view>
     </view>
     <image class='top-suspension-bg' src='../../images/bg_cookies.png'></image>
+    <!-- 邀请 -->
     <view class='top-suspension-bottom'>
       <view class='top-suspension-bottom-left white'>
         <view class='font28 '>邀好友，得饼干</view>
@@ -32,22 +34,22 @@
       <view class='content-title-text titleColor'>小饼干账单</view>
     </view>
     <view class='line'></view>
-
-<block wx:for="{{pointsList}}" wx:key="{{pointsList.id}}">
-    <view class='content-list-box'>
-      <view class='content-list'>
-        <view class='content-list-left'>
-          <view>{{item.name}}</view>
-          <view class='font24 content-list-left-time'>
-            <view>{{item.createTime}}</view>
-            <!-- <view class='time-hms'>17:44:23</view> -->
+  <!--小饼干账单列表  -->
+    <block wx:for="{{pointsList}}" wx:key="{{pointsList.id}}">
+      <view class='content-list-box'>
+        <view class='content-list'>
+          <view class='content-list-left'>
+            <view>{{item.name}}</view>
+            <view class='font24 content-list-left-time'>
+              <view>{{item.date}}</view>
+              <view class='time-hms'>{{item.time}}</view>
+            </view>
           </view>
+          <view class='content-list-right {{item.status==1?"pinkColor":"blue"}}'>{{item.status==1?"+":"-"}}{{item.points}}</view>     
         </view>
-        <view class='content-list-right pinkColor'>+{{item.points}}</view>     
+        <view class='line'></view> 
       </view>
-      <view class='line'></view> 
-    </view>
-</block>
+    </block>
   </view>
 
   <!-- 分享成功提示框 -->
@@ -65,7 +67,7 @@
 
   <!-- 小饼干法则 -->
 
-  <view class='mask-layer' wx:if="{{showRules}}">
+  <view class='mask-layer' wx:if="{{showRules}}" catchtouchmove='mask-layer'>
  
     <view class='modal-rules-box'>
       <view class='delete-box' bindtap='handleCloseRules'>

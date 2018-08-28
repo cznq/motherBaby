@@ -4,6 +4,18 @@ page{
   height: 100%;
   background-color: #fff;
 }
+.margintop26{
+  margin-top: 26rpx;
+}
+.margintop8{
+  margin-top: 8rpx;
+}
+.marginleft80{
+  margin-left: 120rpx;
+}
+.margintop18{
+  margin-top: 18rpx;
+}
 /* 轮播图部分 */
 .swiper-box {
   position: relative;
@@ -29,14 +41,16 @@ page{
 .home-title {
   height: 136rpx;
   display: flex;
-  justify-content: space-around;
-  text-align: center;
+  /* justify-content: space-around; */
+  /* position: relative; */
+  /* text-align: center; */
 }
 /* 平台介绍、联系客服、我的预约-文字 */
 .home-title-words{
   font-size: 24rpx;
   line-height: 0;
-  margin-top: 16rpx;
+  margin-top: 12rpx;
+  text-align: center;
 }
 .platform-words{
   margin-top: 10rpx;
@@ -45,7 +59,24 @@ page{
   margin-top: 16rpx;
 }
 .myappointment-words{
-  margin-top: 12rpx;
+  margin-top: 15rpx;
+}
+.cookies-words{
+  margin-top: 15rpx;
+}
+/*  */
+.home-title-platform{
+  margin-left: 73rpx;
+}
+.home-title-service{
+  margin-left: 78rpx;
+}
+.home-title-myappointment{
+  margin-left: 76rpx;
+  /* margin-left: 70rpx; */
+}
+.home-title-cookies{
+  margin-left: 50rpx;
 }
 .platform-img{
   width: 99rpx;
@@ -59,7 +90,7 @@ page{
 .reservation-img{
   width: 101rpx;
   height: 68rpx;
-  margin-top: 14rpx;
+  margin-top: 12rpx;
 }
 .binggan-img{
   width: 113rpx;
@@ -225,12 +256,7 @@ page{
 .home-content-remarks-left .pinkColor {
   margin-left: 76rpx;
 }
-.margintop26{
-  margin-top: 26rpx;
-}
-.margintop8{
-  margin-top: 8rpx;
-}
+
 .a {
   height: 88rpx;
   margin-top: 28rpx;
@@ -363,15 +389,6 @@ page{
 
 /* 仅支持北京地区上门取件提示框  */
 
-.modal-pick-up {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(15, 15, 15, 0.65);
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
 .modal-pick-up-box {
   width: 560rpx;
   height: 545rpx;
@@ -419,15 +436,6 @@ page{
 }
 
 /* 预约须知提示框  */
-
-.modal-appointment_notice {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(15, 15, 15, 0.65);
-  position: absolute;
-  left: 0;
-  top: 0;
-}
 
 .modal-appointment_notice-box {
   width: 560rpx;
@@ -609,14 +617,7 @@ page{
   border: 5rpx solid #ffe8b4;
 }
 
-.modal-appointment-success {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(15, 15, 15, 0.65);
-  position: absolute;
-  left: 0;
-  top: 0;
-}
+
 .modal-appointment-success .dots{
   border-bottom: 3rpx dotted #f36e89;
   position: absolute;
@@ -639,41 +640,47 @@ page{
 }
 
 .modal-appointment-success-content_1 {
-  margin-top: 50rpx;
-  margin-left: 52rpx;
-  margin-right: 52rpx;
-  line-height: 28rpx;
+  margin-top: 45rpx;
+  margin-left: 53rpx;
+  margin-right: 60rpx;
+  line-height: 32rpx;
 }
 
 .modal-appointment-success-content_2 {
   height: 100rpx;
-  margin-left: 52rpx;
-  margin-top: 36rpx;
-  position: relative;
+  position: absolute;
+  left: 52rpx;
+  top: 262rpx;
 }
 
 .modal-appointment-success-content_2-words {
   width: 456rpx;
   line-height: 28rpx;
+  /* position: absolute;
+  left: 52rpx;
+  top: 262rpx; */
   display: flex;
 }
 
 .btn-copy {
-  width: 80rpx;
-  height: 30rpx;
-  line-height: 30rpx;
+  width: 90rpx;
+  height: 41rpx;
+  line-height: 43rpx;
   text-align: center;
   border: 1rpx solid #FD5293;
-  border-radius: 6rpx;
+  border-radius: 5rpx;
   color: #FD5293;
   background-color: #fff;
+  position: absolute;
+  left: 122rpx;
+  top: 256rpx;
 }
 
 .modal-appointment-success-box .modal-appointment-success-img {
   width: 172rpx;
   height: 56rpx;
-  margin-top: 58rpx;
-  margin-left: 208rpx;
+  margin-top: 54rpx;
+  margin-left: 198rpx;
 }
 
 .modal-appointment-success-btn-box {
@@ -795,3 +802,63 @@ page{
  .margintop2{
    margin-top: 1rpx;
  }
+
+ /* 领取成功提示框 */
+.successfulReceipt-box{
+  width: 560rpx;
+  height: 442rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -280rpx;
+  top: 50%;
+  margin-top: -221rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.delete-box {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  right: 0;
+}
+.delete-btn {
+  position: absolute;
+  right: 30rpx;
+  top: 22rpx;
+  width: 25rpx;
+  height: 25rpx;
+}
+.modal-successfulReceipt-img {
+  width: 171rpx;
+  height: 57rpx;
+  margin-top: 54rpx;
+  margin-left: 199rpx;
+}
+.modal-successfulReceipt-content{
+  /* text-align: center;
+  margin-top: 70rpx; */
+  position: absolute;
+  left: 155rpx;
+  top: 164rpx;
+}
+.dots{
+  border-bottom: 3rpx dotted #f36e89;
+  position: absolute;
+  left: 42rpx;
+  bottom: 175rpx;
+  width: 481rpx;
+}
+.successfulReceipt-btn{
+  position: absolute;
+  bottom: 75rpx;
+  left: 50%;
+  margin-left: -115rpx;
+  text-align: center;
+  background-color: #fd5293;
+  color: #F9EAED;
+  width: 230rpx;
+  height: 70rpx;
+  line-height: 66rpx;
+  border-radius: 70rpx;
+  border: 5rpx solid #ffe8b4;
+}

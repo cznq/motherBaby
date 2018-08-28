@@ -1,5 +1,5 @@
 <!--pages/order/order.wxml-->
-<view class="orderTitle font32 gray-3  row cen-space padding0-15 " bindtap="touchTit">
+<view class="orderTitle font28 gray-3  row cen-space padding0-15 " bindtap="touchTit">
   <li class="text-center "  >
     <view data-tag='all' class=" padding8r-bottom gray-3  {{orderTitle === 'all' ? 'title_border05':''}}">全部</view>
   </li>
@@ -13,44 +13,44 @@
     <view data-tag='finish' class="padding8r-bottom gray-3 {{orderTitle === 'finish' ? 'title_border05':''}}">已完成</view>
   </li>
 </view>
-<view class='order-content-box' >
+<view class='order-content-box font26' >
   <block wx:if="{{orderTitle ==='all'}}" wx:for='{{orderDetails}}' wx:for-item='item' wx:key="unique">
     <view class="marg10-top padding0-15">
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
-          <view class='font28 row cen-start'>
+          <view class=' row cen-start'>
             <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6 text'>订单号：{{item.orderNo}}</text>
           </view>
-          <text wx:if='{{item.orderStatus === 1}}' class='font32 qrcolo'>待确认</text>
-          <text wx:if='{{item.orderStatus === 2}}' class='font32 qrcolo'>已取消</text>
-          <text wx:if='{{item.orderStatus === 3}}' class='font32 qrcolo'>待收货</text>
-          <text wx:if='{{item.orderStatus === 4}}' class='font32 qrcolo'>已完成</text>
+          <text wx:if='{{item.orderStatus === 1}}' class='font28 qrcolo'>待确认</text>
+          <text wx:if='{{item.orderStatus === 2}}' class='font28 qrcolo'>已取消</text>
+          <text wx:if='{{item.orderStatus === 3}}' class='font28 qrcolo'>待收货</text>
+          <text wx:if='{{item.orderStatus === 4}}' class='font28 qrcolo'>已完成</text>
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row start-start'>
-           <view class=' font28 row cen-start'>
+           <view class='  row cen-start'>
              <image src='../../images/yuejz.png'></image>
              <text class='gray-6 text'>捐赠信息：</text>
            </view>
-           <text class='gray-6 font28'>{{item.weightValue}}，{{item.appointment}}上门</text>
+           <text class='gray-6 '>{{item.weightValue}}，{{item.appointment}}上门</text>
          </view>
          <view class='addressInfo Infobottom_05 padding10-0 row start-start'>
-           <view class='font28  row '>
+           <view class=' row '>
              <image src='../../images/dizhi.png'></image>
              <text class='gray-6 text'>取件地址：</text>
            </view>
            <view class='column'>
-            <text class='font28 gray-6'>{{item.userName}}  {{item.telNumber}}</text>
-            <text class='font28 gray-6'>{{item.detailInfo}}</text>
+            <text class=' gray-6'>{{item.userName}}  {{item.telNumber}}</text>
+            <text class=' gray-6'>{{item.detailInfo}}</text>
            </view>
          </view>
          <view class='mybez Infobottom_05 padding10-0 row start-start'>
-           <view class=' font28 row cen-start'>
+           <view class=' row cen-start'>
              <image src='../../images/beizhu.png'></image>
              <text class='row gray-6 text'>备注：</text>
            </view>
-           <text class='bz_text padding10-left gray-6 font28'>{{item.markInfo}}</text>
+           <text class='bz_text padding10-left gray-6 '>{{item.markInfo}}</text>
          </view>
       </view>
       <view wx:if='{{item.orderStatus === 1}}' class='myordbtn row cen-center' data-orderno='{{item.id}}' bindtap='cancelbtn'>
@@ -63,7 +63,7 @@
     <view class="marg10-top padding0-15">
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
-          <view class='font28 row cen-start'>
+          <view class=' row cen-start'>
             <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
@@ -71,28 +71,28 @@
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row start-start'>
-           <view class='font28 row cen-start'>
+           <view class=' row cen-start'>
              <image src='../../images/yuejz.png'></image>
              <text class='gray-6 text'>捐赠信息：</text>
            </view>
-           <text class='gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
+           <text class='gray-6 '>{{item.weight}}，{{item.appointment}}上门</text>
          </view>
          <view class='addressInfo Infobottom_05 padding10-0 row start-start'>
-           <view class='font28 row'>
+           <view class=' row'>
              <image src='../../images/dizhi.png'></image>
              <text class='gray-6 text'>取件地址：</text>
            </view>
            <view class=' column'>
-            <text class='font28 gray-6'>{{item.userName}}  {{item.telNumber}}</text>
-            <text class='font28 gray-6'>{{item.detailInfo}}</text>
+            <text class=' gray-6'>{{item.userName}}  {{item.telNumber}}</text>
+            <text class=' gray-6'>{{item.detailInfo}}</text>
            </view>
          </view>
          <view class='mybez Infobottom_05 padding10-0 row start-start'>
-           <view class='font28 row cen-start'>
+           <view class=' row cen-start'>
              <image src='../../images/beizhu.png'></image>
              <text class='row gray-6 text'>备注：</text>
            </view>
-           <text class='bz_text padding10-left gray-6 font28'>{{item.markInfo}}</text>
+           <text class='bz_text padding10-left gray-6 '>{{item.markInfo}}</text>
          </view>
       </view>
       <view wx:if='{{item.orderStatus === 1}}' class='myordbtn row cen-center' data-orderno='{{item.id}}' bindtap='cancelbtn'>
@@ -105,7 +105,7 @@
     <view class="marg10-top padding0-15">
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
-          <view class='font28 row cen-start'>
+          <view class=' row cen-start'>
             <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
@@ -113,28 +113,28 @@
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row start-start'>
-           <view class='font28 row cen-start'>
+           <view class=' row cen-start'>
              <image src='../../images/yuejz.png'></image>
              <text class='gray-6 text'>捐赠信息：</text>
            </view>
-           <text class='gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
+           <text class='gray-6 '>{{item.weight}}，{{item.appointment}}上门</text>
          </view>
          <view class='addressInfo Infobottom_05 padding10-0 row start-start'>
-           <view class='font28 row'>
+           <view class=' row'>
              <image src='../../images/dizhi.png'></image>
              <text class='gray-6 text'>取件地址：</text>
            </view>
            <view class=' column'>
-            <text class='font28 gray-6'>{{item.userName}}  {{item.telNumber}}</text>
-            <text class='font28 gray-6'>{{item.detailInfo}}</text>
+            <text class=' gray-6'>{{item.userName}}  {{item.telNumber}}</text>
+            <text class=' gray-6'>{{item.detailInfo}}</text>
            </view>
          </view>
          <view class='mybez Infobottom_05 padding10-0 row start-start'>
-           <view class='font28 row cen-start'>
+           <view class=' row cen-start'>
              <image src='../../images/beizhu.png'></image>
              <text class='row gray-6 text'>备注：</text>
            </view>
-           <text class='bz_text padding10-left gray-6 font28'>{{item.markInfo}}</text>
+           <text class='bz_text padding10-left gray-6 '>{{item.markInfo}}</text>
          </view>
       </view>
       <view wx:if='{{item.orderStatus === 1}}' class='myordbtn row cen-center' bindtap='cancelbtn'>
@@ -147,7 +147,7 @@
     <view class="marg10-top padding0-15">
       <view class="orderInfo padding10">
       <view class="title Infobottom_05 row cen-space padding10-bottom">
-          <view class='font28 row cen-start'>
+          <view class=' row cen-start'>
             <image src='../../images/product_intro_1.png'></image>
             <text class='gray-6'>订单号：{{item.orderNo}}</text>
           </view>
@@ -155,32 +155,33 @@
       </view>
       <view>
          <view class='donationInfo Infobottom_05 padding10-0 row start-start'>
-           <view class='font28 row cen-start'>
+           <view class=' row cen-start'>
              <image src='../../images/yuejz.png'></image>
              <text class='gray-6 text'>捐赠信息：</text>
            </view>
-           <text class='gray-6 font28'>{{item.weight}}，{{item.appointment}}上门</text>
+           <text class='gray-6 '>{{item.weight}}，{{item.appointment}}上门</text>
          </view>
          <view class='addressInfo Infobottom_05 padding10-0 row start-start'>
-           <view class='font28 row'>
+           <view class=' row'>
              <image src='../../images/dizhi.png'></image>
              <text class='gray-6 text'>取件地址：</text>
            </view>
            <view class='column'>
-            <text class='font28 gray-6'>{{item.userName}}  {{item.telNumber}}</text>
-            <text class='font28 gray-6'>{{item.detailInfo}}</text>
+            <text class=' gray-6'>{{item.userName}}  {{item.telNumber}}</text>
+            <text class=' gray-6'>{{item.detailInfo}}</text>
            </view>
          </view>
          <view class='mybez Infobottom_05 padding10-0 row start-start'>
-           <view class='font28 row cen-start'>
+           <view class=' row cen-start'>
              <image src='../../images/beizhu.png'></image>
              <text class='row gray-6 text'>备注：</text>
            </view>
-           <text class='bz_text padding10-left gray-6 font28'>{{item.markInfo}}</text>
+           <text class='bz_text padding10-left gray-6 '>{{item.markInfo}}</text>
          </view>
       </view>
       <view class='myordbtn font26 padding10-0 gray-3 row cen-end'>
-        <text class='padding15-right'>回收成功</text><text class='padding10-right'>收获</text><image class='small_cookies' src='../../images/small_cookies.png'></image><text class='energy'>{{123}}</text>
+        <text class='padding15-right'>回收成功</text><text >收获：</text><image class='small_cookies' src='../../images/small_cookies.png'></image><text class='energy font28'> {{item.points?item.points:0}}</text>
+       
       </view>
     </view>
     </view>

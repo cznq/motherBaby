@@ -8,9 +8,10 @@ Page({
    */
   data: {
     date: '请预约', //默认时间
+    day:'',
     startDate: util.mformatTime(new Date()), //当前时间
     memberAddr: [], //取件地址
-    weightArr: [], //重量数组
+    weightArr: ['3kg以下无法上门取件', '3kg~10kg', '10kg~20kg', '20kg~30kg', '30kg以上'], //重量数组
     weightIndex: 0, //默认预估重量下标
     showMModal: false, //是否弹出提示框
     showTextarea: true,
@@ -63,48 +64,27 @@ Page({
         if (!app.globalData.id) {
           // 登录
           app.getOpenid(that.data.shareId).then(function (userId) {
-            if (!that.data.shareId){
-              wx.showToast({
-                title: '没人分享给我，是我自己来的。我的id是' + app.globalData.id,
-                icon: 'none'
-              })
-            }else{
-              wx.showToast({
-                title: '分享给我的id为' + shareid + ' ，我的id是' + app.globalData.id,
-                icon: 'none'
-              })
-            }    
+            // if (!that.data.shareId){
+            //   wx.showToast({
+            //     title: '没人分享给我，是我自己来的。我的id是' + app.globalData.id,
+            //     icon: 'none'
+            //   })
+            // }else{
+            //   wx.showToast({
+            //     title: '分享给我的id为' + shareid + ' ，我的id是' + app.globalData.id,
+            //     icon: 'none'
+            //   })
+            // }    
           })
         }
       }
       console.log('update---',userInfo)
-      // id: 用户id，long类型，不能为空
-      // openId: 微信唯一标识，String类型，不能为空
-      // nickName: 昵称
-      // headSculpture: 头像
-      // gender: 性别，0 - 未知，1 - 男，2 - 女
-      // country: 国家
-      // province: 省份
-      // city: 城市
-      // markInfo: 备注信息
-      // mobile: 手机号
-      // util.mHttp(app.globalData.baseUrl + 'maternal/user/update', {
-
-      // }, function (data) {
-      //   if (data.success) {
-      //     console.log(data) 
-         
-      //   }
-      // }, 'POST', {
-      //     'content-type': 'application/x-www-form-urlencoded'
-      //   })
-
 
       this.setData({
         getUserInfo: true,
         showGift: false,
-        successfulReceipt:true,
-        showTextarea:false
+        showTextarea: false,
+        successfulReceipt: true
       })
     }
   },
@@ -209,7 +189,8 @@ Page({
       day = '（周日）'
     }
     this.setData({
-      date: e.detail.value + day
+      day:day,
+      date: e.detail.value
     })
     this.btnIsable()
   },
@@ -257,26 +238,19 @@ Page({
   },
   // 点击我的预约
   bindMymAppointment() {
-    // console.log('1', app.globalData.id);
     var _that = this;
     if (_that.data.getUserInfo){
-      if (!app.globalData.id) {
-        // 登录
-        app.getOpenid().then(function (userId) {
-          // console.log('2userId', userId);
-          if (userId) {
-            wx.navigateTo({
-              url: '../order/order',
-            })
-          }
-        })
-      } else {
+      if (app.globalData.id) {
         wx.navigateTo({
-          url: '../order/order',
+          url: '../order/order'
         })
       }
     }
-
+  },
+  bindCloseSuccessfulReceipt(){
+    this.setData({
+      successfulReceipt:false
+    })
   },
   bindMyCookies(e){
     if (this.data.getUserInfo){
@@ -289,7 +263,7 @@ Page({
   bindConfirmAppointment(e) {
     let that = this
     console.log('userId', app.globalData.id)
-    console.log('weight', that.data.weightIndex)
+    console.log('weight', parseInt(that.data.weightIndex)+1)
     console.log('appointment', that.data.date)
     console.log('userName', that.data.memberAddr.userName)
     console.log('postalCode', that.data.memberAddr.postalCode)
@@ -308,10 +282,12 @@ Page({
           console.log('userId', userId);
           if (userId) {
             // 订单预约请求
+
             util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
               userId: app.globalData.id, //用户id
               // userId: 2 , //用户id
-              weight: that.data.weightArr[that.data.weightIndex], //预估重量
+              // weight: that.data.weightArr[that.data.weightIndex], //预估重量
+              weight: parseInt(that.data.weightIndex) + 1, //预估重量
               appointment: that.data.date, //上门预约时间 yyyy-MM-dd
               userName: that.data.memberAddr.userName, //收货人姓名
               postalCode: that.data.memberAddr.postalCode, //邮编
@@ -333,7 +309,8 @@ Page({
                   remarkInfo: '', //备注信息
                   showWeightTips: true,  //是否显示重量提示
                   showAppointmentsuccess: true, //是否显示预约成功提示框
-                  showTextarea: false //是否显示textarea
+                  showTextarea: false, //是否显示textarea
+                  day:''
                 })
               }
             }, 'POST', {
@@ -347,7 +324,7 @@ Page({
         util.mHttp(app.globalData.baseUrl + 'maternal/order/appointment', {
           userId: app.globalData.id, //用户id
           // userId: 2 , //用户id
-          weight: that.data.weightIndex, //预估重量
+          weight: parseInt(that.data.weightIndex) + 1, //预估重量
           appointment: that.data.date, //上门预约时间 yyyy-MM-dd
           userName: that.data.memberAddr.userName, //收货人姓名
           postalCode: that.data.memberAddr.postalCode, //邮编
@@ -391,13 +368,14 @@ Page({
     })
   },
   bindCopy() {
-    wx.setClipboardData({
+    wx.setClipboardData({  
       data: 'dark-artist',
       success: function (res) {
-        wx.getClipboardData({
-          success: function (res) {
-            console.log(res.data) // data
-          }
+        wx.hideToast()
+      },
+      complete(){
+        wx.showToast({
+          title: '客服微信已复制',
         })
       }
     })
@@ -450,6 +428,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(this.data.weightIndex+1+'')
     if (options.userId) {
       this.setData({
         shareId: options.userId

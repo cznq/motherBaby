@@ -38,8 +38,8 @@
     </view>
     <!-- 小饼干 -->
     <view bindtap='bindMyCookies' class='home-title-cookies'>
-      <image src='../../images/binggan.png' class='binggan-img'></image>
-      <view class='home-title-words'>小饼干</view>
+      <image src='../../images/icon_cookies.png' class='binggan-img'></image>
+      <view class='home-title-words cookies-words'>小饼干</view>
       <button wx:if="{{!getUserInfo}}" open-type="getUserInfo" class="btn-getuserinfo " lang="zh_CN" bindgetuserinfo="onGotUserInfo">
       </button>
     </view>
@@ -91,7 +91,7 @@
           </view>
           <view class='home-content-main-right home-content-main-time-right'>
             <picker mode="date" value="{{date}}" start="{{startDate}}" end="" bindchange="bindDateChange">
-              <view>{{date}}</view>
+              <view>{{date}}{{date!='请预约'?day:''}}</view>
               <image src='../../images/arrow_right@2x.png'> </image>
             </picker>
           </view>
@@ -124,7 +124,7 @@
   </view>
 
   <!-- 仅支持北京地区上门取件提示框  -->
-  <view class='modal-pick-up titleColor font30' wx:if="{{showPickup}}">
+  <view class='mask-layer modal-pick-up titleColor font30' wx:if="{{showPickup}}" catchtouchmove='modal-pick-up'>
     <view class='modal-pick-up-box'>
       <view class='delete-box' bindtap='bindDelete'>
         <image class='delete-btn' src='../../images/delete.png'></image>
@@ -138,7 +138,7 @@
   </view>
 
   <!-- 预约须知提示框 -->
-  <view class='modal-appointment_notice titleColor ' wx:if="{{showMModal}}">
+  <view class='mask-layer modal-appointment_notice titleColor ' wx:if="{{showMModal}}" catchtouchmove='modal-appointment_notice'>
     <view class='modal-appointment_notice-box'>
       <view class='delete-box' bindtap='bindCloseAppointment'>
         <image class='delete-btn' src='../../images/delete.png'></image>
@@ -172,7 +172,7 @@
   </view>
 
   <!-- 预约成功 -->
-  <view class='modal-appointment-success titleColor font28' wx:if='{{showAppointmentsuccess}}'>
+  <view class='mask-layer modal-appointment-success titleColor font28'  wx:if='{{showAppointmentsuccess}}' catchtouchmove='modal-appointment-success' >
     <view class='modal-appointment-success-box'>
       <view class='delete-box' bindtap='bindCloseAppointment'>
         <image class='delete-btn' src='../../images/delete.png'></image>
@@ -180,28 +180,22 @@
       <image class='modal-appointment-success-img' src='../../images/appointment_success.png'></image>
       <view class='modal-appointment-success-content_1  '>我们已经收到您的预约，上门当天，我们会提前与您联系。</view>
       <view class='modal-appointment-success-content_2 '>
-        <!-- <view class=' modal-appointment-success-content_2-words'>复制并添加客服微信,进入换换星球，更多好礼享不停！ -->
         <view class=' modal-appointment-success-content_2-words'>
-
           <view class='margintop2'>点击</view>
-          <view class='btn-copy font28' bindtap='bindCopy'>复制</view>
-          <view class='margintop2'>客服微信号dark-artist，</view>
+          <view class='margintop2 marginleft80'>客服微信dark-artist</view>
         </view>
-        <view>在微信中添加好友，即可咨询。</view>
-
-        <!-- <view class=' modal-appointment-success-content_2-words'>进入换换星球，更多好礼享不停！
-        </view> -->
-        <!-- <view class='btn-copy font28' bindtap='bindCopy'>复制</view> -->
+        <view class='margintop18'>在微信中添加好友，即可咨询。</view>
       </view>
       <view class='dots'> </view>
       <navigator url='../../pages/order/order' hover-class="none" class='modal-appointment-success-btn-box'>
         <view class='btn-common modal-appointment_notice-btn font34' bindtap='bindCloseAppointment'> 好的 </view>
       </navigator>
+       <view class='btn-copy font24' bindtap='bindCopy'>复制</view>
     </view>
   </view>
 
   <!-- 新手有礼 -->
-  <view class='mask-layer' wx:if='{{showGift}}'>
+  <view class='mask-layer' wx:if='{{showGift}}' catchtouchmove='mask-layer'>
     <view class='gift'>
       <view class='delete-box' bindtap='bindDelete'>
         <image class='delete-btn-gift' src='../../images/delete_white.png'></image>
@@ -216,17 +210,16 @@
       </button>
     </view>
   </view>
-
-    <view class='mask-layer' wx:if='{{successfulReceipt}}'>
-    <view class='gift'>
-      <view class='delete-box' bindtap='bindDelete'>
-        <image class='delete-btn-gift' src='../../images/delete_white.png'></image>
+  <!-- 领取成功 -->
+  <view class='mask-layer titleColor font26' wx:if="{{successfulReceipt}}" catchtouchmove='mask-layer' >
+    <view class='successfulReceipt-box'>
+      <view class='delete-box' bindtap='bindCloseSuccessfulReceipt'>
+        <image class='delete-btn' src='../../images/delete.png'></image>
       </view>
-      <image class='img-gift' src='../../images/gift.png'></image>
-      <view class='font36 gift-words'>
-        <view>160枚小饼干已入账</view>
-      </view>
-      <view class='gift-btn' bindtap='handleViewCookies'>立即查看</view>
-    </view>÷
+      <image class='modal-successfulReceipt-img' src='../../images/successfulReceipt.png'></image>
+      <view class='modal-successfulReceipt-content font26 '>150块小饼干已入账</view>
+      <view class='dots'></view>
+        <view class='successfulReceipt-btn font34' bindtap='handleViewCookies' > 去查看 </view>
+    </view>
   </view>
 </view>
