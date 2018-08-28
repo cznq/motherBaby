@@ -84,7 +84,7 @@ white-space:nowrap;
  text-overflow:ellipsis;
 }
 .bz_text{
-  margin-top:-2px;
+  margin-top:-1px;
 }
 .myordbtn image{
   width:182rpx;
@@ -92,9 +92,6 @@ white-space:nowrap;
   margin-top:30rpx;
   margin-bottom:10rpx;
 }
-
-
-
 .padding8r-bottom{
   padding-bottom: 16rpx;
 }

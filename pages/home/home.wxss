@@ -95,7 +95,7 @@ page{
 .binggan-img{
   width: 113rpx;
   height: 71rpx;
-  margin-top: 10rpx;
+  margin-top: 11rpx;
 }
 
 /* 标题图片样式 */
@@ -204,7 +204,6 @@ page{
   height: 88rpx;
   position: relative;
 }
-
 
 /* 内容--主要区域--时间--左侧 */
 

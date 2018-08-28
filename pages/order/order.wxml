@@ -75,7 +75,7 @@
              <image src='../../images/yuejz.png'></image>
              <text class='gray-6 text'>捐赠信息：</text>
            </view>
-           <text class='gray-6 '>{{item.weight}}，{{item.appointment}}上门</text>
+           <text class='gray-6 '>{{item.weightValue}}，{{item.appointment}}上门</text>
          </view>
          <view class='addressInfo Infobottom_05 padding10-0 row start-start'>
            <view class=' row'>
@@ -117,7 +117,7 @@
              <image src='../../images/yuejz.png'></image>
              <text class='gray-6 text'>捐赠信息：</text>
            </view>
-           <text class='gray-6 '>{{item.weight}}，{{item.appointment}}上门</text>
+           <text class='gray-6 '>{{item.weightValue}}，{{item.appointment}}上门</text>
          </view>
          <view class='addressInfo Infobottom_05 padding10-0 row start-start'>
            <view class=' row'>
@@ -159,7 +159,7 @@
              <image src='../../images/yuejz.png'></image>
              <text class='gray-6 text'>捐赠信息：</text>
            </view>
-           <text class='gray-6 '>{{item.weight}}，{{item.appointment}}上门</text>
+           <text class='gray-6 '>{{item.weightValue}}，{{item.appointment}}上门</text>
          </view>
          <view class='addressInfo Infobottom_05 padding10-0 row start-start'>
            <view class=' row'>
@@ -181,7 +181,6 @@
       </view>
       <view class='myordbtn font26 padding10-0 gray-3 row cen-end'>
         <text class='padding15-right'>回收成功</text><text >收获：</text><image class='small_cookies' src='../../images/small_cookies.png'></image><text class='energy font28'> {{item.points?item.points:0}}</text>
-       
       </view>
     </view>
     </view>
